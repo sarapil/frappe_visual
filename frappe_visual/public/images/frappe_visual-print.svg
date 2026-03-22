@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 50" width="150" height="50">
+  <!-- Print-optimized: no animations, high contrast -->
+  <polygon points="22,5 38,14 38,32 22,41 6,32 6,14" fill="#6366F1" stroke="#4F46E5" stroke-width="1"/>
+  <circle cx="22" cy="22" r="6" fill="none" stroke="white" stroke-width="1.5"/>
+  <circle cx="22" cy="22" r="2.5" fill="white"/>
+  <text x="50" y="22" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#1E1B4B">Frappe</text>
+  <text x="50" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#6366F1">Visual</text>
+</svg>

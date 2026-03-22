@@ -1,0 +1,245 @@
+/* ─── Frappe Visual: Gantt Chart Styles ──────────────────────────
+ * Swim lanes, gradient progress bars, dependency arrows,
+ * today marker with pulse, hover tooltips.
+ */
+
+.fv-gantt {
+	width: 100%;
+	font-family: $fv-font-family;
+	font-size: $fv-font-size-base;
+}
+
+// ── Toolbar ──────────────────────────────────────────────────────
+.fv-gantt-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $fv-space-3 $fv-space-4;
+	border-radius: $fv-radius-md;
+	margin-bottom: $fv-space-3;
+	gap: $fv-space-3;
+	flex-wrap: wrap;
+}
+
+.fv-gantt-title {
+	margin: 0;
+	font-size: $fv-font-size-lg;
+	font-weight: 700;
+}
+
+.fv-gantt-scales {
+	display: flex;
+	gap: 2px;
+	background: var(--fv-bg-tertiary, #f1f5f9);
+	border-radius: $fv-radius-sm;
+	padding: 2px;
+}
+
+.fv-gantt-scale-btn {
+	border: none;
+	background: transparent;
+	padding: $fv-space-1 $fv-space-3;
+	border-radius: $fv-radius-sm - 1px;
+	font-size: $fv-font-size-sm;
+	font-weight: 500;
+	cursor: pointer;
+	color: var(--fv-text-tertiary, #94a3b8);
+	transition: all $fv-transition-fast;
+
+	&.active {
+		background: var(--fv-bg-primary, white);
+		color: var(--fv-accent, #{$fv-accent});
+		box-shadow: $fv-shadow-sm;
+	}
+}
+
+.fv-gantt-fit-btn {
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	background: var(--fv-bg-primary, white);
+	border-radius: $fv-radius-sm;
+	padding: $fv-space-1 $fv-space-3;
+	font-size: $fv-font-size-sm;
+	cursor: pointer;
+	color: var(--fv-text-secondary, #64748b);
+}
+
+// ── Chart ────────────────────────────────────────────────────────
+.fv-gantt-chart {
+	overflow-x: auto;
+	overflow-y: auto;
+	max-height: 600px;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	border-radius: $fv-radius-md;
+	background: var(--fv-bg-primary, white);
+}
+
+.fv-gantt-empty {
+	padding: $fv-space-8;
+	text-align: center;
+	color: var(--fv-text-tertiary, #94a3b8);
+	font-size: $fv-font-size-md;
+}
+
+// ── Timeline Header ──────────────────────────────────────────────
+.fv-gantt-header {
+	display: flex;
+	border-bottom: 2px solid var(--fv-border-primary, #e2e8f0);
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background: var(--fv-bg-primary, white);
+}
+
+.fv-gantt-label-col {
+	width: 240px;
+	flex-shrink: 0;
+	border-right: 1px solid var(--fv-border-primary, #e2e8f0);
+	padding: $fv-space-2 $fv-space-3;
+	font-weight: 600;
+	font-size: $fv-font-size-sm;
+	color: var(--fv-text-tertiary, #94a3b8);
+}
+
+.fv-gantt-timeline {
+	display: flex;
+	flex-shrink: 0;
+}
+
+.fv-gantt-header-cell {
+	border-right: 1px solid var(--fv-border-primary, rgba(226,232,240,0.5));
+	padding: $fv-space-2 $fv-space-1;
+	text-align: center;
+	font-size: $fv-font-size-xs;
+	font-weight: 600;
+	color: var(--fv-text-tertiary, #94a3b8);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+// ── Task Rows ────────────────────────────────────────────────────
+.fv-gantt-rows { position: relative; }
+
+.fv-gantt-row {
+	display: flex;
+	border-bottom: 1px solid var(--fv-border-primary, rgba(226,232,240,0.5));
+	min-height: 44px;
+	align-items: center;
+	transition: background $fv-transition-fast;
+
+	&:hover {
+		background: var(--fv-accent-bg, #{$fv-accent-bg});
+	}
+}
+
+.fv-gantt-row-label {
+	width: 240px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	gap: $fv-space-2;
+	padding: $fv-space-2 $fv-space-3;
+	border-right: 1px solid var(--fv-border-primary, #e2e8f0);
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+}
+
+.fv-gantt-row-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.fv-gantt-row-text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: $fv-font-size-sm;
+	font-weight: 500;
+	color: var(--fv-text-primary, #1e293b);
+}
+
+.fv-gantt-row-track {
+	position: relative;
+	height: 100%;
+	flex-shrink: 0;
+}
+
+// ── Task Bars ────────────────────────────────────────────────────
+.fv-gantt-bar {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 26px;
+	border-radius: $fv-radius-sm;
+	cursor: pointer;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	background: linear-gradient(
+		135deg,
+		var(--fv-bar-color, #{$fv-accent}) 0%,
+		color-mix(in srgb, var(--fv-bar-color, #{$fv-accent}), white 25%) 100%
+	);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	transition: box-shadow $fv-transition-fast;
+
+	&:hover {
+		box-shadow:
+			0 4px 12px rgba(0, 0, 0, 0.15),
+			0 0 0 2px rgba(var(--fv-bar-color, #{$fv-accent}), 0.2);
+	}
+}
+
+.fv-gantt-bar-fill {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.12);
+	border-radius: $fv-radius-sm 0 0 $fv-radius-sm;
+	transition: width $fv-transition-base;
+}
+
+.fv-gantt-bar-text {
+	position: relative;
+	z-index: 1;
+	padding: 0 $fv-space-2;
+	font-size: $fv-font-size-xs;
+	font-weight: 600;
+	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+// ── Today Line ───────────────────────────────────────────────────
+.fv-gantt-today-line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: $fv-danger;
+	z-index: 3;
+	opacity: 0.7;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -4px;
+		left: -3px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: $fv-danger;
+	}
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+@media (max-width: 768px) {
+	.fv-gantt-toolbar { flex-direction: column; align-items: flex-start; }
+	.fv-gantt-label-col { width: 140px; }
+	.fv-gantt-row-text { font-size: $fv-font-size-xs; }
+}

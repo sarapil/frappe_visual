@@ -1,0 +1,909 @@
+/**
+ * Frappe Visual - Icon System CSS
+ * ================================
+ * Comprehensive icon styling for Frappe 16 apps
+ *
+ * Supports:
+ * - Tabler Icons (webfont)
+ * - Frappe native SVG icons
+ * - Custom SVG icons
+ * - Dashboard & Workspace icons
+ * - Graph visualization icons
+ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Icon sizes */
+    --icon-size-xs: 12px;
+    --icon-size-sm: 14px;
+    --icon-size-md: 16px;
+    --icon-size-lg: 20px;
+    --icon-size-xl: 24px;
+    --icon-size-2xl: 32px;
+    --icon-size-3xl: 48px;
+
+    /* Icon colors */
+    --icon-color-primary: var(--primary-color, #2490ef);
+    --icon-color-secondary: var(--text-muted, #6c757d);
+    --icon-color-success: var(--green-500, #28a745);
+    --icon-color-warning: var(--yellow-500, #ffc107);
+    --icon-color-danger: var(--red-500, #dc3545);
+    --icon-color-info: var(--blue-500, #17a2b8);
+    --icon-color-muted: var(--gray-500, #adb5bd);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   BASE ICON STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* SVG Icons (Frappe native + custom) */
+.fv-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    fill: currentColor;
+    stroke: none;
+    flex-shrink: 0;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* SVG Icon Sizes */
+.fv-icon-xs { width: var(--icon-size-xs); height: var(--icon-size-xs); }
+.fv-icon-sm { width: var(--icon-size-sm); height: var(--icon-size-sm); }
+.fv-icon-md { width: var(--icon-size-md); height: var(--icon-size-md); }
+.fv-icon-lg { width: var(--icon-size-lg); height: var(--icon-size-lg); }
+.fv-icon-xl { width: var(--icon-size-xl); height: var(--icon-size-xl); }
+.fv-icon-2xl { width: var(--icon-size-2xl); height: var(--icon-size-2xl); }
+.fv-icon-3xl { width: var(--icon-size-3xl); height: var(--icon-size-3xl); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   TABLER ICONS (Webfont)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ti {
+    font-size: inherit;
+    vertical-align: middle;
+    line-height: 1;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* Tabler icon sizes */
+.ti-xs { font-size: var(--icon-size-xs) !important; }
+.ti-sm { font-size: var(--icon-size-sm) !important; }
+.ti-md { font-size: var(--icon-size-md) !important; }
+.ti-lg { font-size: var(--icon-size-lg) !important; }
+.ti-xl { font-size: var(--icon-size-xl) !important; }
+.ti-2xl { font-size: var(--icon-size-2xl) !important; }
+.ti-3xl { font-size: var(--icon-size-3xl) !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ICON COLORS (Semantic)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.icon-primary,
+.icon-primary .fv-icon,
+.icon-primary.ti { color: var(--icon-color-primary) !important; }
+
+.icon-secondary,
+.icon-secondary .fv-icon,
+.icon-secondary.ti { color: var(--icon-color-secondary) !important; }
+
+.icon-success,
+.icon-success .fv-icon,
+.icon-success.ti { color: var(--icon-color-success) !important; }
+
+.icon-warning,
+.icon-warning .fv-icon,
+.icon-warning.ti { color: var(--icon-color-warning) !important; }
+
+.icon-danger,
+.icon-danger .fv-icon,
+.icon-danger.ti { color: var(--icon-color-danger) !important; }
+
+.icon-info,
+.icon-info .fv-icon,
+.icon-info.ti { color: var(--icon-color-info) !important; }
+
+.icon-muted,
+.icon-muted .fv-icon,
+.icon-muted.ti { color: var(--icon-color-muted) !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ICON CONTAINERS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Circle container */
+.fv-icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--fg-color, #f5f5f5);
+}
+
+.fv-icon-circle-sm { padding: 4px; }
+.fv-icon-circle-md { padding: 8px; }
+.fv-icon-circle-lg { padding: 12px; }
+.fv-icon-circle-xl { padding: 16px; }
+
+/* Colored circle backgrounds */
+.fv-icon-circle-primary { background-color: rgba(36, 144, 239, 0.1); color: var(--icon-color-primary); }
+.fv-icon-circle-success { background-color: rgba(40, 167, 69, 0.1); color: var(--icon-color-success); }
+.fv-icon-circle-warning { background-color: rgba(255, 193, 7, 0.1); color: var(--icon-color-warning); }
+.fv-icon-circle-danger { background-color: rgba(220, 53, 69, 0.1); color: var(--icon-color-danger); }
+.fv-icon-circle-info { background-color: rgba(23, 162, 184, 0.1); color: var(--icon-color-info); }
+
+/* Rounded square container */
+.fv-icon-rounded {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius, 8px);
+    padding: 8px;
+    background-color: var(--fg-color, #f5f5f5);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   WORKSPACE & SIDEBAR ICONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Main sidebar navigation */
+.sidebar-menu .fv-icon,
+.sidebar-menu .ti,
+.desk-sidebar .fv-icon,
+.desk-sidebar .ti,
+.module-links .fv-icon,
+.module-links .ti {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    margin-right: 10px;
+    opacity: 0.75;
+    flex-shrink: 0;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.sidebar-menu .active .fv-icon,
+.sidebar-menu .active .ti,
+.desk-sidebar .active .fv-icon,
+.desk-sidebar .active .ti {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.sidebar-menu a:hover .fv-icon,
+.sidebar-menu a:hover .ti,
+.desk-sidebar a:hover .fv-icon,
+.desk-sidebar a:hover .ti {
+    opacity: 1;
+}
+
+/* Workspace header icon */
+.workspace-header .fv-icon,
+.workspace-header .ti {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+    margin-right: 12px;
+}
+
+/* Workspace shortcut icons */
+.workspace-shortcut .fv-icon,
+.workspace-shortcut .ti,
+.shortcut-widget-box .fv-icon,
+.shortcut-widget-box .ti {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   DASHBOARD CARDS & WIDGETS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Dashboard link cards */
+.fv-dash-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--fg-color);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.fv-dash-link:hover {
+    background: var(--control-bg-on-gray);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fv-dash-link .fv-icon,
+.fv-dash-link .ti {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    margin-right: 12px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.fv-dash-link-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.fv-dash-link-count {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 8px;
+}
+
+/* Dashboard cards with large icons */
+.fv-dash-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--fg-color);
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-height: 140px;
+}
+
+.fv-dash-card:hover {
+    background: var(--control-bg-on-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fv-dash-card .fv-icon,
+.fv-dash-card .ti {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.fv-dash-card-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.fv-dash-card-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.fv-dash-card-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Dashboard card color variants */
+.fv-dash-card-primary { border-left: 4px solid var(--icon-color-primary); }
+.fv-dash-card-success { border-left: 4px solid var(--icon-color-success); }
+.fv-dash-card-warning { border-left: 4px solid var(--icon-color-warning); }
+.fv-dash-card-danger { border-left: 4px solid var(--icon-color-danger); }
+.fv-dash-card-info { border-left: 4px solid var(--icon-color-info); }
+
+.fv-dash-card-primary .fv-icon,
+.fv-dash-card-primary .ti { color: var(--icon-color-primary); }
+.fv-dash-card-success .fv-icon,
+.fv-dash-card-success .ti { color: var(--icon-color-success); }
+.fv-dash-card-warning .fv-icon,
+.fv-dash-card-warning .ti { color: var(--icon-color-warning); }
+.fv-dash-card-danger .fv-icon,
+.fv-dash-card-danger .ti { color: var(--icon-color-danger); }
+.fv-dash-card-info .fv-icon,
+.fv-dash-card-info .ti { color: var(--icon-color-info); }
+
+/* Widget header icons */
+.widget-head .fv-icon,
+.widget-head .ti,
+.widget-header .fv-icon,
+.widget-header .ti {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+/* Number card widget */
+.number-widget .fv-icon,
+.number-widget .ti {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   GRAPH VISUALIZATION ICONS (Frappe Visual Specific)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Graph node icons */
+.graph-node .fv-icon,
+.graph-node .ti,
+.cy-node-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+}
+
+/* Node type indicators */
+.fv-node-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--fg-color);
+    border: 2px solid var(--primary-color);
+}
+
+.fv-node-icon-wrapper .fv-icon,
+.fv-node-icon-wrapper .ti {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* Graph toolbar icons */
+.graph-toolbar .fv-icon,
+.graph-toolbar .ti {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+/* Edge/connection icons */
+.edge-label .fv-icon,
+.edge-label .ti {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   FORM FIELD ICONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Link field & control icons */
+.control-input-wrapper .fv-icon,
+.control-input-wrapper .ti,
+.link-field-btn .fv-icon,
+.link-field-btn .ti {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Field with icon prefix */
+.fv-field-with-icon {
+    position: relative;
+}
+
+.fv-field-with-icon .fv-field-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    z-index: 1;
+    font-size: 16px;
+}
+
+.fv-field-with-icon input,
+.fv-field-with-icon select,
+.fv-field-with-icon .form-control {
+    padding-left: 38px !important;
+}
+
+/* Field with icon suffix */
+.fv-field-with-icon-right .fv-field-icon {
+    left: auto;
+    right: 12px;
+}
+
+.fv-field-with-icon-right input,
+.fv-field-with-icon-right select,
+.fv-field-with-icon-right .form-control {
+    padding-left: 12px !important;
+    padding-right: 38px !important;
+}
+
+/* Clearable field icon */
+.fv-field-clear-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.fv-field-with-icon:hover .fv-field-clear-icon,
+.fv-field-with-icon:focus-within .fv-field-clear-icon {
+    opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   BUTTON ICONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Standard button with icon */
+.btn .fv-icon,
+.btn .ti {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Icon after text */
+.btn .fv-icon-right,
+.btn .ti-right {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+/* Icon-only button */
+.fv-btn-icon,
+.fv-btn-icon-only {
+    padding: 6px 8px;
+    line-height: 1;
+}
+
+.fv-btn-icon .fv-icon,
+.fv-btn-icon .ti,
+.fv-btn-icon-only .fv-icon,
+.fv-btn-icon-only .ti {
+    margin: 0;
+}
+
+/* Icon button sizes */
+.fv-btn-icon-xs { padding: 2px 4px; }
+.fv-btn-icon-sm { padding: 4px 6px; }
+.fv-btn-icon-md { padding: 6px 8px; }
+.fv-btn-icon-lg { padding: 10px 12px; }
+.fv-btn-icon-xl { padding: 14px 16px; }
+
+/* Floating action button */
+.fv-btn-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fv-btn-fab .fv-icon,
+.fv-btn-fab .ti {
+    margin: 0;
+    font-size: 20px;
+}
+
+.fv-btn-fab-sm { width: 36px; height: 36px; }
+.fv-btn-fab-lg { width: 56px; height: 56px; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ACTIVITY LOG & TIMELINE ICONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Timeline item icons */
+.timeline-item .fv-icon,
+.timeline-item .ti,
+.activity-log .fv-icon,
+.activity-log .ti {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* Log type indicator (circular badge) */
+.fv-log-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.fv-log-icon .fv-icon,
+.fv-log-icon .ti {
+    font-size: 14px;
+}
+
+/* Log type colors */
+.fv-log-icon-create,
+.fv-log-icon.fv-log-create {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: var(--icon-color-success);
+}
+
+.fv-log-icon-update,
+.fv-log-icon.fv-log-update {
+    background-color: rgba(23, 162, 184, 0.15);
+    color: var(--icon-color-info);
+}
+
+.fv-log-icon-delete,
+.fv-log-icon.fv-log-delete {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: var(--icon-color-danger);
+}
+
+.fv-log-icon-workflow,
+.fv-log-icon.fv-log-workflow {
+    background-color: rgba(111, 66, 193, 0.15);
+    color: #6f42c1;
+}
+
+.fv-log-icon-comment,
+.fv-log-icon.fv-log-comment {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: var(--icon-color-warning);
+}
+
+.fv-log-icon-email,
+.fv-log-icon.fv-log-email {
+    background-color: rgba(36, 144, 239, 0.15);
+    color: var(--icon-color-primary);
+}
+
+.fv-log-icon-attachment,
+.fv-log-icon.fv-log-attachment {
+    background-color: rgba(108, 117, 125, 0.15);
+    color: var(--icon-color-secondary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   STATUS INDICATORS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Status badge with icon */
+.fv-status-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.fv-status-icon .fv-icon,
+.fv-status-icon .ti {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+}
+
+/* Status colors */
+.fv-status-icon-draft,
+.fv-status-icon.status-draft {
+    background: rgba(108, 117, 125, 0.12);
+    color: var(--gray-700, #495057);
+}
+
+.fv-status-icon-pending,
+.fv-status-icon.status-pending {
+    background: rgba(255, 193, 7, 0.12);
+    color: var(--yellow-700, #d39e00);
+}
+
+.fv-status-icon-active,
+.fv-status-icon-approved,
+.fv-status-icon-completed,
+.fv-status-icon.status-active,
+.fv-status-icon.status-approved,
+.fv-status-icon.status-completed {
+    background: rgba(40, 167, 69, 0.12);
+    color: var(--green-700, #1e7e34);
+}
+
+.fv-status-icon-inactive,
+.fv-status-icon-rejected,
+.fv-status-icon-cancelled,
+.fv-status-icon.status-inactive,
+.fv-status-icon.status-rejected,
+.fv-status-icon.status-cancelled {
+    background: rgba(220, 53, 69, 0.12);
+    color: var(--red-700, #bd2130);
+}
+
+.fv-status-icon-info,
+.fv-status-icon.status-info {
+    background: rgba(23, 162, 184, 0.12);
+    color: var(--blue-700, #117a8b);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVIGATION ICONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Breadcrumb separator */
+.breadcrumb-separator .fv-icon,
+.breadcrumb-separator .ti {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0 4px;
+}
+
+/* Dropdown toggle arrow */
+.dropdown-toggle .fv-icon-chevron,
+.dropdown-toggle .ti-chevron-down {
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"] .fv-icon-chevron,
+.dropdown-toggle[aria-expanded="true"] .ti-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Tab icons */
+.nav-tabs .fv-icon,
+.nav-tabs .ti,
+.nav-pills .fv-icon,
+.nav-pills .ti {
+    margin-right: 6px;
+}
+
+/* Accordion toggle icons */
+.accordion-toggle .fv-icon,
+.accordion-toggle .ti {
+    transition: transform 0.2s ease;
+}
+
+.accordion-toggle.collapsed .fv-icon,
+.accordion-toggle.collapsed .ti {
+    transform: rotate(-90deg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Spinning (loading) */
+.fv-icon-spin,
+.ti-spin {
+    animation: fv-icon-spin 1s linear infinite;
+}
+
+@keyframes fv-icon-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Pulse (attention) */
+.fv-icon-pulse,
+.ti-pulse {
+    animation: fv-icon-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fv-icon-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Bounce */
+.fv-icon-bounce,
+.ti-bounce {
+    animation: fv-icon-bounce 0.5s ease infinite alternate;
+}
+
+@keyframes fv-icon-bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-3px); }
+}
+
+/* Shake (error) */
+.fv-icon-shake,
+.ti-shake {
+    animation: fv-icon-shake 0.5s ease;
+}
+
+@keyframes fv-icon-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* Scale on hover */
+.fv-icon-hover-scale:hover,
+.ti-hover-scale:hover {
+    transform: scale(1.15);
+}
+
+/* Rotate on hover */
+.fv-icon-hover-rotate:hover,
+.ti-hover-rotate:hover {
+    transform: rotate(15deg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RTL SUPPORT (Arabic / Hebrew)
+   ═══════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .btn .fv-icon,
+[dir="rtl"] .btn .ti {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+[dir="rtl"] .btn .fv-icon-right,
+[dir="rtl"] .btn .ti-right {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+[dir="rtl"] .sidebar-menu .fv-icon,
+[dir="rtl"] .sidebar-menu .ti,
+[dir="rtl"] .desk-sidebar .fv-icon,
+[dir="rtl"] .desk-sidebar .ti {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+[dir="rtl"] .fv-dash-link .fv-icon,
+[dir="rtl"] .fv-dash-link .ti {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+[dir="rtl"] .fv-dash-link-count {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+[dir="rtl"] .fv-field-with-icon .fv-field-icon {
+    left: auto;
+    right: 12px;
+}
+
+[dir="rtl"] .fv-field-with-icon input,
+[dir="rtl"] .fv-field-with-icon select,
+[dir="rtl"] .fv-field-with-icon .form-control {
+    padding-left: 12px !important;
+    padding-right: 38px !important;
+}
+
+[dir="rtl"] .fv-field-with-icon-right .fv-field-icon {
+    right: auto;
+    left: 12px;
+}
+
+[dir="rtl"] .fv-field-with-icon-right input,
+[dir="rtl"] .fv-field-with-icon-right select,
+[dir="rtl"] .fv-field-with-icon-right .form-control {
+    padding-right: 12px !important;
+    padding-left: 38px !important;
+}
+
+[dir="rtl"] .dropdown-toggle .fv-icon-chevron,
+[dir="rtl"] .dropdown-toggle .ti-chevron-down {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+[dir="rtl"] .nav-tabs .fv-icon,
+[dir="rtl"] .nav-tabs .ti,
+[dir="rtl"] .nav-pills .fv-icon,
+[dir="rtl"] .nav-pills .ti {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+[dir="rtl"] .fv-status-icon {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .workspace-header .fv-icon,
+[dir="rtl"] .workspace-header .ti {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+[dir="rtl"] .widget-head .fv-icon,
+[dir="rtl"] .widget-head .ti {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+[dir="rtl"] .fv-log-icon {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+[dir="rtl"] .fv-dash-card {
+    border-left: none;
+}
+
+[dir="rtl"] .fv-dash-card-primary { border-right: 4px solid var(--icon-color-primary); }
+[dir="rtl"] .fv-dash-card-success { border-right: 4px solid var(--icon-color-success); }
+[dir="rtl"] .fv-dash-card-warning { border-right: 4px solid var(--icon-color-warning); }
+[dir="rtl"] .fv-dash-card-danger { border-right: 4px solid var(--icon-color-danger); }
+[dir="rtl"] .fv-dash-card-info { border-right: 4px solid var(--icon-color-info); }
+
+/* Mirror directional icons in RTL */
+[dir="rtl"] .ti-chevron-right:before { content: "\ea64"; } /* chevron-left */
+[dir="rtl"] .ti-chevron-left:before { content: "\ea63"; }  /* chevron-right */
+[dir="rtl"] .ti-arrow-right:before { content: "\ea0c"; }   /* arrow-left */
+[dir="rtl"] .ti-arrow-left:before { content: "\ea0b"; }    /* arrow-right */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   DARK MODE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .fv-dash-card,
+[data-theme="dark"] .fv-dash-link {
+    background: var(--card-bg, #1a1a1a);
+}
+
+[data-theme="dark"] .fv-dash-card:hover,
+[data-theme="dark"] .fv-dash-link:hover {
+    background: var(--control-bg, #2a2a2a);
+}
+
+[data-theme="dark"] .fv-icon-circle,
+[data-theme="dark"] .fv-icon-rounded {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .fv-log-icon-create { background-color: rgba(40, 167, 69, 0.2); }
+[data-theme="dark"] .fv-log-icon-update { background-color: rgba(23, 162, 184, 0.2); }
+[data-theme="dark"] .fv-log-icon-delete { background-color: rgba(220, 53, 69, 0.2); }
+
+[data-theme="dark"] .fv-status-icon-draft { background: rgba(108, 117, 125, 0.2); }
+[data-theme="dark"] .fv-status-icon-pending { background: rgba(255, 193, 7, 0.2); }
+[data-theme="dark"] .fv-status-icon-active { background: rgba(40, 167, 69, 0.2); }
+[data-theme="dark"] .fv-status-icon-inactive { background: rgba(220, 53, 69, 0.2); }
+
+[data-theme="dark"] .fv-icon-circle-primary { background-color: rgba(36, 144, 239, 0.15); }
+[data-theme="dark"] .fv-icon-circle-success { background-color: rgba(40, 167, 69, 0.15); }
+[data-theme="dark"] .fv-icon-circle-warning { background-color: rgba(255, 193, 7, 0.15); }
+[data-theme="dark"] .fv-icon-circle-danger { background-color: rgba(220, 53, 69, 0.15); }
+[data-theme="dark"] .fv-icon-circle-info { background-color: rgba(23, 162, 184, 0.15); }

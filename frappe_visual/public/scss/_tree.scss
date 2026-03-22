@@ -1,0 +1,251 @@
+/* ─── Frappe Visual: Tree View Styles ─────────────────────────────
+ * Org chart / tree with node cards, connecting lines,
+ * expand/collapse toggle rotation, hover-lift on nodes.
+ */
+
+.fv-tree {
+	width: 100%;
+	font-family: $fv-font-family;
+	font-size: $fv-font-size-base;
+}
+
+// ── Toolbar ──────────────────────────────────────────────────────
+.fv-tree-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $fv-space-3 $fv-space-4;
+	border-radius: $fv-radius-md;
+	margin-bottom: $fv-space-3;
+	gap: $fv-space-3;
+}
+
+.fv-tree-title-wrap {
+	display: flex;
+	align-items: center;
+	gap: $fv-space-2;
+}
+
+.fv-tree-icon {
+	color: var(--fv-accent, #{$fv-accent});
+	display: flex;
+}
+
+.fv-tree-title {
+	margin: 0;
+	font-size: $fv-font-size-lg;
+	font-weight: 700;
+}
+
+.fv-tree-actions {
+	display: flex;
+	gap: $fv-space-2;
+}
+
+.fv-tree-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: $fv-space-1;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	background: var(--fv-bg-primary, white);
+	border-radius: $fv-radius-sm;
+	padding: $fv-space-1 $fv-space-2;
+	font-size: $fv-font-size-sm;
+	cursor: pointer;
+	color: var(--fv-text-secondary, #64748b);
+	transition: all $fv-transition-fast;
+
+	&:hover {
+		border-color: var(--fv-accent, #{$fv-accent});
+		color: var(--fv-accent, #{$fv-accent});
+	}
+}
+
+// ── Tree Body ────────────────────────────────────────────────────
+.fv-tree-body {
+	padding: $fv-space-2;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	border-radius: $fv-radius-md;
+	background: var(--fv-bg-primary, white);
+	min-height: 200px;
+}
+
+.fv-tree-empty {
+	padding: $fv-space-8;
+	text-align: center;
+	color: var(--fv-text-tertiary, #94a3b8);
+	font-size: $fv-font-size-md;
+}
+
+// ── Tree List ────────────────────────────────────────────────────
+.fv-tree-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	// Indentation based on depth
+	.fv-tree-list {
+		margin-left: $fv-space-6;
+		padding-left: $fv-space-3;
+		border-left: 2px solid var(--fv-border-primary, #e2e8f0);
+		position: relative;
+
+		// Animated connecting line
+		&::before {
+			content: '';
+			position: absolute;
+			left: -2px;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: linear-gradient(
+				to bottom,
+				var(--fv-accent, #{$fv-accent}) 0%,
+				transparent 100%
+			);
+			opacity: 0.3;
+		}
+	}
+}
+
+.fv-tree-item {
+	margin: $fv-space-1 0;
+}
+
+// ── Tree Node ────────────────────────────────────────────────────
+.fv-tree-node {
+	display: flex;
+	align-items: center;
+	gap: $fv-space-2;
+	padding: $fv-space-2 $fv-space-3;
+	border-radius: $fv-radius-sm;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: all $fv-transition-fast;
+	position: relative;
+
+	&:hover {
+		border-color: var(--fv-border-primary, #e2e8f0);
+		background: var(--fv-accent-bg, #{$fv-accent-bg});
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 3px;
+		height: 0;
+		background: var(--fv-node-color, #{$fv-accent});
+		border-radius: 2px;
+		transition: height $fv-transition-fast;
+	}
+
+	&:hover::before {
+		height: 60%;
+	}
+}
+
+.fv-tree-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border: none;
+	background: var(--fv-bg-tertiary, #f1f5f9);
+	border-radius: $fv-radius-sm - 2px;
+	cursor: pointer;
+	padding: 0;
+	flex-shrink: 0;
+	color: var(--fv-text-tertiary, #94a3b8);
+	transition: all $fv-transition-fast;
+
+	svg {
+		transition: transform $fv-transition-base;
+	}
+
+	&:hover {
+		background: var(--fv-accent-bg, #{$fv-accent-bg});
+		color: var(--fv-accent, #{$fv-accent});
+	}
+
+	// Rotate chevron when expanded
+	.fv-tree-expanded > .fv-tree-node > & svg {
+		transform: rotate(90deg);
+	}
+}
+
+.fv-tree-toggle-space {
+	width: 22px;
+	flex-shrink: 0;
+}
+
+.fv-tree-node-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+	box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.fv-tree-node-icon {
+	font-size: $fv-font-size-md;
+	flex-shrink: 0;
+}
+
+.fv-tree-node-label {
+	font-size: $fv-font-size-sm;
+	font-weight: 500;
+	color: var(--fv-text-primary, #1e293b);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.fv-tree-node-badge {
+	margin-left: auto;
+	background: var(--fv-bg-tertiary, #f1f5f9);
+	color: var(--fv-text-tertiary, #94a3b8);
+	font-size: $fv-font-size-xs;
+	font-weight: 600;
+	padding: 1px 6px;
+	border-radius: $fv-radius-full;
+	min-width: 20px;
+	text-align: center;
+
+	&:empty { display: none; }
+}
+
+// ── Horizontal Layout ────────────────────────────────────────────
+.fv-tree-horizontal {
+	.fv-tree-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $fv-space-2;
+	}
+
+	.fv-tree-list .fv-tree-list {
+		margin-left: 0;
+		padding-left: 0;
+		border-left: none;
+		margin-top: $fv-space-2;
+		padding-top: $fv-space-2;
+		border-top: 2px solid var(--fv-border-primary, #e2e8f0);
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.fv-tree-item {
+		flex: 0 0 auto;
+	}
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+@media (max-width: 768px) {
+	.fv-tree-toolbar { flex-direction: column; align-items: flex-start; }
+	.fv-tree-list .fv-tree-list { margin-left: $fv-space-4; }
+}

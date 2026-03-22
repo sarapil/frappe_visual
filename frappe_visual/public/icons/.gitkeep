@@ -1,0 +1,7 @@
+# Place custom SVG icons in this folder
+# They will be injected into Frappe's sprite on app install
+#
+# Required format:
+# - Standard SVG with viewBox (preferably 0 0 24 24)
+# - Clean paths without XML declarations
+# - Register in setup/icons.py CUSTOM_ICONS list

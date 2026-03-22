@@ -1,0 +1,14 @@
+{
+	"creation": "2025-01-01 00:00:00.000000",
+	"doctype": "Page",
+	"icon": "octicon octicon-graph",
+	"modified": "2025-01-01 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "visual-hub",
+	"owner": "Administrator",
+	"page_name": "visual-hub",
+	"standard": "Yes",
+	"system_page": 0,
+	"title": "Visual Hub"
+}

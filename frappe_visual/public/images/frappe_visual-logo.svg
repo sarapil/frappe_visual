@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Main gradient: Indigo → Violet -->
+    <linearGradient id="fv-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="50%" style="stop-color:#818CF8"/>
+      <stop offset="100%" style="stop-color:#A78BFA"/>
+    </linearGradient>
+    <!-- Secondary gradient: Violet → Pink -->
+    <linearGradient id="fv-grad-accent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818CF8"/>
+      <stop offset="100%" style="stop-color:#C084FC"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="fv-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Inner shadow -->
+    <filter id="fv-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6366F1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background glow ring (breathing) -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#fv-grad-main)" stroke-width="1.5" opacity="0.15">
+    <animate attributeName="r" values="220;240;220" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Rotating dashed orbit -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#fv-grad-accent)"
+          stroke-width="1.5" stroke-dasharray="12 8" opacity="0.25">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 256 256" to="360 256 256" dur="60s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Central hexagon (graph engine) -->
+  <g filter="url(#fv-shadow)">
+    <polygon points="256,140 330,183 330,269 256,312 182,269 182,183"
+             fill="url(#fv-grad-main)" opacity="0.9">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Inner eye / visual symbol -->
+    <circle cx="256" cy="226" r="32" fill="none" stroke="white" stroke-width="3" opacity="0.9">
+      <animate attributeName="r" values="30;34;30" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="256" cy="226" r="12" fill="white" opacity="0.95">
+      <animate attributeName="r" values="10;14;10" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Node 1 (top-left) — Module type -->
+  <g filter="url(#fv-glow)">
+    <circle cx="148" cy="148" r="28" fill="#818CF8" opacity="0.85">
+      <animate attributeName="r" values="26;30;26" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="148" cy="148" r="10" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Node 2 (top-right) — Transaction type -->
+  <g filter="url(#fv-glow)">
+    <circle cx="364" cy="148" r="24" fill="#A78BFA" opacity="0.85">
+      <animate attributeName="r" values="22;26;22" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="364" cy="148" r="8" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Node 3 (bottom-left) — Master type -->
+  <g filter="url(#fv-glow)">
+    <circle cx="148" cy="364" r="22" fill="#C084FC" opacity="0.85">
+      <animate attributeName="r" values="20;24;20" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="148" cy="364" r="7" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Node 4 (bottom-right) — Settings type -->
+  <g filter="url(#fv-glow)">
+    <circle cx="364" cy="364" r="26" fill="#6366F1" opacity="0.85">
+      <animate attributeName="r" values="24;28;24" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="364" cy="364" r="9" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Edges: animated dashed lines connecting nodes to center -->
+  <!-- N1 → Center -->
+  <line x1="170" y1="168" x2="210" y2="200" stroke="#818CF8" stroke-width="2" stroke-dasharray="6 4" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- N2 → Center -->
+  <line x1="344" y1="168" x2="302" y2="200" stroke="#A78BFA" stroke-width="2" stroke-dasharray="6 4" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- N3 → Center -->
+  <line x1="170" y1="344" x2="210" y2="290" stroke="#C084FC" stroke-width="2" stroke-dasharray="6 4" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- N4 → Center -->
+  <line x1="344" y1="344" x2="302" y2="290" stroke="#6366F1" stroke-width="2" stroke-dasharray="6 4" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- N1 → N2 (horizontal edge) -->
+  <line x1="176" y1="148" x2="340" y2="148" stroke="#818CF8" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <!-- N3 → N4 (horizontal edge) -->
+  <line x1="170" y1="364" x2="338" y2="364" stroke="#C084FC" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3">
+    <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+  </line>
+</svg>

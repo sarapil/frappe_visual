@@ -1,0 +1,264 @@
+/* ─── Frappe Visual: Dark Mode ──────────────────────────────────
+ * Overrides for dark theme. ThemeManager sets CSS vars dynamically,
+ * but these rules handle edge cases and component-specific dark tweaks.
+ */
+
+body.fv-dark,
+[data-theme="dark"] {
+	// Graph container
+	.fv-graph-container {
+		background: var(--fv-bg-secondary, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	// Minimap
+	.fv-minimap {
+		background: var(--fv-minimap-bg, rgba(30,41,59,0.95));
+		border-color: var(--fv-minimap-border, #334155);
+	}
+
+	// Floating windows
+	.fv-floating-window {
+		background: var(--fv-floating-bg, rgba(30,41,59,0.98));
+		border-color: var(--fv-floating-border, #475569);
+
+		.fv-win-titlebar {
+			border-bottom-color: var(--fv-border-primary, #334155);
+		}
+	}
+
+	// Toolbar
+	.fv-layout-toolbar {
+		background: var(--fv-bg-surface, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-layout-group {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	.fv-layout-btn:hover {
+		background: var(--fv-bg-secondary, #1e293b);
+	}
+
+	// Search
+	.fv-search-input {
+		background: var(--fv-bg-tertiary, #334155);
+		border-color: var(--fv-border-primary, #334155);
+		color: var(--fv-text-primary, #f1f5f9);
+	}
+
+	.fv-type-filter {
+		background: var(--fv-bg-tertiary, #334155);
+		border-color: var(--fv-border-primary, #334155);
+		color: var(--fv-text-primary, #f1f5f9);
+	}
+
+	// Controls
+	.fv-view-controls {
+		background: var(--fv-bg-surface, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	// Badges
+	.fv-summary-badge {
+		background: var(--fv-bg-tertiary, #334155);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	// Detail panel
+	.fv-detail-header {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	.fv-detail-neighbors li {
+		background: var(--fv-bg-tertiary, #334155);
+
+		&:hover {
+			background: var(--fv-accent-bg);
+		}
+	}
+
+	// Storyboard
+	.fv-storyboard {
+		background: var(--fv-bg-surface, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-storyboard-progress {
+		background: var(--fv-bg-secondary, #0f172a);
+		border-bottom-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-step-dot {
+		background: var(--fv-border-secondary, #475569);
+	}
+
+	.fv-storyboard-btn {
+		background: var(--fv-bg-tertiary, #334155);
+		border-color: var(--fv-border-primary, #334155);
+		color: var(--fv-text-secondary, #94a3b8);
+
+		&:hover {
+			border-color: var(--fv-accent, #818cf8);
+			color: var(--fv-accent, #818cf8);
+		}
+
+		&.primary {
+			background: var(--fv-accent, #818cf8);
+			border-color: var(--fv-accent, #818cf8);
+			color: white;
+		}
+	}
+
+	// SVG art
+	.fv-app-header-svg text {
+		fill: var(--fv-text-primary, #f1f5f9);
+	}
+
+	// Window stats
+	.fv-window-stat {
+		border-bottom-color: var(--fv-border-primary, #334155);
+	}
+
+	// Kanban Board
+	.fv-kanban-col {
+		background: var(--fv-bg-secondary, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-kanban-card-inner {
+		background: var(--fv-bg-surface, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-kanban-card:hover .fv-kanban-card-inner {
+		border-color: var(--fv-border-secondary, #475569);
+	}
+
+	.fv-kanban-field {
+		background: var(--fv-bg-tertiary, #334155);
+		color: var(--fv-text-secondary, #94a3b8);
+	}
+
+	.fv-kanban-card-meta {
+		border-top-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-kanban-swimlane-cell {
+		background: var(--fv-bg-secondary, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-kanban-swimlane-count {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	.fv-kanban-add-btn {
+		border-color: var(--fv-border-secondary, #475569);
+		color: var(--fv-text-tertiary, #64748b);
+	}
+
+	// ── Effects ──────────────────────────────────────────
+	.fv-fx-glass {
+		background: rgba(30, 41, 59, 0.75);
+		border-color: rgba(71, 85, 105, 0.4);
+	}
+
+	.fv-fx-glass-strong {
+		background: rgba(30, 41, 59, 0.9);
+		border-color: rgba(71, 85, 105, 0.5);
+	}
+
+	.fv-fx-skeleton {
+		background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+		background-size: 200% 100%;
+	}
+
+	// ── Calendar ─────────────────────────────────────────
+	.fv-cal-days {
+		background: var(--fv-border-primary, #334155);
+	}
+
+	.fv-cal-cell {
+		background: var(--fv-bg-secondary, #1e293b);
+
+		&.fv-cal-cell-other { background: var(--fv-bg-tertiary, #0f172a); }
+		&.fv-cal-cell-today { background: rgba(99, 102, 241, 0.08); }
+	}
+
+	.fv-cal-event {
+		background: rgba(255, 255, 255, 0.06);
+	}
+
+	.fv-cal-view-btn, .fv-gantt-scale-btn {
+		&.active {
+			background: var(--fv-bg-secondary, #1e293b);
+		}
+	}
+
+	// ── Gantt ─────────────────────────────────────────────
+	.fv-gantt-chart {
+		background: var(--fv-bg-secondary, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-gantt-header {
+		background: var(--fv-bg-surface, #1e293b);
+	}
+
+	.fv-gantt-row:hover {
+		background: rgba(99, 102, 241, 0.06);
+	}
+
+	.fv-gantt-label-col {
+		border-right-color: var(--fv-border-primary, #334155);
+	}
+
+	// ── Tree ──────────────────────────────────────────────
+	.fv-tree-body {
+		background: var(--fv-bg-secondary, #1e293b);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-tree-node:hover {
+		background: rgba(99, 102, 241, 0.06);
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	.fv-tree-toggle {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	.fv-tree-node-badge {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	// ── Map ───────────────────────────────────────────────
+	.fv-map-canvas {
+		border-color: var(--fv-border-primary, #334155);
+	}
+
+	// ── Gallery ──────────────────────────────────────────
+	.fv-gallery-item {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+
+	// ── Form Dashboard ──────────────────────────────────
+	.fv-fdash-stat-card {
+		background: rgba(30, 41, 59, 0.75);
+		border-color: rgba(71, 85, 105, 0.4);
+	}
+
+	.fv-fdash-link-item {
+		border-color: var(--fv-border-primary, #334155);
+
+		&:hover {
+			background: rgba(99, 102, 241, 0.06);
+		}
+	}
+
+	.fv-fdash-link-rel {
+		background: var(--fv-bg-tertiary, #334155);
+	}
+}

@@ -1,0 +1,252 @@
+{
+  "name": "Frappe Visual",
+  "doctype": "Workspace",
+  "module": "Frappe Visual",
+  "label": "Frappe Visual",
+  "title": "Frappe Visual",
+  "app": "frappe_visual",
+  "icon": "eye",
+  "public": 1,
+  "type": "Workspace",
+  "idx": 0,
+  "docstatus": 0,
+  "is_hidden": 0,
+  "hide_custom": 0,
+  "sequence_id": 20,
+  "owner": "Administrator",
+  "modified_by": "Administrator",
+  "content": "[{\"id\":\"fv_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header'><h3><span class='ti ti-eye'></span> Frappe Visual</h3><p class='text-muted'>Graph-based Visual UX Framework — 15 interactive components for Frappe apps</p></div>\",\"col\":12}},{\"id\":\"fv_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visual Hub\",\"col\":4}},{\"id\":\"fv_shortcuts_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Settings\",\"col\":4}},{\"id\":\"fv_shortcuts_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"About\",\"col\":4}},{\"id\":\"fv_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fv_card_graph\",\"type\":\"card\",\"data\":{\"card_name\":\"Graph Components\",\"col\":4}},{\"id\":\"fv_card_ui\",\"type\":\"card\",\"data\":{\"card_name\":\"UI Components\",\"col\":4}},{\"id\":\"fv_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration & Docs\",\"col\":4}}]",
+  "shortcuts": [
+    {
+      "label": "Visual Hub",
+      "link_to": "visual-hub",
+      "type": "Page",
+      "icon": "eye"
+    },
+    {
+      "label": "Settings",
+      "link_to": "Frappe Visual Settings",
+      "type": "DocType",
+      "icon": "settings"
+    },
+    {
+      "label": "About",
+      "link_to": "/frappe-visual-about",
+      "type": "URL",
+      "icon": "info-circle"
+    }
+  ],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Graph Components",
+      "icon": "chart-dots-3",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "App Map",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "sitemap",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Interactive app/module/DocType graph explorer",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "ERD Explorer",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "schema",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Entity Relationship Diagrams for DocTypes",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Dependency Graph",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "git-branch",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Workflow & dependency visualization",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Tree View",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "binary-tree-2",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Hierarchical tree visualization",
+      "link_count": 0
+    },
+    {
+      "type": "Card Break",
+      "label": "UI Components",
+      "icon": "layout-dashboard",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Calendar",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "calendar-event",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Month/week/day visual calendar",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Kanban Board",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "layout-kanban",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Drag-and-drop Kanban boards",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Gantt Chart",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "chart-bar",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Project timeline Gantt bars",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Gallery",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "photo",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Image gallery with lightbox",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Map",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "map-2",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Geographic map with markers",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Form Dashboard",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "layout-list",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Visual linked-document dashboard",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Storyboard",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "presentation",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Guided walkthroughs & onboarding",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Floating Window",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "app-window",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Draggable overlay container",
+      "link_count": 0
+    },
+    {
+      "type": "Card Break",
+      "label": "Configuration & Docs",
+      "icon": "settings",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Frappe Visual Settings",
+      "link_to": "Frappe Visual Settings",
+      "link_type": "DocType",
+      "icon": "adjustments-horizontal",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "License, display, and theme settings",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Icon Explorer",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "icons",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Browse and search 3000+ Tabler icons",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "About Frappe Visual",
+      "link_to": "/frappe-visual-about",
+      "link_type": "URL",
+      "icon": "info-circle",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "App showcase for admins and decision makers",
+      "link_count": 0
+    }
+  ],
+  "charts": [],
+  "number_cards": [],
+  "custom_blocks": [],
+  "roles": []
+}

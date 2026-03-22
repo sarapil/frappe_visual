@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <defs>
+    <linearGradient id="lg-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hexagon icon -->
+  <g transform="translate(50, 60)">
+    <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="url(#lg-g)" opacity="0.9">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="0" cy="-4" r="10" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="0" cy="-4" r="4" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Text: Frappe Visual -->
+  <text x="100" y="54" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#6366F1">
+    Frappe
+    <tspan fill="#A78BFA"> Visual</tspan>
+  </text>
+  <text x="100" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94A3B8" letter-spacing="0.5">
+    Graph-based Visual UX Framework
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="100" cy="100" r="2" fill="#6366F1" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="115" cy="100" r="2" fill="#818CF8" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="130" cy="100" r="2" fill="#A78BFA" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+</svg>

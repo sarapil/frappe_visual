@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Frappe Visual — Brand CSS Variables
+ * ═══════════════════════════════════════════════════════════════════
+ * Auto-injected via app_include_css. Provides consistent brand
+ * tokens across all visual components and pages.
+ */
+
+:root {
+  /* ── Primary Brand Colors ────────────────────────────────────── */
+  --fv-primary: #6366F1;
+  --fv-primary-rgb: 99, 102, 241;
+  --fv-primary-light: #818CF8;
+  --fv-primary-lighter: #A78BFA;
+  --fv-primary-dark: #4F46E5;
+  --fv-primary-darker: #4338CA;
+  --fv-accent: #C084FC;
+  --fv-accent-rgb: 192, 132, 252;
+
+  /* ── Semantic Colors ─────────────────────────────────────────── */
+  --fv-success: #10B981;
+  --fv-warning: #F59E0B;
+  --fv-danger: #EF4444;
+  --fv-info: #3B82F6;
+
+  /* ── Text ────────────────────────────────────────────────────── */
+  --fv-text-primary: #1E1B4B;
+  --fv-text-secondary: #475569;
+  --fv-text-muted: #94A3B8;
+
+  /* ── Surfaces ────────────────────────────────────────────────── */
+  --fv-bg-surface: #FFFFFF;
+  --fv-bg-subtle: #EEF2FF;
+  --fv-bg-muted: #F8FAFC;
+
+  /* ── Borders ─────────────────────────────────────────────────── */
+  --fv-border: #E2E8F0;
+  --fv-border-light: #F1F5F9;
+
+  /* ── Gradients ───────────────────────────────────────────────── */
+  --fv-gradient-main: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #A78BFA 100%);
+  --fv-gradient-accent: linear-gradient(315deg, #818CF8 0%, #C084FC 100%);
+  --fv-gradient-dark: linear-gradient(135deg, #312E81 0%, #4338CA 100%);
+
+  /* ── Glass Effects ───────────────────────────────────────────── */
+  --fv-glass: rgba(99, 102, 241, 0.08);
+  --fv-glass-hover: rgba(99, 102, 241, 0.12);
+  --fv-glass-border: rgba(99, 102, 241, 0.15);
+  --fv-glass-blur: blur(12px);
+
+  /* ── Shadows ─────────────────────────────────────────────────── */
+  --fv-shadow-sm: 0 1px 2px rgba(99, 102, 241, 0.06);
+  --fv-shadow-md: 0 4px 6px -1px rgba(99, 102, 241, 0.1);
+  --fv-shadow-lg: 0 10px 15px -3px rgba(99, 102, 241, 0.1);
+  --fv-shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+
+  /* ── Spacing ─────────────────────────────────────────────────── */
+  --fv-space-xs: 4px;
+  --fv-space-sm: 8px;
+  --fv-space-md: 16px;
+  --fv-space-lg: 24px;
+  --fv-space-xl: 32px;
+  --fv-space-2xl: 48px;
+
+  /* ── Border Radius ───────────────────────────────────────────── */
+  --fv-radius-sm: 6px;
+  --fv-radius-md: 10px;
+  --fv-radius-lg: 16px;
+  --fv-radius-xl: 24px;
+  --fv-radius-full: 9999px;
+
+  /* ── Transitions ─────────────────────────────────────────────── */
+  --fv-transition-fast: 150ms ease;
+  --fv-transition-normal: 250ms ease;
+  --fv-transition-slow: 400ms ease;
+  --fv-transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Dark Mode Overrides ───────────────────────────────────────── */
+[data-theme="dark"],
+.dark {
+  --fv-text-primary: #E0E7FF;
+  --fv-text-secondary: #A5B4FC;
+  --fv-text-muted: #6366F1;
+  --fv-bg-surface: #1E1B4B;
+  --fv-bg-subtle: #312E81;
+  --fv-bg-muted: #1E293B;
+  --fv-border: #4338CA;
+  --fv-border-light: #312E81;
+  --fv-glass: rgba(99, 102, 241, 0.15);
+  --fv-glass-hover: rgba(99, 102, 241, 0.2);
+  --fv-glass-border: rgba(99, 102, 241, 0.25);
+  --fv-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --fv-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --fv-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --fv-shadow-glow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+/* ── RTL Adjustments ───────────────────────────────────────────── */
+[dir="rtl"] {
+  --fv-gradient-main: linear-gradient(225deg, #6366F1 0%, #818CF8 50%, #A78BFA 100%);
+  --fv-gradient-accent: linear-gradient(135deg, #818CF8 0%, #C084FC 100%);
+}

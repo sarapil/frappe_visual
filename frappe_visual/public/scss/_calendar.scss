@@ -1,0 +1,342 @@
+/* ─── Frappe Visual: Calendar Styles ──────────────────────────────
+ * Month / Week / Day views with glassmorphism event cards,
+ * today-pulse animation, hover glow, and smooth transitions.
+ */
+
+.fv-calendar {
+	width: 100%;
+	font-family: $fv-font-family;
+	font-size: $fv-font-size-base;
+}
+
+// ── Header ───────────────────────────────────────────────────────
+.fv-calendar-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $fv-space-3 $fv-space-4;
+	border-radius: $fv-radius-md;
+	margin-bottom: $fv-space-3;
+	gap: $fv-space-3;
+	flex-wrap: wrap;
+}
+
+.fv-calendar-nav {
+	display: flex;
+	align-items: center;
+	gap: $fv-space-2;
+}
+
+.fv-calendar-nav-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	background: var(--fv-bg-primary, white);
+	border-radius: $fv-radius-sm;
+	padding: $fv-space-1 $fv-space-2;
+	cursor: pointer;
+	font-size: $fv-font-size-sm;
+	color: var(--fv-text-secondary, #64748b);
+	transition: all $fv-transition-fast;
+	min-width: 32px;
+	min-height: 32px;
+
+	&:hover {
+		border-color: var(--fv-accent, #{$fv-accent});
+		color: var(--fv-accent, #{$fv-accent});
+	}
+}
+
+.fv-calendar-title {
+	margin: 0;
+	font-size: $fv-font-size-lg;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.fv-calendar-views {
+	display: flex;
+	gap: 2px;
+	background: var(--fv-bg-tertiary, #f1f5f9);
+	border-radius: $fv-radius-sm;
+	padding: 2px;
+}
+
+.fv-cal-view-btn {
+	border: none;
+	background: transparent;
+	padding: $fv-space-1 $fv-space-3;
+	border-radius: $fv-radius-sm - 1px;
+	font-size: $fv-font-size-sm;
+	font-weight: 500;
+	cursor: pointer;
+	color: var(--fv-text-tertiary, #94a3b8);
+	transition: all $fv-transition-fast;
+
+	&.active {
+		background: var(--fv-bg-primary, white);
+		color: var(--fv-accent, #{$fv-accent});
+		box-shadow: $fv-shadow-sm;
+	}
+}
+
+// ── Month Grid ───────────────────────────────────────────────────
+.fv-cal-grid { width: 100%; }
+
+.fv-cal-day-headers {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 1px;
+	margin-bottom: $fv-space-1;
+}
+
+.fv-cal-day-hdr {
+	text-align: center;
+	font-size: $fv-font-size-xs;
+	font-weight: 600;
+	color: var(--fv-text-tertiary, #94a3b8);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	padding: $fv-space-2 0;
+}
+
+.fv-cal-days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 1px;
+	background: var(--fv-border-primary, #e2e8f0);
+	border-radius: $fv-radius-md;
+	overflow: hidden;
+}
+
+.fv-cal-cell {
+	background: var(--fv-bg-primary, white);
+	min-height: 100px;
+	padding: $fv-space-1 $fv-space-2;
+	cursor: pointer;
+	transition: background $fv-transition-fast;
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		background: var(--fv-accent-bg, #{$fv-accent-bg});
+	}
+
+	&.fv-cal-cell-other {
+		background: var(--fv-bg-tertiary, #f8fafc);
+		opacity: 0.5;
+	}
+
+	&.fv-cal-cell-today {
+		background: rgba($fv-accent, 0.04);
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: $fv-accent;
+			animation: fv-pulse 2s ease-in-out infinite;
+		}
+	}
+}
+
+.fv-cal-cell-num {
+	display: inline-block;
+	font-size: $fv-font-size-sm;
+	font-weight: 500;
+	color: var(--fv-text-secondary, #64748b);
+	margin-bottom: $fv-space-1;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.fv-cal-today-num {
+	background: $fv-accent;
+	color: white !important;
+	font-weight: 700;
+}
+
+// ── Event Chips ──────────────────────────────────────────────────
+.fv-cal-event {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px $fv-space-1;
+	margin-bottom: 2px;
+	border-radius: $fv-radius-sm - 2px;
+	cursor: pointer;
+	font-size: $fv-font-size-xs;
+	background: rgba(var(--fv-ev-color, #{$fv-accent}), 0.08);
+	border-left: 3px solid var(--fv-ev-color, #{$fv-accent});
+	transition: all $fv-transition-fast;
+	overflow: hidden;
+
+	&:hover {
+		background: rgba(var(--fv-ev-color, #{$fv-accent}), 0.15);
+	}
+}
+
+.fv-cal-event-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.fv-cal-event-text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var(--fv-text-primary, #1e293b);
+	font-weight: 500;
+}
+
+.fv-cal-more {
+	font-size: $fv-font-size-xs;
+	color: var(--fv-accent, #{$fv-accent});
+	cursor: pointer;
+	padding: 2px $fv-space-1;
+	font-weight: 600;
+}
+
+// ── Week View ────────────────────────────────────────────────────
+.fv-cal-week {
+	overflow-x: auto;
+}
+
+.fv-cal-week-hdr {
+	display: flex;
+	border-bottom: 1px solid var(--fv-border-primary, #e2e8f0);
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background: var(--fv-bg-primary, white);
+}
+
+.fv-cal-time-gutter {
+	width: 60px;
+	flex-shrink: 0;
+}
+
+.fv-cal-week-day {
+	flex: 1;
+	text-align: center;
+	padding: $fv-space-2;
+	font-size: $fv-font-size-sm;
+
+	&.fv-cal-cell-today { background: rgba($fv-accent, 0.04); }
+}
+
+.fv-cal-wday-name {
+	display: block;
+	font-weight: 600;
+	color: var(--fv-text-tertiary, #94a3b8);
+	font-size: $fv-font-size-xs;
+	text-transform: uppercase;
+}
+
+.fv-cal-wday-num {
+	display: inline-block;
+	font-size: $fv-font-size-md;
+	font-weight: 700;
+	margin-top: 2px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.fv-cal-week-body {
+	display: flex;
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+.fv-cal-time-col {
+	width: 60px;
+	flex-shrink: 0;
+}
+
+.fv-cal-time-slot {
+	height: 48px;
+	border-bottom: 1px solid var(--fv-border-primary, #e2e8f0);
+	font-size: $fv-font-size-xs;
+	color: var(--fv-text-tertiary, #94a3b8);
+	padding: 2px $fv-space-2;
+	text-align: right;
+}
+
+.fv-cal-week-col {
+	flex: 1;
+	position: relative;
+	border-left: 1px solid var(--fv-border-primary, #e2e8f0);
+}
+
+.fv-cal-hour-cell {
+	height: 48px;
+	border-bottom: 1px solid var(--fv-border-primary, rgba(226,232,240,0.5));
+}
+
+.fv-cal-week-event {
+	position: relative;
+	margin: 2px;
+	padding: $fv-space-1 $fv-space-2;
+	border-radius: $fv-radius-sm;
+	font-size: $fv-font-size-xs;
+	font-weight: 500;
+	color: var(--fv-text-primary, #1e293b);
+	border-left: 3px solid var(--fv-ev-color, #{$fv-accent});
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// ── Day View ─────────────────────────────────────────────────────
+.fv-cal-day-view { width: 100%; }
+
+.fv-cal-day-row {
+	display: flex;
+	border-bottom: 1px solid var(--fv-border-primary, #e2e8f0);
+	min-height: 48px;
+}
+
+.fv-cal-time-label {
+	width: 48px;
+	flex-shrink: 0;
+	font-size: $fv-font-size-xs;
+	color: var(--fv-text-tertiary, #94a3b8);
+	padding: $fv-space-1;
+	font-weight: 600;
+	opacity: 0.8;
+}
+
+.fv-cal-day-cell {
+	flex: 1;
+	padding: $fv-space-1;
+	cursor: pointer;
+}
+
+.fv-cal-day-event {
+	padding: $fv-space-2 $fv-space-3;
+	border-radius: $fv-radius-sm;
+	border-left: 4px solid var(--fv-ev-color, #{$fv-accent});
+	margin-bottom: $fv-space-1;
+	cursor: pointer;
+	font-size: $fv-font-size-sm;
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+@media (max-width: 768px) {
+	.fv-calendar-header { flex-direction: column; align-items: flex-start; }
+	.fv-cal-cell { min-height: 70px; }
+	.fv-cal-event-text { max-width: 60px; }
+}

@@ -1,0 +1,129 @@
+/* ─── Frappe Visual: Map View Styles ──────────────────────────────
+ * Leaflet map integration with custom markers,
+ * glassmorphism popups, animated marker entrance.
+ */
+
+.fv-map {
+	width: 100%;
+	font-family: $fv-font-family;
+	font-size: $fv-font-size-base;
+}
+
+// ── Toolbar ──────────────────────────────────────────────────────
+.fv-map-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $fv-space-3 $fv-space-4;
+	border-radius: $fv-radius-md;
+	margin-bottom: $fv-space-3;
+	gap: $fv-space-3;
+}
+
+.fv-map-title-wrap {
+	display: flex;
+	align-items: center;
+	gap: $fv-space-2;
+}
+
+.fv-map-pin-icon {
+	color: var(--fv-accent, #{$fv-accent});
+}
+
+.fv-map-title {
+	margin: 0;
+	font-size: $fv-font-size-lg;
+	font-weight: 700;
+}
+
+.fv-map-count {
+	font-size: $fv-font-size-sm;
+	color: var(--fv-text-tertiary, #94a3b8);
+	font-weight: 500;
+}
+
+.fv-map-actions {
+	display: flex;
+	gap: $fv-space-2;
+}
+
+.fv-map-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: $fv-space-1;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	background: var(--fv-bg-primary, white);
+	border-radius: $fv-radius-sm;
+	padding: $fv-space-1 $fv-space-2;
+	font-size: $fv-font-size-sm;
+	cursor: pointer;
+	color: var(--fv-text-secondary, #64748b);
+	transition: all $fv-transition-fast;
+
+	&:hover {
+		border-color: var(--fv-accent, #{$fv-accent});
+		color: var(--fv-accent, #{$fv-accent});
+	}
+}
+
+// ── Map Canvas ───────────────────────────────────────────────────
+.fv-map-canvas {
+	width: 100%;
+	height: 500px;
+	border-radius: $fv-radius-md;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	overflow: hidden;
+	z-index: $fv-z-graph;
+}
+
+// ── Custom Markers ───────────────────────────────────────────────
+.fv-map-marker-icon {
+	background: none !important;
+	border: none !important;
+}
+
+.fv-map-marker {
+	transition: transform $fv-transition-fast;
+	filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+	cursor: pointer;
+
+	&:hover {
+		filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+	}
+}
+
+// ── Popup ────────────────────────────────────────────────────────
+.fv-map-popup {
+	padding: $fv-space-2;
+	min-width: 150px;
+
+	strong {
+		display: block;
+		font-size: $fv-font-size-sm;
+		color: var(--fv-text-primary, #1e293b);
+		margin-bottom: $fv-space-1;
+	}
+
+	small {
+		font-size: $fv-font-size-xs;
+	}
+}
+
+.fv-map-popup-link {
+	display: inline-block;
+	margin-top: $fv-space-1;
+	font-size: $fv-font-size-sm;
+	font-weight: 600;
+	color: var(--fv-accent, #{$fv-accent});
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+@media (max-width: 768px) {
+	.fv-map-canvas { height: 350px; }
+	.fv-map-toolbar { flex-direction: column; align-items: flex-start; }
+}

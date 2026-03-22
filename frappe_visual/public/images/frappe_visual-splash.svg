@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="sp-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="50%" style="stop-color:#818CF8"/>
+      <stop offset="100%" style="stop-color:#A78BFA"/>
+    </linearGradient>
+    <filter id="sp-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background pulse -->
+  <circle cx="128" cy="128" r="110" fill="none" stroke="url(#sp-g)" stroke-width="1" opacity="0.15">
+    <animate attributeName="r" values="100;120;100" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Central hexagon -->
+  <g filter="url(#sp-glow)">
+    <polygon points="128,60 170,84 170,132 128,156 86,132 86,84"
+             fill="url(#sp-g)" opacity="0.9">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="128" cy="108" r="16" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+    <circle cx="128" cy="108" r="6" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Loading spinner ring -->
+  <circle cx="128" cy="128" r="100" fill="none" stroke="url(#sp-g)"
+          stroke-width="3" stroke-dasharray="60 570" stroke-linecap="round" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 128 128" to="360 128 128" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Small orbiting nodes -->
+  <circle cx="128" cy="28" r="6" fill="#818CF8" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 128 128" to="360 128 128" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="128" cy="28" r="6" fill="#C084FC" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="120 128 128" to="480 128 128" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="128" cy="28" r="6" fill="#A78BFA" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="240 128 128" to="600 128 128" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,341 @@
+/* ─── Frappe Visual: Premium Effects ────────────────────────────
+ * Advanced visual effects: glassmorphism, mouse-follow glow,
+ * ripple clicks, page transitions, vertical text, hover effects,
+ * gradient animations, parallax layers.
+ *
+ * All prefixed with .fv-fx-* for easy use.
+ */
+
+// ── Glassmorphism ────────────────────────────────────────────────
+.fv-fx-glass {
+	background: rgba(255, 255, 255, 0.65);
+	backdrop-filter: blur(var(--fv-glass-blur, 16px));
+	-webkit-backdrop-filter: blur(var(--fv-glass-blur, 16px));
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.fv-fx-glass-strong {
+	background: rgba(255, 255, 255, 0.82);
+	backdrop-filter: blur(24px) saturate(1.3);
+	-webkit-backdrop-filter: blur(24px) saturate(1.3);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	box-shadow:
+		0 8px 32px rgba(0, 0, 0, 0.06),
+		inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+// ── Mouse-Follow Glow ────────────────────────────────────────────
+// Use with JS: el.style.setProperty('--mouse-x', e.clientX + 'px')
+.fv-fx-mouse-glow {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 300px;
+		height: 300px;
+		background: radial-gradient(
+			circle,
+			rgba($fv-accent, 0.12) 0%,
+			transparent 70%
+		);
+		border-radius: 50%;
+		pointer-events: none;
+		left: var(--mouse-x, 50%);
+		top: var(--mouse-y, 50%);
+		transform: translate(-50%, -50%);
+		transition: opacity 0.3s ease;
+		opacity: 0;
+		z-index: 0;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+}
+
+// ── Ripple Click ─────────────────────────────────────────────────
+@keyframes fv-ripple-expand {
+	0% {
+		transform: scale(0);
+		opacity: 0.5;
+	}
+	100% {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+.fv-fx-ripple {
+	position: relative;
+	overflow: hidden;
+
+	.fv-ripple-wave {
+		position: absolute;
+		border-radius: 50%;
+		background: rgba($fv-accent, 0.25);
+		width: 60px;
+		height: 60px;
+		margin-top: -30px;
+		margin-left: -30px;
+		animation: fv-ripple-expand 0.6s ease-out forwards;
+		pointer-events: none;
+		z-index: 1;
+	}
+}
+
+// ── Page / View Transitions ──────────────────────────────────────
+@keyframes fv-page-enter {
+	from {
+		opacity: 0;
+		transform: translateY(20px) scale(0.98);
+		filter: blur(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+}
+
+@keyframes fv-page-leave {
+	from {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		filter: blur(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-12px) scale(0.98);
+		filter: blur(3px);
+	}
+}
+
+.fv-fx-page-enter {
+	animation: fv-page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fv-fx-page-leave {
+	animation: fv-page-leave 0.3s ease-in both;
+}
+
+// ── Vertical Text ────────────────────────────────────────────────
+.fv-fx-vertical-text {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	letter-spacing: 0.06em;
+	white-space: nowrap;
+}
+
+.fv-fx-vertical-text-upright {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	letter-spacing: 0.08em;
+}
+
+[dir="rtl"] .fv-fx-vertical-text,
+.fv-rtl .fv-fx-vertical-text {
+	writing-mode: vertical-lr;
+}
+
+// ── Hover Effects ────────────────────────────────────────────────
+.fv-fx-hover-lift {
+	transition:
+		transform $fv-transition-base,
+		box-shadow $fv-transition-base;
+	will-change: transform, box-shadow;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow:
+			0 12px 28px -6px rgba(0, 0, 0, 0.12),
+			0 4px 10px -4px rgba(0, 0, 0, 0.06);
+	}
+
+	&:active {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.fv-fx-hover-glow {
+	transition:
+		box-shadow $fv-transition-base,
+		border-color $fv-transition-base;
+
+	&:hover {
+		box-shadow: 0 0 20px rgba($fv-accent, 0.2);
+		border-color: rgba($fv-accent, 0.4);
+	}
+}
+
+.fv-fx-hover-scale {
+	transition: transform $fv-transition-fast;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+}
+
+.fv-fx-hover-shine {
+	position: relative;
+	overflow: hidden;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		background: linear-gradient(
+			to right,
+			transparent 0%,
+			rgba(255, 255, 255, 0.08) 45%,
+			rgba(255, 255, 255, 0.15) 50%,
+			rgba(255, 255, 255, 0.08) 55%,
+			transparent 100%
+		);
+		transform: rotate(25deg) translateX(-150%);
+		transition: none;
+		pointer-events: none;
+	}
+
+	&:hover::after {
+		transition: transform 0.8s ease;
+		transform: rotate(25deg) translateX(150%);
+	}
+}
+
+// ── Gradient Animations ──────────────────────────────────────────
+@keyframes fv-gradient-shift {
+	0%   { background-position: 0% 50%; }
+	50%  { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.fv-fx-gradient-animated {
+	background: linear-gradient(
+		-45deg,
+		var(--fv-gradient-1, #{$fv-accent}),
+		var(--fv-gradient-2, #{$fv-accent-light}),
+		var(--fv-gradient-3, #{$fv-info}),
+		var(--fv-gradient-4, #a855f7)
+	);
+	background-size: 300% 300%;
+	animation: fv-gradient-shift 6s ease infinite;
+}
+
+.fv-fx-gradient-text {
+	background: linear-gradient(
+		135deg,
+		var(--fv-gradient-1, #{$fv-accent}),
+		var(--fv-gradient-2, #a855f7)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+}
+
+@keyframes fv-border-gradient {
+	0%   { border-color: #{$fv-accent}; }
+	33%  { border-color: #a855f7; }
+	66%  { border-color: #{$fv-info}; }
+	100% { border-color: #{$fv-accent}; }
+}
+
+.fv-fx-border-animated {
+	animation: fv-border-gradient 4s linear infinite;
+	border-style: solid;
+	border-width: 2px;
+}
+
+// ── Parallax Depth Layers ────────────────────────────────────────
+.fv-fx-parallax-container {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.fv-fx-parallax-layer-front {
+	transform: translateZ(50px) scale(0.95);
+}
+
+.fv-fx-parallax-layer-mid {
+	transform: translateZ(0);
+}
+
+.fv-fx-parallax-layer-back {
+	transform: translateZ(-50px) scale(1.05);
+	opacity: 0.6;
+}
+
+// ── Skeleton / Loading Shimmer ───────────────────────────────────
+@keyframes fv-shimmer {
+	0%   { background-position: -200% 0; }
+	100% { background-position: 200% 0; }
+}
+
+.fv-fx-skeleton {
+	background: linear-gradient(
+		90deg,
+		var(--fv-bg-tertiary, #f1f5f9) 25%,
+		var(--fv-bg-secondary, #e2e8f0) 50%,
+		var(--fv-bg-tertiary, #f1f5f9) 75%
+	);
+	background-size: 200% 100%;
+	animation: fv-shimmer 1.5s ease infinite;
+	border-radius: $fv-radius-sm;
+}
+
+// ── Morph Blob (ambient) ─────────────────────────────────────────
+@keyframes fv-morph-blob {
+	0%, 100% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+	25% {
+		border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+	}
+	50% {
+		border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+	}
+	75% {
+		border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%;
+	}
+}
+
+.fv-fx-morph-blob {
+	animation: fv-morph-blob 8s ease-in-out infinite;
+	will-change: border-radius;
+}
+
+// ── Floating Badge Pulse ─────────────────────────────────────────
+.fv-fx-notification-dot {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -2px;
+		right: -2px;
+		width: 8px;
+		height: 8px;
+		background: $fv-danger;
+		border-radius: 50%;
+		border: 2px solid var(--fv-bg-primary, white);
+		animation: fv-pulse 2s ease-in-out infinite;
+	}
+}
+
+// ── Typewriter / Counter ─────────────────────────────────────────
+.fv-fx-counter {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: "tnum";
+	transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}

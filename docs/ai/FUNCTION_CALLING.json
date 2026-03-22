@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Frappe Visual Function Calling Schema",
+  "description": "OpenAI/Claude function definitions for Frappe Visual",
+  "functions": [
+    {
+      "name": "get_app_map",
+      "description": "Get the full application structure map showing modules, doctypes, and their relationships as a graph",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "app_name": {
+            "type": "string",
+            "description": "The Frappe app name (e.g., 'erpnext', 'hrms', 'arrowz')"
+          }
+        },
+        "required": ["app_name"]
+      }
+    },
+    {
+      "name": "get_doctype_relationships",
+      "description": "Get all relationships radiating from a single DocType as a graph with configurable depth",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "doctype": {
+            "type": "string",
+            "description": "The root DocType name (e.g., 'Sales Invoice')"
+          },
+          "depth": {
+            "type": "integer",
+            "default": 2,
+            "minimum": 1,
+            "maximum": 5,
+            "description": "How many relationship levels to traverse"
+          }
+        },
+        "required": ["doctype"]
+      }
+    },
+    {
+      "name": "get_workspace_map",
+      "description": "Get a visual map of workspace shortcuts and links",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "workspace": {
+            "type": "string",
+            "description": "Specific workspace name, or empty for all"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_quick_stats",
+      "description": "Get quick statistics (module count, doctype count, reports, pages, workspaces)",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "app_name": {
+            "type": "string",
+            "description": "Filter by app name, or empty for all"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_license_status",
+      "description": "Get current license status and enabled features",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "check_feature",
+      "description": "Check if a specific premium feature is enabled",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "feature_key": {
+            "type": "string",
+            "description": "Feature identifier (e.g., 'advanced_layouts', 'animation_engine')",
+            "enum": [
+              "app_map_basic", "relationship_explorer_basic", "visual_dashboard",
+              "storyboard_wizard", "dark_mode", "rtl_support", "basic_layouts",
+              "search_filter", "minimap", "advanced_layouts", "floating_windows",
+              "animation_engine", "export_svg", "export_png", "custom_node_types",
+              "custom_edge_types", "context_menus", "combo_groups", "summary_badges",
+              "mcp_integration", "api_access", "white_labeling", "priority_support"
+            ]
+          }
+        },
+        "required": ["feature_key"]
+      }
+    }
+  ],
+  "api_base": "/api/method/frappe_visual",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "format": "token {api_key}:{api_secret}"
+  }
+}

@@ -1,0 +1,146 @@
+/* ─── Frappe Visual: Animations ─────────────────────────────────
+ * CSS animations for: ant-lines, pulse, entrance, breathing.
+ */
+
+// ── Ant-line (Marching Ants) ─────────────────────────────────────
+@keyframes fv-ant-march {
+	to { stroke-dashoffset: -18; }
+}
+
+.fv-svg-overlay .fv-ant-edge {
+	animation: fv-ant-march 0.8s linear infinite;
+}
+
+// ── Pulse Glow ───────────────────────────────────────────────────
+@keyframes fv-pulse {
+	0%, 100% {
+		box-shadow: 0 0 0 0 rgba($fv-accent, 0.4);
+	}
+	50% {
+		box-shadow: 0 0 0 8px rgba($fv-accent, 0);
+	}
+}
+
+@keyframes fv-pulse-border {
+	0%, 100% { border-color: rgba($fv-success, 0.5); }
+	50%      { border-color: rgba($fv-success, 1); }
+}
+
+.fv-pulse-indicator {
+	animation: fv-pulse 2s ease-in-out infinite;
+}
+
+// ── Entrance Animations ──────────────────────────────────────────
+@keyframes fv-fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fv-fade-in-scale {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes fv-slide-in-right {
+	from {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+[dir="rtl"] .fv-slide-in-right,
+.fv-rtl .fv-slide-in-right {
+	animation-name: fv-slide-in-left;
+}
+
+@keyframes fv-slide-in-left {
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fv-animate-enter {
+	animation: fv-fade-in-up 0.4s ease-out both;
+}
+
+.fv-animate-scale-enter {
+	animation: fv-fade-in-scale 0.35s $fv-transition-spring both;
+}
+
+// ── Stagger Children ─────────────────────────────────────────────
+.fv-stagger-children > * {
+	animation: fv-fade-in-up 0.4s ease-out both;
+
+	@for $i from 1 through 20 {
+		&:nth-child(#{$i}) {
+			animation-delay: #{$i * 0.06}s;
+		}
+	}
+}
+
+// ── Ambient Breathing ────────────────────────────────────────────
+@keyframes fv-breathe {
+	0%, 100% { opacity: 0.03; }
+	50%      { opacity: 0.06; }
+}
+
+.fv-graph-container::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(
+		ellipse at 50% 50%,
+		var(--fv-accent, #{$fv-accent}) 0%,
+		transparent 70%
+	);
+	opacity: var(--fv-ambient-glow, 0);
+	pointer-events: none;
+	z-index: 0;
+	animation: fv-breathe 6s ease-in-out infinite;
+	border-radius: var(--fv-radius-lg, #{$fv-radius-lg});
+}
+
+// ── Spin ─────────────────────────────────────────────────────────
+@keyframes fv-spin {
+	to { transform: rotate(360deg); }
+}
+
+.fv-spinner {
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--fv-border-primary, #e2e8f0);
+	border-top-color: var(--fv-accent, #{$fv-accent});
+	border-radius: 50%;
+	animation: fv-spin 0.6s linear infinite;
+}
+
+// ── Layout Transition Overlay ────────────────────────────────────
+.fv-layout-transition {
+	position: absolute;
+	inset: 0;
+	background: var(--fv-bg-primary, white);
+	z-index: 999;
+	pointer-events: none;
+	border-radius: inherit;
+}

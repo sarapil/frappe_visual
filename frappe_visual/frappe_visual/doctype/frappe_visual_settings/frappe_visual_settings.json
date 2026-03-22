@@ -1,0 +1,110 @@
+{
+	"actions": [],
+	"creation": "2025-01-01 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"license_section",
+		"license_key",
+		"license_status",
+		"cb_license",
+		"license_info",
+		"general_section",
+		"default_layout",
+		"enable_animations",
+		"enable_minimap",
+		"cb_general",
+		"enable_dark_auto",
+		"enable_rtl_auto"
+	],
+	"fields": [
+		{
+			"fieldname": "license_section",
+			"fieldtype": "Section Break",
+			"label": "License"
+		},
+		{
+			"fieldname": "license_key",
+			"fieldtype": "Password",
+			"label": "License Key",
+			"description": "Enter your premium license key. Not required on Frappe Cloud."
+		},
+		{
+			"fieldname": "license_status",
+			"fieldtype": "Data",
+			"label": "License Status",
+			"read_only": 1,
+			"default": "Free Tier"
+		},
+		{
+			"fieldname": "cb_license",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "license_info",
+			"fieldtype": "HTML",
+			"label": "License Information"
+		},
+		{
+			"fieldname": "general_section",
+			"fieldtype": "Section Break",
+			"label": "General Settings"
+		},
+		{
+			"fieldname": "default_layout",
+			"fieldtype": "Select",
+			"label": "Default Layout",
+			"options": "fcose\nelk-layered\nelk-mrtree\nelk-stress\nelk-radial\nbreadthfirst\ncircle\nconcentric\ngrid",
+			"default": "fcose"
+		},
+		{
+			"fieldname": "enable_animations",
+			"fieldtype": "Check",
+			"label": "Enable Animations",
+			"default": 1
+		},
+		{
+			"fieldname": "enable_minimap",
+			"fieldtype": "Check",
+			"label": "Enable Minimap",
+			"default": 1
+		},
+		{
+			"fieldname": "cb_general",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "enable_dark_auto",
+			"fieldtype": "Check",
+			"label": "Auto Dark Mode Detection",
+			"default": 1
+		},
+		{
+			"fieldname": "enable_rtl_auto",
+			"fieldtype": "Check",
+			"label": "Auto RTL Detection",
+			"default": 1
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"issingle": 1,
+	"links": [],
+	"modified": "2025-01-01 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "Frappe Visual Settings",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"email": 1,
+			"print": 1,
+			"read": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC"
+}

@@ -1,0 +1,203 @@
+{% extends "templates/web.html" %}
+
+{% block title %}About Frappe Visual{% endblock %}
+
+{% block page_content %}
+<div id="frappe-visual-about-container" data-page="frappe-visual-about"></div>
+
+<style>
+  #frappe-visual-about-container {
+    min-height: 80vh;
+    padding: var(--fv-space-lg, 24px) 0;
+  }
+  .fv-about-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .fv-about-loading .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--fv-glass, rgba(99, 102, 241, 0.08));
+    border-top-color: var(--fv-primary, #6366F1);
+    border-radius: 50%;
+    animation: fv-spin 0.8s linear infinite;
+  }
+  @keyframes fv-spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('frappe-visual-about-container');
+  container.innerHTML = `
+    <div class="fv-about-loading">
+      <div class="spinner"></div>
+      <p style="color: var(--fv-text-muted, #94A3B8);">${__("Loading...")}</p>
+    </div>
+  `;
+
+  // Load the frappe_visual bundle if not already loaded
+  frappe.require('frappe_visual.bundle.js', function() {
+    if (frappe.visual && frappe.visual.storyboard) {
+      _buildAboutStoryboard(container);
+    } else {
+      container.innerHTML = `
+        <div class="text-center" style="padding: 40px;">
+          <h3>${__("Frappe Visual")}</h3>
+          <p>${__("Graph-based Visual UX Framework for Frappe applications")}</p>
+          <p class="text-muted">${__("15 interactive components • 3000+ icons • Full RTL & dark mode support")}</p>
+        </div>
+      `;
+    }
+  });
+});
+
+function _buildAboutStoryboard(container) {
+  const slides = [
+    // Slide 1: Overview
+    {
+      title: __("Frappe Visual"),
+      subtitle: __("Graph-based Visual UX Framework"),
+      content: `
+        <div style="text-align:center; padding: 20px;">
+          <img src="/assets/frappe_visual/images/frappe_visual-logo.svg"
+               alt="Frappe Visual" style="width:200px; height:200px; margin-bottom:20px;">
+          <h2 style="background: var(--fv-gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem;">
+            ${__("Frappe Visual")}
+          </h2>
+          <p style="color: var(--fv-text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+            ${__("15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards.")}
+          </p>
+          <div style="display:flex; justify-content:center; gap:24px; margin-top:32px; flex-wrap:wrap;">
+            <div style="padding:16px 24px; background:var(--fv-glass); border-radius:12px; border:1px solid var(--fv-glass-border);">
+              <div style="font-size:2rem; font-weight:700; color:var(--fv-primary);">15</div>
+              <div style="color:var(--fv-text-muted); font-size:0.85rem;">${__("Components")}</div>
+            </div>
+            <div style="padding:16px 24px; background:var(--fv-glass); border-radius:12px; border:1px solid var(--fv-glass-border);">
+              <div style="font-size:2rem; font-weight:700; color:var(--fv-primary);">3000+</div>
+              <div style="color:var(--fv-text-muted); font-size:0.85rem;">${__("Icons")}</div>
+            </div>
+            <div style="padding:16px 24px; background:var(--fv-glass); border-radius:12px; border:1px solid var(--fv-glass-border);">
+              <div style="font-size:2rem; font-weight:700; color:var(--fv-primary);">42</div>
+              <div style="color:var(--fv-text-muted); font-size:0.85rem;">${__("Tests")}</div>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    // Slide 2: Components — Graph
+    {
+      title: __("Graph Components"),
+      subtitle: __("Visualize your data relationships"),
+      content: `
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; padding:20px;">
+          ${_componentCard("sitemap", __("App Map"), __("Interactive app/module/DocType graph explorer with multiple layout engines"))}
+          ${_componentCard("schema", __("ERD"), __("Entity Relationship Diagrams showing DocType links and child tables"))}
+          ${_componentCard("git-branch", __("Dependency Graph"), __("Workflow and dependency chain visualization"))}
+          ${_componentCard("binary-tree-2", __("Tree View"), __("Hierarchical tree with expand/collapse and search"))}
+        </div>
+      `
+    },
+    // Slide 3: Components — UI
+    {
+      title: __("UI Components"),
+      subtitle: __("Rich interactive widgets"),
+      content: `
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; padding:20px;">
+          ${_componentCard("calendar-event", __("Calendar"), __("Month/week/day event calendar with drag support"))}
+          ${_componentCard("layout-kanban", __("Kanban Board"), __("Drag-and-drop cards with WIP limits"))}
+          ${_componentCard("chart-bar", __("Gantt Chart"), __("Project timeline with task dependencies"))}
+          ${_componentCard("photo", __("Gallery"), __("Image gallery with lightbox and zoom"))}
+          ${_componentCard("map-2", __("Map"), __("Geographic map with clustering and markers"))}
+          ${_componentCard("layout-list", __("Form Dashboard"), __("Visual linked-document dashboard on forms"))}
+          ${_componentCard("presentation", __("Storyboard"), __("Guided walkthroughs and onboarding slides"))}
+          ${_componentCard("app-window", __("Floating Window"), __("Draggable, resizable overlay containers"))}
+        </div>
+      `
+    },
+    // Slide 4: Core Infrastructure
+    {
+      title: __("Core Infrastructure"),
+      subtitle: __("Powerful engines under the hood"),
+      content: `
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; padding:20px;">
+          ${_componentCard("chart-dots-3", __("Graph Engine"), __("Cytoscape.js with 8 layout algorithms including ELK.js"))}
+          ${_componentCard("wand", __("Animation Engine"), __("GSAP-powered stagger, morph, and scroll animations"))}
+          ${_componentCard("palette", __("Theme Manager"), __("Auto dark mode, RTL, and 55+ CSS design tokens"))}
+          ${_componentCard("transform", __("Layout Manager"), __("Force-directed, hierarchical, radial, grid, and more"))}
+          ${_componentCard("map-pin", __("Minimap"), __("Navigation overview for large graphs"))}
+          ${_componentCard("menu-2", __("Context Menu"), __("Right-click actions on graph nodes and edges"))}
+          ${_componentCard("icons", __("Icon System"), __("3000+ Tabler icons with smart DocType mapping"))}
+        </div>
+      `
+    },
+    // Slide 5: Tech Stack
+    {
+      title: __("Technology Stack"),
+      subtitle: __("Built on battle-tested libraries"),
+      content: `
+        <div style="max-width:600px; margin:0 auto; padding:20px;">
+          <table style="width:100%; border-collapse:separate; border-spacing:0 8px;">
+            <tr><td style="padding:12px; background:var(--fv-glass); border-radius:8px;"><strong>Cytoscape.js</strong></td><td style="padding:12px; color:var(--fv-text-muted);">${__("Graph rendering & interaction")}</td></tr>
+            <tr><td style="padding:12px; background:var(--fv-glass); border-radius:8px;"><strong>ELK.js</strong></td><td style="padding:12px; color:var(--fv-text-muted);">${__("Advanced layout algorithms")}</td></tr>
+            <tr><td style="padding:12px; background:var(--fv-glass); border-radius:8px;"><strong>GSAP + Draggable</strong></td><td style="padding:12px; color:var(--fv-text-muted);">${__("Professional animations")}</td></tr>
+            <tr><td style="padding:12px; background:var(--fv-glass); border-radius:8px;"><strong>Lottie-web</strong></td><td style="padding:12px; color:var(--fv-text-muted);">${__("After Effects animations")}</td></tr>
+            <tr><td style="padding:12px; background:var(--fv-glass); border-radius:8px;"><strong>Tabler Icons 3.30</strong></td><td style="padding:12px; color:var(--fv-text-muted);">${__("3000+ premium icons")}</td></tr>
+          </table>
+        </div>
+      `
+    },
+    // Slide 6: Getting Started
+    {
+      title: __("Getting Started"),
+      subtitle: __("Start building visual experiences"),
+      content: `
+        <div style="max-width:600px; margin:0 auto; padding:20px; text-align:center;">
+          <div style="background:var(--fv-glass); border:1px solid var(--fv-glass-border); border-radius:16px; padding:32px; margin-bottom:24px;">
+            <p style="font-family:monospace; font-size:0.95rem; color:var(--fv-primary); margin-bottom:16px;">
+              frappe.visual.appMap({ app: "erpnext" })
+            </p>
+            <p style="color:var(--fv-text-muted); font-size:0.85rem;">
+              ${__("One line to create an interactive application graph")}
+            </p>
+          </div>
+          <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="/app/visual-hub" class="btn btn-primary" style="background:var(--fv-primary); border-color:var(--fv-primary);">
+              <span class="ti ti-eye"></span> ${__("Visual Hub")}
+            </a>
+            <a href="/app/frappe-visual-settings" class="btn btn-default">
+              <span class="ti ti-settings"></span> ${__("Settings")}
+            </a>
+          </div>
+        </div>
+      `
+    }
+  ];
+
+  frappe.visual.storyboard({
+    container: container,
+    slides: slides,
+    showNavigation: true,
+    showProgress: true,
+    navigationPosition: "both",
+    theme: "premium",
+    animate: true,
+  });
+}
+
+function _componentCard(icon, title, desc) {
+  return `
+    <div style="padding:20px; background:var(--fv-glass, rgba(99,102,241,0.08)); border:1px solid var(--fv-glass-border, rgba(99,102,241,0.15)); border-radius:12px; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='var(--fv-shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <span class="ti ti-${icon}" style="font-size:28px; color:var(--fv-primary, #6366F1);"></span>
+      <h4 style="margin:8px 0 4px; font-size:1rem;">${title}</h4>
+      <p style="color:var(--fv-text-muted, #94A3B8); font-size:0.85rem; margin:0;">${desc}</p>
+    </div>
+  `;
+}
+</script>
+{% endblock %}

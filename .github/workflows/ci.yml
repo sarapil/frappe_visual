@@ -1,0 +1,85 @@
+name: Server Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: server-tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+
+    services:
+      mariadb:
+        image: mariadb:10.6
+        env:
+          MARIADB_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mariadb-admin ping"
+          --health-interval=5s
+          --health-timeout=2s
+          --health-retries=3
+
+      redis-cache:
+        image: redis:alpine
+        ports:
+          - 13000:6379
+      redis-queue:
+        image: redis:alpine
+        ports:
+          - 11000:6379
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Bench
+        run: pip install frappe-bench
+
+      - name: Init Frappe Bench
+        run: |
+          bench init --frappe-branch version-16 --skip-assets frappe-bench
+          cd frappe-bench
+          bench get-app --branch main $GITHUB_WORKSPACE
+
+      - name: Create Test Site
+        run: |
+          cd frappe-bench
+          bench new-site test_site \
+            --mariadb-root-password root \
+            --admin-password admin \
+            --no-mariadb-socket
+          bench --site test_site install-app frappe_visual
+
+      - name: Build Assets
+        run: |
+          cd frappe-bench
+          bench build --app frappe_visual
+
+      - name: Run Tests
+        run: |
+          cd frappe-bench
+          bench --site test_site run-tests \
+            --app frappe_visual \
+            --failfast

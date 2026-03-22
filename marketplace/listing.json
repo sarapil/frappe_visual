@@ -1,0 +1,84 @@
+{
+    "name": "frappe_visual",
+    "title": "Frappe Visual",
+    "description": "Graph-based Visual UX Framework for Frappe v16 — Interactive node-graph visualizations for app architecture, doctype relationships, and data models",
+    "publisher": "Arkan Lab",
+    "publisher_email": "moatazsarapil@gmail.com",
+    "publisher_website": "https://arkan.it.com",
+    "category": "Developer Tools",
+    "subcategory": "Visualization",
+    "tags": ["visualization", "graph", "architecture", "doctype", "developer-tools", "ux", "cytoscape", "elk"],
+    "frappe_version": ">=16.0.0",
+    "license": "GPL-3.0",
+    "pricing_model": "freemium",
+    "tiers": [
+        {
+            "name": "Community",
+            "price": 0,
+            "currency": "USD",
+            "billing": "forever",
+            "features": [
+                "App Map (basic)",
+                "Relationship Explorer (basic)",
+                "Visual Dashboard",
+                "Storyboard Wizard",
+                "Dark Mode + RTL",
+                "Basic Layouts (fcose, breadthfirst)",
+                "Search & Filter",
+                "Minimap"
+            ]
+        },
+        {
+            "name": "Professional",
+            "price": 49,
+            "currency": "USD",
+            "billing": "monthly",
+            "features": [
+                "Everything in Community",
+                "Advanced ELK Layouts",
+                "Floating Windows",
+                "Animation Engine",
+                "SVG + PNG Export",
+                "Context Menus",
+                "Combo Groups + Summary Badges",
+                "Email Support"
+            ]
+        },
+        {
+            "name": "Enterprise",
+            "price": 99,
+            "currency": "USD",
+            "billing": "monthly",
+            "features": [
+                "Everything in Professional",
+                "MCP Server Integration",
+                "Full API Access",
+                "White Labeling",
+                "Priority Support",
+                "Custom Development (2h/month)"
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "file": "app-map-light.png",
+            "caption": "App Map — ERPNext visualization (Light Mode)"
+        },
+        {
+            "file": "app-map-dark.png",
+            "caption": "App Map — Dark Mode with animated edges"
+        },
+        {
+            "file": "relationship-explorer.png",
+            "caption": "Relationship Explorer — Sales Invoice depth-2"
+        },
+        {
+            "file": "layout-comparison.png",
+            "caption": "9 Layout Algorithms — Same data, different views"
+        }
+    ],
+    "demo_url": "",
+    "documentation_url": "https://github.com/ArkanLab/frappe_visual/tree/main/docs",
+    "source_url": "https://github.com/ArkanLab/frappe_visual",
+    "support_email": "moatazsarapil@gmail.com"
+}

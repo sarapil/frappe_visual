@@ -1,0 +1,187 @@
+/* ─── Frappe Visual: Form Dashboard Styles ───────────────────────
+ * Enhanced form dashboard with stat cards, mini relationship
+ * graph (SVG), and linked-document navigation grid.
+ */
+
+.fv-form-dash {
+	width: 100%;
+	font-family: $fv-font-family;
+	font-size: $fv-font-size-base;
+}
+
+// ── Main Layout ──────────────────────────────────────────────────
+.fv-fdash-main {
+	display: flex;
+	gap: $fv-space-4;
+	margin-bottom: $fv-space-4;
+	align-items: stretch;
+}
+
+// ── Stat Cards ───────────────────────────────────────────────────
+.fv-fdash-stats {
+	flex: 1;
+	min-width: 0;
+}
+
+.fv-fdash-stat-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: $fv-space-3;
+}
+
+.fv-fdash-stat-card {
+	padding: $fv-space-3 $fv-space-4;
+	border-radius: $fv-radius-md;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.fv-fdash-stat-value {
+	font-size: $fv-font-size-2xl;
+	font-weight: 800;
+	color: var(--fv-text-primary, #1e293b);
+	line-height: 1.2;
+	margin-bottom: $fv-space-1;
+}
+
+.fv-fdash-stat-label {
+	font-size: $fv-font-size-xs;
+	font-weight: 600;
+	color: var(--fv-text-tertiary, #94a3b8);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.fv-fdash-stat-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	opacity: 0.6;
+	transition: opacity $fv-transition-fast;
+
+	.fv-fdash-stat-card:hover & {
+		opacity: 1;
+	}
+}
+
+// ── Mini Graph ───────────────────────────────────────────────────
+.fv-fdash-graph {
+	flex: 0 0 260px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fv-fdash-mini-graph {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fv-fdash-graph-svg {
+	width: 100%;
+	height: auto;
+	max-width: 240px;
+
+	text {
+		font-family: $fv-font-family;
+		pointer-events: none;
+	}
+
+	line {
+		animation: fv-ant-march 2s linear infinite;
+	}
+}
+
+.fv-fdash-node-circle {
+	transition: all $fv-transition-fast;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5 !important;
+		r: 18;
+	}
+}
+
+// ── Links Grid ───────────────────────────────────────────────────
+.fv-fdash-links-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $fv-space-2;
+}
+
+.fv-fdash-link-item {
+	display: inline-flex;
+	align-items: center;
+	gap: $fv-space-2;
+	padding: $fv-space-2 $fv-space-3;
+	border: 1px solid var(--fv-border-primary, #e2e8f0);
+	border-radius: $fv-radius-sm;
+	text-decoration: none;
+	color: var(--fv-text-primary, #1e293b);
+	font-size: $fv-font-size-sm;
+	transition: all $fv-transition-fast;
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		border-color: var(--fv-link-color, #{$fv-accent});
+		background: var(--fv-accent-bg, #{$fv-accent-bg});
+		text-decoration: none;
+		color: var(--fv-text-primary, #1e293b);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 3px;
+		background: var(--fv-link-color, #{$fv-accent});
+		opacity: 0;
+		transition: opacity $fv-transition-fast;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+}
+
+.fv-fdash-link-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.fv-fdash-link-name {
+	font-weight: 500;
+}
+
+.fv-fdash-link-rel {
+	font-size: $fv-font-size-xs;
+	color: var(--fv-text-tertiary, #94a3b8);
+	background: var(--fv-bg-tertiary, #f1f5f9);
+	padding: 1px 6px;
+	border-radius: $fv-radius-full;
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+@media (max-width: 768px) {
+	.fv-fdash-main {
+		flex-direction: column;
+	}
+
+	.fv-fdash-graph {
+		flex: 0 0 auto;
+	}
+
+	.fv-fdash-stat-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

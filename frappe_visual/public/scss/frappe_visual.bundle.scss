@@ -1,0 +1,20 @@
+/**
+ * Frappe Visual — SCSS Bundle Entry
+ * ===================================
+ * Main stylesheet importing all design system partials.
+ */
+
+@import "./_variables";
+@import "./_animations";
+@import "./_effects";
+@import "./_components";
+@import "./_floating_windows";
+@import "./_kanban";
+@import "./_calendar";
+@import "./_gantt";
+@import "./_tree";
+@import "./_map";
+@import "./_gallery";
+@import "./_form_dashboard";
+@import "./_dark_mode";
+@import "./_rtl";

@@ -1,0 +1,274 @@
+App Map,خريطة التطبيق
+Visual Hub,المركز المرئي
+Relationship Explorer,مستكشف العلاقات
+Storyboard Wizard,معالج القصة المصورة
+Visual Dashboard,لوحة المعلومات المرئية
+Floating Window,النافذة العائمة
+Minimap,الخريطة المصغرة
+Context Menu,قائمة السياق
+Animation Engine,محرك الرسوم المتحركة
+Theme Manager,مدير المظهر
+Layout Manager,مدير التخطيط
+Graph Engine,محرك الرسوم البيانية
+Color System,نظام الألوان
+Data Adapter,محول البيانات
+Loading...,جاري التحميل...
+Select an app,اختر تطبيقاً
+No apps found,لم يتم العثور على تطبيقات
+Search nodes...,بحث في العقد...
+Zoom In,تكبير
+Zoom Out,تصغير
+Fit to Screen,ملاءمة الشاشة
+Reset View,إعادة تعيين العرض
+Export as SVG,تصدير كـ SVG
+Export as PNG,تصدير كـ PNG
+Force Directed,قوة موجهة
+Hierarchical,تسلسل هرمي
+ELK Layered,ELK طبقي
+ELK Tree,ELK شجري
+ELK Stress,ELK ضغط
+ELK Radial,ELK دائري
+Circle,دائرة
+Grid,شبكة
+Concentric,متحد المركز
+Dark Mode,الوضع الداكن
+Light Mode,الوضع الفاتح
+Enable Animations,تمكين الرسوم المتحركة
+Disable Animations,تعطيل الرسوم المتحركة
+Enable Minimap,تمكين الخريطة المصغرة
+Disable Minimap,تعطيل الخريطة المصغرة
+Open,فتح
+View Details,عرض التفاصيل
+View Relationships,عرض العلاقات
+Expand,توسيع
+Collapse,طي
+Close,إغلاق
+Settings,الإعدادات
+License Key,مفتاح الترخيص
+License Status,حالة الترخيص
+Default Layout,التخطيط الافتراضي
+Auto Dark Mode,الوضع الداكن التلقائي
+Auto RTL,RTL التلقائي
+Frappe Visual Settings,إعدادات Frappe Visual
+License,الترخيص
+Display Settings,إعدادات العرض
+Auto Detection,الكشف التلقائي
+Free,مجاني
+Premium,احترافي
+Enterprise,مؤسسي
+Active,نشط
+Inactive,غير نشط
+Valid,صالح
+Invalid,غير صالح
+Expired,منتهي
+Feature not available in free tier,الميزة غير متاحة في الطبقة المجانية
+Upgrade to Premium for this feature,قم بالترقية للإصدار الاحترافي لهذه الميزة
+Graph generated successfully,تم إنشاء الرسم البياني بنجاح
+No relationships found,لم يتم العثور على علاقات
+Found {0} nodes,تم العثور على {0} عقدة
+Found {0} edges,تم العثور على {0} حافة
+{0} modules,{0} وحدات
+{0} doctypes,{0} أنواع مستندات
+Module,وحدة
+DocType,نوع المستند
+Transaction,معاملة
+Master,رئيسي
+Setup,إعداد
+Report,تقرير
+Child Table,جدول فرعي
+Controller,متحكم
+Tool,أداة
+Log,سجل
+Queue,طابور
+Singleton,مفرد
+Tree,شجرة
+Amendment,تعديل
+Custom,مخصص
+Link,رابط
+Dynamic Link,رابط ديناميكي
+Table,جدول
+Select,اختيار
+Submittable,قابل للإرسال
+Single,مفرد
+Virtual,افتراضي
+Depth,العمق
+Load More,تحميل المزيد
+Back,رجوع
+Next,التالي
+Previous,السابق
+Step {0} of {1},الخطوة {0} من {1}
+Complete,اكتمال
+Cancel,إلغاء
+Nodes,عقد
+Edges,حواف
+Modules,وحدات
+Relationships,علاقات
+Statistics,إحصائيات
+Total DocTypes,إجمالي أنواع المستندات
+Total Modules,إجمالي الوحدات
+All types,جميع الأنواع
+Connected to,متصل بـ
+Connections,الاتصالات
+Export PNG,تصدير PNG
+Export SVG,تصدير SVG
+Failed to load app map,فشل في تحميل خريطة التطبيق
+Fields,الحقول
+Fit to View,ملاءمة العرض
+Incoming,وارد
+Links,الروابط
+Loading application map...,جاري تحميل خريطة التطبيق...
+Name,الاسم
+Open List,فتح القائمة
+Outgoing,صادر
+Records,السجلات
+Premium Feature,ميزة احترافية
+DocTypes,أنواع المستندات
+Reports,التقارير
+Type,النوع
+WIP limit reached for {0},تم الوصول لحد العمل الجاري لـ {0}
+Failed to move card,فشل نقل البطاقة
+No cards,لا توجد بطاقات
+Calendar,التقويم
+Visual Calendar,التقويم المرئي
+Month,شهر
+Week,أسبوع
+Day,يوم
+Today,اليوم
+January,يناير
+February,فبراير
+March,مارس
+April,أبريل
+May,مايو
+June,يونيو
+July,يوليو
+August,أغسطس
+September,سبتمبر
+October,أكتوبر
+November,نوفمبر
+December,ديسمبر
+Sun,أحد
+Mon,إثنين
+Tue,ثلاثاء
+Wed,أربعاء
+Thu,خميس
+Fri,جمعة
+Sat,سبت
+more,المزيد
+No events found,لم يتم العثور على أحداث
+Timeline,الجدول الزمني
+Visual Gantt,مخطط جانت المرئي
+Gantt Chart,مخطط جانت
+Fit,ملاءمة
+No tasks found,لم يتم العثور على مهام
+Tree,شجرة
+Visual Tree View,عرض الشجرة المرئي
+Expand All,توسيع الكل
+Collapse All,طي الكل
+No records found,لم يتم العثور على سجلات
+Map,الخريطة
+Visual Map,الخريطة المرئية
+My Location,موقعي
+Gallery,المعرض
+Visual Gallery,المعرض المرئي
+No images found,لم يتم العثور على صور
+Form Dashboard,لوحة النموذج
+Visual Form Dashboard,لوحة النموذج المرئية
+Linked Types,الأنواع المرتبطة
+Select Icon,اختيار أيقونة
+Search icons...,بحث في الأيقونات...
+Please select an icon,يرجى اختيار أيقونة
+Interactive Application Explorer,مستكشف التطبيقات التفاعلي
+Application,التطبيق
+Frappe Visual,فراب فيجوال
+Graph-based Visual UX Framework,إطار عمل UX مرئي قائم على الرسوم البيانية
+Graph-based Visual UX Framework for Frappe applications,إطار عمل UX مرئي قائم على الرسوم البيانية لتطبيقات Frappe
+15 interactive components • 3000+ icons • Full RTL & dark mode support,15 مكون تفاعلي • أكثر من 3000 أيقونة • دعم كامل لـ RTL والوضع الداكن
+"15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards.","15 مكون مرئي تفاعلي لبناء تجارب UX غنية في تطبيقات Frappe. من محركات الرسوم البيانية إلى لوحات كانبان ومن التقاويم إلى القصص المصورة."
+Components,المكونات
+Icons,الأيقونات
+Tests,الاختبارات
+Graph Components,مكونات الرسوم البيانية
+Visualize your data relationships,تصور علاقات بياناتك
+Interactive app/module/DocType graph explorer with multiple layout engines,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات مع محركات تخطيط متعددة
+ERD,مخطط علاقات الكيانات
+"Entity Relationship Diagrams showing DocType links and child tables","مخططات علاقات الكيانات تعرض روابط أنواع المستندات والجداول الفرعية"
+Dependency Graph,رسم التبعيات
+Workflow and dependency chain visualization,تصور سلسلة سير العمل والتبعيات
+Tree View,عرض الشجرة
+"Hierarchical tree with expand/collapse and search","شجرة هرمية مع توسيع/طي وبحث"
+UI Components,مكونات واجهة المستخدم
+Rich interactive widgets,أدوات تفاعلية غنية
+Month/week/day event calendar with drag support,تقويم أحداث شهري/أسبوعي/يومي مع دعم السحب
+Kanban Board,لوحة كانبان
+Drag-and-drop cards with WIP limits,بطاقات سحب وإفلات مع حدود العمل الجاري
+Project timeline with task dependencies,جدول زمني للمشروع مع تبعيات المهام
+Image gallery with lightbox and zoom,معرض صور مع عرض مكبر وتقريب
+Geographic map with clustering and markers,خريطة جغرافية مع تجميع وعلامات
+Visual linked-document dashboard on forms,لوحة مستندات مرتبطة مرئية على النماذج
+Storyboard,القصة المصورة
+Guided walkthroughs and onboarding slides,جولات إرشادية وشرائح تعريفية
+"Draggable, resizable overlay containers","حاويات عائمة قابلة للسحب وتغيير الحجم"
+Core Infrastructure,البنية التحتية الأساسية
+Powerful engines under the hood,محركات قوية تحت الغطاء
+Cytoscape.js with 8 layout algorithms including ELK.js,Cytoscape.js مع 8 خوارزميات تخطيط بما في ذلك ELK.js
+"GSAP-powered stagger, morph, and scroll animations","رسوم متحركة بتقنية GSAP مع تأثيرات التتابع والتحول والتمرير"
+"Auto dark mode, RTL, and 55+ CSS design tokens","وضع داكن تلقائي و RTL وأكثر من 55 رمز تصميم CSS"
+"Force-directed, hierarchical, radial, grid, and more","قوة موجهة وتسلسل هرمي ودائري وشبكي والمزيد"
+Navigation overview for large graphs,نظرة عامة للتنقل في الرسوم البيانية الكبيرة
+Right-click actions on graph nodes and edges,إجراءات النقر بزر الماوس الأيمن على عقد وحواف الرسم البياني
+Icon System,نظام الأيقونات
+3000+ Tabler icons with smart DocType mapping,أكثر من 3000 أيقونة Tabler مع ربط ذكي لأنواع المستندات
+Technology Stack,المكدس التقني
+Built on battle-tested libraries,مبني على مكتبات مجربة وموثوقة
+Graph rendering & interaction,عرض الرسوم البيانية والتفاعل
+Advanced layout algorithms,خوارزميات تخطيط متقدمة
+Professional animations,رسوم متحركة احترافية
+After Effects animations,رسوم متحركة After Effects
+3000+ premium icons,أكثر من 3000 أيقونة احترافية
+Getting Started,البدء
+Start building visual experiences,ابدأ ببناء تجارب مرئية
+One line to create an interactive application graph,سطر واحد لإنشاء رسم بياني تفاعلي للتطبيق
+About Frappe Visual,عن Frappe Visual
+Home,الرئيسية
+View Visual Hub,عرض المركز المرئي
+Use App Map,استخدام خريطة التطبيق
+Use ERD Explorer,استخدام مستكشف العلاقات
+Use Storyboard,استخدام القصة المصورة
+Use Kanban Board,استخدام لوحة كانبان
+Use Calendar,استخدام التقويم
+Use Gantt Chart,استخدام مخطط جانت
+Use Map,استخدام الخريطة
+Use Gallery,استخدام المعرض
+Use Tree View,استخدام عرض الشجرة
+Change Layout Algorithm,تغيير خوارزمية التخطيط
+Manage Settings,إدارة الإعدادات
+View Statistics,عرض الإحصائيات
+Frappe Visual Viewer,عارض Frappe Visual
+Frappe Visual Power User,مستخدم متقدم Frappe Visual
+Frappe Visual Administrator,مدير Frappe Visual
+About,حول
+ERD Explorer,مستكشف علاقات الكيانات
+Configuration & Docs,الإعدادات والتوثيق
+Icon Explorer,مستكشف الأيقونات
+Interactive app/module/DocType graph explorer,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات
+Entity Relationship Diagrams for DocTypes,مخططات علاقات الكيانات لأنواع المستندات
+Workflow & dependency visualization,تصور سير العمل والتبعيات
+Hierarchical tree visualization,تصور الشجرة الهرمية
+Month/week/day visual calendar,تقويم مرئي شهري/أسبوعي/يومي
+Drag-and-drop Kanban boards,لوحات كانبان بالسحب والإفلات
+Project timeline Gantt bars,أشرطة جانت للجدول الزمني للمشروع
+Image gallery with lightbox,معرض صور مع عرض مكبر
+Geographic map with markers,خريطة جغرافية مع علامات
+Visual linked-document dashboard,لوحة مستندات مرتبطة مرئية
+Guided walkthroughs & onboarding,جولات إرشادية وتعريفية
+Draggable overlay container,حاوية عائمة قابلة للسحب
+"License, display, and theme settings","إعدادات الترخيص والعرض والمظهر"
+Browse and search 3000+ Tabler icons,تصفح وابحث في أكثر من 3000 أيقونة Tabler
+App showcase for admins and decision makers,عرض التطبيق للمسؤولين وصانعي القرار
+License Information,معلومات الترخيص
+General Settings,الإعدادات العامة
+Auto Dark Mode Detection,الكشف التلقائي للوضع الداكن
+Auto RTL Detection,الكشف التلقائي لـ RTL
+Export as SVG,تصدير كـ SVG
+Export as PNG,تصدير كـ PNG
+Visual Hub,المركز المرئي
