@@ -1,0 +1,62 @@
+/* Frappe Visual — Design Tokens / CSS Variables
+ * Brand color palette and design system tokens.
+ * Prefix: --fv-
+ */
+
+:root {
+  /* Primary */
+  --fv-primary: #6366F1;
+  --fv-primary-light: #6366F122;
+  --fv-primary-dark: #6366F1DD;
+
+  /* Secondary & Accent */
+  --fv-secondary: #64748B;
+  --fv-accent: #6366F1;
+
+  /* Semantic */
+  --fv-success: #10B981;
+  --fv-warning: #F59E0B;
+  --fv-danger: #EF4444;
+  --fv-info: #3B82F6;
+
+  /* Surfaces */
+  --fv-bg: #FFFFFF;
+  --fv-bg-subtle: #F8FAFC;
+  --fv-text: #1E293B;
+  --fv-text-muted: #64748B;
+  --fv-border: #E2E8F0;
+
+  /* Spacing */
+  --fv-space-xs: 0.25rem;
+  --fv-space-sm: 0.5rem;
+  --fv-space-md: 1rem;
+  --fv-space-lg: 1.5rem;
+  --fv-space-xl: 2rem;
+
+  /* Border radius */
+  --fv-radius-sm: 0.375rem;
+  --fv-radius-md: 0.5rem;
+  --fv-radius-lg: 0.75rem;
+  --fv-radius-xl: 1rem;
+
+  /* Shadows */
+  --fv-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --fv-shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --fv-shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Typography */
+  --fv-font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --fv-font-family-ar: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --fv-bg: #0F172A;
+  --fv-bg-subtle: #1E293B;
+  --fv-text: #F1F5F9;
+  --fv-text-muted: #94A3B8;
+  --fv-border: #334155;
+  --fv-shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --fv-shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+  --fv-shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
+}

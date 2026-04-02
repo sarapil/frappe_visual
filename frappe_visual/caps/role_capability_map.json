@@ -1,0 +1,10 @@
+[
+  {
+    "role": "System Manager",
+    "capabilities": [
+      "FV_view_maps",
+      "FV_manage_settings",
+      "FV_use_components"
+    ]
+  }
+]

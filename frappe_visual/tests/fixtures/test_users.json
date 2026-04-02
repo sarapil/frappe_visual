@@ -1,0 +1,10 @@
+{
+  "_comment": "Test users for Frappe Visual",
+  "users": [
+    {
+      "email": "test_frappe_visual@example.com",
+      "first_name": "Test",
+      "roles": []
+    }
+  ]
+}

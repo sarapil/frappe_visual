@@ -1,0 +1,17 @@
+[
+  {
+    "name": "FV_view_maps",
+    "category": "Module",
+    "description": "View app maps and ERDs"
+  },
+  {
+    "name": "FV_manage_settings",
+    "category": "Module",
+    "description": "Manage Visual settings"
+  },
+  {
+    "name": "FV_use_components",
+    "category": "Action",
+    "description": "Use visual components"
+  }
+]
