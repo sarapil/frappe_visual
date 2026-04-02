@@ -126,12 +126,16 @@ class LicenseValidator:
 @frappe.whitelist()
 def get_license_status() -> dict:
 	"""API: Get current license status."""
+	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+
 	return LicenseValidator.get_license_info()
 
 
 @frappe.whitelist()
 def validate_license_key(key: str) -> dict:
 	"""API: Validate a license key without saving."""
+	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+
 	is_valid = LicenseValidator._validate_key(key)
 	return {
 		"valid": is_valid,

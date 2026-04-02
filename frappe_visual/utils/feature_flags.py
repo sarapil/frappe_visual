@@ -58,6 +58,8 @@ def require_premium(feature_key: str):
 		@frappe.whitelist()
 		@require_premium("animation_engine")
 		def create_animation(data):
+			frappe.only_for(["System Manager", "System Manager"])
+
 			# Premium-only code
 			pass
 	"""
@@ -132,6 +134,8 @@ def get_all_features() -> Dict[str, Dict[str, Any]]:
 @frappe.whitelist()
 def get_enabled_features() -> Dict[str, bool]:
 	"""API: Get dictionary of feature:enabled for client-side use."""
+	frappe.only_for(["System Manager", "System Manager"])
+
 	from frappe_visual.utils.license import LicenseValidator
 
 	is_premium = LicenseValidator.is_premium_active()
@@ -145,6 +149,8 @@ def get_enabled_features() -> Dict[str, bool]:
 @frappe.whitelist()
 def check_feature(feature_key: str) -> Dict[str, Any]:
 	"""API: Check if a specific feature is available."""
+	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+
 	enabled = is_feature_enabled(feature_key)
 	tier = get_feature_tier(feature_key)
 

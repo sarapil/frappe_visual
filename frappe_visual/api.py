@@ -229,6 +229,8 @@ def get_quick_stats(app_name=None):
 	"""
 	Get quick statistics for dashboard widgets.
 	"""
+	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+
 	stats = {}
 
 	if app_name:
@@ -341,6 +343,8 @@ def get_form_dashboard_data(doctype, docname, depth=1):
 	Returns:
 		dict with 'nodes', 'edges', and 'stats'
 	"""
+	frappe.only_for(["System Manager"])
+	frappe.only_for(["System Manager"])
 	frappe.has_permission(doctype, "read", throw=True)
 	depth = int(depth)
 
@@ -447,6 +451,8 @@ def get_kanban_data(doctype, fieldname, fields=None, filters=None, order_by=None
 	Returns:
 		dict with 'cards' list and 'columns' metadata
 	"""
+	frappe.only_for(["System Manager"])
+	frappe.only_for(["System Manager"])
 	frappe.has_permission(doctype, "read", throw=True)
 
 	if isinstance(fields, str):

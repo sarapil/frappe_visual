@@ -48,6 +48,8 @@ app_include_css = [
 # ICON SYSTEM - Install / Migrate / Uninstall Hooks
 # ═══════════════════════════════════════════════════════════════════
 after_install = "frappe_visual.setup.icons.after_install"
+
+after_migrate = ["frappe_visual.frappe_visual.seed.seed_data"]
 before_uninstall = "frappe_visual.setup.icons.before_uninstall"
 after_migrate = "frappe_visual.setup.icons.after_migrate"
 
