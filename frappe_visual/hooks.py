@@ -28,6 +28,7 @@ app_include_js = [
     "/assets/frappe_visual/js/icon_helper.js",
 ]
 app_include_css = [
+    "/assets/frappe_visual/css/frappe_visual-theme.css",
     "frappe_visual.bundle.css",
     # Tabler Icons Webfont (6,000+ icons)
     "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css",

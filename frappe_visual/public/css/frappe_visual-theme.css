@@ -1,0 +1,120 @@
+/* Frappe Visual — Theme CSS Variables
+ * Brand colors and design tokens for Frappe Visual
+ * Domain: Visual Graph & UI Component Library
+ */
+
+:root {
+  /* Primary Colors */
+  --frappe_visual-primary: #6366F1;
+  --frappe_visual-primary-dark: #4F46E5;
+  --frappe_visual-primary-light: #6366F133;
+  --frappe_visual-primary-subtle: #6366F10D;
+
+  /* Neutral Colors */
+  --frappe_visual-bg: #FFFFFF;
+  --frappe_visual-bg-subtle: #F8FAFC;
+  --frappe_visual-text: #1E293B;
+  --frappe_visual-text-muted: #64748B;
+  --frappe_visual-border: #E2E8F0;
+
+  /* Status Colors */
+  --frappe_visual-success: #10B981;
+  --frappe_visual-warning: #F59E0B;
+  --frappe_visual-danger: #EF4444;
+  --frappe_visual-info: #3B82F6;
+
+  /* Spacing */
+  --frappe_visual-radius-sm: 6px;
+  --frappe_visual-radius-md: 10px;
+  --frappe_visual-radius-lg: 16px;
+
+  /* Shadows */
+  --frappe_visual-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --frappe_visual-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --frappe_visual-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --frappe_visual-font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  --frappe_visual-font-size-xs: 0.75rem;
+  --frappe_visual-font-size-sm: 0.875rem;
+  --frappe_visual-font-size-base: 1rem;
+  --frappe_visual-font-size-lg: 1.125rem;
+  --frappe_visual-font-size-xl: 1.25rem;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --frappe_visual-bg: #0F172A;
+  --frappe_visual-bg-subtle: #1E293B;
+  --frappe_visual-text: #F1F5F9;
+  --frappe_visual-text-muted: #94A3B8;
+  --frappe_visual-border: #334155;
+  --frappe_visual-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --frappe_visual-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --frappe_visual-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* RTL Support */
+[dir="rtl"] .frappe_visual-sidebar {
+  border-inline-start: 2px solid var(--frappe_visual-primary);
+  margin-inline-start: 0;
+  margin-inline-end: 1rem;
+}
+
+/* Glassmorphism Card */
+.frappe_visual-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--frappe_visual-border);
+  border-radius: var(--frappe_visual-radius-lg);
+  box-shadow: var(--frappe_visual-shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.frappe_visual-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--frappe_visual-shadow-lg);
+}
+
+[data-theme="dark"] .frappe_visual-glass-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* Status Badge */
+.frappe_visual-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: var(--frappe_visual-font-size-xs);
+  font-weight: 600;
+}
+
+.frappe_visual-badge--success { background: var(--frappe_visual-success)1A; color: var(--frappe_visual-success); }
+.frappe_visual-badge--warning { background: var(--frappe_visual-warning)1A; color: var(--frappe_visual-warning); }
+.frappe_visual-badge--danger { background: var(--frappe_visual-danger)1A; color: var(--frappe_visual-danger); }
+.frappe_visual-badge--info { background: var(--frappe_visual-info)1A; color: var(--frappe_visual-info); }
+
+/* Workspace Header */
+.frappe_visual-ws-header {
+  background: linear-gradient(135deg, var(--frappe_visual-primary), var(--frappe_visual-primary-dark));
+  color: white;
+  padding: 2rem;
+  border-radius: var(--frappe_visual-radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.frappe_visual-ws-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.frappe_visual-ws-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+  font-size: var(--frappe_visual-font-size-sm);
+}
