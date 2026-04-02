@@ -79,3 +79,11 @@ website_route_rules = [
 
 # ─── Scheduled Tasks ──────────────────────────────────────────────
 # scheduler_events = {}
+
+# CAPS Integration — Capability-Based Access Control
+# ------------------------------------------------------------
+caps_capabilities = [
+    {"name": "FV_view_maps", "category": "Module", "description": "View app maps and ERDs"},
+    {"name": "FV_manage_settings", "category": "Module", "description": "Manage Visual settings"},
+    {"name": "FV_use_components", "category": "Action", "description": "Use visual components"},
+]
