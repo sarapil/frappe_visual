@@ -70,7 +70,9 @@ jinja = {
 fixtures = [
     {
         "doctype": "Workspace",
-        "filters": [["module", "=", "Frappe Visual"]],
+        "filters": [["module", "=", "Frappe Visual",
+    {"dt": "Desktop Icon", "filters": [["app", "=", "frappe_visual"]]},
+]],
     },
 ]
 

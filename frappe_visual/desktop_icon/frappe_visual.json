@@ -1,0 +1,11 @@
+{
+  "app": "frappe_visual",
+  "doctype": "Desktop Icon",
+  "icon_type": "App",
+  "label": "Frappe Visual",
+  "link": "/app/frappe-visual",
+  "link_type": "External",
+  "logo_url": "/assets/frappe_visual/images/logo.svg",
+  "standard": 1,
+  "hidden": 0
+}

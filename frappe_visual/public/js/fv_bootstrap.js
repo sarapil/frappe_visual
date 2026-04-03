@@ -390,6 +390,82 @@
 		return frappe.visual.PDFViewer.create(container, opts);
 	};
 
+	// ── Spatial & Form Tools Shorthands ───────────────────────────
+
+	/** Floor Plan Designer — interactive spatial layout editor */
+	frappe.visual.floorPlan = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FloorPlanDesigner.create(container, opts);
+	};
+
+	/** Form Wizard — multi-step guided form with validation */
+	frappe.visual.formWizard = async function (opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FormWizard.create(opts);
+	};
+
+	/** Data Exporter — export data to CSV/Excel/PDF */
+	frappe.visual.dataExporter = async function (opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.DataExporter.create(opts);
+	};
+
+	// ── Enterprise Suite Shorthands (Wave 5) ─────────────────────
+
+	/** CRM Pipeline — visual sales pipeline with draggable deal cards */
+	frappe.visual.crmPipeline = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CRMPipeline.create(container, opts);
+	};
+
+	/** Inventory Grid — warehouse bin grid with stock level visualization */
+	frappe.visual.inventoryGrid = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.InventoryGrid.create(container, opts);
+	};
+
+	/** Form Builder — drag-drop form layout designer */
+	frappe.visual.formBuilder = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FormBuilder.create(container, opts);
+	};
+
+	/** Permission Matrix — roles × doctype permission grid */
+	frappe.visual.permissionMatrix = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.PermissionMatrix.create(container, opts);
+	};
+
+	/** API Explorer — interactive API endpoint tester */
+	frappe.visual.apiExplorer = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.APIExplorer.create(container, opts);
+	};
+
+	/** Schema Designer — DocType schema viewer/editor */
+	frappe.visual.schemaDesigner = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SchemaDesigner.create(container, opts);
+	};
+
+	/** Import Wizard — multi-step data import with mapping */
+	frappe.visual.importWizard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ImportWizard.create(container, opts);
+	};
+
+	/** Audit Trail — visual version history timeline */
+	frappe.visual.auditTrail = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.AuditTrail.create(container, opts);
+	};
+
+	/** Status Board — real-time multi-entity status monitor */
+	frappe.visual.statusBoard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.StatusBoard.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

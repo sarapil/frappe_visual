@@ -109,6 +109,22 @@ import { ImageAnnotator } from "./components/image_annotator";
 import { MediaPlayer } from "./components/media_player";
 import { PDFViewer } from "./components/pdf_viewer";
 
+// ── Spatial & Form Tools ─────────────────────────────────────────
+import { FloorPlanDesigner } from "./components/floor_plan_designer";
+import { FormWizard } from "./components/form_wizard";
+import { DataExporter } from "./components/data_exporter";
+
+// ── Enterprise Suite (Wave 5) ────────────────────────────────────
+import { CRMPipeline } from "./components/crm_pipeline";
+import { InventoryGrid } from "./components/inventory_grid";
+import { FormBuilder } from "./components/form_builder";
+import { PermissionMatrix } from "./components/permission_matrix";
+import { APIExplorer } from "./components/api_explorer";
+import { SchemaDesigner } from "./components/schema_designer";
+import { ImportWizard } from "./components/import_wizard";
+import { AuditTrail } from "./components/audit_trail";
+import { StatusBoard } from "./components/status_board";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -203,6 +219,22 @@ frappe.visual.ImageAnnotator = ImageAnnotator;
 frappe.visual.MediaPlayer = MediaPlayer;
 frappe.visual.PDFViewer = PDFViewer;
 
+// Spatial & Form Tools
+frappe.visual.FloorPlanDesigner = FloorPlanDesigner;
+frappe.visual.FormWizard = FormWizard;
+frappe.visual.DataExporter = DataExporter;
+
+// Enterprise Suite (Wave 5)
+frappe.visual.CRMPipeline = CRMPipeline;
+frappe.visual.InventoryGrid = InventoryGrid;
+frappe.visual.FormBuilder = FormBuilder;
+frappe.visual.PermissionMatrix = PermissionMatrix;
+frappe.visual.APIExplorer = APIExplorer;
+frappe.visual.SchemaDesigner = SchemaDesigner;
+frappe.visual.ImportWizard = ImportWizard;
+frappe.visual.AuditTrail = AuditTrail;
+frappe.visual.StatusBoard = StatusBoard;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -214,7 +246,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 60+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 74+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

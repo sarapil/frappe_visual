@@ -1,0 +1,462 @@
+App Map,App Map
+Visual Hub,Visual Hub
+Relationship Explorer,Relationship Explorer
+Storyboard Wizard,Storyboard Wizard
+Visual Dashboard,Visual Dashboard
+Floating Window,Floating Window
+Minimap,Minimap
+Context Menu,Context Menu
+Animation Engine,Animation Engine
+Theme Manager,Theme Manager
+Layout Manager,Layout Manager
+Graph Engine,Graph Engine
+Color System,Color System
+Data Adapter,Data Adapter
+Loading...,Loading...
+Select an app,Select an app
+No apps found,No apps found
+Search nodes...,Search nodes...
+Zoom In,Zoom In
+Zoom Out,Zoom Out
+Fit to Screen,Fit to Screen
+Reset View,Reset View
+Export as SVG,Export as SVG
+Export as PNG,Export as PNG
+Force Directed,Force Directed
+Hierarchical,Hierarchical
+ELK Layered,ELK Layered
+ELK Tree,ELK Tree
+ELK Stress,ELK Stress
+ELK Radial,ELK Radial
+Circle,Circle
+Grid,Grid
+Concentric,Concentric
+Dark Mode,Dark Mode
+Light Mode,Light Mode
+Enable Animations,Enable Animations
+Disable Animations,Disable Animations
+Enable Minimap,Enable Minimap
+Disable Minimap,Disable Minimap
+Open,Open
+View Details,View Details
+View Relationships,View Relationships
+Expand,Expand
+Collapse,Collapse
+Close,Close
+Settings,Settings
+License Key,License Key
+License Status,License Status
+Default Layout,Default Layout
+Auto Dark Mode,Auto Dark Mode
+Auto RTL,Auto RTL
+Frappe Visual Settings,Frappe Visual Settings
+License,License
+Display Settings,Display Settings
+Auto Detection,Auto Detection
+Free,Free
+Premium,Premium
+Enterprise,Enterprise
+Active,Active
+Inactive,Inactive
+Valid,Valid
+Invalid,Invalid
+Expired,Expired
+Feature not available in free tier,Feature not available in free tier
+Upgrade to Premium for this feature,Upgrade to Premium for this feature
+Graph generated successfully,Graph generated successfully
+No relationships found,No relationships found
+Found {0} nodes,Found {0} nodes
+Found {0} edges,Found {0} edges
+{0} modules,{0} modules
+{0} doctypes,{0} doctypes
+Module,Module
+DocType,DocType
+Transaction,Transaction
+Master,Master
+Setup,Setup
+Report,Report
+Child Table,Child Table
+Controller,Controller
+Tool,Tool
+Log,Log
+Queue,Queue
+Singleton,Singleton
+Tree,Tree
+Amendment,Amendment
+Custom,Custom
+Link,Link
+Dynamic Link,Dynamic Link
+Table,Table
+Select,Select
+Submittable,Submittable
+Single,Single
+Virtual,Virtual
+Depth,Depth
+Load More,Load More
+Back,Back
+Next,Next
+Previous,Previous
+Step {0} of {1},Step {0} of {1}
+Complete,Complete
+Cancel,Cancel
+Nodes,Nodes
+Edges,Edges
+Modules,Modules
+Relationships,Relationships
+Statistics,Statistics
+Total DocTypes,Total DocTypes
+Total Modules,Total Modules
+All types,All types
+Connected to,Connected to
+Connections,Connections
+Export PNG,Export PNG
+Export SVG,Export SVG
+Failed to load app map,Failed to load app map
+Fields,Fields
+Fit to View,Fit to View
+Incoming,Incoming
+Links,Links
+Loading application map...,Loading application map...
+Name,Name
+Open List,Open List
+Outgoing,Outgoing
+Records,Records
+Premium Feature,Premium Feature
+DocTypes,DocTypes
+Reports,Reports
+Type,Type
+WIP limit reached for {0},WIP limit reached for {0}
+Failed to move card,Failed to move card
+No cards,No cards
+Calendar,Calendar
+Visual Calendar,Visual Calendar
+Month,Month
+Week,Week
+Day,Day
+Today,Today
+January,January
+February,February
+March,March
+April,April
+May,May
+June,June
+July,July
+August,August
+September,September
+October,October
+November,November
+December,December
+Sun,Sun
+Mon,Mon
+Tue,Tue
+Wed,Wed
+Thu,Thu
+Fri,Fri
+Sat,Sat
+more,more
+No events found,No events found
+Timeline,Timeline
+Visual Gantt,Visual Gantt
+Gantt Chart,Gantt Chart
+Fit,Fit
+No tasks found,No tasks found
+Tree,Tree
+Visual Tree View,Visual Tree View
+Expand All,Expand All
+Collapse All,Collapse All
+No records found,No records found
+Map,Map
+Visual Map,Visual Map
+My Location,My Location
+Gallery,Gallery
+Visual Gallery,Visual Gallery
+No images found,No images found
+Form Dashboard,Form Dashboard
+Visual Form Dashboard,Visual Form Dashboard
+Linked Types,Linked Types
+Select Icon,Select Icon
+Search icons...,Search icons...
+Please select an icon,Please select an icon
+Interactive Application Explorer,Interactive Application Explorer
+Application,Application
+Frappe Visual,Frappe Visual
+Graph-based Visual UX Framework,Graph-based Visual UX Framework
+Graph-based Visual UX Framework for Frappe applications,Graph-based Visual UX Framework for Frappe applications
+15 interactive components • 3000+ icons • Full RTL & dark mode support,15 interactive components • 3000+ icons • Full RTL & dark mode support
+"15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards.","15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards."
+Components,Components
+Icons,Icons
+Tests,Tests
+Graph Components,Graph Components
+Visualize your data relationships,Visualize your data relationships
+Interactive app/module/DocType graph explorer with multiple layout engines,Interactive app/module/DocType graph explorer with multiple layout engines
+ERD,ERD
+Entity Relationship Diagrams showing DocType links and child tables,Entity Relationship Diagrams showing DocType links and child tables
+Dependency Graph,Dependency Graph
+Workflow and dependency chain visualization,Workflow and dependency chain visualization
+Tree View,Tree View
+Hierarchical tree with expand/collapse and search,Hierarchical tree with expand/collapse and search
+UI Components,UI Components
+Rich interactive widgets,Rich interactive widgets
+Month/week/day event calendar with drag support,Month/week/day event calendar with drag support
+Kanban Board,Kanban Board
+Drag-and-drop cards with WIP limits,Drag-and-drop cards with WIP limits
+Project timeline with task dependencies,Project timeline with task dependencies
+Image gallery with lightbox and zoom,Image gallery with lightbox and zoom
+Geographic map with clustering and markers,Geographic map with clustering and markers
+Visual linked-document dashboard on forms,Visual linked-document dashboard on forms
+Storyboard,Storyboard
+Guided walkthroughs and onboarding slides,Guided walkthroughs and onboarding slides
+"Draggable, resizable overlay containers","Draggable, resizable overlay containers"
+Core Infrastructure,Core Infrastructure
+Powerful engines under the hood,Powerful engines under the hood
+Cytoscape.js with 8 layout algorithms including ELK.js,Cytoscape.js with 8 layout algorithms including ELK.js
+"GSAP-powered stagger, morph, and scroll animations","GSAP-powered stagger, morph, and scroll animations"
+"Auto dark mode, RTL, and 55+ CSS design tokens","Auto dark mode, RTL, and 55+ CSS design tokens"
+"Force-directed, hierarchical, radial, grid, and more","Force-directed, hierarchical, radial, grid, and more"
+Navigation overview for large graphs,Navigation overview for large graphs
+Right-click actions on graph nodes and edges,Right-click actions on graph nodes and edges
+Icon System,Icon System
+3000+ Tabler icons with smart DocType mapping,3000+ Tabler icons with smart DocType mapping
+Technology Stack,Technology Stack
+Built on battle-tested libraries,Built on battle-tested libraries
+Graph rendering & interaction,Graph rendering & interaction
+Advanced layout algorithms,Advanced layout algorithms
+Professional animations,Professional animations
+After Effects animations,After Effects animations
+3000+ premium icons,3000+ premium icons
+Getting Started,Getting Started
+Start building visual experiences,Start building visual experiences
+One line to create an interactive application graph,One line to create an interactive application graph
+About Frappe Visual,About Frappe Visual
+Home,Home
+View Visual Hub,View Visual Hub
+Use App Map,Use App Map
+Use ERD Explorer,Use ERD Explorer
+Use Storyboard,Use Storyboard
+Use Kanban Board,Use Kanban Board
+Use Calendar,Use Calendar
+Use Gantt Chart,Use Gantt Chart
+Use Map,Use Map
+Use Gallery,Use Gallery
+Use Tree View,Use Tree View
+Change Layout Algorithm,Change Layout Algorithm
+Manage Settings,Manage Settings
+View Statistics,View Statistics
+Frappe Visual Viewer,Frappe Visual Viewer
+Frappe Visual Power User,Frappe Visual Power User
+Frappe Visual Administrator,Frappe Visual Administrator
+About,About
+ERD Explorer,ERD Explorer
+Configuration & Docs,Configuration & Docs
+Icon Explorer,Icon Explorer
+Interactive app/module/DocType graph explorer,Interactive app/module/DocType graph explorer
+Entity Relationship Diagrams for DocTypes,Entity Relationship Diagrams for DocTypes
+Workflow & dependency visualization,Workflow & dependency visualization
+Hierarchical tree visualization,Hierarchical tree visualization
+Month/week/day visual calendar,Month/week/day visual calendar
+Drag-and-drop Kanban boards,Drag-and-drop Kanban boards
+Project timeline Gantt bars,Project timeline Gantt bars
+Image gallery with lightbox,Image gallery with lightbox
+Geographic map with markers,Geographic map with markers
+Visual linked-document dashboard,Visual linked-document dashboard
+Guided walkthroughs & onboarding,Guided walkthroughs & onboarding
+Draggable overlay container,Draggable overlay container
+"License, display, and theme settings","License, display, and theme settings"
+Browse and search 3000+ Tabler icons,Browse and search 3000+ Tabler icons
+App showcase for admins and decision makers,App showcase for admins and decision makers
+License Information,License Information
+General Settings,General Settings
+Auto Dark Mode Detection,Auto Dark Mode Detection
+Auto RTL Detection,Auto RTL Detection
+Export as SVG,Export as SVG
+Export as PNG,Export as PNG
+Visual Hub,Visual Hub
+Visual Templates Demo,Visual Templates Demo
+Click any button above to preview a template,Click any button above to preview a template
+8 Ready-to-use Templates,8 Ready-to-use Templates
+Bilingual Tooltip System,Bilingual Tooltip System
+Premium Visual Effects,Premium Visual Effects
+Full RTL Support,Full RTL Support
+Toggle Bilingual Tips,Toggle Bilingual Tips
+Bilingual tooltips enabled,Bilingual tooltips enabled
+Bilingual tooltips disabled,Bilingual tooltips disabled
+Sales Dashboard,Sales Dashboard
+Real-time business metrics,Real-time business metrics
+Total Revenue,Total Revenue
+New Orders,New Orders
+Active Customers,Active Customers
+Pending Invoices,Pending Invoices
+Monthly Sales,Monthly Sales
+Revenue by Region,Revenue by Region
+New Invoice,New Invoice
+New Order,New Order
+Add Customer,Add Customer
+View Reports,View Reports
+Customer Relationships,Customer Relationships
+Entity relationship diagram for Customer doctype,Entity relationship diagram for Customer doctype
+Order Processing Workflow,Order Processing Workflow
+From order creation to delivery,From order creation to delivery
+Draft,Draft
+Submitted,Submitted
+Approved,Approved
+Processing,Processing
+Shipped,Shipped
+Delivered,Delivered
+Order created pending submission,Order created pending submission
+Order submitted for approval,Order submitted for approval
+Order approved by manager,Order approved by manager
+Order being prepared,Order being prepared
+Order dispatched,Order dispatched
+Order delivered to customer,Order delivered to customer
+Reject,Reject
+Organization Structure,Organization Structure
+Company departments and hierarchy,Company departments and hierarchy
+CEO,CEO
+CTO,CTO
+CFO,CFO
+COO,COO
+Dev Lead,Dev Lead
+QA Lead,QA Lead
+Accounting,Accounting
+Treasury,Treasury
+HR,HR
+Operations,Operations
+Setup Wizard,Setup Wizard
+Complete the following steps to get started,Complete the following steps to get started
+Company Details,Company Details
+Enter your company information to get started,Enter your company information to get started
+Company Name,Company Name
+Enter company name,Enter company name
+Industry,Industry
+Select industry,Select industry
+Technology,Technology
+Manufacturing,Manufacturing
+Retail,Retail
+Add Users,Add Users
+Invite team members to your workspace,Invite team members to your workspace
+Email Address,Email Address
+Role,Role
+Admin,Admin
+Manager,Manager
+User,User
+Configure your preferences,Configure your preferences
+Enable notifications,Enable notifications
+Auto-backup data,Auto-backup data
+Enable dark mode,Enable dark mode
+Setup Complete!,Setup Complete!
+You're all set. Click Finish to start using the system.,You're all set. Click Finish to start using the system.
+Wizard completed successfully!,Wizard completed successfully!
+Project Tasks,Project Tasks
+Drag and drop to organize tasks,Drag and drop to organize tasks
+Backlog,Backlog
+To Do,To Do
+In Progress,In Progress
+Review,Review
+Done,Done
+Research competitors,Research competitors
+Write documentation,Write documentation
+Design mockups,Design mockups
+API integration,API integration
+Frontend development,Frontend development
+Database optimization,Database optimization
+Code review,Code review
+Project setup,Project setup
+Initial planning,Initial planning
+Project Timeline,Project Timeline
+Q2 2026 Development Roadmap,Q2 2026 Development Roadmap
+Phase 1: Planning,Phase 1: Planning
+Phase 2: Design,Phase 2: Design
+Phase 3: Development,Phase 3: Development
+Phase 4: Testing,Phase 4: Testing
+Phase 5: Launch,Phase 5: Launch
+Visual GUI Framework for Frappe,Visual GUI Framework for Frappe
+15 Visual Components,15 Visual Components
+From graphs to kanban boards everything you need,From graphs to kanban boards everything you need
+3000+ Icons,3000+ Icons
+Tabler Icons with smart DocType mapping,Tabler Icons with smart DocType mapping
+Built for Arabic and Hebrew from the ground up,Built for Arabic and Hebrew from the ground up
+Premium Animations,Premium Animations
+GSAP-powered smooth animations everywhere,GSAP-powered smooth animations everywhere
+Get Started,Get Started
+Documentation,Documentation
+Generating page for,Generating page for
+Failed to load app info,Failed to load app info
+Key Features,Key Features
+Application Structure,Application Structure
+Data Relationships,Data Relationships
+User Roles,User Roles
+Ready to get started?,Ready to get started?
+Explore all the features and capabilities,Explore all the features and capabilities
+Reports Hub,Reports Hub
+reports available,reports available
+Search reports...,Search reports...
+Standard,Standard
+Welcome to,Welcome to
+Let's get you started with a quick tour,Let's get you started with a quick tour
+Finish,Finish
+Onboarding complete!,Onboarding complete!
+Settings saved successfully,Settings saved successfully
+Configure your settings,Configure your settings
+Failed to load settings,Failed to load settings
+Failed to load reports,Failed to load reports
+Query Report,Query Report
+Script Report,Script Report
+Report Builder,Report Builder
+Other,Other
+Search...,Search...
+records,records
+No records found,No records found
+Create first,Create first
+Failed to load data,Failed to load data
+Retry,Retry
+Cards,Cards
+List,List
+Kanban,Kanban
+Quick entry form,Quick entry form
+Full Form,Full Form
+Created successfully,Created successfully
+Saved successfully,Saved successfully
+Linked Documents,Linked Documents
+No linked documents,No linked documents
+Failed to load links,Failed to load links
+more,more
+Modified,Modified
+View,View
+Edit,Edit
+Delete,Delete
+Select...,Select...
+View file,View file
+Status,Status
+Created By,Created By
+Last Modified,Last Modified
+Linked Documents,Linked Documents
+Connection Types,Connection Types
+Relationships,Relationships
+Expand,Expand
+Quick Navigation,Quick Navigation
+Total documents,Total documents
+Table View,Table View
+Card View,Card View
+Kanban View,Kanban View
+Timeline View,Timeline View
+No records found,No records found
+No status field found for Kanban view,No status field found for Kanban view
+This DocType needs a Select field with status options,This DocType needs a Select field with status options
+No status options defined,No status options defined
+Empty,Empty
+Loading relationship explorer...,Loading relationship explorer...
+Draft,Draft
+Submitted,Submitted
+Cancelled,Cancelled
+Active,Active
+Enabled,Enabled
+Approved,Approved
+Completed,Completed
+Open,Open
+Closed,Closed
+Rejected,Rejected
+Disabled,Disabled
+Pending,Pending
+On Hold,On Hold
+In Progress,In Progress
