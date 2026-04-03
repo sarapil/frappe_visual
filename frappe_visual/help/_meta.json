@@ -1,0 +1,12 @@
+{
+  "app": "frappe_visual",
+  "name": "Frappe Visual",
+  "icon": "chart-dots",
+  "color": "#9B59B6",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "default_language": "en",
+  "fallback_language": "en"
+}

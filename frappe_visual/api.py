@@ -344,7 +344,6 @@ def get_form_dashboard_data(doctype, docname, depth=1):
 		dict with 'nodes', 'edges', and 'stats'
 	"""
 	frappe.only_for(["System Manager"])
-	frappe.only_for(["System Manager"])
 	frappe.has_permission(doctype, "read", throw=True)
 	depth = int(depth)
 
@@ -451,7 +450,6 @@ def get_kanban_data(doctype, fieldname, fields=None, filters=None, order_by=None
 	Returns:
 		dict with 'cards' list and 'columns' metadata
 	"""
-	frappe.only_for(["System Manager"])
 	frappe.only_for(["System Manager"])
 	frappe.has_permission(doctype, "read", throw=True)
 
