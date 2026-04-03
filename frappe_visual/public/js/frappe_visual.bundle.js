@@ -76,6 +76,17 @@ import { VisualFunnel } from "./components/visual_funnel";
 import { VisualRadar } from "./components/visual_radar";
 import { VisualReportPro } from "./components/visual_report_pro";
 
+// ── UX Power Suite ───────────────────────────────────────────────
+import { CommandPalette } from "./components/command_palette";
+import { WorkflowBuilder } from "./components/workflow_builder";
+import { SparklineEngine } from "./components/sparkline_engine";
+import { NotificationCenter } from "./components/notification_center";
+import { PivotTable } from "./components/pivot_table";
+import { DataStorytelling } from "./components/data_storytelling";
+import { VisualDiff } from "./components/visual_diff";
+import { WizardPro } from "./components/wizard_pro";
+import { AIChatWidget } from "./components/ai_chat_widget";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -137,6 +148,17 @@ frappe.visual.Funnel = VisualFunnel;
 frappe.visual.Radar = VisualRadar;
 frappe.visual.ReportPro = VisualReportPro;
 
+// UX Power Suite
+frappe.visual.CommandPalette = CommandPalette;
+frappe.visual.WorkflowBuilder = WorkflowBuilder;
+frappe.visual.SparklineEngine = SparklineEngine;
+frappe.visual.NotificationCenter = NotificationCenter;
+frappe.visual.PivotTable = PivotTable;
+frappe.visual.DataStorytelling = DataStorytelling;
+frappe.visual.VisualDiff = VisualDiff;
+frappe.visual.WizardPro = WizardPro;
+frappe.visual.AIChatWidget = AIChatWidget;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -148,7 +170,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 30+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 40+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

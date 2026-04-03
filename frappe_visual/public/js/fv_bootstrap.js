@@ -222,6 +222,62 @@
 		return frappe.visual.ReportPro.create(container, opts);
 	};
 
+	// ── UX Power Suite Shorthands ─────────────────────────────────
+
+	/** Command Palette — Cmd+K spotlight search */
+	frappe.visual.commandPalette = async function (opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CommandPalette.create(opts);
+	};
+
+	/** Workflow Builder — visual drag-drop workflow editor */
+	frappe.visual.workflowBuilder = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.WorkflowBuilder.create(container, opts);
+	};
+
+	/** Sparkline — inline micro-charts */
+	frappe.visual.sparkline = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SparklineEngine.create(container, opts);
+	};
+
+	/** Notification Center — premium notification panel */
+	frappe.visual.notifications = async function (opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.NotificationCenter.create(opts);
+	};
+
+	/** Pivot Table — interactive pivot with drag-drop zones */
+	frappe.visual.pivotTable = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.PivotTable.create(container, opts);
+	};
+
+	/** Data Storytelling — scrollytelling with animated data reveals */
+	frappe.visual.storytelling = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.DataStorytelling.create(container, opts);
+	};
+
+	/** Visual Diff — side-by-side document comparison */
+	frappe.visual.diff = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.VisualDiff.create(container, opts);
+	};
+
+	/** Wizard Pro — multi-step form wizard with validation */
+	frappe.visual.wizard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.WizardPro.create(container, opts);
+	};
+
+	/** AI Chat Widget — AI assistant chat panel */
+	frappe.visual.aiChat = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.AIChatWidget.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
