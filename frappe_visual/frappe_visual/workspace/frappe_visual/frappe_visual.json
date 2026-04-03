@@ -243,6 +243,18 @@
       "onboard": 0,
       "description": "App showcase for admins and decision makers",
       "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Templates Demo",
+      "link_to": "visual-templates-demo",
+      "link_type": "Page",
+      "icon": "layout-grid",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Interactive demo of all 8 page templates",
+      "link_count": 0
     }
   ],
   "charts": [],

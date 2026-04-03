@@ -169,6 +169,17 @@ def after_install():
     frappe.logger().info(f"[{APP_NAME}] Icon installation complete")
 
 
+
+    # ── Desktop Icon injection (Frappe v16 /desk) ──
+    from frappe_visual.desktop_utils import inject_app_desktop_icon
+    inject_app_desktop_icon(
+        app="frappe_visual",
+        label="Frappe Visual",
+        route="/app/visual-hub",
+        logo_url="/assets/frappe_visual/images/frappe_visual-logo.svg",
+        bg_color="#4F46E5",
+    )
+
 def after_migrate():
     """
     Called after bench migrate.

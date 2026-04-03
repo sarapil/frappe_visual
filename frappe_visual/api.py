@@ -523,3 +523,324 @@ def get_kanban_data(doctype, fieldname, fields=None, filters=None, order_by=None
 		"columns": columns,
 		"total": len(cards),
 	}
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# BILINGUAL TOOLTIP SUPPORT
+# ═══════════════════════════════════════════════════════════════════════════
+
+@frappe.whitelist(allow_guest=True)
+def get_reverse_translation(arabic_text):
+	"""
+	Find the English source string for a given Arabic translation.
+	Used by bilingual_tooltip.js to show English hints on Arabic text.
+
+	Args:
+	    arabic_text: The Arabic string to look up
+
+	Returns:
+	    The English source string if found, else None
+	"""
+	if not arabic_text or not isinstance(arabic_text, str):
+		return None
+
+	arabic_text = arabic_text.strip()
+	if not arabic_text:
+		return None
+
+	# Try frappe's translation cache first (reverse lookup)
+	try:
+		# Get all translations for Arabic
+		translations = frappe.get_all(
+			"Translation",
+			filters={
+				"language": ["in", ["ar", "ar-SA", "ar-EG", "ar-AE"]],
+				"translated_text": arabic_text,
+			},
+			fields=["source_text"],
+			limit=1,
+		)
+		if translations:
+			return translations[0].source_text
+
+		# Also check partial match for longer strings
+		if len(arabic_text) > 5:
+			translations = frappe.get_all(
+				"Translation",
+				filters={
+					"language": ["in", ["ar", "ar-SA", "ar-EG", "ar-AE"]],
+					"translated_text": ["like", f"%{arabic_text}%"],
+				},
+				fields=["source_text", "translated_text"],
+				limit=5,
+			)
+			for t in translations:
+				if t.translated_text.strip() == arabic_text:
+					return t.source_text
+	except Exception:
+		pass
+
+	return None
+
+
+@frappe.whitelist()
+def get_tree_data(doctype, parent_field="parent"):
+	"""
+	Get hierarchical tree data for a DocType with a self-referencing parent field.
+
+	Args:
+	    doctype: The DocType name
+	    parent_field: The field that contains the parent reference
+
+	Returns:
+	    Nested tree structure suitable for VisualTreeView
+	"""
+	frappe.has_permission(doctype, "read", throw=True)
+
+	# Get all records
+	records = frappe.get_all(
+		doctype,
+		fields=["name", parent_field, "modified"],
+		filters={},
+		order_by="name",
+		limit_page_length=0,
+	)
+
+	# Build lookup
+	lookup = {r.name: r for r in records}
+	children_map = {}
+
+	for r in records:
+		parent = r.get(parent_field)
+		if parent:
+			if parent not in children_map:
+				children_map[parent] = []
+			children_map[parent].append(r.name)
+
+	def build_tree(name, depth=0):
+		"""Recursively build tree node."""
+		node = {
+			"id": name,
+			"label": name,
+			"children": [],
+			"depth": depth,
+		}
+		if name in children_map:
+			for child_name in children_map[name]:
+				node["children"].append(build_tree(child_name, depth + 1))
+		return node
+
+	# Find root nodes (no parent or parent not in records)
+	roots = []
+	for r in records:
+		parent = r.get(parent_field)
+		if not parent or parent not in lookup:
+			roots.append(build_tree(r.name))
+
+	return roots
+
+
+@frappe.whitelist()
+def get_app_info(app_name):
+	"""
+	Get comprehensive app information for the About page generator.
+	Returns app metadata, statistics, modules, doctypes, and reports.
+	"""
+	frappe.has_permission("DocType", "read", throw=True)
+
+	# Get app details from installed_apps
+	from frappe.utils.change_log import get_versions
+	versions = get_versions() or {}
+	app_version = versions.get(app_name, {})
+
+	# Get app hooks
+	try:
+		hooks = frappe.get_hooks(app_name=app_name)
+	except Exception:
+		hooks = {}
+
+	# Get modules
+	modules = frappe.get_all(
+		"Module Def",
+		filters={"app_name": app_name},
+		fields=["name", "module_name"],
+	)
+
+	# Get doctypes count
+	doctypes_count = 0
+	for mod in modules:
+		doctypes_count += frappe.db.count("DocType", {"module": mod.name, "custom": 0})
+
+	# Get reports count
+	reports_count = 0
+	for mod in modules:
+		reports_count += frappe.db.count("Report", {"module": mod.name, "disabled": 0})
+
+	# Get roles
+	roles = []
+	role_names = set()
+	for mod in modules:
+		mod_roles = frappe.get_all(
+			"Role",
+			filters=[["name", "like", f"%{mod.name.split()[0]}%"]],
+			fields=["name", "desk_access"],
+			limit=10,
+		)
+		for r in mod_roles:
+			if r.name not in role_names:
+				role_names.add(r.name)
+				roles.append({
+					"name": r.name,
+					"desk_access": r.desk_access,
+				})
+
+	# App title from hooks
+	app_title = hooks.get("app_title", [app_name])[0] if hooks.get("app_title") else app_name
+	app_description = hooks.get("app_description", [""])[0] if hooks.get("app_description") else ""
+	app_logo = hooks.get("app_logo_url", [""])[0] if hooks.get("app_logo_url") else ""
+	app_icon = hooks.get("app_icon", [""])[0] if hooks.get("app_icon") else ""
+	app_color = hooks.get("app_color", ["#6366f1"])[0] if hooks.get("app_color") else "#6366f1"
+
+	return {
+		"name": app_name,
+		"title": app_title,
+		"description": app_description,
+		"logo": app_logo,
+		"icon": app_icon,
+		"color": app_color,
+		"version": app_version.get("version", ""),
+		"modules_count": len(modules),
+		"doctypes_count": doctypes_count,
+		"reports_count": reports_count,
+		"modules": [{"name": m.name, "label": m.module_name or m.name} for m in modules],
+		"roles": roles,
+	}
+
+
+@frappe.whitelist()
+def get_module_reports(module):
+	"""
+	Get all reports for a module with categorization.
+	"""
+	frappe.has_permission("Report", "read", throw=True)
+
+	reports = frappe.get_all(
+		"Report",
+		filters={"module": module, "disabled": 0},
+		fields=["name", "report_name", "report_type", "description", "is_standard", "ref_doctype"],
+		order_by="report_name",
+	)
+
+	return reports
+
+
+@frappe.whitelist()
+def get_app_doctypes(app_name):
+	"""
+	Get all doctypes for an app with classification.
+	"""
+	frappe.has_permission("DocType", "read", throw=True)
+
+	modules = frappe.get_all(
+		"Module Def",
+		filters={"app_name": app_name},
+		pluck="name",
+	)
+
+	doctypes = []
+	for mod in modules:
+		dts = frappe.get_all(
+			"DocType",
+			filters={"module": mod, "custom": 0},
+			fields=["name", "module", "issingle", "istable", "is_submittable", "is_tree", "description"],
+		)
+		for dt in dts:
+			dt["type"] = _classify_doctype(dt)
+			doctypes.append(dt)
+
+	return doctypes
+
+
+@frappe.whitelist()
+def get_linked_document_counts(doctype, docname):
+	"""
+	Get counts of linked documents for a specific document.
+	Returns { "Sales Invoice": 3, "Delivery Note": 1, ... }
+	"""
+	frappe.has_permission(doctype, "read", throw=True)
+
+	counts = {}
+
+	# Get meta for the doctype
+	meta = frappe.get_meta(doctype)
+
+	# Find all doctypes that link to this one
+	linked_doctypes = frappe.get_all(
+		"DocField",
+		filters={
+			"fieldtype": "Link",
+			"options": doctype,
+			"parent": ["not in", [doctype]],
+			"parenttype": "DocType",
+		},
+		fields=["parent", "fieldname"],
+		group_by="parent",
+	)
+
+	for link in linked_doctypes:
+		try:
+			if not frappe.has_permission(link.parent, "read"):
+				continue
+
+			count = frappe.db.count(
+				link.parent,
+				filters={link.fieldname: docname},
+			)
+			if count > 0:
+				counts[link.parent] = count
+		except Exception:
+			pass  # Skip doctypes with permission or schema issues
+
+	# Also check child tables that reference this doctype
+	child_links = frappe.get_all(
+		"DocField",
+		filters={
+			"fieldtype": "Link",
+			"options": doctype,
+			"parenttype": "DocType",
+		},
+		fields=["parent", "fieldname"],
+	)
+
+	for cl in child_links:
+		try:
+			child_meta = frappe.get_meta(cl.parent)
+			if not child_meta.istable:
+				continue
+			# Find parent doctype of this child table
+			parent_links = frappe.get_all(
+				"DocField",
+				filters={
+					"fieldtype": "Table",
+					"options": cl.parent,
+					"parenttype": "DocType",
+				},
+				fields=["parent"],
+				limit=1,
+			)
+			if parent_links:
+				parent_dt = parent_links[0].parent
+				if parent_dt != doctype and parent_dt not in counts:
+					count = frappe.db.sql(
+						f"""SELECT COUNT(DISTINCT p.name)
+						FROM `tab{parent_dt}` p
+						INNER JOIN `tab{cl.parent}` c ON c.parent = p.name
+						WHERE c.`{cl.fieldname}` = %s""",
+						docname,
+					)[0][0]
+					if count > 0:
+						counts[parent_dt] = counts.get(parent_dt, 0) + count
+		except Exception:
+			pass
+
+	return counts

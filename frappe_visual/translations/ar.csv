@@ -272,3 +272,191 @@ Auto RTL Detection,الكشف التلقائي لـ RTL
 Export as SVG,تصدير كـ SVG
 Export as PNG,تصدير كـ PNG
 Visual Hub,المركز المرئي
+Visual Templates Demo,عرض توضيحي للقوالب المرئية
+Click any button above to preview a template,انقر على أي زر أعلاه لمعاينة قالب
+8 Ready-to-use Templates,8 قوالب جاهزة للاستخدام
+Bilingual Tooltip System,نظام التلميحات ثنائية اللغة
+Premium Visual Effects,تأثيرات مرئية احترافية
+Full RTL Support,دعم كامل للغات من اليمين لليسار
+Toggle Bilingual Tips,تبديل التلميحات ثنائية اللغة
+Bilingual tooltips enabled,تم تفعيل التلميحات ثنائية اللغة
+Bilingual tooltips disabled,تم تعطيل التلميحات ثنائية اللغة
+Sales Dashboard,لوحة المبيعات
+Real-time business metrics,مقاييس الأعمال في الوقت الفعلي
+Total Revenue,إجمالي الإيرادات
+New Orders,الطلبات الجديدة
+Active Customers,العملاء النشطون
+Pending Invoices,الفواتير المعلقة
+Monthly Sales,المبيعات الشهرية
+Revenue by Region,الإيرادات حسب المنطقة
+New Invoice,فاتورة جديدة
+New Order,طلب جديد
+Add Customer,إضافة عميل
+View Reports,عرض التقارير
+Customer Relationships,علاقات العملاء
+Entity relationship diagram for Customer doctype,مخطط علاقات الكيانات لنوع مستند العميل
+Order Processing Workflow,سير عمل معالجة الطلبات
+From order creation to delivery,من إنشاء الطلب إلى التسليم
+Draft,مسودة
+Submitted,مُرسَل
+Approved,موافق عليه
+Processing,قيد المعالجة
+Shipped,تم الشحن
+Delivered,تم التسليم
+Order created pending submission,تم إنشاء الطلب في انتظار الإرسال
+Order submitted for approval,تم إرسال الطلب للموافقة
+Order approved by manager,تمت الموافقة من المدير
+Order being prepared,جاري تحضير الطلب
+Order dispatched,تم إرسال الطلب
+Order delivered to customer,تم تسليم الطلب للعميل
+Reject,رفض
+Organization Structure,الهيكل التنظيمي
+Company departments and hierarchy,أقسام الشركة والتسلسل الهرمي
+CEO,الرئيس التنفيذي
+CTO,المدير التقني
+CFO,المدير المالي
+COO,مدير العمليات
+Dev Lead,قائد التطوير
+QA Lead,قائد الجودة
+Accounting,المحاسبة
+Treasury,الخزينة
+HR,الموارد البشرية
+Operations,العمليات
+Setup Wizard,معالج الإعداد
+Complete the following steps to get started,أكمل الخطوات التالية للبدء
+Company Details,بيانات الشركة
+Enter your company information to get started,أدخل معلومات شركتك للبدء
+Company Name,اسم الشركة
+Enter company name,أدخل اسم الشركة
+Industry,القطاع
+Select industry,اختر القطاع
+Technology,التقنية
+Manufacturing,التصنيع
+Retail,التجزئة
+Add Users,إضافة المستخدمين
+Invite team members to your workspace,دعوة أعضاء الفريق إلى مساحة العمل
+Email Address,البريد الإلكتروني
+Role,الدور
+Admin,مدير
+Manager,مسؤول
+User,مستخدم
+Configure your preferences,تكوين تفضيلاتك
+Enable notifications,تفعيل الإشعارات
+Auto-backup data,النسخ الاحتياطي التلقائي
+Enable dark mode,تفعيل الوضع الداكن
+Setup Complete!,اكتمل الإعداد!
+You're all set. Click Finish to start using the system.,أنت جاهز. انقر إنهاء لبدء استخدام النظام.
+Wizard completed successfully!,تم إكمال المعالج بنجاح!
+Project Tasks,مهام المشروع
+Drag and drop to organize tasks,اسحب وأفلت لتنظيم المهام
+Backlog,قائمة الانتظار
+To Do,للتنفيذ
+In Progress,قيد التنفيذ
+Review,المراجعة
+Done,مكتمل
+Research competitors,بحث المنافسين
+Write documentation,كتابة التوثيق
+Design mockups,تصميم النماذج
+API integration,دمج API
+Frontend development,تطوير الواجهة
+Database optimization,تحسين قاعدة البيانات
+Code review,مراجعة الكود
+Project setup,إعداد المشروع
+Initial planning,التخطيط الأولي
+Project Timeline,الجدول الزمني للمشروع
+Q2 2026 Development Roadmap,خارطة طريق التطوير للربع الثاني 2026
+Phase 1: Planning,المرحلة 1: التخطيط
+Phase 2: Design,المرحلة 2: التصميم
+Phase 3: Development,المرحلة 3: التطوير
+Phase 4: Testing,المرحلة 4: الاختبار
+Phase 5: Launch,المرحلة 5: الإطلاق
+Visual GUI Framework for Frappe,إطار عمل واجهة مستخدم رسومية لـ Frappe
+15 Visual Components,15 مكون مرئي
+From graphs to kanban boards everything you need,من الرسوم البيانية إلى لوحات كانبان كل ما تحتاجه
+3000+ Icons,أكثر من 3000 أيقونة
+Tabler Icons with smart DocType mapping,أيقونات Tabler مع ربط ذكي لأنواع المستندات
+Built for Arabic and Hebrew from the ground up,مبني للعربية والعبرية من الأساس
+Premium Animations,رسوم متحركة احترافية
+GSAP-powered smooth animations everywhere,رسوم متحركة سلسة بتقنية GSAP في كل مكان
+Get Started,ابدأ الآن
+Documentation,التوثيق
+Generating page for,جاري إنشاء صفحة لـ
+Failed to load app info,فشل في تحميل معلومات التطبيق
+Key Features,الميزات الرئيسية
+Application Structure,هيكل التطبيق
+Data Relationships,علاقات البيانات
+User Roles,أدوار المستخدمين
+Ready to get started?,جاهز للبدء؟
+Explore all the features and capabilities,استكشف جميع الميزات والإمكانيات
+Reports Hub,مركز التقارير
+reports available,تقرير متاح
+Search reports...,بحث في التقارير...
+Standard,قياسي
+Welcome to,مرحباً بك في
+Let's get you started with a quick tour,دعنا نبدأ معك بجولة سريعة
+Finish,إنهاء
+Onboarding complete!,اكتمل التعريف!
+Settings saved successfully,تم حفظ الإعدادات بنجاح
+Configure your settings,تكوين إعداداتك
+Failed to load settings,فشل في تحميل الإعدادات
+Failed to load reports,فشل في تحميل التقارير
+Query Report,تقرير استعلام
+Script Report,تقرير برمجي
+Report Builder,منشئ التقارير
+Other,أخرى
+Search...,بحث...
+records,سجل
+No records found,لم يتم العثور على سجلات
+Create first,إنشاء أول
+Failed to load data,فشل في تحميل البيانات
+Retry,إعادة المحاولة
+Cards,بطاقات
+List,قائمة
+Kanban,كانبان
+Quick entry form,نموذج إدخال سريع
+Full Form,النموذج الكامل
+Created successfully,تم الإنشاء بنجاح
+Saved successfully,تم الحفظ بنجاح
+Linked Documents,المستندات المرتبطة
+No linked documents,لا توجد مستندات مرتبطة
+Failed to load links,فشل في تحميل الروابط
+more,المزيد
+Modified,تم التعديل
+View,عرض
+Edit,تعديل
+Delete,حذف
+Select...,اختر...
+View file,عرض الملف
+Status,الحالة
+Created By,أنشأ بواسطة
+Last Modified,آخر تعديل
+Linked Documents,المستندات المرتبطة
+Connection Types,أنواع الاتصال
+Relationships,العلاقات
+Expand,توسيع
+Quick Navigation,تنقل سريع
+Total documents,إجمالي المستندات
+Table View,عرض الجدول
+Card View,عرض البطاقات
+Kanban View,عرض كانبان
+Timeline View,عرض الخط الزمني
+No records found,لا توجد سجلات
+No status field found for Kanban view,لم يتم العثور على حقل حالة لعرض كانبان
+This DocType needs a Select field with status options,يحتاج هذا النوع إلى حقل اختيار مع خيارات الحالة
+No status options defined,لم يتم تحديد خيارات الحالة
+Empty,فارغ
+Loading relationship explorer...,جاري تحميل مستكشف العلاقات...
+Draft,مسودة
+Submitted,مقدم
+Cancelled,ملغى
+Active,نشط
+Enabled,مفعل
+Approved,معتمد
+Completed,مكتمل
+Open,مفتوح
+Closed,مغلق
+Rejected,مرفوض
+Disabled,معطل
+Pending,معلق
+On Hold,في الانتظار
+In Progress,قيد التنفيذ

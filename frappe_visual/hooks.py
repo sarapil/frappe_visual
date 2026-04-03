@@ -36,6 +36,8 @@ app_include_css = [
     "/assets/frappe_visual/css/icons.css",
     # Brand CSS variables
     "/assets/frappe_visual/css/brand.css",
+    # Visual page templates
+    "/assets/frappe_visual/css/templates.css",
 ]
 
 # ─── Website Includes ─────────────────────────────────────────────
@@ -50,9 +52,8 @@ app_include_css = [
 # ═══════════════════════════════════════════════════════════════════
 after_install = "frappe_visual.setup.icons.after_install"
 
-after_migrate = ["frappe_visual.frappe_visual.seed.seed_data"]
+after_migrate = ["frappe_visual.seed.seed_data", "frappe_visual.setup.icons.after_migrate"]
 before_uninstall = "frappe_visual.setup.icons.before_uninstall"
-after_migrate = "frappe_visual.setup.icons.after_migrate"
 
 # Boot session (preload icon config)
 extend_bootinfo = "frappe_visual.setup.icons.extend_bootinfo"

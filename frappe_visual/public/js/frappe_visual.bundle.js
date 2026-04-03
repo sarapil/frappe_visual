@@ -56,6 +56,15 @@ import { VisualMap } from "./components/visual_map";
 import { VisualGallery } from "./components/visual_gallery";
 import { VisualFormDashboard } from "./components/visual_form_dashboard";
 
+// ── Utility Modules (auto-init) ──────────────────────────────────
+import "./utils/bilingual_tooltip";
+import "./utils/visual_page_templates";
+import "./utils/app_page_generator";
+import "./utils/doctype_visualizer";
+import "./utils/form_enhancer";
+import "./utils/list_enhancer";
+import "./utils/workspace_enhancer";
+
 // ── Register on frappe.visual namespace ──────────────────────────
 frappe.provide("frappe.visual");
 
@@ -99,7 +108,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — Cytoscape + ELK + GSAP",
+	"%c⬡ Frappe Visual Engine%c ready — Cytoscape + ELK + GSAP + Bilingual + Enhancers",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
