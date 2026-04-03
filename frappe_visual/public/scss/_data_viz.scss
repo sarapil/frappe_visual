@@ -1,0 +1,1119 @@
+// ═══════════════════════════════════════════════════════════════
+// Frappe Visual — Data Viz Suite Styles
+// ═══════════════════════════════════════════════════════════════
+// Covers: TimelinePro, FlowPro, OrgChart, Sankey, Treemap,
+//         HeatmapCalendar, Funnel, Radar, ReportPro,
+//         FormPro, ListPro, DashboardPro, WorkspacePro
+
+// ─── Variables ───────────────────────────────────────────────
+$fv-primary: #6366F1;
+$fv-bg: #ffffff;
+$fv-bg-alt: #f8fafc;
+$fv-text: #1e293b;
+$fv-text-muted: #64748b;
+$fv-border: #e2e8f0;
+$fv-shadow: 0 4px 20px rgba(0,0,0,0.08);
+$fv-radius: 12px;
+$fv-radius-sm: 8px;
+$fv-font: var(--font-stack, system-ui, -apple-system, sans-serif);
+$fv-glass-bg: rgba(255,255,255,0.75);
+$fv-glass-border: rgba(255,255,255,0.3);
+$fv-glass-blur: 12px;
+
+// ═══════════════════════════════════════════════════════════════
+// 1. TIMELINE PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-tl {
+  font-family: $fv-font;
+  color: $fv-text;
+
+  // Toolbar
+  &-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid $fv-border;
+    gap: 12px;
+  }
+
+  &-zoom-btns {
+    display: flex;
+    gap: 4px;
+  }
+
+  &-zoom-btn {
+    padding: 4px 12px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    color: $fv-text-muted;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.active, &:hover { background: $fv-primary; color: #fff; border-color: $fv-primary; }
+  }
+
+  &-layout-btn {
+    padding: 6px 10px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover { background: $fv-bg-alt; }
+  }
+
+  // Body
+  &-body {
+    padding: 16px;
+    overflow: auto;
+    max-height: 70vh;
+  }
+
+  // Groups
+  &-group {
+    margin-bottom: 24px;
+    &.collapsed .fv-tl-events { display: none; }
+    &.collapsed .fv-tl-group-toggle svg { transform: rotate(-90deg); }
+  }
+
+  &-group-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &-group-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: $fv-text;
+  }
+
+  &-group-count {
+    font-size: 12px;
+    color: $fv-text-muted;
+    background: $fv-bg-alt;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  &-group-toggle {
+    margin-inline-start: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $fv-text-muted;
+    svg { transition: transform 0.2s; }
+  }
+
+  // Events
+  &-events {
+    position: relative;
+    padding-inline-start: 20px;
+    &::before {
+      content: '';
+      position: absolute;
+      inset-inline-start: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: $fv-border;
+    }
+  }
+
+  &-event {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 8px 0;
+    cursor: pointer;
+    &:focus { outline: 2px solid $fv-primary; outline-offset: 2px; border-radius: $fv-radius-sm; }
+  }
+
+  &-event-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &-event-connector {
+    position: absolute;
+    inset-inline-start: -13px;
+    top: 12px;
+    width: 12px;
+    height: 2px;
+    background: $fv-border;
+  }
+
+  &-event-card {
+    flex: 1;
+    background: $fv-bg;
+    border: 1px solid $fv-border;
+    border-radius: $fv-radius-sm;
+    padding: 12px 16px;
+    box-shadow: $fv-shadow;
+    transition: all 0.2s;
+    &:hover { border-color: $fv-primary; transform: translateY(-1px); }
+  }
+
+  &-event-meta {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    color: $fv-text-muted;
+    margin-bottom: 6px;
+  }
+
+  &-event-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-event-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &-event-title { font-weight: 600; font-size: 14px; }
+  &-event-subtitle { font-size: 12px; color: $fv-text-muted; }
+  &-event-badge {
+    margin-inline-start: auto;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  &-event-desc { font-size: 13px; color: $fv-text-muted; margin-top: 8px; line-height: 1.5; }
+
+  // Empty
+  &-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: $fv-text-muted;
+    p { margin-top: 12px; }
+  }
+
+  // Legend
+  &-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    border-top: 1px solid $fv-border;
+  }
+  &-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: $fv-text-muted; }
+  &-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  // Horizontal layout
+  &--horizontal {
+    .fv-tl-body { display: flex; overflow-x: auto; padding: 20px; }
+    .fv-tl-group { display: flex; flex-direction: column; min-width: 300px; }
+    .fv-tl-events { padding-inline-start: 0; padding-top: 20px;
+      &::before { inset-inline-start: 0; top: 7px; bottom: auto; height: 2px; width: 100%; }
+    }
+    .fv-tl-event { flex-direction: column; }
+  }
+
+  // Glass theme
+  &--glass {
+    .fv-tl-event-card {
+      background: $fv-glass-bg;
+      backdrop-filter: blur($fv-glass-blur);
+      border-color: $fv-glass-border;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 2. FLOW PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-flow {
+  font-family: $fv-font;
+  position: relative;
+
+  &-toolbar {
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 8px;
+    inset-inline-end: 8px;
+    z-index: 10;
+  }
+
+  &-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    &:hover { background: $fv-primary; color: #fff; }
+  }
+
+  &-viewport {
+    overflow: hidden;
+    cursor: grab;
+    min-height: 300px;
+    &:active { cursor: grabbing; }
+  }
+
+  &-svg {
+    transition: transform 0.15s;
+  }
+
+  &-node { cursor: pointer;
+    &:hover rect, &:hover ellipse, &:hover polygon {
+      stroke-width: 3;
+      filter: brightness(1.05);
+    }
+  }
+
+  &-node-label {
+    font-size: 13px;
+    font-weight: 500;
+    fill: $fv-text;
+    pointer-events: none;
+  }
+
+  &-edge-label {
+    font-size: 11px;
+    fill: $fv-text-muted;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 3. ORG CHART
+// ═══════════════════════════════════════════════════════════════
+.fv-org {
+  font-family: $fv-font;
+  position: relative;
+
+  &-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-bottom: 1px solid $fv-border;
+  }
+
+  &-search {
+    padding: 6px 12px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    font-size: 13px;
+    min-width: 200px;
+    &:focus { outline: none; border-color: $fv-primary; }
+  }
+
+  &-btns { display: flex; gap: 4px; margin-inline-start: auto; }
+
+  &-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover { background: $fv-primary; color: #fff; }
+  }
+
+  &-viewport {
+    overflow: hidden;
+    cursor: grab;
+    min-height: 400px;
+    &:active { cursor: grabbing; }
+  }
+
+  &-svg { transition: transform 0.15s; }
+
+  &-card {
+    cursor: pointer;
+    &:hover rect:first-child {
+      stroke-width: 2.5;
+      filter: brightness(0.97);
+    }
+  }
+
+  &-name { font-size: 12px; font-weight: 600; fill: $fv-text; }
+  &-role { font-size: 10px; fill: $fv-text-muted; }
+  &-dept { font-size: 9px; fill: $fv-text-muted; font-style: italic; }
+  &-initials { font-size: 14px; font-weight: 700; }
+  &-toggle { cursor: pointer; }
+  &-toggle-text { font-size: 11px; font-weight: 600; fill: $fv-text; }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 4. SANKEY
+// ═══════════════════════════════════════════════════════════════
+.fv-sankey {
+  font-family: $fv-font;
+
+  &-svg { overflow: visible; }
+
+  &-link {
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.8 !important; }
+  }
+
+  &-node rect {
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.9; }
+  }
+
+  &-label {
+    font-size: 12px;
+    fill: $fv-text;
+    font-weight: 500;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 5. TREEMAP
+// ═══════════════════════════════════════════════════════════════
+.fv-tm {
+  font-family: $fv-font;
+
+  &-breadcrumb {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: $fv-text-muted;
+    border-bottom: 1px solid $fv-border;
+  }
+
+  &-bc-item {
+    cursor: pointer;
+    color: $fv-primary;
+    &:hover { text-decoration: underline; }
+  }
+
+  &-bc-current { font-weight: 600; color: $fv-text; }
+
+  &-viewport { overflow: hidden; }
+
+  &-cell {
+    cursor: pointer;
+    rect { transition: opacity 0.2s; }
+  }
+
+  &-label {
+    font-size: 12px;
+    fill: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+
+  &-value {
+    font-size: 11px;
+    fill: rgba(255,255,255,0.8);
+    pointer-events: none;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 6. HEATMAP CALENDAR
+// ═══════════════════════════════════════════════════════════════
+.fv-hm {
+  font-family: $fv-font;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  &-nav-btn {
+    background: none;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    &:hover { background: $fv-bg-alt; }
+  }
+
+  &-year { font-size: 18px; font-weight: 700; color: $fv-text; }
+  &-label { font-size: 13px; color: $fv-text-muted; }
+
+  &-viewport {
+    overflow-x: auto;
+    padding: 4px 16px;
+  }
+
+  &-cell {
+    transition: opacity 0.15s;
+    &:hover { opacity: 0.8; stroke: $fv-text; stroke-width: 1; }
+  }
+
+  &-day-label, &-month-label {
+    font-size: 10px;
+    fill: $fv-text-muted;
+  }
+
+  &-legend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    justify-content: flex-end;
+  }
+
+  &-legend-text { font-size: 11px; color: $fv-text-muted; }
+
+  &-legend-cell {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 7. FUNNEL
+// ═══════════════════════════════════════════════════════════════
+.fv-funnel {
+  font-family: $fv-font;
+
+  &-svg { overflow: visible; }
+
+  &-stage {
+    transition: opacity 0.2s;
+  }
+
+  &-label {
+    font-size: 13px;
+    font-weight: 600;
+    fill: $fv-text;
+  }
+
+  &-value {
+    font-size: 11px;
+    fill: $fv-text-muted;
+  }
+
+  &-center-val {
+    font-size: 13px;
+    font-weight: 700;
+    fill: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+
+  &-empty {
+    text-align: center;
+    padding: 40px;
+    color: $fv-text-muted;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 8. RADAR
+// ═══════════════════════════════════════════════════════════════
+.fv-radar {
+  font-family: $fv-font;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-viewport { display: flex; justify-content: center; }
+
+  &-svg { overflow: visible; }
+
+  &-area {
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.8 !important; }
+  }
+
+  &-dot {
+    transition: r 0.2s;
+    &:hover { r: 6; }
+  }
+
+  &-axis-label {
+    font-size: 12px;
+    fill: $fv-text;
+    font-weight: 500;
+  }
+
+  &-ring-val {
+    font-size: 9px;
+    fill: $fv-text-muted;
+  }
+
+  &-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  &-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.7; }
+  }
+
+  &-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  &-empty { text-align: center; padding: 40px; color: $fv-text-muted; }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 9. REPORT PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-rpt {
+  font-family: $fv-font;
+  border: 1px solid $fv-border;
+  border-radius: $fv-radius;
+  overflow: hidden;
+  background: $fv-bg;
+
+  &-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid $fv-border;
+    background: $fv-bg-alt;
+  }
+
+  &-title { font-size: 16px; font-weight: 600; margin: 0; }
+  &-subtitle { font-size: 12px; color: $fv-text-muted; }
+
+  &-toolbar-right { display: flex; gap: 6px; align-items: center; }
+  &-export-group { display: flex; gap: 4px; }
+
+  &-btn {
+    padding: 6px 12px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover { background: $fv-primary; color: #fff; border-color: $fv-primary; }
+    &.active { background: $fv-primary; color: #fff; border-color: $fv-primary; }
+    &:disabled { opacity: 0.4; cursor: not-allowed; }
+  }
+
+  // Filters
+  &-filters {
+    padding: 8px 16px;
+    border-bottom: 1px solid $fv-border;
+    display: flex;
+    gap: 8px;
+  }
+
+  &-search {
+    padding: 6px 12px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 300px;
+    &:focus { outline: none; border-color: $fv-primary; }
+  }
+
+  // Table
+  &-body { overflow: auto; max-height: 65vh; }
+
+  &-table-wrap {
+    overflow: auto;
+  }
+
+  &-sticky thead { position: sticky; top: 0; z-index: 5; }
+
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  &-th {
+    padding: 10px 12px;
+    text-align: start;
+    font-weight: 600;
+    background: $fv-bg-alt;
+    border-bottom: 2px solid $fv-border;
+    white-space: nowrap;
+    user-select: none;
+    &.sortable { cursor: pointer; &:hover { color: $fv-primary; } }
+  }
+
+  &-td {
+    padding: 8px 12px;
+    border-bottom: 1px solid $fv-border;
+    &--currency { text-align: end; font-variant-numeric: tabular-nums; }
+    &--int, &--float { text-align: end; font-variant-numeric: tabular-nums; }
+    &--agg { background: rgba($fv-primary, 0.04); }
+  }
+
+  &-row {
+    transition: background 0.15s;
+    &:hover { background: rgba($fv-primary, 0.04); }
+  }
+
+  &-group-row {
+    td {
+      padding: 10px 12px;
+      background: rgba($fv-primary, 0.08);
+      font-size: 13px;
+    }
+  }
+
+  &-group-count {
+    font-size: 11px;
+    color: $fv-text-muted;
+    margin-inline-start: 4px;
+  }
+
+  &-subtotal td { background: rgba($fv-primary, 0.06); font-weight: 500; border-top: 1px dashed $fv-border; }
+  &-total td { background: rgba($fv-primary, 0.1); font-weight: 700; }
+
+  // Footer
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-top: 1px solid $fv-border;
+    font-size: 12px;
+    color: $fv-text-muted;
+  }
+
+  &-pagination { display: flex; align-items: center; gap: 8px; }
+
+  &-empty {
+    text-align: center;
+    padding: 40px;
+    color: $fv-text-muted;
+    font-size: 14px;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 10. FORM PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-fp {
+  &-header {
+    padding: 16px 20px;
+    border-radius: $fv-radius $fv-radius 0 0;
+    color: #fff;
+    h2 { margin: 0; font-size: 20px; }
+  }
+
+  &-stats-ribbon {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    background: $fv-bg-alt;
+    border-bottom: 1px solid $fv-border;
+    overflow-x: auto;
+  }
+
+  &-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: $fv-radius-sm;
+    background: $fv-bg;
+    border: 1px solid $fv-border;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    &:hover { border-color: $fv-primary; transform: translateY(-1px); }
+  }
+
+  &-stat-value { font-weight: 700; color: $fv-primary; }
+
+  &-quick-bar {
+    display: flex;
+    gap: 8px;
+    padding: 8px 20px;
+    border-bottom: 1px solid $fv-border;
+  }
+
+  &-quick-btn {
+    padding: 6px 14px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    background: $fv-bg;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover { background: $fv-primary; color: #fff; }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 11. LIST PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-lp {
+  border: 1px solid $fv-border;
+  border-radius: $fv-radius;
+  background: $fv-bg;
+
+  &-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid $fv-border;
+  }
+
+  &-search {
+    flex: 1;
+    padding: 6px 12px;
+    border: 1px solid $fv-border;
+    border-radius: 6px;
+    font-size: 13px;
+    &:focus { outline: none; border-color: $fv-primary; }
+  }
+
+  &-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+
+  &-card {
+    border: 1px solid $fv-border;
+    border-radius: $fv-radius-sm;
+    padding: 16px;
+    background: $fv-bg;
+    box-shadow: $fv-shadow;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover { border-color: $fv-primary; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+  }
+
+  &-card-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  &-card-subtitle { font-size: 12px; color: $fv-text-muted; }
+  &-card-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+
+  &-bulk-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: rgba($fv-primary, 0.08);
+    border-top: 1px solid $fv-border;
+    font-size: 13px;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 12. DASHBOARD PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-dp {
+  &-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid $fv-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-title { font-size: 18px; font-weight: 700; }
+  &-subtitle { font-size: 13px; color: $fv-text-muted; }
+
+  &-grid {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  &-widget {
+    border: 1px solid $fv-border;
+    border-radius: $fv-radius;
+    background: $fv-bg;
+    box-shadow: $fv-shadow;
+    overflow: hidden;
+    transition: all 0.2s;
+    &:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+  }
+
+  &-widget-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid $fv-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &-widget-body { padding: 16px; }
+
+  &-kpi {
+    text-align: center;
+    &-value { font-size: 28px; font-weight: 700; color: $fv-primary; }
+    &-label { font-size: 12px; color: $fv-text-muted; margin-top: 4px; }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 13. WORKSPACE PRO
+// ═══════════════════════════════════════════════════════════════
+.fv-wp {
+  &-shell { font-family: $fv-font; }
+
+  &-hero {
+    padding: 24px;
+    border-radius: $fv-radius;
+    margin: 16px;
+    color: #fff;
+  }
+
+  &-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-hero-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  &-hero-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-hero-title { font-size: 22px; font-weight: 700; margin: 0; }
+  &-hero-sub { font-size: 14px; opacity: 0.85; margin: 4px 0 0; }
+
+  &-onboarding {
+    margin-top: 16px;
+    &-text { font-size: 12px; margin-bottom: 6px; }
+  }
+
+  &-ob-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &-ob-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  &-search {
+    padding: 0 16px;
+    margin-bottom: 12px;
+  }
+
+  &-search-input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid $fv-border;
+    border-radius: $fv-radius-sm;
+    font-size: 14px;
+    &:focus { outline: none; border-color: $fv-primary; }
+  }
+
+  &-section {
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  &-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: $fv-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  &-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid $fv-border;
+    border-radius: $fv-radius-sm;
+    background: $fv-bg;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    &:hover { border-color: $fv-primary; transform: translateY(-1px); box-shadow: $fv-shadow; }
+  }
+
+  &-card-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &-card-info { flex: 1; min-width: 0; }
+  &-card-label { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  &-card-count { font-size: 18px; font-weight: 700; color: $fv-primary; }
+
+  &-card-actions { display: flex; gap: 4px; }
+
+  &-card-new, &-card-star {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: $fv-text-muted;
+    transition: all 0.2s;
+    &:hover { background: $fv-bg-alt; color: $fv-primary; }
+  }
+
+  &-card-star.starred { color: #F59E0B; }
+
+  &-stars-tray {
+    display: flex;
+    gap: 8px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &-stars-label { font-size: 12px; font-weight: 600; color: #F59E0B; }
+
+  &-star-chip {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: rgba(#F59E0B, 0.1);
+    color: #92400E;
+  }
+
+  // Glass
+  &-shell--glass {
+    .fv-wp-card {
+      background: $fv-glass-bg;
+      backdrop-filter: blur($fv-glass-blur);
+      border-color: $fv-glass-border;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// DARK MODE
+// ═══════════════════════════════════════════════════════════════
+[data-theme="dark"], .dark {
+  --fv-flow-edge: #475569;
+  --fv-org-edge: #475569;
+  --fv-org-card-bg: #1e293b;
+  --fv-sankey-border: #1e293b;
+  --fv-tm-border: #1e293b;
+  --fv-hm-empty: #1e293b;
+  --fv-funnel-border: #1e293b;
+  --fv-radar-grid: #334155;
+  --fv-radar-dot-border: #1e293b;
+
+  .fv-tl, .fv-flow, .fv-org, .fv-sankey, .fv-tm, .fv-hm, .fv-funnel, .fv-radar, .fv-rpt, .fv-lp, .fv-dp, .fv-wp {
+    color: #e2e8f0;
+  }
+
+  .fv-tl-event-card, .fv-lp-card, .fv-wp-card, .fv-dp-widget, .fv-rpt {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .fv-tl-zoom-btn, .fv-flow-btn, .fv-org-btn, .fv-rpt-btn, .fv-hm-nav-btn {
+    background: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+
+  .fv-rpt-th { background: #0f172a; }
+  .fv-rpt-toolbar { background: #0f172a; }
+
+  .fv-tl--glass .fv-tl-event-card,
+  .fv-wp-shell--glass .fv-wp-card {
+    background: rgba(30,41,59,0.8);
+    backdrop-filter: blur(12px);
+    border-color: rgba(51,65,85,0.5);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RTL OVERRIDES
+// ═══════════════════════════════════════════════════════════════
+[dir="rtl"] {
+  .fv-tl-events::before { inset-inline-start: 7px; }
+  .fv-rpt-td--currency, .fv-rpt-td--int, .fv-rpt-td--float { text-align: start; }
+  .fv-funnel-label { text-anchor: end; }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PRINT
+// ═══════════════════════════════════════════════════════════════
+@media print {
+  .fv-tl-toolbar, .fv-flow-toolbar, .fv-org-toolbar, .fv-hm-header,
+  .fv-rpt-toolbar, .fv-rpt-filters, .fv-rpt-footer { display: none !important; }
+
+  .fv-tl-event-card, .fv-lp-card, .fv-wp-card, .fv-dp-widget, .fv-rpt {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}

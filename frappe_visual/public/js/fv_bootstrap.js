@@ -122,6 +122,106 @@
 		return frappe.visual.VisualFormDashboard.create(container, opts);
 	};
 
+	// ── Pro Enhancement Shorthands ────────────────────────────────
+
+	/** Map Pro — multi-provider maps (OSM/Google/Mapbox) */
+	frappe.visual.mapPro = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.MapPro.create(container, opts);
+	};
+
+	/** Chart Pro — 18 chart types via ECharts */
+	frappe.visual.chartPro = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ChartPro.create(container, opts);
+	};
+
+	/** App Shell — visual facades for complex apps */
+	frappe.visual.appShell = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.AppShell.create(container, opts);
+	};
+
+	/** Form Pro — enhanced form with glass theme, stats, quick actions */
+	frappe.visual.formPro = async function (frm, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FormPro.enhance(frm, opts);
+	};
+
+	/** List Pro — 7 view modes (card/table/kanban/timeline/gallery/map/board) */
+	frappe.visual.listPro = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ListPro.create(container, opts);
+	};
+
+	/** Dashboard Pro — widget grid with KPI, charts, lists */
+	frappe.visual.dashboardPro = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.DashboardPro.create(container, opts);
+	};
+
+	/** Workspace Pro — hero banner, glassmorphism cards, live counts */
+	frappe.visual.workspacePro = async function (opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.WorkspacePro.enhance(opts);
+	};
+
+	// ── Data Viz Suite Shorthands ─────────────────────────────────
+
+	/** Timeline Pro — horizontal/vertical event timelines */
+	frappe.visual.timeline = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.TimelinePro.create(container, opts);
+	};
+
+	/** Flow Pro — process/workflow flow diagrams */
+	frappe.visual.flow = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FlowPro.create(container, opts);
+	};
+
+	/** Org Chart — organizational hierarchy from Employee */
+	frappe.visual.orgChart = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.OrgChart.create(container, opts);
+	};
+
+	/** Sankey — alluvial/Sankey flow diagrams */
+	frappe.visual.sankey = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Sankey.create(container, opts);
+	};
+
+	/** Treemap — squarified treemap with drill-down */
+	frappe.visual.treemap = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Treemap.create(container, opts);
+	};
+
+	/** Heatmap Calendar — GitHub-style activity heatmap */
+	frappe.visual.heatmap = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.HeatmapCalendar.create(container, opts);
+	};
+
+	/** Funnel — conversion funnel chart */
+	frappe.visual.funnel = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Funnel.create(container, opts);
+	};
+
+	/** Radar — spider/radar chart */
+	frappe.visual.radar = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Radar.create(container, opts);
+	};
+
+	/** Report Pro — premium report builder/viewer */
+	frappe.visual.report = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ReportPro.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

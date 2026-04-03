@@ -56,6 +56,26 @@ import { VisualMap } from "./components/visual_map";
 import { VisualGallery } from "./components/visual_gallery";
 import { VisualFormDashboard } from "./components/visual_form_dashboard";
 
+// ── Pro Enhancement Components ───────────────────────────────────
+import { VisualMapPro } from "./components/visual_map_pro";
+import { VisualChartPro } from "./components/visual_chart_pro";
+import { AppShell } from "./components/app_shell";
+import { VisualFormPro } from "./components/visual_form_pro";
+import { VisualListPro } from "./components/visual_list_pro";
+import { VisualDashboardPro } from "./components/visual_dashboard_pro";
+import { VisualWorkspacePro } from "./components/visual_workspace_pro";
+
+// ── Data Visualization Suite ─────────────────────────────────────
+import { VisualTimelinePro } from "./components/visual_timeline_pro";
+import { VisualFlowPro } from "./components/visual_flow_pro";
+import { VisualOrgChart } from "./components/visual_org_chart";
+import { VisualSankey } from "./components/visual_sankey";
+import { VisualTreemap } from "./components/visual_treemap";
+import { VisualHeatmapCalendar } from "./components/visual_heatmap_calendar";
+import { VisualFunnel } from "./components/visual_funnel";
+import { VisualRadar } from "./components/visual_radar";
+import { VisualReportPro } from "./components/visual_report_pro";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -97,6 +117,26 @@ frappe.visual.VisualMap = VisualMap;
 frappe.visual.VisualGallery = VisualGallery;
 frappe.visual.VisualFormDashboard = VisualFormDashboard;
 
+// Pro Enhancements
+frappe.visual.MapPro = VisualMapPro;
+frappe.visual.ChartPro = VisualChartPro;
+frappe.visual.AppShell = AppShell;
+frappe.visual.FormPro = VisualFormPro;
+frappe.visual.ListPro = VisualListPro;
+frappe.visual.DashboardPro = VisualDashboardPro;
+frappe.visual.WorkspacePro = VisualWorkspacePro;
+
+// Data Viz Suite
+frappe.visual.TimelinePro = VisualTimelinePro;
+frappe.visual.FlowPro = VisualFlowPro;
+frappe.visual.OrgChart = VisualOrgChart;
+frappe.visual.Sankey = VisualSankey;
+frappe.visual.Treemap = VisualTreemap;
+frappe.visual.HeatmapCalendar = VisualHeatmapCalendar;
+frappe.visual.Funnel = VisualFunnel;
+frappe.visual.Radar = VisualRadar;
+frappe.visual.ReportPro = VisualReportPro;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -108,7 +148,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — Cytoscape + ELK + GSAP + Bilingual + Enhancers",
+	"%c⬡ Frappe Visual Engine%c ready — 30+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
