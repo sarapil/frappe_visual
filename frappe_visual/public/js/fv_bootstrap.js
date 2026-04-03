@@ -278,6 +278,118 @@
 		return frappe.visual.AIChatWidget.create(container, opts);
 	};
 
+	// ── Collaboration & Productivity Suite Shorthands ─────────────
+
+	/** Virtual Table — high-perf table with virtual scrolling for 100K+ rows */
+	frappe.visual.virtualTable = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.VirtualTable.create(container, opts);
+	};
+
+	/** Virtual Scroller — generic virtual list scroller */
+	frappe.visual.virtualScroller = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.VirtualScroller.create(container, opts);
+	};
+
+	/** Visual Table — enhanced table with sorting, filtering, grouping */
+	frappe.visual.table = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.VisualTable.create(container, opts);
+	};
+
+	/** Rich Editor — WYSIWYG with slash commands, @mentions */
+	frappe.visual.richEditor = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.RichEditor.create(container, opts);
+	};
+
+	/** Rich Text — full text editor with toolbar */
+	frappe.visual.richText = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.RichText.create(container, opts);
+	};
+
+	/** File Manager — visual file browser with upload */
+	frappe.visual.fileManager = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FileManager.create(container, opts);
+	};
+
+	/** Data Grid — spreadsheet-like grid with cell editing */
+	frappe.visual.dataGrid = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.DataGrid.create(container, opts);
+	};
+
+	/** Whiteboard — infinite canvas with drawing tools */
+	frappe.visual.whiteboard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Whiteboard.create(container, opts);
+	};
+
+	/** Tour Guide — step-by-step spotlight tours */
+	frappe.visual.tour = async function (steps, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.TourGuide.create(steps, opts);
+	};
+
+	/** Filter Builder — visual AND/OR filter builder */
+	frappe.visual.filterBuilder = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.FilterBuilder.create(container, opts);
+	};
+
+	/** Activity Feed — social activity stream */
+	frappe.visual.activityFeed = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ActivityFeed.create(container, opts);
+	};
+
+	/** Page Header — breadcrumbs + title + actions */
+	frappe.visual.pageHeader = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.PageHeader.create(container, opts);
+	};
+
+	// ── Media & Content Suite Shorthands ──────────────────────────
+
+	/** Calendar Scheduler — advanced calendar with resource scheduling */
+	frappe.visual.calendarScheduler = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CalendarScheduler.create(container, opts);
+	};
+
+	/** Code Editor — syntax-highlighted code editor */
+	frappe.visual.codeEditor = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CodeEditor.create(container, opts);
+	};
+
+	/** Color Picker — advanced color picker with palettes */
+	frappe.visual.colorPicker = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ColorPicker.create(container, opts);
+	};
+
+	/** Image Annotator — image annotation with drawing tools */
+	frappe.visual.imageAnnotator = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ImageAnnotator.create(container, opts);
+	};
+
+	/** Media Player — audio/video player with playlist */
+	frappe.visual.mediaPlayer = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.MediaPlayer.create(container, opts);
+	};
+
+	/** PDF Viewer — in-browser PDF viewer with annotations */
+	frappe.visual.pdfViewer = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.PDFViewer.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

@@ -87,6 +87,28 @@ import { VisualDiff } from "./components/visual_diff";
 import { WizardPro } from "./components/wizard_pro";
 import { AIChatWidget } from "./components/ai_chat_widget";
 
+// ── Collaboration & Productivity Suite ───────────────────────────
+import { VirtualTable } from "./components/virtual_table";
+import { VirtualScroller } from "./components/virtual_scroller";
+import { VisualTable } from "./components/visual_table";
+import { RichEditor } from "./components/rich_editor";
+import { RichText } from "./components/rich_text_pro";
+import { FileManager } from "./components/file_manager";
+import { DataGrid } from "./components/data_grid";
+import { Whiteboard } from "./components/whiteboard";
+import { TourGuide } from "./components/tour_guide";
+import { FilterBuilder } from "./components/filter_builder";
+import { ActivityFeed } from "./components/activity_feed";
+import { PageHeader } from "./components/page_header";
+
+// ── Media & Content Suite ────────────────────────────────────────
+import { CalendarScheduler } from "./components/calendar_scheduler";
+import { CodeEditor } from "./components/code_editor";
+import { ColorPicker } from "./components/color_picker";
+import { ImageAnnotator } from "./components/image_annotator";
+import { MediaPlayer } from "./components/media_player";
+import { PDFViewer } from "./components/pdf_viewer";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -159,6 +181,28 @@ frappe.visual.VisualDiff = VisualDiff;
 frappe.visual.WizardPro = WizardPro;
 frappe.visual.AIChatWidget = AIChatWidget;
 
+// Collaboration & Productivity Suite
+frappe.visual.VirtualTable = VirtualTable;
+frappe.visual.VirtualScroller = VirtualScroller;
+frappe.visual.VisualTable = VisualTable;
+frappe.visual.RichEditor = RichEditor;
+frappe.visual.RichText = RichText;
+frappe.visual.FileManager = FileManager;
+frappe.visual.DataGrid = DataGrid;
+frappe.visual.Whiteboard = Whiteboard;
+frappe.visual.TourGuide = TourGuide;
+frappe.visual.FilterBuilder = FilterBuilder;
+frappe.visual.ActivityFeed = ActivityFeed;
+frappe.visual.PageHeader = PageHeader;
+
+// Media & Content Suite
+frappe.visual.CalendarScheduler = CalendarScheduler;
+frappe.visual.CodeEditor = CodeEditor;
+frappe.visual.ColorPicker = ColorPicker;
+frappe.visual.ImageAnnotator = ImageAnnotator;
+frappe.visual.MediaPlayer = MediaPlayer;
+frappe.visual.PDFViewer = PDFViewer;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -170,7 +214,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 40+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 60+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
