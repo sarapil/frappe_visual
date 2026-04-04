@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2024, Arkan Lab and contributors
+
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# Developer Website: https://arkan.it.com
+# License: GPL-3.0
+# For license information, please see license.txt
+
 # CAPS Capability Definitions for Frappe Visual
 # Prefix: FV_
 

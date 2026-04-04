@@ -1,3 +1,8 @@
+// Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+// Developer Website: https://arkan.it.com
+// License: GPL-3.0
+// For license information, please see license.txt
+
 frappe.pages["frappe-visual-onboarding"].on_page_load = async function(wrapper) {
     const page = frappe.ui.make_app_page({ parent: wrapper, title: __("Frappe Visual Onboarding"), single_column: true });
     page.set_secondary_action(__("Skip"), () => frappe.set_route("app"));

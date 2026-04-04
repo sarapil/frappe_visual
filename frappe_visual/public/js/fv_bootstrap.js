@@ -1,3 +1,8 @@
+// Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+// Developer Website: https://arkan.it.com
+// License: GPL-3.0
+// For license information, please see license.txt
+
 /**
  * Frappe Visual — Bootstrap Loader
  * ================================
@@ -1056,6 +1061,44 @@
 	frappe.visual.speedDial = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.SpeedDial.create(opts);
+	};
+
+	// ── Wave 19 — Feedback & Overlay ──────────────────────────────
+	frappe.visual.bottomSheet = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BottomSheet.create(opts);
+	};
+	frappe.visual.lightbox = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Lightbox.create(opts);
+	};
+	frappe.visual.imageCompare = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ImageCompare.create(opts);
+	};
+	frappe.visual.popconfirm = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Popconfirm.create(opts);
+	};
+	frappe.visual.cookieBanner = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CookieBanner.create(opts);
+	};
+	frappe.visual.onboardingTour = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.OnboardingTour.create(opts);
+	};
+	frappe.visual.contextPanel = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ContextPanel.create(opts);
+	};
+	frappe.visual.pinchZoom = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PinchZoom.create(opts);
+	};
+	frappe.visual.notificationStack = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.NotificationStack.create(opts);
 	};
 
 	/**

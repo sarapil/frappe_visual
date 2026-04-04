@@ -1,3 +1,8 @@
+// Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+// Developer Website: https://arkan.it.com
+// License: GPL-3.0
+// For license information, please see license.txt
+
 /**
  * Frappe Visual — Main Bundle Entry
  * ==================================
@@ -267,6 +272,17 @@ import { TabBar } from "./components/tab_bar";
 import { BottomNav } from "./components/bottom_nav";
 import { SpeedDial } from "./components/speed_dial";
 
+// ── Wave 19 — Feedback & Overlay ─────────────────────────────
+import { BottomSheet } from "./components/bottom_sheet";
+import { Lightbox } from "./components/lightbox";
+import { ImageCompare } from "./components/image_compare";
+import { Popconfirm } from "./components/popconfirm";
+import { CookieBanner } from "./components/cookie_banner";
+import { OnboardingTour } from "./components/onboarding_tour";
+import { ContextPanel } from "./components/context_panel";
+import { PinchZoom } from "./components/pinch_zoom";
+import { NotificationStack } from "./components/notification_stack";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -519,6 +535,17 @@ frappe.visual.TabBar = TabBar;
 frappe.visual.BottomNav = BottomNav;
 frappe.visual.SpeedDial = SpeedDial;
 
+// Wave 19 — Feedback & Overlay
+frappe.visual.BottomSheet = BottomSheet;
+frappe.visual.Lightbox = Lightbox;
+frappe.visual.ImageCompare = ImageCompare;
+frappe.visual.Popconfirm = Popconfirm;
+frappe.visual.CookieBanner = CookieBanner;
+frappe.visual.OnboardingTour = OnboardingTour;
+frappe.visual.ContextPanel = ContextPanel;
+frappe.visual.PinchZoom = PinchZoom;
+frappe.visual.NotificationStack = NotificationStack;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -530,7 +557,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 190+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 199+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
