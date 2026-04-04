@@ -1101,6 +1101,44 @@
 		return frappe.visual.NotificationStack.create(opts);
 	};
 
+	// ── Wave 20 — Productivity & Power Tools ─────────────────────
+	frappe.visual.shortcutManager = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ShortcutManager.create(opts);
+	};
+	frappe.visual.clipboardManager = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ClipboardManager.create(opts);
+	};
+	frappe.visual.undoRedo = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.UndoRedo.create(opts);
+	};
+	frappe.visual.focusTrap = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FocusTrap.create(opts);
+	};
+	frappe.visual.hotkeyHint = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.HotkeyHint.create(opts);
+	};
+	frappe.visual.globalSearch = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.GlobalSearch.create(opts);
+	};
+	frappe.visual.quickAction = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.QuickAction.create(opts);
+	};
+	frappe.visual.bulkActions = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BulkActions.create(opts);
+	};
+	frappe.visual.multiSelectBar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.MultiSelectBar.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

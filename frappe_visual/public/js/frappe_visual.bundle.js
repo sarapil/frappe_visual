@@ -283,6 +283,17 @@ import { ContextPanel } from "./components/context_panel";
 import { PinchZoom } from "./components/pinch_zoom";
 import { NotificationStack } from "./components/notification_stack";
 
+// ── Wave 20 — Productivity & Power Tools Suite ───────────────────
+import { ShortcutManager } from "./components/shortcut_manager";
+import { ClipboardManager } from "./components/clipboard_manager";
+import { UndoRedo } from "./components/undo_redo";
+import { FocusTrap } from "./components/focus_trap";
+import { HotkeyHint } from "./components/hotkey_hint";
+import { GlobalSearch } from "./components/global_search";
+import { QuickAction } from "./components/quick_action";
+import { BulkActions } from "./components/bulk_actions";
+import { MultiSelectBar } from "./components/multi_select_bar";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -546,6 +557,17 @@ frappe.visual.ContextPanel = ContextPanel;
 frappe.visual.PinchZoom = PinchZoom;
 frappe.visual.NotificationStack = NotificationStack;
 
+// Wave 20 — Productivity & Power Tools
+frappe.visual.ShortcutManager = ShortcutManager;
+frappe.visual.ClipboardManager = ClipboardManager;
+frappe.visual.UndoRedo = UndoRedo;
+frappe.visual.FocusTrap = FocusTrap;
+frappe.visual.HotkeyHint = HotkeyHint;
+frappe.visual.GlobalSearch = GlobalSearch;
+frappe.visual.QuickAction = QuickAction;
+frappe.visual.BulkActions = BulkActions;
+frappe.visual.MultiSelectBar = MultiSelectBar;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -557,7 +579,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 199+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 208+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -569,5 +591,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 16%c Heatmap · Sparkline · Radar · Funnel · Treemap · Donut · DataCard · Area · Sankey",
 	"color:#14b8a6;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 20%c ShortcutManager · ClipboardManager · UndoRedo · FocusTrap · HotkeyHint · GlobalSearch · QuickAction · BulkActions · MultiSelectBar",
+	"color:#f59e0b;font-weight:bold",
 	"color:#94a3b8"
 );
