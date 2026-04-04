@@ -1,0 +1,335 @@
+/* ================================================================
+   Wave 16 — Data Visualization & Chart Enhancement Suite
+   Heatmap · Sparkline · Radar · Funnel · Treemap
+   Donut · DataCard · Area · Sankey
+   ================================================================ */
+
+/* ── Heatmap ────────────────────────────────────────── */
+.fv-hm {
+	overflow-x: auto;
+	padding: 4px;
+}
+.fv-hm-svg rect {
+	cursor: pointer;
+	transition: opacity 0.15s;
+}
+.fv-hm-svg rect:hover {
+	opacity: 0.7;
+	stroke: var(--text-color, #333);
+	stroke-width: 1;
+}
+.fv-hm-month {
+	font-size: 10px;
+	fill: var(--text-muted, #6b7280);
+}
+.fv-hm-day {
+	font-size: 9px;
+	fill: var(--text-muted, #6b7280);
+	text-anchor: end;
+}
+
+/* ── Sparkline ──────────────────────────────────────── */
+.fv-spark {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 0;
+}
+.fv-spark-dot {
+	opacity: 0;
+	animation: fvSparkDot 0.3s ease 0.8s forwards;
+}
+@keyframes fvSparkDraw {
+	to { stroke-dashoffset: 0; }
+}
+@keyframes fvSparkDot {
+	to { opacity: 1; }
+}
+
+/* ── RadarChart ─────────────────────────────────────── */
+.fv-radar {
+	display: inline-block;
+}
+.fv-radar-grid {
+	fill: none;
+	stroke: var(--border-color, #e5e7eb);
+	stroke-width: 0.5;
+}
+.fv-radar-axis {
+	stroke: var(--border-color, #e5e7eb);
+	stroke-width: 0.5;
+}
+.fv-radar-label {
+	font-size: 11px;
+	fill: var(--text-muted, #6b7280);
+}
+@keyframes fvRadarIn {
+	from { opacity: 0; transform: scale(0.3); }
+	to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── FunnelChart ────────────────────────────────────── */
+.fv-funnel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+.fv-funnel-horizontal {
+	flex-direction: row;
+}
+.fv-funnel-seg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.fv-funnel-bar {
+	border-radius: 4px;
+	min-height: 8px;
+	transition: width 0.5s ease, height 0.5s ease;
+}
+.fv-funnel-label {
+	font-size: 0.8rem;
+	padding: 4px 0;
+	text-align: center;
+}
+.fv-funnel-val {
+	color: var(--text-muted, #6b7280);
+	margin-inline-start: 4px;
+}
+.fv-funnel-pct {
+	font-size: 0.75rem;
+	color: var(--text-light, #9ca3af);
+	margin-inline-start: 4px;
+}
+
+/* ── TreemapChart ───────────────────────────────────── */
+.fv-treemap {
+	border-radius: 6px;
+	overflow: hidden;
+}
+.fv-treemap-cell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+	box-sizing: border-box;
+	border: 1px solid rgba(255,255,255,.2);
+	cursor: pointer;
+	transition: filter 0.2s;
+}
+.fv-treemap-cell:hover {
+	filter: brightness(1.1);
+}
+.fv-treemap-lbl {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0,0,0,.3);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+.fv-treemap-val {
+	font-size: 0.65rem;
+	color: rgba(255,255,255,.8);
+}
+
+/* ── DonutChart ─────────────────────────────────────── */
+.fv-donut {
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+}
+.fv-donut-seg {
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+.fv-donut-seg:hover {
+	opacity: 0.8;
+}
+.fv-donut-center {
+	font-size: 1.4rem;
+	font-weight: 700;
+	fill: var(--text-color, #111);
+}
+.fv-donut-sub {
+	font-size: 0.7rem;
+	fill: var(--text-muted, #6b7280);
+}
+.fv-donut-legend {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.fv-donut-legend-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.8rem;
+}
+.fv-donut-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+.fv-donut-pct {
+	color: var(--text-muted, #6b7280);
+	margin-inline-start: 4px;
+}
+@keyframes fvDonutIn {
+	from { opacity: 0; transform: scale(0.85); }
+	to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── DataCard ───────────────────────────────────────── */
+.fv-dc {
+	border-radius: 12px;
+	padding: 16px;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.fv-dc:hover {
+	transform: translateY(-2px);
+}
+.fv-dc-glass {
+	background: rgba(255,255,255,.6);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255,255,255,.3);
+	box-shadow: 0 4px 24px rgba(0,0,0,.06);
+}
+.fv-dc-flat {
+	background: var(--control-bg, #f8f9fa);
+	border: 1px solid var(--border-color, #e5e7eb);
+}
+.fv-dc-outline {
+	background: transparent;
+	border: 2px solid var(--border-color, #e5e7eb);
+}
+.fv-dc-minimal {
+	background: transparent;
+	padding: 8px 0;
+}
+.fv-dc-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+.fv-dc-icon {
+	flex-shrink: 0;
+}
+.fv-dc-title {
+	font-size: 0.8rem;
+	color: var(--text-muted, #6b7280);
+	font-weight: 500;
+}
+.fv-dc-body {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 12px;
+}
+.fv-dc-value {
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--text-color, #111);
+}
+.fv-dc-sm .fv-dc-value { font-size: 1.25rem; }
+.fv-dc-lg .fv-dc-value { font-size: 2.25rem; }
+.fv-dc-trend {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	margin-top: 6px;
+}
+.fv-dc-change-label {
+	font-weight: 400;
+	color: var(--text-muted, #6b7280);
+	margin-inline-start: 2px;
+}
+
+/* ── AreaChart ──────────────────────────────────────── */
+.fv-area-grid {
+	stroke: var(--border-color, #e5e7eb);
+	stroke-width: 0.5;
+	stroke-dasharray: 3 3;
+}
+.fv-area-xlab, .fv-area-ylab {
+	font-size: 10px;
+	fill: var(--text-muted, #6b7280);
+}
+.fv-area-dot {
+	opacity: 0;
+	animation: fvSparkDot 0.2s ease 0.9s forwards;
+}
+@keyframes fvAreaDraw {
+	to { stroke-dashoffset: 0; }
+}
+
+/* ── SankeyChart ────────────────────────────────────── */
+.fv-sankey {
+	overflow-x: auto;
+}
+.fv-sankey-label {
+	font-size: 11px;
+	fill: var(--text-color, #333);
+	font-weight: 500;
+}
+@keyframes fvSankeyIn {
+	from { opacity: 0; }
+	to   { opacity: 0.3; }
+}
+
+
+/* ================================================================
+   Dark Mode Overrides
+   ================================================================ */
+[data-theme="dark"] .fv-hm-svg rect:hover,
+.dark .fv-hm-svg rect:hover {
+	stroke: var(--text-muted, #a1a1aa);
+}
+
+[data-theme="dark"] .fv-dc-glass,
+.dark .fv-dc-glass {
+	background: rgba(30, 30, 46, .6);
+	border-color: rgba(255,255,255,.08);
+	box-shadow: 0 4px 24px rgba(0,0,0,.3);
+}
+
+[data-theme="dark"] .fv-donut-center,
+.dark .fv-donut-center {
+	fill: var(--text-color, #e5e7eb);
+}
+
+[data-theme="dark"] .fv-treemap-cell,
+.dark .fv-treemap-cell {
+	border-color: rgba(0,0,0,.3);
+}
+
+[data-theme="dark"] .fv-sankey-label,
+.dark .fv-sankey-label {
+	fill: var(--text-muted, #a1a1aa);
+}
+
+
+/* ================================================================
+   RTL Adjustments
+   ================================================================ */
+[dir="rtl"] .fv-donut {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .fv-dc-body {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .fv-bullet-label {
+	text-align: start;
+}
