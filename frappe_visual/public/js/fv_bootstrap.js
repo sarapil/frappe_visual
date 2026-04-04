@@ -814,6 +814,52 @@
 		return frappe.visual.CurrencyInput.create(opts);
 	};
 
+	// Wave 13: Content & Layout Composition
+	frappe.visual.carousel = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Carousel.create(opts);
+	};
+
+	frappe.visual.collapsible = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Collapsible.create(opts);
+	};
+
+	frappe.visual.highlight = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Highlight.create(opts);
+	};
+
+	frappe.visual.scrollArea = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScrollArea.create(opts);
+	};
+
+	frappe.visual.aspectRatio = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AspectRatio.create(opts);
+	};
+
+	frappe.visual.blockquote = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Blockquote.create(opts);
+	};
+
+	frappe.visual.kbd = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Kbd.create(opts);
+	};
+
+	frappe.visual.stickyHeader = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StickyHeader.create(opts);
+	};
+
+	frappe.visual.contentPlaceholder = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ContentPlaceholder.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

@@ -201,6 +201,17 @@ import { NumberStepper } from "./components/number_stepper";
 import { ChipInput } from "./components/chip_input";
 import { CurrencyInput } from "./components/currency_input";
 
+// ── Wave 13: Content & Layout Composition Suite ──────────────────
+import { Carousel } from "./components/carousel";
+import { Collapsible } from "./components/collapsible";
+import { Highlight } from "./components/highlight";
+import { ScrollArea } from "./components/scroll_area";
+import { AspectRatio } from "./components/aspect_ratio";
+import { Blockquote } from "./components/blockquote";
+import { Kbd } from "./components/kbd";
+import { StickyHeader } from "./components/sticky_header";
+import { ContentPlaceholder } from "./components/content_placeholder";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -387,6 +398,17 @@ frappe.visual.NumberStepper = NumberStepper;
 frappe.visual.ChipInput = ChipInput;
 frappe.visual.CurrencyInput = CurrencyInput;
 
+// Wave 13: Content & Layout Composition
+frappe.visual.Carousel = Carousel;
+frappe.visual.Collapsible = Collapsible;
+frappe.visual.Highlight = Highlight;
+frappe.visual.ScrollArea = ScrollArea;
+frappe.visual.AspectRatio = AspectRatio;
+frappe.visual.Blockquote = Blockquote;
+frappe.visual.Kbd = Kbd;
+frappe.visual.StickyHeader = StickyHeader;
+frappe.visual.ContentPlaceholder = ContentPlaceholder;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -398,7 +420,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 136+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 145+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
