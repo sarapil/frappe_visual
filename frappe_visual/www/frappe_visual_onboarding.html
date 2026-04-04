@@ -1,0 +1,57 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Frappe Visual Onboarding") }}{% endblock %}
+
+{% block page_content %}
+<div id="frappe_visual-onboarding-container" data-page="frappe_visual-onboarding"></div>
+
+<style>
+  #frappe_visual-onboarding-container { min-height: 80vh; padding: 24px 0; }
+  .fv-onboard-hero { text-align: center; padding: 60px 20px; }
+  .fv-onboard-hero h1 { font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 16px; }
+  .fv-onboard-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto 32px; }
+  .fv-onboard-steps { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+  .fv-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+  .fv-step-num { width: 40px; height: 40px; border-radius: 50%; background: rgba(99, 102, 241, 0.1); color: #6366F1; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .fv-step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .fv-step p { font-size: 0.9rem; color: var(--text-muted); }
+  .fv-onboard-footer { text-align: center; padding: 40px 20px; }
+  .fv-onboard-footer a { display: inline-block; padding: 12px 32px; border-radius: 8px; background: #6366F1; color: white; text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+  .fv-onboard-footer a:hover { opacity: 0.9; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('frappe_visual-onboarding-container');
+  const steps = [
+    { title: __("Install & Verify"), desc: __("Frappe Visual auto-enhances all forms, lists, and workspaces. Verify it's active by checking any form for stats ribbons.") },
+    { title: __("Graph Engine Basics"), desc: __("Create your first interactive graph with frappe.visual.GraphEngine — add nodes, edges, and apply layouts.") },
+    { title: __("Layout Algorithms"), desc: __("Try different ELK.js layouts — hierarchical, force-directed, layered — for different visualization needs.") },
+    { title: __("Floating Windows"), desc: __("Use frappe.visual.FloatingWindow for draggable overlays — minimize, maximize, fullscreen, snap to edges.") },
+    { title: __("Page Templates"), desc: __("Use built-in templates — Dashboard, ERD, Workflow, Kanban, Timeline — to create pages in minutes.") },
+    { title: __("Auto-Enhancers"), desc: __("Explore form stats ribbons, list view toggles (Card/Kanban/Timeline), and workspace glass cards.") },
+    { title: __("Custom Components"), desc: __("Combine KanbanBoard, VisualCalendar, VisualGantt, TreeView, Map, and Gallery into custom pages.") }
+  ];
+  container.innerHTML = `
+    <div class="fv-onboard-hero">
+      <h1>🚀 ${__("Get Started with Frappe Visual")}</h1>
+      <p>${__("Follow these steps to set up and start using Frappe Visual.")}</p>
+    </div>
+    <div class="fv-onboard-steps">
+      ${steps.map((s, i) => `
+        <div class="fv-step">
+          <div class="fv-step-num">${i + 1}</div>
+          <div>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="fv-onboard-footer">
+      <a href="/app">${__("Go to Dashboard →")}</a>
+    </div>
+  `;
+});
+</script>
+{% endblock %}
