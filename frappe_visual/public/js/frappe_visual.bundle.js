@@ -212,6 +212,17 @@ import { Kbd } from "./components/kbd";
 import { StickyHeader } from "./components/sticky_header";
 import { ContentPlaceholder } from "./components/content_placeholder";
 
+// ── Wave 14: Status & Feedback Display Suite ────────────────────
+import { ProgressRing } from "./components/progress_ring";
+import { StatusDot } from "./components/status_dot";
+import { CountUp } from "./components/count_up";
+import { Callout } from "./components/callout";
+import { Banner } from "./components/banner";
+import { StepIndicator } from "./components/step_indicator";
+import { Comparison } from "./components/comparison";
+import { PricingTable } from "./components/pricing_table";
+import { FeatureList } from "./components/feature_list";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -409,6 +420,17 @@ frappe.visual.Kbd = Kbd;
 frappe.visual.StickyHeader = StickyHeader;
 frappe.visual.ContentPlaceholder = ContentPlaceholder;
 
+// Wave 14: Status & Feedback Display
+frappe.visual.ProgressRing = ProgressRing;
+frappe.visual.StatusDot = StatusDot;
+frappe.visual.CountUp = CountUp;
+frappe.visual.Callout = Callout;
+frappe.visual.Banner = Banner;
+frappe.visual.StepIndicator = StepIndicator;
+frappe.visual.Comparison = Comparison;
+frappe.visual.PricingTable = PricingTable;
+frappe.visual.FeatureList = FeatureList;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -420,7 +442,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 145+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 154+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

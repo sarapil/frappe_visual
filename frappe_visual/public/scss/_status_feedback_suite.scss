@@ -1,0 +1,282 @@
+/**
+ * Wave 14 — Status & Feedback Display Suite
+ * ============================================
+ * ProgressRing · StatusDot · CountUp · Callout · Banner
+ * StepIndicator · Comparison · PricingTable · FeatureList
+ */
+
+/* ── ProgressRing (fv-pr) ─────────────────────────────────────── */
+.fv-pr { display: inline-flex; }
+
+/* ── StatusDot (fv-sd) ─────────────────────────────────────────── */
+@keyframes fvSdPulse { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.8); } }
+
+/* ── CountUp (fv-cu) ───────────────────────────────────────────── */
+.fv-cu { font-variant-numeric: tabular-nums; }
+
+/* ── Callout (fv-call) ─────────────────────────────────────────── */
+.fv-call {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 12px 16px;
+	border-radius: 8px;
+	opacity: 0;
+	transform: translateY(-8px);
+	transition: opacity 0.2s, transform 0.2s;
+	margin-bottom: 8px;
+}
+
+.fv-call-default { border-inline-start: 4px solid var(--fv-call-color); background: var(--fv-call-bg); }
+.fv-call-filled { background: var(--fv-call-color); color: #fff; }
+.fv-call-filled .fv-call-title,
+.fv-call-filled .fv-call-msg { color: inherit; }
+.fv-call-outline { border: 1px solid var(--fv-call-color); }
+.fv-call-soft { background: var(--fv-call-bg); }
+
+.fv-call-icon { font-size: 1.125rem; flex-shrink: 0; line-height: 1.4; }
+.fv-call-body { flex: 1; min-width: 0; }
+.fv-call-title { font-weight: 600; font-size: 0.875rem; margin-bottom: 2px; }
+.fv-call-msg { font-size: 0.8125rem; line-height: 1.5; color: var(--text-color, #475569); }
+.fv-call-close { border: none; background: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted, #94a3b8); padding: 0 4px; line-height: 1; }
+.fv-call-close:hover { color: var(--text-color, #1e293b); }
+
+/* ── Banner (fv-banner) ────────────────────────────────────────── */
+.fv-banner {
+	display: flex;
+	align-items: center;
+	padding: 10px 16px;
+	font-size: 0.875rem;
+	transition: max-height 0.3s, padding 0.3s;
+	max-height: 80px;
+}
+.fv-banner-inner { flex: 1; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.fv-banner-msg { font-weight: 500; }
+.fv-banner-cta {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 4px;
+	background: rgba(255,255,255,0.2);
+	color: inherit;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.8125rem;
+	transition: background 0.15s;
+}
+.fv-banner-cta:hover { background: rgba(255,255,255,0.35); }
+.fv-banner-close { border: none; background: none; font-size: 1.25rem; cursor: pointer; color: inherit; opacity: 0.7; padding: 0 8px; }
+.fv-banner-close:hover { opacity: 1; }
+
+/* ── StepIndicator (fv-step) ───────────────────────────────────── */
+.fv-step-horizontal {
+	display: flex;
+	align-items: flex-start;
+}
+.fv-step-horizontal .fv-step-item {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	position: relative;
+}
+.fv-step-horizontal .fv-step-line {
+	flex: 1;
+	height: 2px;
+	background: var(--border-color, #e2e8f0);
+	margin: 0 8px;
+	align-self: center;
+}
+.fv-step-horizontal .fv-step-line-done { background: var(--primary, #6366f1); }
+
+.fv-step-vertical { display: flex; flex-direction: column; }
+.fv-step-vertical .fv-step-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	position: relative;
+}
+.fv-step-vertical .fv-step-line {
+	position: absolute;
+	inset-inline-start: 15px;
+	top: 32px;
+	bottom: -8px;
+	width: 2px;
+	background: var(--border-color, #e2e8f0);
+}
+.fv-step-vertical .fv-step-line-done { background: var(--primary, #6366f1); }
+.fv-step-vertical .fv-step-item { padding-bottom: 24px; }
+
+.fv-step-indicator {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 0.8125rem;
+	flex-shrink: 0;
+	border: 2px solid var(--border-color, #e2e8f0);
+	background: #fff;
+	transition: all 0.2s;
+}
+
+.fv-step-active .fv-step-indicator { border-color: var(--primary, #6366f1); color: var(--primary, #6366f1); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+.fv-step-complete .fv-step-indicator { background: var(--primary, #6366f1); border-color: var(--primary, #6366f1); color: #fff; }
+
+.fv-step-info { display: flex; flex-direction: column; }
+.fv-step-label { font-weight: 600; font-size: 0.8125rem; }
+.fv-step-desc { font-size: 0.75rem; color: var(--text-muted, #64748b); }
+
+.fv-step-dots .fv-step-indicator { width: 12px; height: 12px; border: none; }
+.fv-step-dots .fv-step-active .fv-step-indicator { background: var(--primary, #6366f1); box-shadow: 0 0 0 3px rgba(99,102,241,0.2); }
+.fv-step-dots .fv-step-complete .fv-step-indicator { background: var(--primary, #6366f1); }
+.fv-step-dots .fv-step-pending .fv-step-indicator { background: var(--border-color, #e2e8f0); }
+.fv-step-dot { display: block; width: 100%; height: 100%; border-radius: 50%; background: inherit; }
+
+.fv-step-check { color: inherit; }
+.fv-step-num { color: inherit; }
+
+.fv-step-sm .fv-step-indicator { width: 24px; height: 24px; font-size: 0.6875rem; }
+.fv-step-lg .fv-step-indicator { width: 40px; height: 40px; font-size: 1rem; }
+
+/* ── Comparison (fv-cmp) ───────────────────────────────────────── */
+.fv-cmp-rounded { border-radius: 12px; }
+
+/* ── PricingTable (fv-price) ───────────────────────────────────── */
+.fv-price-toggle {
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+	margin-bottom: 24px;
+	background: var(--subtle-fg, #f1f5f9);
+	border-radius: 8px;
+	padding: 4px;
+	width: fit-content;
+	margin-inline: auto;
+}
+.fv-price-tbtn {
+	border: none;
+	background: transparent;
+	padding: 6px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 0.8125rem;
+	color: var(--text-muted, #64748b);
+	transition: all 0.15s;
+}
+.fv-price-tbtn-active { background: #fff; color: var(--text-color, #1e293b); box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 600; }
+
+.fv-price-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 20px;
+}
+
+.fv-price-card {
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 12px;
+	padding: 24px;
+	text-align: center;
+	position: relative;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.fv-price-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.fv-price-hl { border-color: var(--primary, #6366f1); box-shadow: 0 0 0 1px var(--primary, #6366f1); }
+
+.fv-price-badge {
+	position: absolute;
+	top: -10px;
+	inset-inline-end: 16px;
+	background: var(--primary, #6366f1);
+	color: #fff;
+	padding: 2px 10px;
+	border-radius: 9999px;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.fv-price-name { font-size: 1.125rem; font-weight: 700; margin: 0 0 4px; }
+.fv-price-desc { font-size: 0.8125rem; color: var(--text-muted, #64748b); margin: 0 0 16px; }
+
+.fv-price-amount { display: flex; align-items: baseline; justify-content: center; gap: 2px; margin-bottom: 20px; }
+.fv-price-currency { font-size: 1.25rem; font-weight: 600; color: var(--text-muted, #64748b); }
+.fv-price-value { font-size: 2.5rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.fv-price-period { font-size: 0.875rem; color: var(--text-muted, #64748b); }
+
+.fv-price-features { list-style: none; padding: 0; margin: 0 0 20px; text-align: start; }
+.fv-price-feat { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 0.8125rem; border-bottom: 1px solid var(--border-color, #f1f5f9); }
+.fv-price-feat:last-child { border-bottom: none; }
+.fv-price-feat-icon { font-weight: 700; }
+.fv-price-feat .fv-price-feat-icon { color: #22c55e; }
+.fv-price-feat-no { color: var(--text-muted, #94a3b8); }
+.fv-price-feat-no .fv-price-feat-icon { color: #ef4444; }
+
+.fv-price-cta {
+	display: block;
+	padding: 10px 24px;
+	border-radius: 8px;
+	border: 1px solid var(--border-color, #e2e8f0);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.875rem;
+	color: var(--text-color, #1e293b);
+	transition: all 0.15s;
+}
+.fv-price-cta:hover { border-color: var(--primary, #6366f1); color: var(--primary, #6366f1); }
+.fv-price-cta-hl { background: var(--primary, #6366f1); border-color: var(--primary, #6366f1); color: #fff; }
+.fv-price-cta-hl:hover { background: #4f46e5; color: #fff; }
+
+/* ── FeatureList (fv-fl) ───────────────────────────────────────── */
+.fv-fl {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.8125rem;
+}
+.fv-fl th,
+.fv-fl td { padding: 10px 14px; text-align: center; border-bottom: 1px solid var(--border-color, #e2e8f0); }
+.fv-fl th { font-weight: 700; background: var(--subtle-fg, #f8fafc); position: sticky; top: 0; }
+.fv-fl .fv-fl-feature-col,
+.fv-fl .fv-fl-label { text-align: start; font-weight: 500; }
+
+.fv-fl-hl { background: rgba(99,102,241,0.04); }
+.fv-fl th.fv-fl-hl { background: rgba(99,102,241,0.1); color: var(--primary, #6366f1); }
+
+.fv-fl-check { color: #22c55e; font-weight: 700; }
+.fv-fl-cross { color: #ef4444; font-weight: 700; }
+
+.fv-fl-striped tbody tr:nth-child(even) { background: var(--subtle-fg, #f8fafc); }
+.fv-fl-compact th,
+.fv-fl-compact td { padding: 6px 10px; font-size: 0.75rem; }
+
+/* ───────────────────── Dark Mode ──────────────────────────────── */
+[data-theme="dark"] .fv-call-default,
+body.dark .fv-call-default { background: rgba(var(--fv-call-color), 0.08); }
+
+[data-theme="dark"] .fv-step-indicator,
+body.dark .fv-step-indicator { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .fv-step-complete .fv-step-indicator,
+body.dark .fv-step-complete .fv-step-indicator { background: #6366f1; border-color: #6366f1; }
+
+[data-theme="dark"] .fv-price-card,
+body.dark .fv-price-card { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .fv-price-hl,
+body.dark .fv-price-hl { border-color: #6366f1; }
+
+[data-theme="dark"] .fv-price-toggle,
+body.dark .fv-price-toggle { background: #1e293b; }
+[data-theme="dark"] .fv-price-tbtn-active,
+body.dark .fv-price-tbtn-active { background: #334155; color: #f1f5f9; }
+
+[data-theme="dark"] .fv-fl th,
+body.dark .fv-fl th { background: #1e293b; }
+[data-theme="dark"] .fv-fl td,
+body.dark .fv-fl td { border-color: #334155; }
+
+[data-theme="dark"] .fv-price-cta,
+body.dark .fv-price-cta { border-color: #334155; color: #f1f5f9; }
+
+/* ───────────────────── RTL ────────────────────────────────────── */
+[dir="rtl"] .fv-call-default { border-inline-start: 4px solid var(--fv-call-color); border-inline-end: none; }
+[dir="rtl"] .fv-price-features { text-align: start; }

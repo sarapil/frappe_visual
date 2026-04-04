@@ -860,6 +860,52 @@
 		return frappe.visual.ContentPlaceholder.create(opts);
 	};
 
+	// Wave 14: Status & Feedback Display
+	frappe.visual.progressRing = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ProgressRing.create(opts);
+	};
+
+	frappe.visual.statusDot = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StatusDot.create(opts);
+	};
+
+	frappe.visual.countUp = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CountUp.create(opts);
+	};
+
+	frappe.visual.callout = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Callout.create(opts);
+	};
+
+	frappe.visual.banner = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Banner.create(opts);
+	};
+
+	frappe.visual.stepIndicator = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StepIndicator.create(opts);
+	};
+
+	frappe.visual.comparison = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Comparison.create(opts);
+	};
+
+	frappe.visual.pricingTable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PricingTable.create(opts);
+	};
+
+	frappe.visual.featureList = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FeatureList.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
