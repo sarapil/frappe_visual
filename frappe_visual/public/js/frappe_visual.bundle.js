@@ -382,6 +382,17 @@ import { CellEditor } from "./components/cell_editor";
 import { SortableHeaders } from "./components/sortable_headers";
 import { FilterBar } from "./components/filter_bar";
 
+// ── Wave 29 — Navigation & Layout Suite ──────────────────────────
+import { CommandPalette } from "./components/command_palette";
+import { BreadcrumbTrail } from "./components/breadcrumb_trail";
+import { StepIndicator } from "./components/step_indicator";
+import { TabStrip } from "./components/tab_strip";
+import { AccordionGroup } from "./components/accordion_group";
+import { SplitPane } from "./components/split_pane";
+import { ResizablePanel } from "./components/resizable_panel";
+import { DockLayout } from "./components/dock_layout";
+import { FloatingToolbar } from "./components/floating_toolbar";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -744,6 +755,17 @@ frappe.visual.CellEditor = CellEditor;
 frappe.visual.SortableHeaders = SortableHeaders;
 frappe.visual.FilterBar = FilterBar;
 
+// Wave 29 — Navigation & Layout Suite
+frappe.visual.CommandPalette = CommandPalette;
+frappe.visual.BreadcrumbTrail = BreadcrumbTrail;
+frappe.visual.StepIndicator = StepIndicator;
+frappe.visual.TabStrip = TabStrip;
+frappe.visual.AccordionGroup = AccordionGroup;
+frappe.visual.SplitPane = SplitPane;
+frappe.visual.ResizablePanel = ResizablePanel;
+frappe.visual.DockLayout = DockLayout;
+frappe.visual.FloatingToolbar = FloatingToolbar;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -755,7 +777,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 280+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 289+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -812,5 +834,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 28%c DataTable · VirtualScroll · PivotTable · SpreadsheetGrid · ColumnResizer · RowExpander · CellEditor · SortableHeaders · FilterBar",
 	"color:#22d3ee;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 29%c CommandPalette · BreadcrumbTrail · StepIndicator · TabStrip · AccordionGroup · SplitPane · ResizablePanel · DockLayout · FloatingToolbar",
+	"color:#a855f7;font-weight:bold",
 	"color:#94a3b8"
 );
