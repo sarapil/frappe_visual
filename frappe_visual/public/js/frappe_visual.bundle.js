@@ -294,6 +294,17 @@ import { QuickAction } from "./components/quick_action";
 import { BulkActions } from "./components/bulk_actions";
 import { MultiSelectBar } from "./components/multi_select_bar";
 
+// ── Wave 21 — Immersive SVG Scene Engine ─────────────────────────
+import { SceneEngine } from "./components/scene_engine";
+import { SceneRoom } from "./components/scene_room";
+import { SceneFrame } from "./components/scene_frame";
+import { SceneDesk } from "./components/scene_desk";
+import { SceneDocument } from "./components/scene_document";
+import { SceneShelf } from "./components/scene_shelf";
+import { SceneBoard } from "./components/scene_board";
+import { SceneWidget } from "./components/scene_widget";
+import { SceneLighting } from "./components/scene_lighting";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -568,6 +579,17 @@ frappe.visual.QuickAction = QuickAction;
 frappe.visual.BulkActions = BulkActions;
 frappe.visual.MultiSelectBar = MultiSelectBar;
 
+// Wave 21 — Immersive SVG Scene Engine
+frappe.visual.SceneEngine = SceneEngine;
+frappe.visual.SceneRoom = SceneRoom;
+frappe.visual.SceneFrame = SceneFrame;
+frappe.visual.SceneDesk = SceneDesk;
+frappe.visual.SceneDocument = SceneDocument;
+frappe.visual.SceneShelf = SceneShelf;
+frappe.visual.SceneBoard = SceneBoard;
+frappe.visual.SceneWidget = SceneWidget;
+frappe.visual.SceneLighting = SceneLighting;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -579,7 +601,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 208+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 217+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -596,5 +618,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 20%c ShortcutManager · ClipboardManager · UndoRedo · FocusTrap · HotkeyHint · GlobalSearch · QuickAction · BulkActions · MultiSelectBar",
 	"color:#f59e0b;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 21%c SceneEngine · SceneRoom · SceneFrame · SceneDesk · SceneDocument · SceneShelf · SceneBoard · SceneWidget · SceneLighting",
+	"color:#8b5cf6;font-weight:bold",
 	"color:#94a3b8"
 );

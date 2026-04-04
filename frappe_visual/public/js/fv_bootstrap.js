@@ -1139,6 +1139,44 @@
 		return frappe.visual.MultiSelectBar.create(opts);
 	};
 
+	// ── Wave 21 — Immersive SVG Scene Engine ─────────────────────
+	frappe.visual.sceneEngine = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneEngine.create(opts);
+	};
+	frappe.visual.sceneRoom = async function (svg, pal, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneRoom.render(svg, pal, eng);
+	};
+	frappe.visual.sceneFrame = async function (parent, opts, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneFrame.render(parent, opts, eng);
+	};
+	frappe.visual.sceneDesk = async function (svg, opts, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneDesk.render(svg, opts, eng);
+	};
+	frappe.visual.sceneDocument = async function (parent, opts, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneDocument.render(parent, opts, eng);
+	};
+	frappe.visual.sceneShelf = async function (svg, opts, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneShelf.render(svg, opts, eng);
+	};
+	frappe.visual.sceneBoard = async function (svg, opts, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneBoard.render(svg, opts, eng);
+	};
+	frappe.visual.sceneWidget = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneWidget.create(opts);
+	};
+	frappe.visual.sceneLighting = async function (svg, pal, eng) {
+		await frappe.visual._load();
+		return frappe.visual.SceneLighting.render(svg, pal, eng);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

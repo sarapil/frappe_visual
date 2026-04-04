@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════════
+   Wave 21 — Immersive SVG Scene Engine Suite
+   SceneEngine · SceneRoom · SceneFrame · SceneDesk · SceneDocument
+   SceneShelf · SceneBoard · SceneWidget · SceneLighting
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Scene container ───────────────────────────────────────────── */
+.fv-scene {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--fv-scene-bg, #f8f6f0);
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+  }
+}
+
+.fv-scene--warm { --fv-scene-bg: #f8f6f0; }
+.fv-scene--cool { --fv-scene-bg: #eef2f7; }
+.fv-scene--dark { --fv-scene-bg: #1a1a2e; }
+.fv-scene--blueprint { --fv-scene-bg: #0c1322; }
+
+/* ── Animated entrance ─────────────────────────────────────────── */
+.fv-scene--animated {
+  .fv-scene__frame {
+    opacity: 0;
+    animation: fvSceneFrameIn .5s cubic-bezier(.4,0,.2,1) forwards;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { animation-delay: #{$i * 0.1}s; }
+    }
+  }
+
+  .fv-scene__doc {
+    opacity: 0;
+    animation: fvSceneDocIn .4s cubic-bezier(.4,0,.2,1) forwards;
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) { animation-delay: #{0.3 + $i * 0.08}s; }
+    }
+  }
+
+  .fv-scene__book {
+    opacity: 0;
+    animation: fvSceneBookIn .35s cubic-bezier(.4,0,.2,1) forwards;
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) { animation-delay: #{0.2 + $i * 0.06}s; }
+    }
+  }
+
+  .fv-scene__note {
+    opacity: 0;
+    animation: fvSceneNoteIn .35s cubic-bezier(.34,1.56,.64,1) forwards;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { animation-delay: #{0.4 + $i * 0.07}s; }
+    }
+  }
+
+  .fv-scene__lamp-glow {
+    animation: fvSceneLampPulse 3s ease-in-out infinite;
+  }
+
+  .fv-scene__window-light {
+    animation: fvSceneWindowShift 8s ease-in-out infinite alternate;
+  }
+}
+
+/* ── Frame interactions ────────────────────────────────────────── */
+.fv-scene__frame {
+  transition: transform .2s ease, filter .2s ease;
+  &:hover {
+    .fv-scene__frame-value { font-size: 17px; }
+  }
+}
+
+/* ── Document interactions ─────────────────────────────────────── */
+.fv-scene__doc {
+  transition: transform .2s ease, filter .2s ease;
+}
+
+/* ── Book interactions ─────────────────────────────────────────── */
+.fv-scene__book {
+  transition: transform .15s ease, filter .2s ease;
+  &:hover { transform: translateY(-2px); }
+}
+
+/* ── Note interactions ─────────────────────────────────────────── */
+.fv-scene__note {
+  transition: transform .15s ease, filter .2s ease;
+  &:hover { transform: scale(1.1); }
+}
+
+/* ── Widget wrapper ────────────────────────────────────────────── */
+.fv-scene-widget {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  position: relative;
+
+  .fv-scene {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.fv-scene-widget__overlay {
+  border-radius: 0 0 14px 14px;
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────── */
+@keyframes fvSceneFrameIn {
+  from { opacity: 0; transform: translateY(-8px) scale(.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fvSceneDocIn {
+  from { opacity: 0; transform: translateY(10px) rotate(5deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes fvSceneBookIn {
+  from { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes fvSceneNoteIn {
+  from { opacity: 0; transform: scale(0) rotate(-15deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes fvSceneLampPulse {
+  0%, 100% { opacity: 0.08; }
+  50%      { opacity: 0.14; }
+}
+
+@keyframes fvSceneWindowShift {
+  from { opacity: 0.5; }
+  to   { opacity: 0.7; }
+}
+
+/* ── Dark Mode ─────────────────────────────────────────────────── */
+[data-theme="dark"], .dark {
+  .fv-scene--warm,
+  .fv-scene--cool {
+    --fv-scene-bg: #1a1a2e;
+  }
+
+  .fv-scene-widget__overlay {
+    --fv-scene-widget-fade: #1a1a2e;
+  }
+
+  .fv-scene__frame-value { fill: #e2e8f0 !important; }
+  .fv-scene__frame-label { fill: #94a3b8 !important; }
+}
+
+/* ── RTL Support ───────────────────────────────────────────────── */
+[dir="rtl"] {
+  .fv-scene {
+    svg { transform: scaleX(-1); }
+    // Flip text back to readable
+    text { transform: scaleX(-1); }
+    .fv-scene__frame-value,
+    .fv-scene__frame-label {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+    }
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .fv-scene {
+    border-radius: 10px;
+    svg { min-height: 200px; }
+  }
+  .fv-scene-widget { border-radius: 10px; }
+}
+
+@media (max-width: 480px) {
+  .fv-scene {
+    border-radius: 8px;
+    font-size: 0.85em;
+  }
+}
