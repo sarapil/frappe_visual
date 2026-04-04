@@ -371,6 +371,17 @@ import { EmojiPicker } from "./components/emoji_picker";
 import { AvatarGroup } from "./components/avatar_group";
 import { Lightbox } from "./components/lightbox";
 
+// ── Wave 28 — Table & Data Grid Suite ────────────────────────────
+import { DataTable } from "./components/data_table";
+import { VirtualScroll } from "./components/virtual_scroll";
+import { PivotTable } from "./components/pivot_table";
+import { SpreadsheetGrid } from "./components/spreadsheet_grid";
+import { ColumnResizer } from "./components/column_resizer";
+import { RowExpander } from "./components/row_expander";
+import { CellEditor } from "./components/cell_editor";
+import { SortableHeaders } from "./components/sortable_headers";
+import { FilterBar } from "./components/filter_bar";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -722,6 +733,17 @@ frappe.visual.EmojiPicker = EmojiPicker;
 frappe.visual.AvatarGroup = AvatarGroup;
 frappe.visual.Lightbox = Lightbox;
 
+// Wave 28 — Table & Data Grid Suite
+frappe.visual.DataTable = DataTable;
+frappe.visual.VirtualScroll = VirtualScroll;
+frappe.visual.PivotTable = PivotTable;
+frappe.visual.SpreadsheetGrid = SpreadsheetGrid;
+frappe.visual.ColumnResizer = ColumnResizer;
+frappe.visual.RowExpander = RowExpander;
+frappe.visual.CellEditor = CellEditor;
+frappe.visual.SortableHeaders = SortableHeaders;
+frappe.visual.FilterBar = FilterBar;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -733,7 +755,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 271+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 280+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -785,5 +807,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 27%c ImageCropper · VideoPlayer · AudioWaveform · PDFViewer · CodeEditor · MarkdownRenderer · EmojiPicker · AvatarGroup · Lightbox",
 	"color:#f97316;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 28%c DataTable · VirtualScroll · PivotTable · SpreadsheetGrid · ColumnResizer · RowExpander · CellEditor · SortableHeaders · FilterBar",
+	"color:#22d3ee;font-weight:bold",
 	"color:#94a3b8"
 );

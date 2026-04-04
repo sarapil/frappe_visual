@@ -1405,6 +1405,44 @@
 		return frappe.visual.Lightbox.create(opts);
 	};
 
+	// ── Wave 28 — Table & Data Grid Suite ───────────────────────────
+	frappe.visual.dataTable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DataTable.create(opts);
+	};
+	frappe.visual.virtualScroll = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.VirtualScroll.create(opts);
+	};
+	frappe.visual.pivotTable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PivotTable.create(opts);
+	};
+	frappe.visual.spreadsheetGrid = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SpreadsheetGrid.create(opts);
+	};
+	frappe.visual.columnResizer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ColumnResizer.create(opts);
+	};
+	frappe.visual.rowExpander = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.RowExpander.create(opts);
+	};
+	frappe.visual.cellEditor = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CellEditor.create(opts);
+	};
+	frappe.visual.sortableHeaders = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SortableHeaders.create(opts);
+	};
+	frappe.visual.filterBar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FilterBar.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
