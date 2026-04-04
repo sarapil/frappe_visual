@@ -159,6 +159,15 @@ import { Pagination } from "./components/pagination";
 import { EmptyState } from "./components/empty_state";
 import { Skeleton } from "./components/skeleton";
 
+// ── Communication & Feedback Suite (Wave 9) ───────────────────
+import { Toast } from "./components/toast";
+import { AlertBanner } from "./components/alert_banner";
+import { ConfirmDialog } from "./components/confirm_dialog";
+import { Popover } from "./components/popover";
+import { Drawer } from "./components/drawer";
+import { ChatBubble } from "./components/chat_bubble";
+import { Spotlight } from "./components/spotlight";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -303,6 +312,15 @@ frappe.visual.Pagination = Pagination;
 frappe.visual.EmptyState = EmptyState;
 frappe.visual.Skeleton = Skeleton;
 
+// Communication & Feedback Suite (Wave 9)
+frappe.visual.Toast = Toast;
+frappe.visual.AlertBanner = AlertBanner;
+frappe.visual.ConfirmDialog = ConfirmDialog;
+frappe.visual.Popover = Popover;
+frappe.visual.Drawer = Drawer;
+frappe.visual.ChatBubble = ChatBubble;
+frappe.visual.Spotlight = Spotlight;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -314,7 +332,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 102+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 109+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

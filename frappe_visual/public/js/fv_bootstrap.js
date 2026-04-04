@@ -640,6 +640,42 @@
 		return frappe.visual.Skeleton.create(container, opts);
 	};
 
+	// ── Communication & Feedback Suite (Wave 9) ─────────────
+	frappe.visual.toast = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Toast.show(opts);
+	};
+
+	frappe.visual.alertBanner = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AlertBanner.create(opts);
+	};
+
+	frappe.visual.confirmDialog = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ConfirmDialog.confirm(opts);
+	};
+
+	frappe.visual.popover = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Popover.create(opts);
+	};
+
+	frappe.visual.drawer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Drawer.create(opts);
+	};
+
+	frappe.visual.chatBubble = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ChatBubble.create(opts);
+	};
+
+	frappe.visual.spotlight = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Spotlight.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
