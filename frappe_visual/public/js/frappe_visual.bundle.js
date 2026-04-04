@@ -125,6 +125,17 @@ import { ImportWizard } from "./components/import_wizard";
 import { AuditTrail } from "./components/audit_trail";
 import { StatusBoard } from "./components/status_board";
 
+// ── Analytics & Metrics Suite (Wave 6) ───────────────────────────
+import { MetricCard } from "./components/metric_card";
+import { ScoreCard } from "./components/score_card";
+import { GaugeChart } from "./components/gauge_chart";
+import { BulletChart } from "./components/bullet_chart";
+import { WaterfallChart } from "./components/waterfall_chart";
+import { WordCloud } from "./components/word_cloud";
+import { Sunburst } from "./components/sunburst";
+import { NetworkGraph } from "./components/network_graph";
+import { ProgressTracker } from "./components/progress_tracker";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -235,6 +246,17 @@ frappe.visual.ImportWizard = ImportWizard;
 frappe.visual.AuditTrail = AuditTrail;
 frappe.visual.StatusBoard = StatusBoard;
 
+// Analytics & Metrics Suite (Wave 6)
+frappe.visual.MetricCard = MetricCard;
+frappe.visual.ScoreCard = ScoreCard;
+frappe.visual.GaugeChart = GaugeChart;
+frappe.visual.BulletChart = BulletChart;
+frappe.visual.WaterfallChart = WaterfallChart;
+frappe.visual.WordCloud = WordCloud;
+frappe.visual.Sunburst = Sunburst;
+frappe.visual.NetworkGraph = NetworkGraph;
+frappe.visual.ProgressTracker = ProgressTracker;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -246,7 +268,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 74+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 83+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

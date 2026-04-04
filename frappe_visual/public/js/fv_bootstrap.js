@@ -466,6 +466,62 @@
 		return frappe.visual.StatusBoard.create(container, opts);
 	};
 
+	// ── Analytics & Metrics Suite Shorthands (Wave 6) ────────────
+
+	/** Metric Card — KPI cards with sparklines, trends, and targets */
+	frappe.visual.metricCard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.MetricCard.create(container, opts);
+	};
+
+	/** Score Card — multi-metric balanced scorecard with RAG status */
+	frappe.visual.scoreCard = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ScoreCard.create(container, opts);
+	};
+
+	/** Gauge Chart — circular gauge/speedometer with zones */
+	frappe.visual.gaugeChart = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.GaugeChart.create(container, opts);
+	};
+
+	/** Bullet Chart — Stephen Few bullet charts for KPI vs target */
+	frappe.visual.bulletChart = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.BulletChart.create(container, opts);
+	};
+
+	/** Waterfall Chart — financial bridge/waterfall chart */
+	frappe.visual.waterfallChart = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.WaterfallChart.create(container, opts);
+	};
+
+	/** Word Cloud — tag/word cloud with proportional sizing */
+	frappe.visual.wordCloud = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.WordCloud.create(container, opts);
+	};
+
+	/** Sunburst — hierarchical ring chart with drill-down */
+	frappe.visual.sunburst = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Sunburst.create(container, opts);
+	};
+
+	/** Network Graph — force-directed network visualization */
+	frappe.visual.networkGraph = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.NetworkGraph.create(container, opts);
+	};
+
+	/** Progress Tracker — multi-step milestone progress indicator */
+	frappe.visual.progressTracker = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ProgressTracker.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

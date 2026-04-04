@@ -1,0 +1,803 @@
+/**
+ * Frappe Visual — Analytics & Metrics Suite (Wave 6)
+ * ====================================================
+ * Styles for: MetricCard, ScoreCard, GaugeChart, BulletChart,
+ * WaterfallChart, WordCloud, Sunburst, NetworkGraph, ProgressTracker
+ */
+
+/* ─── MetricCard ─────────────────────────────────────────────── */
+.fv-mc {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 1rem;
+}
+
+.fv-mc-card {
+	background: var(--card-bg, white);
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 12px;
+	padding: 1.2rem;
+	transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.fv-mc-card:hover {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+	transform: translateY(-1px);
+}
+
+.fv-mc--glass .fv-mc-card {
+	background: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fv-mc-label {
+	font-size: 0.78rem;
+	font-weight: 500;
+	color: var(--text-muted, #64748b);
+	margin-bottom: 0.4rem;
+	display: block;
+}
+
+.fv-mc-value-row {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	margin-bottom: 0.3rem;
+}
+
+.fv-mc-value {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: var(--text-color, #1e293b);
+	line-height: 1.2;
+}
+
+.fv-mc-prefix,
+.fv-mc-suffix {
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--text-muted, #64748b);
+}
+
+.fv-mc-delta {
+	font-size: 0.72rem;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.2rem;
+	padding: 0.15rem 0.5rem;
+	border-radius: 20px;
+	line-height: 1.4;
+}
+
+.fv-mc-sparkline {
+	margin-top: 0.5rem;
+}
+
+.fv-mc-target {
+	margin-top: 0.5rem;
+}
+
+.fv-mc-target-bar {
+	width: 100%;
+	height: 4px;
+	background: var(--gray-200, #e2e8f0);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.fv-mc-target-fill {
+	height: 100%;
+	border-radius: 2px;
+	transition: width 0.6s ease-out;
+}
+
+.fv-mc-target-text {
+	font-size: 0.68rem;
+	color: var(--text-muted, #64748b);
+	margin-top: 0.2rem;
+	display: block;
+}
+
+/* ─── ScoreCard ──────────────────────────────────────────────── */
+.fv-sc {
+	background: var(--card-bg, white);
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+.fv-sc--glass {
+	background: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fv-sc-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.2rem;
+	border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.fv-sc-title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-color, #1e293b);
+	margin: 0;
+}
+
+.fv-sc-summary {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.fv-sc-rag-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.2rem 0.5rem;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: white;
+}
+
+.fv-sc-metrics {
+	padding: 0.6rem;
+}
+
+.fv-sc-group-label {
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--text-muted, #64748b);
+	padding: 0.5rem 0.6rem 0.3rem;
+}
+
+.fv-sc-metric {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 0.55rem 0.6rem;
+	border-radius: 8px;
+	transition: background 0.15s;
+}
+
+.fv-sc-metric:hover {
+	background: var(--gray-50, #f8fafc);
+}
+
+.fv-sc-rag-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.fv-sc-metric-label {
+	flex: 1;
+	font-size: 0.82rem;
+	font-weight: 500;
+	color: var(--text-color, #1e293b);
+}
+
+.fv-sc-metric-value {
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--text-color, #1e293b);
+	min-width: 60px;
+	text-align: right;
+}
+
+.fv-sc-metric-visual {
+	width: 40px;
+	flex-shrink: 0;
+}
+
+.fv-sc-mini-gauge {
+	transform: rotate(-90deg);
+}
+
+.fv-sc-mini-progress {
+	width: 60px;
+	height: 4px;
+	background: var(--gray-200, #e2e8f0);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.fv-sc-mini-progress-fill {
+	height: 100%;
+	border-radius: 2px;
+	transition: width 0.4s ease-out;
+}
+
+/* ─── GaugeChart ─────────────────────────────────────────────── */
+.fv-gauge {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fv-gauge--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-gauge-value-text {
+	font-variant-numeric: tabular-nums;
+}
+
+.fv-gauge-label-text {
+	font-size: 0.78rem;
+}
+
+/* ─── BulletChart ────────────────────────────────────────────── */
+.fv-bc {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.fv-bc--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-bc-bullet {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.fv-bc-bullet--vertical {
+	flex-direction: column;
+}
+
+.fv-bc-label {
+	min-width: 100px;
+	font-size: 0.82rem;
+	font-weight: 500;
+	color: var(--text-color, #1e293b);
+	text-align: right;
+}
+
+.fv-bc-bullet--vertical .fv-bc-label {
+	text-align: center;
+	min-width: auto;
+}
+
+.fv-bc-bar {
+	position: relative;
+	flex: 1;
+	overflow: visible;
+}
+
+.fv-bc-actual-bar {
+	transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+
+.fv-bc-value-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--text-muted, #64748b);
+	min-width: 50px;
+}
+
+/* ─── WaterfallChart ─────────────────────────────────────────── */
+.fv-wf {
+	background: var(--card-bg, white);
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-wf--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fv-wf-title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-color, #1e293b);
+	margin: 0 0 0.8rem 0;
+}
+
+.fv-wf-chart {
+	overflow-x: auto;
+}
+
+.fv-wf-chart svg text {
+	font-family: inherit;
+}
+
+/* ─── WordCloud ──────────────────────────────────────────────── */
+.fv-wc {
+	position: relative;
+}
+
+.fv-wc--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-wc-canvas {
+	position: relative;
+	overflow: hidden;
+}
+
+.fv-wc-word {
+	position: absolute;
+	cursor: pointer;
+	white-space: nowrap;
+	font-weight: 600;
+	transition: transform 0.15s, opacity 0.3s;
+	opacity: 0;
+}
+
+.fv-wc-word.fv-wc--visible {
+	opacity: 1;
+}
+
+.fv-wc-word:hover {
+	transform: scale(1.15) !important;
+	z-index: 10;
+}
+
+.fv-wc-tooltip {
+	position: fixed;
+	padding: 0.4rem 0.7rem;
+	background: rgba(15, 23, 42, 0.9);
+	color: white;
+	border-radius: 6px;
+	font-size: 0.72rem;
+	pointer-events: none;
+	z-index: 9999;
+	backdrop-filter: blur(4px);
+}
+
+/* ─── Sunburst ───────────────────────────────────────────────── */
+.fv-sun {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.fv-sun--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-sun-breadcrumb {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	margin-bottom: 0.6rem;
+	flex-wrap: wrap;
+}
+
+.fv-sun-crumb {
+	font-size: 0.78rem;
+	color: var(--primary, #6366f1);
+	cursor: pointer;
+	padding: 0.15rem 0.3rem;
+	border-radius: 4px;
+	transition: background 0.15s;
+}
+
+.fv-sun-crumb:hover {
+	background: rgba(99, 102, 241, 0.08);
+}
+
+.fv-sun-crumb--current {
+	color: var(--text-color, #1e293b);
+	font-weight: 600;
+	cursor: default;
+}
+
+.fv-sun-crumb--current:hover {
+	background: transparent;
+}
+
+.fv-sun-crumb-sep {
+	color: var(--text-muted, #94a3b8);
+	font-size: 0.8rem;
+}
+
+.fv-sun-chart {
+	display: flex;
+	justify-content: center;
+}
+
+.fv-sun-chart svg {
+	overflow: visible;
+}
+
+.fv-sun-center {
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+.fv-sun-tooltip {
+	position: fixed;
+	padding: 0.5rem 0.8rem;
+	background: rgba(15, 23, 42, 0.92);
+	color: white;
+	border-radius: 8px;
+	font-size: 0.78rem;
+	pointer-events: none;
+	z-index: 9999;
+	backdrop-filter: blur(4px);
+	line-height: 1.5;
+}
+
+.fv-sun-empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 200px;
+	color: var(--text-muted, #94a3b8);
+	font-size: 0.88rem;
+}
+
+/* ─── NetworkGraph ───────────────────────────────────────────── */
+.fv-ng {
+	position: relative;
+}
+
+.fv-ng--glass {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(8px);
+	border-radius: 14px;
+	padding: 1rem;
+}
+
+.fv-ng svg {
+	cursor: grab;
+}
+
+.fv-ng svg:active {
+	cursor: grabbing;
+}
+
+.fv-ng-edge {
+	transition: stroke-opacity 0.15s;
+}
+
+.fv-ng-edge:hover {
+	stroke-opacity: 0.8 !important;
+}
+
+.fv-ng-node circle {
+	filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+	transition: r 0.2s ease-out;
+}
+
+.fv-ng-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+	padding: 0.5rem 0;
+	justify-content: center;
+}
+
+.fv-ng-legend-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: 0.75rem;
+	color: var(--text-muted, #64748b);
+}
+
+.fv-ng-legend-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+/* ─── ProgressTracker ────────────────────────────────────────── */
+.fv-pt {
+	background: var(--card-bg, white);
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 14px;
+	padding: 1.2rem;
+}
+
+.fv-pt--glass {
+	background: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fv-pt-header {
+	margin-bottom: 1.2rem;
+}
+
+.fv-pt-title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-color, #1e293b);
+	margin: 0 0 0.6rem 0;
+}
+
+.fv-pt-progress {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.fv-pt-progress-bar {
+	flex: 1;
+	height: 6px;
+	background: var(--gray-200, #e2e8f0);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.fv-pt-progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #10b981, #6366f1);
+	border-radius: 3px;
+	transition: width 0.5s ease-out;
+}
+
+.fv-pt-progress-text {
+	font-size: 0.72rem;
+	color: var(--text-muted, #64748b);
+	white-space: nowrap;
+}
+
+/* Horizontal Steps */
+.fv-pt--horizontal .fv-pt-steps {
+	display: flex;
+	align-items: flex-start;
+}
+
+.fv-pt--horizontal .fv-pt-step {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-width: 80px;
+}
+
+.fv-pt--horizontal .fv-pt-node-wrap {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	position: relative;
+}
+
+.fv-pt-node {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 2px solid;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.85rem;
+	font-weight: 700;
+	flex-shrink: 0;
+	z-index: 1;
+	transition: transform 0.2s;
+}
+
+.fv-pt-step:hover .fv-pt-node {
+	transform: scale(1.1);
+}
+
+.fv-pt--horizontal .fv-pt-connector {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 2px;
+	background: var(--gray-300, #cbd5e1);
+	transform: translateY(-50%);
+	z-index: 0;
+}
+
+.fv-pt--horizontal .fv-pt-connector--dashed {
+	background: transparent;
+	border-top: 2px dashed var(--gray-300, #cbd5e1);
+}
+
+.fv-pt--horizontal .fv-pt-connector--dotted {
+	background: transparent;
+	border-top: 2px dotted var(--gray-300, #cbd5e1);
+}
+
+.fv-pt--horizontal .fv-pt-connector--done {
+	background: #10b981;
+}
+
+.fv-pt--horizontal .fv-pt-connector--done.fv-pt-connector--dashed {
+	background: transparent;
+	border-top-color: #10b981;
+}
+
+.fv-pt--horizontal .fv-pt-info {
+	margin-top: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+
+.fv-pt-step-label {
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--text-color, #1e293b);
+}
+
+.fv-pt-step-date {
+	font-size: 0.68rem;
+	color: var(--text-muted, #94a3b8);
+}
+
+.fv-pt-step-desc {
+	font-size: 0.72rem;
+	color: var(--text-muted, #64748b);
+	margin: 0;
+	line-height: 1.4;
+}
+
+.fv-pt-step-details {
+	font-size: 0.7rem;
+	color: var(--text-muted, #94a3b8);
+	margin-top: 0.3rem;
+	padding: 0.4rem 0.6rem;
+	background: var(--gray-50, #f8fafc);
+	border-radius: 6px;
+}
+
+/* Vertical Steps */
+.fv-pt--vertical .fv-pt-steps {
+	display: flex;
+	flex-direction: column;
+}
+
+.fv-pt--vertical .fv-pt-step {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.8rem;
+	min-height: 60px;
+}
+
+.fv-pt--vertical .fv-pt-node-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.fv-pt--vertical .fv-pt-connector {
+	width: 2px;
+	flex: 1;
+	min-height: 24px;
+	background: var(--gray-300, #cbd5e1);
+	margin: 4px 0;
+}
+
+.fv-pt--vertical .fv-pt-connector--dashed {
+	background: transparent;
+	border-left: 2px dashed var(--gray-300, #cbd5e1);
+}
+
+.fv-pt--vertical .fv-pt-connector--dotted {
+	background: transparent;
+	border-left: 2px dotted var(--gray-300, #cbd5e1);
+}
+
+.fv-pt--vertical .fv-pt-connector--done {
+	background: #10b981;
+}
+
+.fv-pt--vertical .fv-pt-connector--done.fv-pt-connector--dashed {
+	background: transparent;
+	border-left-color: #10b981;
+}
+
+.fv-pt--vertical .fv-pt-info {
+	padding-top: 0.2rem;
+	padding-bottom: 0.8rem;
+}
+
+.fv-pt--vertical .fv-pt-step-header {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+}
+
+/* Compact variant */
+.fv-pt--compact .fv-pt-node {
+	width: 24px;
+	height: 24px;
+	font-size: 0.7rem;
+}
+
+.fv-pt--compact .fv-pt-step-label {
+	font-size: 0.72rem;
+}
+
+.fv-pt--compact .fv-pt-step-desc,
+.fv-pt--compact .fv-pt-step-date {
+	display: none;
+}
+
+/* Step completed animation */
+.fv-pt-step--completed {
+	animation: fv-pt-step-in 0.4s ease-out both;
+}
+
+@keyframes fv-pt-step-in {
+	from {
+		opacity: 0.5;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* ─── Dark Mode ──────────────────────────────────────────────── */
+[data-theme="dark"] .fv-mc-card,
+[data-theme="dark"] .fv-sc,
+[data-theme="dark"] .fv-wf,
+[data-theme="dark"] .fv-pt {
+	background: rgba(30, 41, 59, 0.7);
+	border-color: rgba(148, 163, 184, 0.15);
+}
+
+[data-theme="dark"] .fv-mc--glass .fv-mc-card,
+[data-theme="dark"] .fv-sc--glass,
+[data-theme="dark"] .fv-wf--glass,
+[data-theme="dark"] .fv-pt--glass,
+[data-theme="dark"] .fv-bc--glass,
+[data-theme="dark"] .fv-wc--glass,
+[data-theme="dark"] .fv-sun--glass,
+[data-theme="dark"] .fv-ng--glass {
+	background: rgba(30, 41, 59, 0.5);
+}
+
+[data-theme="dark"] .fv-sc-metric:hover,
+[data-theme="dark"] .fv-pt-step-details {
+	background: rgba(51, 65, 85, 0.5);
+}
+
+/* ─── RTL ────────────────────────────────────────────────────── */
+[dir="rtl"] .fv-bc-label {
+	text-align: left;
+}
+
+[dir="rtl"] .fv-sc-metric-value {
+	text-align: left;
+}
+
+[dir="rtl"] .fv-pt--horizontal .fv-pt-connector {
+	left: auto;
+	right: 50%;
+}
+
+[dir="rtl"] .fv-pt--vertical .fv-pt-step {
+	flex-direction: row-reverse;
+}
