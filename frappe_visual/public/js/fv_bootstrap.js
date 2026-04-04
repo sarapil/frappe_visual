@@ -944,6 +944,44 @@
 		return frappe.visual.DotPattern.create(opts);
 	};
 
+	// Wave 16 — Data Visualization & Chart Enhancement
+	frappe.visual.heatmap = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Heatmap.create(opts);
+	};
+	frappe.visual.sparkline = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Sparkline.create(opts);
+	};
+	frappe.visual.radarChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.RadarChart.create(opts);
+	};
+	frappe.visual.funnelChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FunnelChart.create(opts);
+	};
+	frappe.visual.treemapChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.TreemapChart.create(opts);
+	};
+	frappe.visual.donutChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DonutChart.create(opts);
+	};
+	frappe.visual.dataCard = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DataCard.create(opts);
+	};
+	frappe.visual.areaChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AreaChart.create(opts);
+	};
+	frappe.visual.sankeyChart = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SankeyChart.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

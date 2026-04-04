@@ -234,6 +234,17 @@ import { GlowCard } from "./components/glow_card";
 import { MorphingText } from "./components/morphing_text";
 import { DotPattern } from "./components/dot_pattern";
 
+// Wave 16 — Data Visualization & Chart Enhancement Suite
+import { Heatmap } from "./components/heatmap";
+import { Sparkline } from "./components/sparkline";
+import { RadarChart } from "./components/radar_chart";
+import { FunnelChart } from "./components/funnel_chart";
+import { TreemapChart } from "./components/treemap_chart";
+import { DonutChart } from "./components/donut_chart";
+import { DataCard } from "./components/data_card";
+import { AreaChart } from "./components/area_chart";
+import { SankeyChart } from "./components/sankey_chart";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -453,6 +464,17 @@ frappe.visual.GlowCard = GlowCard;
 frappe.visual.MorphingText = MorphingText;
 frappe.visual.DotPattern = DotPattern;
 
+// Wave 16 — Data Visualization & Chart Enhancement
+frappe.visual.Heatmap = Heatmap;
+frappe.visual.Sparkline = Sparkline;
+frappe.visual.RadarChart = RadarChart;
+frappe.visual.FunnelChart = FunnelChart;
+frappe.visual.TreemapChart = TreemapChart;
+frappe.visual.DonutChart = DonutChart;
+frappe.visual.DataCard = DataCard;
+frappe.visual.AreaChart = AreaChart;
+frappe.visual.SankeyChart = SankeyChart;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -464,12 +486,17 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 163+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 172+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
 console.log(
 	"%c⬡ Wave 15%c Typewriter · Parallax · Confetti · Ripple · TextLoop · NumberTicker · GlowCard · MorphingText · DotPattern",
 	"color:#ec4899;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 16%c Heatmap · Sparkline · Radar · Funnel · Treemap · Donut · DataCard · Area · Sankey",
+	"color:#14b8a6;font-weight:bold",
 	"color:#94a3b8"
 );
