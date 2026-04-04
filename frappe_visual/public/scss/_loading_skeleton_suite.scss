@@ -1,0 +1,254 @@
+/* ================================================================
+   Wave 31 — Loading & Skeleton Suite
+   Skeleton · Shimmer · LoadingDots · ProgressRing · InfiniteScroll ·
+   LazyImage · Placeholder · ContentLoader · PageTransition
+   ================================================================ */
+
+/* ── Shared shimmer keyframe ───────────────────────────────────── */
+@keyframes fvShimmer {
+	0%   { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+
+/* ── Skeleton ──────────────────────────────────────────────────── */
+.fv-skeleton {
+	border-radius: 6px;
+	overflow: hidden;
+
+	&--pulse {
+		animation: fvSkeletonPulse 1.8s ease-in-out infinite;
+	}
+
+	&--wave .fv-skeleton__inner {
+		background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
+		background-size: 200% 100%;
+		animation: fvShimmer 1.6s infinite linear;
+	}
+}
+
+@keyframes fvSkeletonPulse {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: 0.4; }
+}
+
+/* ── Shimmer ───────────────────────────────────────────────────── */
+.fv-shimmer {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+
+	&__shine {
+		position: absolute;
+		inset: 0;
+	}
+}
+
+/* ── LoadingDots ───────────────────────────────────────────────── */
+.fv-loading-dots {
+	display: inline-flex;
+	align-items: center;
+}
+
+@keyframes fvDotsBounce {
+	0%, 80%, 100% { transform: translateY(0); }
+	40%           { transform: translateY(-8px); }
+}
+@keyframes fvDotsFade {
+	0%, 80%, 100% { opacity: 0.3; }
+	40%           { opacity: 1; }
+}
+@keyframes fvDotsScale {
+	0%, 80%, 100% { transform: scale(0.6); }
+	40%           { transform: scale(1); }
+}
+@keyframes fvDotsPulse {
+	0%, 100% { opacity: 0.4; transform: scale(0.85); }
+	50%      { opacity: 1; transform: scale(1.1); }
+}
+
+/* ── ProgressRing ──────────────────────────────────────────────── */
+.fv-progress-ring {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&__label {
+		position: absolute;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--text-color, #374151);
+	}
+
+	&--indeterminate svg {
+		animation: fvRingSpin 1.4s linear infinite;
+	}
+}
+
+@keyframes fvRingSpin {
+	100% { transform: rotate(360deg); }
+}
+
+/* ── InfiniteScroll ────────────────────────────────────────────── */
+.fv-infinite-scroll {
+	&__sentinel {
+		height: 1px;
+		width: 100%;
+	}
+
+	&__loader {
+		display: flex;
+		justify-content: center;
+		padding: 16px 0;
+	}
+
+	&__end {
+		text-align: center;
+		padding: 16px 0;
+		font-size: 0.82rem;
+		opacity: 0.5;
+	}
+}
+
+/* ── LazyImage ─────────────────────────────────────────────────── */
+.fv-lazy-image {
+	position: relative;
+	overflow: hidden;
+	background: var(--bg-light-gray, #f3f4f6);
+
+	&--error {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 80px;
+
+		&::after {
+			content: "⚠";
+			font-size: 1.5rem;
+			opacity: 0.4;
+		}
+	}
+
+	&__shimmer {
+		position: absolute;
+		inset: 0;
+	}
+}
+
+/* ── Placeholder ───────────────────────────────────────────────── */
+.fv-placeholder {
+	padding: 32px 16px;
+
+	&--centered {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--card {
+		border: 1px dashed var(--border-color, #e5e7eb);
+		border-radius: 12px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--inline {
+		padding: 12px 0;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		max-width: 360px;
+	}
+
+	&--inline &__inner {
+		flex-direction: row;
+		max-width: none;
+	}
+
+	&__icon { opacity: 0.35; }
+	&__image { max-height: 120px; }
+
+	&__title {
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--heading-color, #1f2937);
+	}
+
+	&__desc {
+		margin: 0;
+		font-size: 0.85rem;
+		color: var(--text-muted, #9ca3af);
+		line-height: 1.5;
+	}
+
+	&__action {
+		margin-top: 8px;
+	}
+
+	/* Dark */
+	&--dark {
+		.fv-placeholder__title { color: #e5e7eb; }
+		.fv-placeholder__desc { color: #9ca3af; }
+	}
+	&--dark.fv-placeholder--card {
+		border-color: rgba(255,255,255,0.08);
+	}
+}
+
+/* ── ContentLoader ─────────────────────────────────────────────── */
+.fv-content-loader {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+
+	&__shape {
+		position: absolute;
+	}
+}
+
+/* ── PageTransition ────────────────────────────────────────────── */
+.fv-page-transition {
+	&--fade-enter {
+		opacity: 0;
+		animation: fvFadeIn 0.3s ease forwards;
+	}
+	&--fade-leave {
+		animation: fvFadeOut 0.3s ease forwards;
+	}
+	&--slide-enter {
+		transform: translateX(20px);
+		opacity: 0;
+		animation: fvSlideIn 0.35s ease forwards;
+	}
+	&--slide-leave {
+		animation: fvSlideOut 0.35s ease forwards;
+	}
+}
+
+@keyframes fvFadeIn  { to { opacity: 1; } }
+@keyframes fvFadeOut { to { opacity: 0; } }
+@keyframes fvSlideIn  { to { transform: translateX(0); opacity: 1; } }
+@keyframes fvSlideOut { to { transform: translateX(-20px); opacity: 0; } }
+
+/* ── RTL ───────────────────────────────────────────────────────── */
+[dir="rtl"] {
+	.fv-placeholder--inline .fv-placeholder__inner {
+		flex-direction: row-reverse;
+	}
+	.fv-page-transition--slide-enter {
+		transform: translateX(-20px);
+	}
+	@keyframes fvSlideIn  { to { transform: translateX(0); opacity: 1; } }
+	@keyframes fvSlideOut { to { transform: translateX(20px); opacity: 0; } }
+}
