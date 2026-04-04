@@ -1519,6 +1519,44 @@
 		return frappe.visual.PerformanceMonitor.create(opts);
 	};
 
+	// ── Wave 31: Loading & Skeleton Suite ─────────────────────────
+	frappe.visual.skeleton = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Skeleton.create(opts);
+	};
+	frappe.visual.shimmer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Shimmer.create(opts);
+	};
+	frappe.visual.loadingDots = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.LoadingDots.create(opts);
+	};
+	frappe.visual.progressRing = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ProgressRing.create(opts);
+	};
+	frappe.visual.infiniteScroll = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.InfiniteScroll.create(opts);
+	};
+	frappe.visual.lazyImage = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.LazyImage.create(opts);
+	};
+	frappe.visual.placeholder = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Placeholder.create(opts);
+	};
+	frappe.visual.contentLoader = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ContentLoader.create(opts);
+	};
+	frappe.visual.pageTransition = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PageTransition.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

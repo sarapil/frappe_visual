@@ -404,6 +404,17 @@ import { FeatureFlag } from "./components/feature_flag";
 import { DebugOverlay } from "./components/debug_overlay";
 import { PerformanceMonitor } from "./components/performance_monitor";
 
+// ── Wave 31: Loading & Skeleton Suite ─────────────────────────────
+import { Skeleton } from "./components/skeleton";
+import { Shimmer } from "./components/shimmer";
+import { LoadingDots } from "./components/loading_dots";
+import { ProgressRing } from "./components/progress_ring";
+import { InfiniteScroll } from "./components/infinite_scroll";
+import { LazyImage } from "./components/lazy_image";
+import { Placeholder } from "./components/placeholder";
+import { ContentLoader } from "./components/content_loader";
+import { PageTransition } from "./components/page_transition";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -788,6 +799,17 @@ frappe.visual.FeatureFlag = FeatureFlag;
 frappe.visual.DebugOverlay = DebugOverlay;
 frappe.visual.PerformanceMonitor = PerformanceMonitor;
 
+// Wave 31: Loading & Skeleton Suite
+frappe.visual.Skeleton = Skeleton;
+frappe.visual.Shimmer = Shimmer;
+frappe.visual.LoadingDots = LoadingDots;
+frappe.visual.ProgressRing = ProgressRing;
+frappe.visual.InfiniteScroll = InfiniteScroll;
+frappe.visual.LazyImage = LazyImage;
+frappe.visual.Placeholder = Placeholder;
+frappe.visual.ContentLoader = ContentLoader;
+frappe.visual.PageTransition = PageTransition;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -799,7 +821,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 298+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 307+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -866,5 +888,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 30%c StateMachine · EventBus · DataStore · ComputedBinding · FormValidator · ConditionalRenderer · FeatureFlag · DebugOverlay · PerformanceMonitor",
 	"color:#84cc16;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 31%c Skeleton · Shimmer · LoadingDots · ProgressRing · InfiniteScroll · LazyImage · Placeholder · ContentLoader · PageTransition",
+	"color:#f472b6;font-weight:bold",
 	"color:#94a3b8"
 );
