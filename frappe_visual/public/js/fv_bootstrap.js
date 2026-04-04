@@ -676,6 +676,52 @@
 		return frappe.visual.Spotlight.create(opts);
 	};
 
+	// ── Wave 10 — Data Display & Table Suite ─────────────────────
+	frappe.visual.dataTable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DataTable.create(opts);
+	};
+
+	frappe.visual.avatar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Avatar.create(opts);
+	};
+
+	frappe.visual.badge = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Badge.create(opts);
+	};
+
+	frappe.visual.timeline = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Timeline.create(opts);
+	};
+
+	frappe.visual.statCard = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StatCard.create(opts);
+	};
+
+	frappe.visual.fileTree = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FileTree.create(opts);
+	};
+
+	frappe.visual.descriptionList = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DescriptionList.create(opts);
+	};
+
+	frappe.visual.imageGrid = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ImageGrid.create(opts);
+	};
+
+	frappe.visual.inlineEdit = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.InlineEdit.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

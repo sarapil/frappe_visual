@@ -168,6 +168,17 @@ import { Drawer } from "./components/drawer";
 import { ChatBubble } from "./components/chat_bubble";
 import { Spotlight } from "./components/spotlight";
 
+// ── Wave 10 — Data Display & Table Suite ─────────────────────────
+import { DataTable } from "./components/data_table";
+import { Avatar } from "./components/avatar";
+import { Badge } from "./components/badge";
+import { Timeline } from "./components/timeline";
+import { StatCard } from "./components/stat_card";
+import { FileTree } from "./components/file_tree";
+import { DescriptionList } from "./components/description_list";
+import { ImageGrid } from "./components/image_grid";
+import { InlineEdit } from "./components/inline_edit";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -321,6 +332,17 @@ frappe.visual.Drawer = Drawer;
 frappe.visual.ChatBubble = ChatBubble;
 frappe.visual.Spotlight = Spotlight;
 
+// Wave 10 — Data Display & Table Suite
+frappe.visual.DataTable = DataTable;
+frappe.visual.Avatar = Avatar;
+frappe.visual.Badge = Badge;
+frappe.visual.Timeline = Timeline;
+frappe.visual.StatCard = StatCard;
+frappe.visual.FileTree = FileTree;
+frappe.visual.DescriptionList = DescriptionList;
+frappe.visual.ImageGrid = ImageGrid;
+frappe.visual.InlineEdit = InlineEdit;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -332,7 +354,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 109+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 118+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
