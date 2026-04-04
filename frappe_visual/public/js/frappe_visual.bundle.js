@@ -360,6 +360,17 @@ import { StatusPulse } from "./components/status_pulse";
 import { NotificationCenter } from "./components/notification_center";
 import { BadgeCounter } from "./components/badge_counter";
 
+// ── Wave 27 — Media & Content Suite ─────────────────────────────
+import { ImageCropper } from "./components/image_cropper";
+import { VideoPlayer } from "./components/video_player";
+import { AudioWaveform } from "./components/audio_waveform";
+import { PDFViewer } from "./components/pdf_viewer";
+import { CodeEditor } from "./components/code_editor";
+import { MarkdownRenderer } from "./components/markdown_renderer";
+import { EmojiPicker } from "./components/emoji_picker";
+import { AvatarGroup } from "./components/avatar_group";
+import { Lightbox } from "./components/lightbox";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -700,6 +711,17 @@ frappe.visual.StatusPulse = StatusPulse;
 frappe.visual.NotificationCenter = NotificationCenter;
 frappe.visual.BadgeCounter = BadgeCounter;
 
+// Wave 27 — Media & Content Suite
+frappe.visual.ImageCropper = ImageCropper;
+frappe.visual.VideoPlayer = VideoPlayer;
+frappe.visual.AudioWaveform = AudioWaveform;
+frappe.visual.PDFViewer = PDFViewer;
+frappe.visual.CodeEditor = CodeEditor;
+frappe.visual.MarkdownRenderer = MarkdownRenderer;
+frappe.visual.EmojiPicker = EmojiPicker;
+frappe.visual.AvatarGroup = AvatarGroup;
+frappe.visual.Lightbox = Lightbox;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -711,7 +733,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 262+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 271+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -758,5 +780,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 26%c ToastStack · SnackBar · BannerAlert · ConfirmDialog · ProgressModal · CountdownTimer · StatusPulse · NotificationCenter · BadgeCounter",
 	"color:#a855f7;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 27%c ImageCropper · VideoPlayer · AudioWaveform · PDFViewer · CodeEditor · MarkdownRenderer · EmojiPicker · AvatarGroup · Lightbox",
+	"color:#f97316;font-weight:bold",
 	"color:#94a3b8"
 );
