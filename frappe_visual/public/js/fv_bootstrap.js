@@ -1215,6 +1215,44 @@
 		return frappe.visual.SceneExporter.create(opts);
 	};
 
+	// ── Wave 23 — Accessibility & i18n Suite ─────────────────
+	frappe.visual.screenReaderHelper = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScreenReaderHelper.create(opts);
+	};
+	frappe.visual.reducedMotion = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ReducedMotion.create(opts);
+	};
+	frappe.visual.highContrastMode = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.HighContrastMode.create(opts);
+	};
+	frappe.visual.fontScaler = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FontScaler.create(opts);
+	};
+	frappe.visual.keyboardNavigator = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.KeyboardNavigator.create(opts);
+	};
+	frappe.visual.ariaLiveRegion = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AriaLiveRegion.create(opts);
+	};
+	frappe.visual.rtlAutoMirror = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.RTLAutoMirror.create(opts);
+	};
+	frappe.visual.langSwitcher = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.LangSwitcher.create(opts);
+	};
+	frappe.visual.a11yAudit = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.A11yAudit.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

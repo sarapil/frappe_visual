@@ -6,7 +6,7 @@
 app_name = "frappe_visual"
 app_title = "Frappe Visual"
 app_publisher = "Arkan Lab"
-app_description = "Visual GUI For Any APP — Interactive graph-based UX framework with animations, floating windows, and a complete design system for Frappe applications"
+app_description = "Interactive graph engine and UI component library for Frappe"
 app_email = "moatazsarapil@gmail.com"
 app_license = "GPL-3.0"
 required_apps = ["frappe"]

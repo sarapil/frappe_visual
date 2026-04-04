@@ -316,6 +316,17 @@ import { SceneRefresher } from "./components/scene_refresher";
 import { SceneNavigator } from "./components/scene_navigator";
 import { SceneExporter } from "./components/scene_exporter";
 
+// ── Wave 23 — Accessibility & i18n Suite ─────────────────────────
+import { ScreenReaderHelper } from "./components/screen_reader_helper";
+import { ReducedMotion } from "./components/reduced_motion";
+import { HighContrastMode } from "./components/high_contrast_mode";
+import { FontScaler } from "./components/font_scaler";
+import { KeyboardNavigator } from "./components/keyboard_navigator";
+import { AriaLiveRegion } from "./components/aria_live_region";
+import { RTLAutoMirror } from "./components/rtl_auto_mirror";
+import { LangSwitcher } from "./components/lang_switcher";
+import { A11yAudit } from "./components/a11y_audit";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -612,6 +623,17 @@ frappe.visual.SceneRefresher = SceneRefresher;
 frappe.visual.SceneNavigator = SceneNavigator;
 frappe.visual.SceneExporter = SceneExporter;
 
+// Wave 23 — Accessibility & i18n Suite
+frappe.visual.ScreenReaderHelper = ScreenReaderHelper;
+frappe.visual.ReducedMotion = ReducedMotion;
+frappe.visual.HighContrastMode = HighContrastMode;
+frappe.visual.FontScaler = FontScaler;
+frappe.visual.KeyboardNavigator = KeyboardNavigator;
+frappe.visual.AriaLiveRegion = AriaLiveRegion;
+frappe.visual.RTLAutoMirror = RTLAutoMirror;
+frappe.visual.LangSwitcher = LangSwitcher;
+frappe.visual.A11yAudit = A11yAudit;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -623,7 +645,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 226+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 235+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -650,5 +672,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 22%c ScenePresetOffice · Library · Clinic · Workshop · Cafe · DataBinder · Refresher · Navigator · Exporter",
 	"color:#06b6d4;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 23%c ScreenReaderHelper · ReducedMotion · HighContrastMode · FontScaler · KeyboardNavigator · AriaLiveRegion · RTLAutoMirror · LangSwitcher · A11yAudit",
+	"color:#10b981;font-weight:bold",
 	"color:#94a3b8"
 );
