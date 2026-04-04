@@ -1177,6 +1177,44 @@
 		return frappe.visual.SceneLighting.render(svg, pal, eng);
 	};
 
+	// ── Wave 22 — Scene Presets & Smart Data Binding ─────────────
+	frappe.visual.scenePresetOffice = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScenePresetOffice.create(opts);
+	};
+	frappe.visual.scenePresetLibrary = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScenePresetLibrary.create(opts);
+	};
+	frappe.visual.scenePresetClinic = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScenePresetClinic.create(opts);
+	};
+	frappe.visual.scenePresetWorkshop = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScenePresetWorkshop.create(opts);
+	};
+	frappe.visual.scenePresetCafe = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ScenePresetCafe.create(opts);
+	};
+	frappe.visual.sceneDataBinder = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneDataBinder.create(opts);
+	};
+	frappe.visual.sceneRefresher = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneRefresher.create(opts);
+	};
+	frappe.visual.sceneNavigator = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneNavigator.create(opts);
+	};
+	frappe.visual.sceneExporter = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SceneExporter.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

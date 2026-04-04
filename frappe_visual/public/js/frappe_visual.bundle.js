@@ -305,6 +305,17 @@ import { SceneBoard } from "./components/scene_board";
 import { SceneWidget } from "./components/scene_widget";
 import { SceneLighting } from "./components/scene_lighting";
 
+// ── Wave 22 — Scene Presets & Smart Data Binding ─────────────────
+import { ScenePresetOffice } from "./components/scene_preset_office";
+import { ScenePresetLibrary } from "./components/scene_preset_library";
+import { ScenePresetClinic } from "./components/scene_preset_clinic";
+import { ScenePresetWorkshop } from "./components/scene_preset_workshop";
+import { ScenePresetCafe } from "./components/scene_preset_cafe";
+import { SceneDataBinder } from "./components/scene_data_binder";
+import { SceneRefresher } from "./components/scene_refresher";
+import { SceneNavigator } from "./components/scene_navigator";
+import { SceneExporter } from "./components/scene_exporter";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -590,6 +601,17 @@ frappe.visual.SceneBoard = SceneBoard;
 frappe.visual.SceneWidget = SceneWidget;
 frappe.visual.SceneLighting = SceneLighting;
 
+// Wave 22 — Scene Presets & Smart Data Binding
+frappe.visual.ScenePresetOffice = ScenePresetOffice;
+frappe.visual.ScenePresetLibrary = ScenePresetLibrary;
+frappe.visual.ScenePresetClinic = ScenePresetClinic;
+frappe.visual.ScenePresetWorkshop = ScenePresetWorkshop;
+frappe.visual.ScenePresetCafe = ScenePresetCafe;
+frappe.visual.SceneDataBinder = SceneDataBinder;
+frappe.visual.SceneRefresher = SceneRefresher;
+frappe.visual.SceneNavigator = SceneNavigator;
+frappe.visual.SceneExporter = SceneExporter;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -601,7 +623,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 217+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 226+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -623,5 +645,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 21%c SceneEngine · SceneRoom · SceneFrame · SceneDesk · SceneDocument · SceneShelf · SceneBoard · SceneWidget · SceneLighting",
 	"color:#8b5cf6;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 22%c ScenePresetOffice · Library · Clinic · Workshop · Cafe · DataBinder · Refresher · Navigator · Exporter",
+	"color:#06b6d4;font-weight:bold",
 	"color:#94a3b8"
 );
