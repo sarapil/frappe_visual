@@ -1253,6 +1253,44 @@
 		return frappe.visual.A11yAudit.create(opts);
 	};
 
+	// ── Wave 24 — Collaboration & Social Suite ───────────────────
+	frappe.visual.presenceIndicator = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PresenceIndicator.create(opts);
+	};
+	frappe.visual.cursorShare = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CursorShare.create(opts);
+	};
+	frappe.visual.liveComments = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.LiveComments.create(opts);
+	};
+	frappe.visual.reactions = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Reactions.create(opts);
+	};
+	frappe.visual.mentionPopup = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.MentionPopup.create(opts);
+	};
+	frappe.visual.activityFeed = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ActivityFeed.create(opts);
+	};
+	frappe.visual.changeTracker = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ChangeTracker.create(opts);
+	};
+	frappe.visual.approvalFlow = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ApprovalFlow.create(opts);
+	};
+	frappe.visual.shareDialog = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ShareDialog.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

@@ -327,6 +327,17 @@ import { RTLAutoMirror } from "./components/rtl_auto_mirror";
 import { LangSwitcher } from "./components/lang_switcher";
 import { A11yAudit } from "./components/a11y_audit";
 
+// ── Wave 24 — Collaboration & Social Suite ───────────────────────
+import { PresenceIndicator } from "./components/presence_indicator";
+import { CursorShare } from "./components/cursor_share";
+import { LiveComments } from "./components/live_comments";
+import { Reactions } from "./components/reactions";
+import { MentionPopup } from "./components/mention_popup";
+import { ActivityFeed } from "./components/activity_feed";
+import { ChangeTracker } from "./components/change_tracker";
+import { ApprovalFlow } from "./components/approval_flow";
+import { ShareDialog } from "./components/share_dialog";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -634,6 +645,17 @@ frappe.visual.RTLAutoMirror = RTLAutoMirror;
 frappe.visual.LangSwitcher = LangSwitcher;
 frappe.visual.A11yAudit = A11yAudit;
 
+// Wave 24 — Collaboration & Social Suite
+frappe.visual.PresenceIndicator = PresenceIndicator;
+frappe.visual.CursorShare = CursorShare;
+frappe.visual.LiveComments = LiveComments;
+frappe.visual.Reactions = Reactions;
+frappe.visual.MentionPopup = MentionPopup;
+frappe.visual.ActivityFeed = ActivityFeed;
+frappe.visual.ChangeTracker = ChangeTracker;
+frappe.visual.ApprovalFlow = ApprovalFlow;
+frappe.visual.ShareDialog = ShareDialog;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -645,7 +667,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 235+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 244+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -677,5 +699,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 23%c ScreenReaderHelper · ReducedMotion · HighContrastMode · FontScaler · KeyboardNavigator · AriaLiveRegion · RTLAutoMirror · LangSwitcher · A11yAudit",
 	"color:#10b981;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 24%c PresenceIndicator · CursorShare · LiveComments · Reactions · MentionPopup · ActivityFeed · ChangeTracker · ApprovalFlow · ShareDialog",
+	"color:#f43f5e;font-weight:bold",
 	"color:#94a3b8"
 );
