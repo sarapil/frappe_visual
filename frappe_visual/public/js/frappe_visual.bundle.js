@@ -136,6 +136,17 @@ import { Sunburst } from "./components/sunburst";
 import { NetworkGraph } from "./components/network_graph";
 import { ProgressTracker } from "./components/progress_tracker";
 
+// ── Form & Input Components Suite (Wave 7) ───────────────────────
+import { TagInput } from "./components/tag_input";
+import { DateRangePicker } from "./components/date_range_picker";
+import { RatingWidget } from "./components/rating_widget";
+import { ToggleGroup } from "./components/toggle_group";
+import { SliderRange } from "./components/slider_range";
+import { SearchSelect } from "./components/search_select";
+import { OTPInput } from "./components/otp_input";
+import { SignaturePad } from "./components/signature_pad";
+import { CronBuilder } from "./components/cron_builder";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -257,6 +268,17 @@ frappe.visual.Sunburst = Sunburst;
 frappe.visual.NetworkGraph = NetworkGraph;
 frappe.visual.ProgressTracker = ProgressTracker;
 
+// Form & Input Components Suite (Wave 7)
+frappe.visual.TagInput = TagInput;
+frappe.visual.DateRangePicker = DateRangePicker;
+frappe.visual.RatingWidget = RatingWidget;
+frappe.visual.ToggleGroup = ToggleGroup;
+frappe.visual.SliderRange = SliderRange;
+frappe.visual.SearchSelect = SearchSelect;
+frappe.visual.OTPInput = OTPInput;
+frappe.visual.SignaturePad = SignaturePad;
+frappe.visual.CronBuilder = CronBuilder;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -268,7 +290,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 83+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 92+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

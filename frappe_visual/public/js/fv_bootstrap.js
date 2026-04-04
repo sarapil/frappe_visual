@@ -522,6 +522,62 @@
 		return frappe.visual.ProgressTracker.create(container, opts);
 	};
 
+	// ── Form & Input Components Suite Shorthands (Wave 7) ────────────
+
+	/** Tag Input — multi-tag input with autocomplete, paste-split, drag-reorder */
+	frappe.visual.tagInput = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.TagInput.create(container, opts);
+	};
+
+	/** Date Range Picker — dual-calendar date range with presets */
+	frappe.visual.dateRangePicker = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.DateRangePicker.create(container, opts);
+	};
+
+	/** Rating Widget — star/heart/emoji rating with half-value support */
+	frappe.visual.ratingWidget = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.RatingWidget.create(container, opts);
+	};
+
+	/** Toggle Group — segmented control with sliding indicator */
+	frappe.visual.toggleGroup = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.ToggleGroup.create(container, opts);
+	};
+
+	/** Slider Range — dual-handle range slider with histogram overlay */
+	frappe.visual.sliderRange = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SliderRange.create(container, opts);
+	};
+
+	/** Search Select — searchable dropdown with grouping and keyboard nav */
+	frappe.visual.searchSelect = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SearchSelect.create(container, opts);
+	};
+
+	/** OTP Input — one-time password per-digit cells with auto-advance */
+	frappe.visual.otpInput = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.OTPInput.create(container, opts);
+	};
+
+	/** Signature Pad — canvas signature capture with Bézier smoothing */
+	frappe.visual.signaturePad = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SignaturePad.create(container, opts);
+	};
+
+	/** Cron Builder — visual cron expression builder with presets */
+	frappe.visual.cronBuilder = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CronBuilder.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

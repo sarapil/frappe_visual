@@ -9,6 +9,7 @@ required_apps = ["frappe"]
 # ─── App Branding ─────────────────────────────────────────────────
 app_logo_url = "/assets/frappe_visual/images/frappe_visual-logo.svg"
 app_icon = "/assets/frappe_visual/images/desktop_icons/frappe_visual-solid.svg"
+app_color = "#6366F1"
 
 add_to_apps_screen = [
     {
