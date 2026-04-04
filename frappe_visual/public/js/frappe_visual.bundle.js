@@ -256,6 +256,17 @@ import { VirtualList } from "./components/virtual_list";
 import { StackedLayout } from "./components/stacked_layout";
 import { Resizable } from "./components/resizable";
 
+// ── Wave 18 — Navigation & Wayfinding ────────────────────────────
+import { CommandBar } from "./components/command_bar";
+import { FloatingNav } from "./components/floating_nav";
+import { PageTransition } from "./components/page_transition";
+import { BackToTop } from "./components/back_to_top";
+import { NavRail } from "./components/nav_rail";
+import { AnchorNav } from "./components/anchor_nav";
+import { TabBar } from "./components/tab_bar";
+import { BottomNav } from "./components/bottom_nav";
+import { SpeedDial } from "./components/speed_dial";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -497,6 +508,17 @@ frappe.visual.VirtualList = VirtualList;
 frappe.visual.StackedLayout = StackedLayout;
 frappe.visual.Resizable = Resizable;
 
+// Wave 18 — Navigation & Wayfinding
+frappe.visual.CommandBar = CommandBar;
+frappe.visual.FloatingNav = FloatingNav;
+frappe.visual.PageTransition = PageTransition;
+frappe.visual.BackToTop = BackToTop;
+frappe.visual.NavRail = NavRail;
+frappe.visual.AnchorNav = AnchorNav;
+frappe.visual.TabBar = TabBar;
+frappe.visual.BottomNav = BottomNav;
+frappe.visual.SpeedDial = SpeedDial;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -508,7 +530,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 181+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 190+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

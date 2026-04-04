@@ -1020,6 +1020,44 @@
 		return frappe.visual.Resizable.create(opts);
 	};
 
+	// ── Wave 18 — Navigation & Wayfinding ─────────────────────────
+	frappe.visual.commandBar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CommandBar.create(opts);
+	};
+	frappe.visual.floatingNav = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FloatingNav.create(opts);
+	};
+	frappe.visual.pageTransition = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PageTransition.create(opts);
+	};
+	frappe.visual.backToTop = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BackToTop.create(opts);
+	};
+	frappe.visual.navRail = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.NavRail.create(opts);
+	};
+	frappe.visual.anchorNav = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AnchorNav.create(opts);
+	};
+	frappe.visual.tabBar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.TabBar.create(opts);
+	};
+	frappe.visual.bottomNav = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BottomNav.create(opts);
+	};
+	frappe.visual.speedDial = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SpeedDial.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
