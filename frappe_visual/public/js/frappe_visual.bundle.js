@@ -338,6 +338,17 @@ import { ChangeTracker } from "./components/change_tracker";
 import { ApprovalFlow } from "./components/approval_flow";
 import { ShareDialog } from "./components/share_dialog";
 
+// ── Wave 25 — Form Enhancement & Smart Input Suite ───────────────
+import { TagInput } from "./components/tag_input";
+import { ColorPicker } from "./components/color_picker";
+import { DateRangePicker } from "./components/date_range_picker";
+import { SignaturePad } from "./components/signature_pad";
+import { RatingStars } from "./components/rating_stars";
+import { FileDropZone } from "./components/file_drop_zone";
+import { InlineEditor } from "./components/inline_editor";
+import { AutoSave } from "./components/auto_save";
+import { FormWizard } from "./components/form_wizard";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -656,6 +667,17 @@ frappe.visual.ChangeTracker = ChangeTracker;
 frappe.visual.ApprovalFlow = ApprovalFlow;
 frappe.visual.ShareDialog = ShareDialog;
 
+// Wave 25 — Form Enhancement & Smart Input Suite
+frappe.visual.TagInput = TagInput;
+frappe.visual.ColorPicker = ColorPicker;
+frappe.visual.DateRangePicker = DateRangePicker;
+frappe.visual.SignaturePad = SignaturePad;
+frappe.visual.RatingStars = RatingStars;
+frappe.visual.FileDropZone = FileDropZone;
+frappe.visual.InlineEditor = InlineEditor;
+frappe.visual.AutoSave = AutoSave;
+frappe.visual.FormWizard = FormWizard;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -667,7 +689,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 244+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 253+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -704,5 +726,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 24%c PresenceIndicator · CursorShare · LiveComments · Reactions · MentionPopup · ActivityFeed · ChangeTracker · ApprovalFlow · ShareDialog",
 	"color:#f43f5e;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 25%c TagInput · ColorPicker · DateRangePicker · SignaturePad · RatingStars · FileDropZone · InlineEditor · AutoSave · FormWizard",
+	"color:#0ea5e9;font-weight:bold",
 	"color:#94a3b8"
 );

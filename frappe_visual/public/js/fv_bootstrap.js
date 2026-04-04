@@ -1291,6 +1291,44 @@
 		return frappe.visual.ShareDialog.create(opts);
 	};
 
+	// ── Wave 25 — Form Enhancement & Smart Input Suite ───────────────
+	frappe.visual.tagInput = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.TagInput.create(opts);
+	};
+	frappe.visual.colorPicker = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ColorPicker.create(opts);
+	};
+	frappe.visual.dateRangePicker = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DateRangePicker.create(opts);
+	};
+	frappe.visual.signaturePad = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SignaturePad.create(opts);
+	};
+	frappe.visual.ratingStars = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.RatingStars.create(opts);
+	};
+	frappe.visual.fileDropZone = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FileDropZone.create(opts);
+	};
+	frappe.visual.inlineEditor = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.InlineEditor.create(opts);
+	};
+	frappe.visual.autoSave = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AutoSave.create(opts);
+	};
+	frappe.visual.formWizard = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FormWizard.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
