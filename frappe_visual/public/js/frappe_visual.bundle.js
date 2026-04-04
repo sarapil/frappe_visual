@@ -179,6 +179,17 @@ import { DescriptionList } from "./components/description_list";
 import { ImageGrid } from "./components/image_grid";
 import { InlineEdit } from "./components/inline_edit";
 
+// ── Wave 11 — Utility & Advanced Interaction Suite ───────────────
+import { Clipboard } from "./components/clipboard";
+import { Countdown } from "./components/countdown";
+import { SortableList } from "./components/sortable_list";
+import { CodeBlock } from "./components/code_block";
+import { DiffViewer } from "./components/diff_viewer";
+import { Marquee } from "./components/marquee";
+import { Divider } from "./components/divider";
+import { ScrollSpy } from "./components/scroll_spy";
+import { PasswordStrength } from "./components/password_strength";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -343,6 +354,17 @@ frappe.visual.DescriptionList = DescriptionList;
 frappe.visual.ImageGrid = ImageGrid;
 frappe.visual.InlineEdit = InlineEdit;
 
+// Wave 11 — Utility & Advanced Interaction Suite
+frappe.visual.Clipboard = Clipboard;
+frappe.visual.Countdown = Countdown;
+frappe.visual.SortableList = SortableList;
+frappe.visual.CodeBlock = CodeBlock;
+frappe.visual.DiffViewer = DiffViewer;
+frappe.visual.Marquee = Marquee;
+frappe.visual.Divider = Divider;
+frappe.visual.ScrollSpy = ScrollSpy;
+frappe.visual.PasswordStrength = PasswordStrength;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -354,7 +376,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 118+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 127+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
