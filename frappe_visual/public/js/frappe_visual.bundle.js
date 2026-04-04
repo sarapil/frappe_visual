@@ -147,6 +147,18 @@ import { OTPInput } from "./components/otp_input";
 import { SignaturePad } from "./components/signature_pad";
 import { CronBuilder } from "./components/cron_builder";
 
+// ── Navigation & Layout Suite (Wave 8) ────────────────────────
+import { Breadcrumb } from "./components/breadcrumb";
+import { Stepper } from "./components/stepper";
+import { TabNav } from "./components/tab_nav";
+import { Accordion } from "./components/accordion";
+import { SplitPane } from "./components/split_pane";
+import { CardStack } from "./components/card_stack";
+import { MasonryGrid } from "./components/masonry_grid";
+import { Pagination } from "./components/pagination";
+import { EmptyState } from "./components/empty_state";
+import { Skeleton } from "./components/skeleton";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -279,6 +291,18 @@ frappe.visual.OTPInput = OTPInput;
 frappe.visual.SignaturePad = SignaturePad;
 frappe.visual.CronBuilder = CronBuilder;
 
+// Navigation & Layout Suite (Wave 8)
+frappe.visual.Breadcrumb = Breadcrumb;
+frappe.visual.Stepper = Stepper;
+frappe.visual.TabNav = TabNav;
+frappe.visual.Accordion = Accordion;
+frappe.visual.SplitPane = SplitPane;
+frappe.visual.CardStack = CardStack;
+frappe.visual.MasonryGrid = MasonryGrid;
+frappe.visual.Pagination = Pagination;
+frappe.visual.EmptyState = EmptyState;
+frappe.visual.Skeleton = Skeleton;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -290,7 +314,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 92+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 102+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );

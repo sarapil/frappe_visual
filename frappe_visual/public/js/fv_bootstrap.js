@@ -578,6 +578,68 @@
 		return frappe.visual.CronBuilder.create(container, opts);
 	};
 
+	// ── Navigation & Layout Suite Shorthands (Wave 8) ──────────────
+
+	/** Breadcrumb — hierarchical navigation with overflow collapse */
+	frappe.visual.breadcrumb = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Breadcrumb.create(container, opts);
+	};
+
+	/** Stepper — multi-step progress indicator */
+	frappe.visual.stepper = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Stepper.create(container, opts);
+	};
+
+	/** TabNav — animated tab navigation with sliding indicator */
+	frappe.visual.tabNav = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.TabNav.create(container, opts);
+	};
+
+	/** Accordion — collapsible content panels with animation */
+	frappe.visual.accordion = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Accordion.create(container, opts);
+	};
+
+	/** SplitPane — resizable split-panel layout with drag handles */
+	frappe.visual.splitPane = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.SplitPane.create(container, opts);
+	};
+
+	/** CardStack — swipeable card stack with gesture support */
+	frappe.visual.cardStack = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.CardStack.create(container, opts);
+	};
+
+	/** MasonryGrid — Pinterest-style masonry layout */
+	frappe.visual.masonryGrid = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.MasonryGrid.create(container, opts);
+	};
+
+	/** Pagination — page navigation with size changer and jumper */
+	frappe.visual.pagination = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Pagination.create(container, opts);
+	};
+
+	/** EmptyState — beautiful zero-state with illustrations and actions */
+	frappe.visual.emptyState = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.EmptyState.create(container, opts);
+	};
+
+	/** Skeleton — content loading placeholder with shimmer */
+	frappe.visual.skeleton = async function (container, opts = {}) {
+		await frappe.visual.engine();
+		return frappe.visual.Skeleton.create(container, opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */
