@@ -768,6 +768,52 @@
 		return frappe.visual.PasswordStrength.create(opts);
 	};
 
+	// ── Wave 12 — Selection & Rich Input Suite ───────────────────
+	frappe.visual.segmentedControl = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SegmentedControl.create(opts);
+	};
+
+	frappe.visual.transferList = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.TransferList.create(opts);
+	};
+
+	frappe.visual.pinInput = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PinInput.create(opts);
+	};
+
+	frappe.visual.creditCard = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CreditCard.create(opts);
+	};
+
+	frappe.visual.annotationLayer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.AnnotationLayer.create(opts);
+	};
+
+	frappe.visual.combobox = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Combobox.create(opts);
+	};
+
+	frappe.visual.numberStepper = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.NumberStepper.create(opts);
+	};
+
+	frappe.visual.chipInput = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ChipInput.create(opts);
+	};
+
+	frappe.visual.currencyInput = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CurrencyInput.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

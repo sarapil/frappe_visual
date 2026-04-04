@@ -190,6 +190,17 @@ import { Divider } from "./components/divider";
 import { ScrollSpy } from "./components/scroll_spy";
 import { PasswordStrength } from "./components/password_strength";
 
+// ── Wave 12 — Selection & Rich Input Suite ───────────────────────
+import { SegmentedControl } from "./components/segmented_control";
+import { TransferList } from "./components/transfer_list";
+import { PinInput } from "./components/pin_input";
+import { CreditCard } from "./components/credit_card";
+import { AnnotationLayer } from "./components/annotation_layer";
+import { Combobox } from "./components/combobox";
+import { NumberStepper } from "./components/number_stepper";
+import { ChipInput } from "./components/chip_input";
+import { CurrencyInput } from "./components/currency_input";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -365,6 +376,17 @@ frappe.visual.Divider = Divider;
 frappe.visual.ScrollSpy = ScrollSpy;
 frappe.visual.PasswordStrength = PasswordStrength;
 
+// Wave 12 — Selection & Rich Input Suite
+frappe.visual.SegmentedControl = SegmentedControl;
+frappe.visual.TransferList = TransferList;
+frappe.visual.PinInput = PinInput;
+frappe.visual.CreditCard = CreditCard;
+frappe.visual.AnnotationLayer = AnnotationLayer;
+frappe.visual.Combobox = Combobox;
+frappe.visual.NumberStepper = NumberStepper;
+frappe.visual.ChipInput = ChipInput;
+frappe.visual.CurrencyInput = CurrencyInput;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -376,7 +398,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 127+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 136+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
