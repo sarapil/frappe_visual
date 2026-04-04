@@ -1481,6 +1481,44 @@
 		return frappe.visual.FloatingToolbar.create(opts);
 	};
 
+	// ── Wave 30 — State & Logic Suite ──────────────────────────────
+	frappe.visual.stateMachine = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StateMachine.create(opts);
+	};
+	frappe.visual.eventBus = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.EventBus.create(opts);
+	};
+	frappe.visual.dataStore = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DataStore.create(opts);
+	};
+	frappe.visual.computedBinding = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ComputedBinding.create(opts);
+	};
+	frappe.visual.formValidator = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FormValidator.create(opts);
+	};
+	frappe.visual.conditionalRenderer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ConditionalRenderer.create(opts);
+	};
+	frappe.visual.featureFlag = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.FeatureFlag.create(opts);
+	};
+	frappe.visual.debugOverlay = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DebugOverlay.create(opts);
+	};
+	frappe.visual.performanceMonitor = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.PerformanceMonitor.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

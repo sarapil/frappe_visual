@@ -393,6 +393,17 @@ import { ResizablePanel } from "./components/resizable_panel";
 import { DockLayout } from "./components/dock_layout";
 import { FloatingToolbar } from "./components/floating_toolbar";
 
+// ── Wave 30 — State & Logic Suite ──────────────────────────────
+import { StateMachine } from "./components/state_machine";
+import { EventBus } from "./components/event_bus";
+import { DataStore } from "./components/data_store";
+import { ComputedBinding } from "./components/computed_binding";
+import { FormValidator } from "./components/form_validator";
+import { ConditionalRenderer } from "./components/conditional_renderer";
+import { FeatureFlag } from "./components/feature_flag";
+import { DebugOverlay } from "./components/debug_overlay";
+import { PerformanceMonitor } from "./components/performance_monitor";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -766,6 +777,17 @@ frappe.visual.ResizablePanel = ResizablePanel;
 frappe.visual.DockLayout = DockLayout;
 frappe.visual.FloatingToolbar = FloatingToolbar;
 
+// Wave 30 — State & Logic Suite
+frappe.visual.StateMachine = StateMachine;
+frappe.visual.EventBus = EventBus;
+frappe.visual.DataStore = DataStore;
+frappe.visual.ComputedBinding = ComputedBinding;
+frappe.visual.FormValidator = FormValidator;
+frappe.visual.ConditionalRenderer = ConditionalRenderer;
+frappe.visual.FeatureFlag = FeatureFlag;
+frappe.visual.DebugOverlay = DebugOverlay;
+frappe.visual.PerformanceMonitor = PerformanceMonitor;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -777,7 +799,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 289+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 298+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -839,5 +861,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 29%c CommandPalette · BreadcrumbTrail · StepIndicator · TabStrip · AccordionGroup · SplitPane · ResizablePanel · DockLayout · FloatingToolbar",
 	"color:#a855f7;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 30%c StateMachine · EventBus · DataStore · ComputedBinding · FormValidator · ConditionalRenderer · FeatureFlag · DebugOverlay · PerformanceMonitor",
+	"color:#84cc16;font-weight:bold",
 	"color:#94a3b8"
 );
