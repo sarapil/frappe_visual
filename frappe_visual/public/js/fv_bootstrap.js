@@ -906,6 +906,44 @@
 		return frappe.visual.FeatureList.create(opts);
 	};
 
+	// Wave 15 — Advanced Interaction & Micro-Animation
+	frappe.visual.typewriter = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Typewriter.create(opts);
+	};
+	frappe.visual.parallaxScroll = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ParallaxScroll.create(opts);
+	};
+	frappe.visual.confetti = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Confetti.create(opts);
+	};
+	frappe.visual.ripple = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Ripple.create(opts);
+	};
+	frappe.visual.textLoop = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.TextLoop.create(opts);
+	};
+	frappe.visual.numberTicker = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.NumberTicker.create(opts);
+	};
+	frappe.visual.glowCard = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.GlowCard.create(opts);
+	};
+	frappe.visual.morphingText = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.MorphingText.create(opts);
+	};
+	frappe.visual.dotPattern = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.DotPattern.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

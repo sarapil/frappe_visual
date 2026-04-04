@@ -1,0 +1,188 @@
+/* ================================================================
+   Wave 15 — Advanced Interaction & Micro-Animation Suite
+   Typewriter · Parallax · Confetti · Ripple · TextLoop
+   NumberTicker · GlowCard · MorphingText · DotPattern
+   ================================================================ */
+
+/* ── Typewriter ─────────────────────────────────────── */
+.fv-tw {
+	display: inline;
+	font-family: inherit;
+}
+.fv-tw-cursor {
+	display: inline-block;
+	width: 2px;
+	margin-inline-start: 1px;
+	background: currentColor;
+	animation: fvTwBlink 0.75s step-end infinite;
+	vertical-align: text-bottom;
+}
+@keyframes fvTwBlink {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: 0; }
+}
+
+/* ── Confetti canvas ────────────────────────────────── */
+.fv-confetti {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 99999;
+}
+
+/* ── Ripple ─────────────────────────────────────────── */
+.fv-ripple {
+	position: relative;
+	overflow: hidden;
+}
+.fv-ripple-wave {
+	position: absolute;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .35);
+	transform: scale(0);
+	animation: fvRipple 0.6s ease-out forwards;
+	pointer-events: none;
+}
+@keyframes fvRipple {
+	to { transform: scale(4); opacity: 0; }
+}
+
+/* ── TextLoop ───────────────────────────────────────── */
+.fv-tl2 {
+	display: inline-flex;
+	vertical-align: baseline;
+	overflow: hidden;
+}
+.fv-tl2-inner {
+	display: inline-block;
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fv-tl2-inner[data-trans="slideUp"] { transform: translateY(-110%); opacity: 0; }
+.fv-tl2-inner[data-trans="slideDown"] { transform: translateY(110%); opacity: 0; }
+.fv-tl2-inner[data-trans="fade"] { opacity: 0; }
+.fv-tl2-inner[data-trans="blur"] { opacity: 0; filter: blur(6px); }
+.fv-tl2-inner.fv-tl2-active {
+	transform: translateY(0);
+	opacity: 1;
+	filter: none;
+}
+
+/* ── NumberTicker ────────────────────────────────────── */
+.fv-nt {
+	display: inline-flex;
+	overflow: hidden;
+	line-height: 1;
+	align-items: baseline;
+}
+.fv-nt-digit {
+	display: inline-block;
+	overflow: hidden;
+	height: 1em;
+}
+.fv-nt-col {
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fv-nt-col span {
+	display: block;
+	height: 1em;
+	line-height: 1;
+	text-align: center;
+}
+.fv-nt-sep,
+.fv-nt-pre,
+.fv-nt-suf {
+	display: inline-block;
+}
+
+/* ── GlowCard ───────────────────────────────────────── */
+.fv-glow {
+	position: relative;
+	overflow: hidden;
+	background: var(--fv-glow-bg, var(--fg-color, #fff));
+}
+.fv-glow::before {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	border-radius: inherit;
+	padding: 2px;
+	background: radial-gradient(
+		var(--fv-glow-size, 300px) circle at var(--fv-glow-x, 50%) var(--fv-glow-y, 50%),
+		var(--fv-glow-color, rgba(99, 102, 241, 0.5)),
+		transparent 70%
+	);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	-webkit-mask-composite: xor;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.fv-glow:hover::before,
+.fv-glow.fv-glow-active::before {
+	opacity: 1;
+}
+
+/* ── MorphingText ───────────────────────────────────── */
+.fv-morph {
+	display: inline-block;
+	position: relative;
+}
+.fv-morph-text {
+	display: inline-block;
+	will-change: opacity;
+}
+
+/* ── DotPattern ─────────────────────────────────────── */
+.fv-dots {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+.fv-dots canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* ================================================================
+   Dark Mode Overrides
+   ================================================================ */
+[data-theme="dark"] .fv-ripple-wave,
+.dark .fv-ripple-wave {
+	background: rgba(255, 255, 255, .2);
+}
+
+[data-theme="dark"] .fv-glow,
+.dark .fv-glow {
+	--fv-glow-bg: var(--fg-color, #1e1e2e);
+	--fv-glow-color: rgba(139, 92, 246, 0.6);
+}
+
+[data-theme="dark"] .fv-tw-cursor,
+.dark .fv-tw-cursor {
+	background: var(--text-muted, #a1a1aa);
+}
+
+
+/* ================================================================
+   RTL Adjustments
+   ================================================================ */
+[dir="rtl"] .fv-tw-cursor {
+	margin-inline-start: 1px;
+	margin-inline-end: 0;
+}
+
+[dir="rtl"] .fv-nt {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+
+[dir="rtl"] .fv-tl2 {
+	direction: ltr;
+}

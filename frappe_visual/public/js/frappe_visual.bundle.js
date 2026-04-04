@@ -223,6 +223,17 @@ import { Comparison } from "./components/comparison";
 import { PricingTable } from "./components/pricing_table";
 import { FeatureList } from "./components/feature_list";
 
+// Wave 15 — Advanced Interaction & Micro-Animation Suite
+import { Typewriter } from "./components/typewriter";
+import { ParallaxScroll } from "./components/parallax_scroll";
+import { Confetti } from "./components/confetti";
+import { Ripple } from "./components/ripple";
+import { TextLoop } from "./components/text_loop";
+import { NumberTicker } from "./components/number_ticker";
+import { GlowCard } from "./components/glow_card";
+import { MorphingText } from "./components/morphing_text";
+import { DotPattern } from "./components/dot_pattern";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -431,6 +442,17 @@ frappe.visual.Comparison = Comparison;
 frappe.visual.PricingTable = PricingTable;
 frappe.visual.FeatureList = FeatureList;
 
+// Wave 15 — Advanced Interaction & Micro-Animation
+frappe.visual.Typewriter = Typewriter;
+frappe.visual.ParallaxScroll = ParallaxScroll;
+frappe.visual.Confetti = Confetti;
+frappe.visual.Ripple = Ripple;
+frappe.visual.TextLoop = TextLoop;
+frappe.visual.NumberTicker = NumberTicker;
+frappe.visual.GlowCard = GlowCard;
+frappe.visual.MorphingText = MorphingText;
+frappe.visual.DotPattern = DotPattern;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -442,7 +464,12 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 154+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 163+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 15%c Typewriter · Parallax · Confetti · Ripple · TextLoop · NumberTicker · GlowCard · MorphingText · DotPattern",
+	"color:#ec4899;font-weight:bold",
 	"color:#94a3b8"
 );
