@@ -36,6 +36,7 @@ app_include_js = [
     "/assets/arkan_help/js/navbar_help.js",
     "/assets/arkan_help/js/help_widget.js",
     "/assets/arkan_help/js/field_help.js",
+    "/assets/frappe_visual/js/fv_integration.js",
 ]
 app_include_css = [
     "/assets/frappe_visual/css/frappe_visual-theme.css",

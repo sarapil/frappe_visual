@@ -1329,6 +1329,44 @@
 		return frappe.visual.FormWizard.create(opts);
 	};
 
+	// ── Wave 26 — Notification & Alert Suite ─────────────────────────
+	frappe.visual.toastStack = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ToastStack.create(opts);
+	};
+	frappe.visual.snackBar = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.SnackBar.create(opts);
+	};
+	frappe.visual.bannerAlert = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BannerAlert.create(opts);
+	};
+	frappe.visual.confirmDialog = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ConfirmDialog.create(opts);
+	};
+	frappe.visual.progressModal = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.ProgressModal.create(opts);
+	};
+	frappe.visual.countdownTimer = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.CountdownTimer.create(opts);
+	};
+	frappe.visual.statusPulse = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StatusPulse.create(opts);
+	};
+	frappe.visual.notificationCenter = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.NotificationCenter.create(opts);
+	};
+	frappe.visual.badgeCounter = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.BadgeCounter.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

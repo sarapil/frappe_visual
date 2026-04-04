@@ -349,6 +349,17 @@ import { InlineEditor } from "./components/inline_editor";
 import { AutoSave } from "./components/auto_save";
 import { FormWizard } from "./components/form_wizard";
 
+// ── Wave 26 — Notification & Alert Suite ─────────────────────────
+import { ToastStack } from "./components/toast_stack";
+import { SnackBar } from "./components/snack_bar";
+import { BannerAlert } from "./components/banner_alert";
+import { ConfirmDialog } from "./components/confirm_dialog";
+import { ProgressModal } from "./components/progress_modal";
+import { CountdownTimer } from "./components/countdown_timer";
+import { StatusPulse } from "./components/status_pulse";
+import { NotificationCenter } from "./components/notification_center";
+import { BadgeCounter } from "./components/badge_counter";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -678,6 +689,17 @@ frappe.visual.InlineEditor = InlineEditor;
 frappe.visual.AutoSave = AutoSave;
 frappe.visual.FormWizard = FormWizard;
 
+// Wave 26 — Notification & Alert Suite
+frappe.visual.ToastStack = ToastStack;
+frappe.visual.SnackBar = SnackBar;
+frappe.visual.BannerAlert = BannerAlert;
+frappe.visual.ConfirmDialog = ConfirmDialog;
+frappe.visual.ProgressModal = ProgressModal;
+frappe.visual.CountdownTimer = CountdownTimer;
+frappe.visual.StatusPulse = StatusPulse;
+frappe.visual.NotificationCenter = NotificationCenter;
+frappe.visual.BadgeCounter = BadgeCounter;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -689,7 +711,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 253+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 262+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
@@ -731,5 +753,10 @@ console.log(
 console.log(
 	"%c⬡ Wave 25%c TagInput · ColorPicker · DateRangePicker · SignaturePad · RatingStars · FileDropZone · InlineEditor · AutoSave · FormWizard",
 	"color:#0ea5e9;font-weight:bold",
+	"color:#94a3b8"
+);
+console.log(
+	"%c⬡ Wave 26%c ToastStack · SnackBar · BannerAlert · ConfirmDialog · ProgressModal · CountdownTimer · StatusPulse · NotificationCenter · BadgeCounter",
+	"color:#a855f7;font-weight:bold",
 	"color:#94a3b8"
 );
