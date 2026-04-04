@@ -982,6 +982,44 @@
 		return frappe.visual.SankeyChart.create(opts);
 	};
 
+	// ── Wave 17 — Layout & Container Components ───────────────────
+	frappe.visual.masonry = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Masonry.create(opts);
+	};
+	frappe.visual.dock = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Dock.create(opts);
+	};
+	frappe.visual.gridStack = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.GridStack.create(opts);
+	};
+	frappe.visual.bento = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Bento.create(opts);
+	};
+	frappe.visual.infiniteScroll = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.InfiniteScroll.create(opts);
+	};
+	frappe.visual.sortable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Sortable.create(opts);
+	};
+	frappe.visual.virtualList = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.VirtualList.create(opts);
+	};
+	frappe.visual.stackedLayout = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.StackedLayout.create(opts);
+	};
+	frappe.visual.resizable = async function (opts = {}) {
+		await frappe.visual._load();
+		return frappe.visual.Resizable.create(opts);
+	};
+
 	/**
 	 * Quick-detect the current theme mode.
 	 */

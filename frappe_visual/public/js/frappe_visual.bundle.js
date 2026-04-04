@@ -245,6 +245,17 @@ import { DataCard } from "./components/data_card";
 import { AreaChart } from "./components/area_chart";
 import { SankeyChart } from "./components/sankey_chart";
 
+// ── Wave 17 — Layout & Container Components ─────────────────────
+import { Masonry } from "./components/masonry";
+import { Dock } from "./components/dock";
+import { GridStack } from "./components/grid_stack";
+import { Bento } from "./components/bento";
+import { InfiniteScroll } from "./components/infinite_scroll";
+import { Sortable } from "./components/sortable";
+import { VirtualList } from "./components/virtual_list";
+import { StackedLayout } from "./components/stacked_layout";
+import { Resizable } from "./components/resizable";
+
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
 import "./utils/visual_page_templates";
@@ -475,6 +486,17 @@ frappe.visual.DataCard = DataCard;
 frappe.visual.AreaChart = AreaChart;
 frappe.visual.SankeyChart = SankeyChart;
 
+// Wave 17 — Layout & Container
+frappe.visual.Masonry = Masonry;
+frappe.visual.Dock = Dock;
+frappe.visual.GridStack = GridStack;
+frappe.visual.Bento = Bento;
+frappe.visual.InfiniteScroll = InfiniteScroll;
+frappe.visual.Sortable = Sortable;
+frappe.visual.VirtualList = VirtualList;
+frappe.visual.StackedLayout = StackedLayout;
+frappe.visual.Resizable = Resizable;
+
 // Expose libraries for advanced usage
 frappe.visual.cytoscape = cytoscape;
 frappe.visual.ELK = ELK;
@@ -486,7 +508,7 @@ frappe.visual.lottie = lottie;
 ThemeManager.init();
 
 console.log(
-	"%c⬡ Frappe Visual Engine%c ready — 172+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
+	"%c⬡ Frappe Visual Engine%c ready — 181+ components · Cytoscape · ELK · ECharts · GSAP · Leaflet",
 	"color:#6366f1;font-weight:bold",
 	"color:#94a3b8"
 );
