@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
 # Developer Website: https://arkan.it.com
 # License: GPL-3.0
@@ -234,8 +232,8 @@ def before_uninstall():
 
 def extend_bootinfo(bootinfo):
     """
-    Add icon configuration to boot session.
-    Makes icon info available to frontend.
+    Add icon configuration, CAPS capabilities, and feature flags to boot session.
+    Makes all Frappe Visual config available to the frontend on page load.
     """
     bootinfo.frappe_visual_icons = {
         "libraries": {
@@ -252,6 +250,46 @@ def extend_bootinfo(bootinfo):
         "doctype_icons": DOCTYPE_ICONS,
         "custom_icons": [ic["name"] for ic in CUSTOM_ICONS],
     }
+
+    # ── CAPS capabilities for the current user ──
+    user = frappe.session.user
+    user_caps = []
+    if frappe.db.exists("DocType", "CAPS Capability"):
+        from frappe_visual.caps_integration.gate import check_capability
+        from frappe_visual.caps import FV_CAPABILITIES
+        for cap in FV_CAPABILITIES:
+            if check_capability(cap["name"], user):
+                user_caps.append(cap["name"])
+    else:
+        # CAPS not installed — grant all capabilities
+        from frappe_visual.caps import FV_CAPABILITIES
+        user_caps = [cap["name"] for cap in FV_CAPABILITIES]
+
+    bootinfo.frappe_visual_caps = user_caps
+
+    # ── Feature flags ──
+    bootinfo.frappe_visual_features = {
+        "auto_enhancers": True,
+        "form_enhancer": True,
+        "list_enhancer": True,
+        "workspace_enhancer": True,
+        "bilingual_tooltip": True,
+        "scene_engine": True,
+        "realtime_collab": True,
+    }
+
+    # Override from Settings if available
+    try:
+        for dt_name in ["Frappe Visual Settings", "FV Settings"]:
+            if frappe.db.exists("DocType", dt_name):
+                settings = frappe.get_cached_doc(dt_name)
+                for flag in bootinfo.frappe_visual_features:
+                    field_name = f"enable_{flag}"
+                    if hasattr(settings, field_name):
+                        bootinfo.frappe_visual_features[flag] = bool(getattr(settings, field_name))
+                break
+    except Exception:
+        pass
 
 
 # ═══════════════════════════════════════════════════════════════════

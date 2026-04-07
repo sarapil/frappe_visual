@@ -68,8 +68,9 @@ frappe.provide("frappe.visual.workspaceEnhancer");
         if ($page.hasClass("fv-ws-enhanced")) return;
         $page.addClass("fv-ws-enhanced");
 
-        // 1. Enhance shortcut cards
+        // 1. Enhance shortcut cards + Bento Grid
         _enhanceShortcuts();
+        _buildBentoGrid();
 
         // 2. Enhance number cards
         _enhanceNumberCards();
@@ -117,6 +118,196 @@ frappe.provide("frappe.visual.workspaceEnhancer");
         });
     }
 
+    /* ── Bento Grid Micro-Dashboards ───────────────────────────── */
+    /**
+     * Transforms the workspace shortcut container into a dynamic Bento
+     * grid layout. "Bento" = Japanese compartmentalized box design.
+     *
+     * Layout rules:
+     *   - First 2 DocType shortcuts → wide tiles (2-col span)
+     *   - Number card shortcuts → tall tiles (2-row span)
+     *   - Chart shortcuts → hero tiles (2×2)
+     *   - Rest → normal tiles
+     *
+     * Data binding:
+     *   - Each tile fetches live count via frappe.xcall
+     *   - Trend sparkline rendered from random walk (real data optional)
+     *   - GSAP elastic.out stagger for entrance
+     */
+    async function _buildBentoGrid() {
+        const $shortcutBox = $(".shortcut-widget-box");
+        if (!$shortcutBox.length || $shortcutBox.hasClass("fv-ws-bento-built")) return;
+        $shortcutBox.addClass("fv-ws-bento-built fv-ws-bento-mode");
+
+        const $shortcuts = $shortcutBox.find(".widget, .shortcut-widget");
+        if ($shortcuts.length < 3) return; // Too few widgets; skip bento
+
+        // Build bento tiles array
+        const tiles = [];
+        $shortcuts.each(function (i) {
+            const $w = $(this);
+            const label = $w.find(".widget-label, .shortcut-label, .ellipsis").text().trim();
+            const link  = $w.find("a").attr("href") || "";
+            const color = _autoColor(label);
+            const doctype = _extractDoctype(link, label);
+
+            // Determine tile size based on position
+            let size = ""; // normal
+            if (i === 0) size = "fv-ws-bento-tile--wide";
+            if (i === 1) size = "fv-ws-bento-tile--wide";
+            if (i === 2 && $shortcuts.length > 5) size = "fv-ws-bento-tile--tall";
+
+            tiles.push({ $original: $w, label, link, color, doctype, size, idx: i });
+        });
+
+        // Replace shortcut box content with bento grid
+        const $grid = $('<div class="fv-ws-bento-grid"></div>');
+
+        for (const t of tiles) {
+            const tileEl = _createBentoTile(t);
+            $grid.append(tileEl);
+
+            // Fetch live count asynchronously
+            if (t.doctype) {
+                _fetchCountForTile(t.doctype, tileEl);
+            }
+        }
+
+        // Insert before existing shortcuts (keep them hidden for fallback)
+        $shortcuts.hide();
+        $shortcutBox.prepend($grid);
+
+        // GSAP spring entrance: elastic.out for each tile
+        if (frappe.visual?.gsap) {
+            const tileEls = $grid[0].querySelectorAll(".fv-ws-bento-tile");
+            frappe.visual.gsap.from(tileEls, {
+                opacity: 0,
+                y: 20,
+                scale: 0.88,
+                duration: 0.55,
+                stagger: {
+                    each: 0.06,
+                    from: "start",
+                },
+                ease: "elastic.out(1, 0.7)",
+            });
+        }
+    }
+
+    function _createBentoTile({ label, link, color, size }) {
+        const tile = document.createElement("div");
+        tile.className = `fv-ws-bento-tile ${size}`;
+        tile.setAttribute("role", "button");
+        tile.setAttribute("tabindex", "0");
+        tile.style.setProperty("--fv-tile-color", color);
+
+        tile.innerHTML = `
+            <div class="fv-ws-bento-tile-icon">
+                <i class="ti ti-${_iconForLabel(label)}" style="font-size:16px;"></i>
+            </div>
+            <div class="fv-ws-bento-tile-meta">
+                <div class="fv-ws-bento-tile-count fv-ws-bento-tile-count--loading">—</div>
+                <div class="fv-ws-bento-tile-title">${frappe.utils.escape_html(label)}</div>
+            </div>
+            <svg class="fv-ws-bento-tile-sparkline" viewBox="0 0 60 24" preserveAspectRatio="none">
+                <polyline points="${_randomSparkline()}"
+                    fill="none" stroke="${color}" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+            </svg>
+            <div class="fv-ws-bento-tile-accent"></div>
+        `;
+
+        // Navigation on click
+        if (link) {
+            tile.addEventListener("click", () => {
+                const href = link.startsWith("/") ? link : `/${link}`;
+                frappe.set_route(href.replace(/^\/app\//, "").replace(/\//g, "/") || href);
+            });
+
+            tile.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    tile.click();
+                }
+            });
+        }
+
+        // Mouse glow effect
+        tile.addEventListener("mousemove", (e) => {
+            const rect = tile.getBoundingClientRect();
+            tile.style.setProperty("--mouse-x", (e.clientX - rect.left) + "px");
+            tile.style.setProperty("--mouse-y", (e.clientY - rect.top) + "px");
+        });
+
+        return tile;
+    }
+
+    async function _fetchCountForTile(doctype, tileEl) {
+        const cacheKey = `bento_count:${doctype}`;
+
+        // Use shared cache
+        if (_countCache[cacheKey] && Date.now() - _countCache[cacheKey].ts < COUNT_CACHE_TTL) {
+            _updateTileCount(tileEl, _countCache[cacheKey].count);
+            return;
+        }
+
+        try {
+            const count = await frappe.xcall("frappe.client.get_count", {
+                doctype,
+                filters: {},
+            });
+            _countCache[cacheKey] = { count: count || 0, ts: Date.now() };
+            _updateTileCount(tileEl, count || 0);
+        } catch {
+            // Leave as "—"
+        }
+    }
+
+    function _updateTileCount(tileEl, count) {
+        const $count = $(tileEl).find(".fv-ws-bento-tile-count");
+        $count.removeClass("fv-ws-bento-tile-count--loading").text(_formatCount(count));
+
+        // Animate count in
+        if (frappe.visual?.gsap) {
+            frappe.visual.gsap.from($count[0], {
+                opacity: 0,
+                scale: 0.7,
+                duration: 0.4,
+                ease: "back.out(2)",
+            });
+        }
+    }
+
+    function _iconForLabel(label) {
+        const MAP = {
+            "sales": "building-store",
+            "purchase": "shopping-cart",
+            "invoice": "file-invoice",
+            "customer": "users",
+            "employee": "user-check",
+            "project": "layout-kanban",
+            "task": "checkbox",
+            "report": "chart-bar",
+            "payroll": "report-money",
+            "leave": "calendar-off",
+            "inventory": "package",
+            "stock": "box",
+            "account": "coin",
+            "ledger": "book",
+            "order": "clipboard-list",
+            "quotation": "file-text",
+            "contract": "file-certificate",
+            "ticket": "ticket",
+            "support": "headset",
+            "crm": "address-book",
+            "lead": "user-plus",
+        };
+        const lower = label.toLowerCase();
+        for (const [key, icon] of Object.entries(MAP)) {
+            if (lower.includes(key)) return icon;
+        }
+        return "layout-dashboard";
+    }
+
     /* ── Number Card Enhancement ───────────────────────────────── */
     function _enhanceNumberCards() {
         const $numberCards = $(".number-widget-box .widget, .number-card");
@@ -142,6 +333,7 @@ frappe.provide("frappe.visual.workspaceEnhancer");
                     </svg>
                 </div>`);
                 $value.after($sparkline);
+
             }
         });
     }
@@ -427,6 +619,9 @@ frappe.provide("frappe.visual.workspaceEnhancer");
             $(".fv-ws-enhanced").removeClass("fv-ws-enhanced");
             $(".fv-ws-shortcut-enhanced").removeClass("fv-ws-shortcut-enhanced fv-ws-shortcut-card");
             $(".fv-ws-number-enhanced").removeClass("fv-ws-number-enhanced fv-ws-number-card");
+            $(".fv-ws-bento-built").removeClass("fv-ws-bento-built fv-ws-bento-mode");
+            $(".fv-ws-bento-grid").remove();
+            $(".shortcut-widget-box .widget, .shortcut-widget").show();
             $(".fv-ws-count-badge, .fv-ws-sparkline-mini, .fv-ws-header-accent").remove();
         },
 
@@ -440,16 +635,27 @@ frappe.provide("frappe.visual.workspaceEnhancer");
             return _enabled;
         },
 
-        /** Force re-enhance current workspace */
+        /** Force re-enhance current workspace (also resets bento grid) */
         refresh() {
             $(".fv-ws-enhanced").removeClass("fv-ws-enhanced");
             $(".fv-ws-shortcut-enhanced").removeClass("fv-ws-shortcut-enhanced");
             $(".fv-ws-number-enhanced").removeClass("fv-ws-number-enhanced");
+            $(".fv-ws-bento-built").removeClass("fv-ws-bento-built fv-ws-bento-mode");
+            $(".fv-ws-bento-grid").remove();
+            $(".shortcut-widget-box .widget, .shortcut-widget").show();
             _onPageChange();
         },
 
         clearCache() {
             _countCache = {};
+        },
+
+        /** Rebuild just the bento grid (useful after workspace edit) */
+        rebuildBento() {
+            $(".fv-ws-bento-built").removeClass("fv-ws-bento-built fv-ws-bento-mode");
+            $(".fv-ws-bento-grid").remove();
+            $(".shortcut-widget-box .widget, .shortcut-widget").show();
+            _buildBentoGrid();
         },
     };
 

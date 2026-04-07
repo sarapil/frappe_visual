@@ -1,17 +1,17 @@
 [
-  {
-    "name": "FV_view_maps",
-    "category": "Module",
-    "description": "View app maps and ERDs"
-  },
-  {
-    "name": "FV_manage_settings",
-    "category": "Module",
-    "description": "Manage Visual settings"
-  },
-  {
-    "name": "FV_use_components",
-    "category": "Action",
-    "description": "Use visual components"
-  }
+  {"name": "FV_view_visual_hub", "category": "Module", "description": "Access the Visual Hub page and all visual components"},
+  {"name": "FV_use_app_map", "category": "Module", "description": "Generate and interact with application maps"},
+  {"name": "FV_use_erd", "category": "Module", "description": "View Entity Relationship Diagrams"},
+  {"name": "FV_use_storyboard", "category": "Module", "description": "Create and view storyboard walkthroughs"},
+  {"name": "FV_use_kanban", "category": "Module", "description": "Create and interact with Kanban boards"},
+  {"name": "FV_use_calendar", "category": "Module", "description": "View and interact with visual calendar"},
+  {"name": "FV_use_gantt", "category": "Module", "description": "View project Gantt timelines"},
+  {"name": "FV_use_map", "category": "Module", "description": "View geographic map with markers"},
+  {"name": "FV_use_gallery", "category": "Module", "description": "View image galleries"},
+  {"name": "FV_use_tree", "category": "Module", "description": "View hierarchical tree visualizations"},
+  {"name": "FV_export_svg", "category": "Action", "description": "Export visual graphs as SVG files"},
+  {"name": "FV_export_png", "category": "Action", "description": "Export visual graphs as PNG images"},
+  {"name": "FV_change_layout", "category": "Action", "description": "Switch between layout engines (Force, Hierarchical, ELK, etc.)"},
+  {"name": "FV_manage_settings", "category": "Action", "description": "Configure Frappe Visual Settings (license, theme, defaults)"},
+  {"name": "FV_view_statistics", "category": "Report", "description": "View app and DocType statistics in Visual Hub"}
 ]

@@ -1,462 +1,1114 @@
-App Map,خريطة التطبيق
-Visual Hub,المركز المرئي
-Relationship Explorer,مستكشف العلاقات
-Storyboard Wizard,معالج القصة المصورة
-Visual Dashboard,لوحة المعلومات المرئية
-Floating Window,النافذة العائمة
-Minimap,الخريطة المصغرة
-Context Menu,قائمة السياق
-Animation Engine,محرك الرسوم المتحركة
-Theme Manager,مدير المظهر
-Layout Manager,مدير التخطيط
-Graph Engine,محرك الرسوم البيانية
-Color System,نظام الألوان
-Data Adapter,محول البيانات
-Loading...,جاري التحميل...
-Select an app,اختر تطبيقاً
-No apps found,لم يتم العثور على تطبيقات
-Search nodes...,بحث في العقد...
-Zoom In,تكبير
-Zoom Out,تصغير
-Fit to Screen,ملاءمة الشاشة
-Reset View,إعادة تعيين العرض
-Export as SVG,تصدير كـ SVG
-Export as PNG,تصدير كـ PNG
-Force Directed,قوة موجهة
-Hierarchical,تسلسل هرمي
-ELK Layered,ELK طبقي
-ELK Tree,ELK شجري
-ELK Stress,ELK ضغط
-ELK Radial,ELK دائري
-Circle,دائرة
-Grid,شبكة
-Concentric,متحد المركز
-Dark Mode,الوضع الداكن
-Light Mode,الوضع الفاتح
-Enable Animations,تمكين الرسوم المتحركة
-Disable Animations,تعطيل الرسوم المتحركة
-Enable Minimap,تمكين الخريطة المصغرة
-Disable Minimap,تعطيل الخريطة المصغرة
-Open,فتح
-View Details,عرض التفاصيل
-View Relationships,عرض العلاقات
-Expand,توسيع
-Collapse,طي
-Close,إغلاق
-Settings,الإعدادات
-License Key,مفتاح الترخيص
-License Status,حالة الترخيص
-Default Layout,التخطيط الافتراضي
-Auto Dark Mode,الوضع الداكن التلقائي
-Auto RTL,RTL التلقائي
-Frappe Visual Settings,إعدادات Frappe Visual
-License,الترخيص
-Display Settings,إعدادات العرض
-Auto Detection,الكشف التلقائي
-Free,مجاني
-Premium,احترافي
-Enterprise,مؤسسي
-Active,نشط
-Inactive,غير نشط
-Valid,صالح
-Invalid,غير صالح
-Expired,منتهي
-Feature not available in free tier,الميزة غير متاحة في الطبقة المجانية
-Upgrade to Premium for this feature,قم بالترقية للإصدار الاحترافي لهذه الميزة
-Graph generated successfully,تم إنشاء الرسم البياني بنجاح
-No relationships found,لم يتم العثور على علاقات
-Found {0} nodes,تم العثور على {0} عقدة
-Found {0} edges,تم العثور على {0} حافة
-{0} modules,{0} وحدات
-{0} doctypes,{0} أنواع مستندات
-Module,وحدة
-DocType,نوع المستند
-Transaction,معاملة
-Master,رئيسي
-Setup,إعداد
-Report,تقرير
-Child Table,جدول فرعي
-Controller,متحكم
-Tool,أداة
-Log,سجل
-Queue,طابور
-Singleton,مفرد
-Tree,شجرة
-Amendment,تعديل
-Custom,مخصص
-Link,رابط
-Dynamic Link,رابط ديناميكي
-Table,جدول
-Select,اختيار
-Submittable,قابل للإرسال
-Single,مفرد
-Virtual,افتراضي
-Depth,العمق
-Load More,تحميل المزيد
-Back,رجوع
-Next,التالي
-Previous,السابق
-Step {0} of {1},الخطوة {0} من {1}
-Complete,اكتمال
-Cancel,إلغاء
-Nodes,عقد
-Edges,حواف
-Modules,وحدات
-Relationships,علاقات
-Statistics,إحصائيات
-Total DocTypes,إجمالي أنواع المستندات
-Total Modules,إجمالي الوحدات
-All types,جميع الأنواع
-Connected to,متصل بـ
-Connections,الاتصالات
-Export PNG,تصدير PNG
-Export SVG,تصدير SVG
-Failed to load app map,فشل في تحميل خريطة التطبيق
-Fields,الحقول
-Fit to View,ملاءمة العرض
-Incoming,وارد
-Links,الروابط
-Loading application map...,جاري تحميل خريطة التطبيق...
-Name,الاسم
-Open List,فتح القائمة
-Outgoing,صادر
-Records,السجلات
-Premium Feature,ميزة احترافية
-DocTypes,أنواع المستندات
-Reports,التقارير
-Type,النوع
-WIP limit reached for {0},تم الوصول لحد العمل الجاري لـ {0}
-Failed to move card,فشل نقل البطاقة
-No cards,لا توجد بطاقات
-Calendar,التقويم
-Visual Calendar,التقويم المرئي
-Month,شهر
-Week,أسبوع
-Day,يوم
-Today,اليوم
-January,يناير
-February,فبراير
-March,مارس
-April,أبريل
-May,مايو
-June,يونيو
-July,يوليو
-August,أغسطس
-September,سبتمبر
-October,أكتوبر
-November,نوفمبر
-December,ديسمبر
-Sun,أحد
-Mon,إثنين
-Tue,ثلاثاء
-Wed,أربعاء
-Thu,خميس
-Fri,جمعة
-Sat,سبت
-more,المزيد
-No events found,لم يتم العثور على أحداث
-Timeline,الجدول الزمني
-Visual Gantt,مخطط جانت المرئي
-Gantt Chart,مخطط جانت
-Fit,ملاءمة
-No tasks found,لم يتم العثور على مهام
-Tree,شجرة
-Visual Tree View,عرض الشجرة المرئي
-Expand All,توسيع الكل
-Collapse All,طي الكل
-No records found,لم يتم العثور على سجلات
-Map,الخريطة
-Visual Map,الخريطة المرئية
-My Location,موقعي
-Gallery,المعرض
-Visual Gallery,المعرض المرئي
-No images found,لم يتم العثور على صور
-Form Dashboard,لوحة النموذج
-Visual Form Dashboard,لوحة النموذج المرئية
-Linked Types,الأنواع المرتبطة
-Select Icon,اختيار أيقونة
-Search icons...,بحث في الأيقونات...
-Please select an icon,يرجى اختيار أيقونة
-Interactive Application Explorer,مستكشف التطبيقات التفاعلي
-Application,التطبيق
-Frappe Visual,فراب فيجوال
-Graph-based Visual UX Framework,إطار عمل UX مرئي قائم على الرسوم البيانية
-Graph-based Visual UX Framework for Frappe applications,إطار عمل UX مرئي قائم على الرسوم البيانية لتطبيقات Frappe
+(None),(None)
+(blank),(blank)
+(empty),(empty)
++ Add Parameter,+ إضافة معامل
+15 Visual Components,15 مكون مرئي
 15 interactive components • 3000+ icons • Full RTL & dark mode support,15 مكون تفاعلي • أكثر من 3000 أيقونة • دعم كامل لـ RTL والوضع الداكن
-"15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards.","15 مكون مرئي تفاعلي لبناء تجارب UX غنية في تطبيقات Frappe. من محركات الرسوم البيانية إلى لوحات كانبان ومن التقاويم إلى القصص المصورة."
-Components,المكونات
-Icons,الأيقونات
-Tests,الاختبارات
-Graph Components,مكونات الرسوم البيانية
-Visualize your data relationships,تصور علاقات بياناتك
-Interactive app/module/DocType graph explorer with multiple layout engines,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات مع محركات تخطيط متعددة
-ERD,مخطط علاقات الكيانات
-"Entity Relationship Diagrams showing DocType links and child tables","مخططات علاقات الكيانات تعرض روابط أنواع المستندات والجداول الفرعية"
-Dependency Graph,رسم التبعيات
-Workflow and dependency chain visualization,تصور سلسلة سير العمل والتبعيات
-Tree View,عرض الشجرة
-"Hierarchical tree with expand/collapse and search","شجرة هرمية مع توسيع/طي وبحث"
-UI Components,مكونات واجهة المستخدم
-Rich interactive widgets,أدوات تفاعلية غنية
-Month/week/day event calendar with drag support,تقويم أحداث شهري/أسبوعي/يومي مع دعم السحب
-Kanban Board,لوحة كانبان
-Drag-and-drop cards with WIP limits,بطاقات سحب وإفلات مع حدود العمل الجاري
-Project timeline with task dependencies,جدول زمني للمشروع مع تبعيات المهام
-Image gallery with lightbox and zoom,معرض صور مع عرض مكبر وتقريب
-Geographic map with clustering and markers,خريطة جغرافية مع تجميع وعلامات
-Visual linked-document dashboard on forms,لوحة مستندات مرتبطة مرئية على النماذج
-Storyboard,القصة المصورة
-Guided walkthroughs and onboarding slides,جولات إرشادية وشرائح تعريفية
-"Draggable, resizable overlay containers","حاويات عائمة قابلة للسحب وتغيير الحجم"
-Core Infrastructure,البنية التحتية الأساسية
-Powerful engines under the hood,محركات قوية تحت الغطاء
-Cytoscape.js with 8 layout algorithms including ELK.js,Cytoscape.js مع 8 خوارزميات تخطيط بما في ذلك ELK.js
-"GSAP-powered stagger, morph, and scroll animations","رسوم متحركة بتقنية GSAP مع تأثيرات التتابع والتحول والتمرير"
-"Auto dark mode, RTL, and 55+ CSS design tokens","وضع داكن تلقائي و RTL وأكثر من 55 رمز تصميم CSS"
-"Force-directed, hierarchical, radial, grid, and more","قوة موجهة وتسلسل هرمي ودائري وشبكي والمزيد"
-Navigation overview for large graphs,نظرة عامة للتنقل في الرسوم البيانية الكبيرة
-Right-click actions on graph nodes and edges,إجراءات النقر بزر الماوس الأيمن على عقد وحواف الرسم البياني
-Icon System,نظام الأيقونات
+"15 interactive visual components for building rich UX experiences in Frappe apps. From graph engines to kanban boards, from calendars to storyboards.",15 مكون مرئي تفاعلي لبناء تجارب UX غنية في تطبيقات Frappe. من محركات الرسوم البيانية إلى لوحات كانبان ومن التقاويم إلى القصص المصورة.
+3000+ Icons,أكثر من 3000 أيقونة
 3000+ Tabler icons with smart DocType mapping,أكثر من 3000 أيقونة Tabler مع ربط ذكي لأنواع المستندات
-Technology Stack,المكدس التقني
-Built on battle-tested libraries,مبني على مكتبات مجربة وموثوقة
-Graph rendering & interaction,عرض الرسوم البيانية والتفاعل
-Advanced layout algorithms,خوارزميات تخطيط متقدمة
-Professional animations,رسوم متحركة احترافية
-After Effects animations,رسوم متحركة After Effects
 3000+ premium icons,أكثر من 3000 أيقونة احترافية
-Getting Started,البدء
-Start building visual experiences,ابدأ ببناء تجارب مرئية
-One line to create an interactive application graph,سطر واحد لإنشاء رسم بياني تفاعلي للتطبيق
-About Frappe Visual,عن Frappe Visual
-Home,الرئيسية
-View Visual Hub,عرض المركز المرئي
-Use App Map,استخدام خريطة التطبيق
-Use ERD Explorer,استخدام مستكشف العلاقات
-Use Storyboard,استخدام القصة المصورة
-Use Kanban Board,استخدام لوحة كانبان
-Use Calendar,استخدام التقويم
-Use Gantt Chart,استخدام مخطط جانت
-Use Map,استخدام الخريطة
-Use Gallery,استخدام المعرض
-Use Tree View,استخدام عرض الشجرة
-Change Layout Algorithm,تغيير خوارزمية التخطيط
-Manage Settings,إدارة الإعدادات
-View Statistics,عرض الإحصائيات
-Frappe Visual Viewer,عارض Frappe Visual
-Frappe Visual Power User,مستخدم متقدم Frappe Visual
-Frappe Visual Administrator,مدير Frappe Visual
-About,حول
-ERD Explorer,مستكشف علاقات الكيانات
-Configuration & Docs,الإعدادات والتوثيق
-Icon Explorer,مستكشف الأيقونات
-Interactive app/module/DocType graph explorer,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات
-Entity Relationship Diagrams for DocTypes,مخططات علاقات الكيانات لأنواع المستندات
-Workflow & dependency visualization,تصور سير العمل والتبعيات
-Hierarchical tree visualization,تصور الشجرة الهرمية
-Month/week/day visual calendar,تقويم مرئي شهري/أسبوعي/يومي
-Drag-and-drop Kanban boards,لوحات كانبان بالسحب والإفلات
-Project timeline Gantt bars,أشرطة جانت للجدول الزمني للمشروع
-Image gallery with lightbox,معرض صور مع عرض مكبر
-Geographic map with markers,خريطة جغرافية مع علامات
-Visual linked-document dashboard,لوحة مستندات مرتبطة مرئية
-Guided walkthroughs & onboarding,جولات إرشادية وتعريفية
-Draggable overlay container,حاوية عائمة قابلة للسحب
-"License, display, and theme settings","إعدادات الترخيص والعرض والمظهر"
-Browse and search 3000+ Tabler icons,تصفح وابحث في أكثر من 3000 أيقونة Tabler
-App showcase for admins and decision makers,عرض التطبيق للمسؤولين وصانعي القرار
-License Information,معلومات الترخيص
-General Settings,الإعدادات العامة
-Auto Dark Mode Detection,الكشف التلقائي للوضع الداكن
-Auto RTL Detection,الكشف التلقائي لـ RTL
-Export as SVG,تصدير كـ SVG
-Export as PNG,تصدير كـ PNG
-Visual Hub,المركز المرئي
-Visual Templates Demo,عرض توضيحي للقوالب المرئية
-Click any button above to preview a template,انقر على أي زر أعلاه لمعاينة قالب
 8 Ready-to-use Templates,8 قوالب جاهزة للاستخدام
-Bilingual Tooltip System,نظام التلميحات ثنائية اللغة
-Premium Visual Effects,تأثيرات مرئية احترافية
-Full RTL Support,دعم كامل للغات من اليمين لليسار
-Toggle Bilingual Tips,تبديل التلميحات ثنائية اللغة
-Bilingual tooltips enabled,تم تفعيل التلميحات ثنائية اللغة
-Bilingual tooltips disabled,تم تعطيل التلميحات ثنائية اللغة
-Sales Dashboard,لوحة المبيعات
-Real-time business metrics,مقاييس الأعمال في الوقت الفعلي
-Total Revenue,إجمالي الإيرادات
-New Orders,الطلبات الجديدة
+AI Assistant,مساعد الذكاء الاصطناعي
+AI endpoint not configured. Set `endpoint` or `method` option.,نقطة نهاية الذكاء الاصطناعي غير مُعدّة. عيّن خيار `endpoint` أو `method`.
+API integration,دمج API
+About,حول
+About Frappe Visual,عن Frappe Visual
+Accent,لون مميز
+Accept All,قبول الكل
+Accessibility Audit,تدقيق إمكانية الوصول
+Accounting,المحاسبة
+Actions,الإجراءات
+Active,نشط
 Active Customers,العملاء النشطون
-Pending Invoices,الفواتير المعلقة
-Monthly Sales,المبيعات الشهرية
-Revenue by Region,الإيرادات حسب المنطقة
-New Invoice,فاتورة جديدة
-New Order,طلب جديد
+Add,إضافة
 Add Customer,إضافة عميل
-View Reports,عرض التقارير
-Customer Relationships,علاقات العملاء
-Entity relationship diagram for Customer doctype,مخطط علاقات الكيانات لنوع مستند العميل
-Order Processing Workflow,سير عمل معالجة الطلبات
-From order creation to delivery,من إنشاء الطلب إلى التسليم
-Draft,مسودة
-Submitted,مُرسَل
-Approved,موافق عليه
-Processing,قيد المعالجة
-Shipped,تم الشحن
-Delivered,تم التسليم
-Order created pending submission,تم إنشاء الطلب في انتظار الإرسال
-Order submitted for approval,تم إرسال الطلب للموافقة
-Order approved by manager,تمت الموافقة من المدير
-Order being prepared,جاري تحضير الطلب
-Order dispatched,تم إرسال الطلب
-Order delivered to customer,تم تسليم الطلب للعميل
-Reject,رفض
-Organization Structure,الهيكل التنظيمي
-Company departments and hierarchy,أقسام الشركة والتسلسل الهرمي
+Add Document Card,إضافة بطاقة مستند
+Add New,إضافة جديد
+Add Users,إضافة المستخدمين
+Add a comment...,أضف تعليقاً...
+Add comment (optional),أضف تعليق (اختياري)
+Add condition,إضافة شرط
+Add group,إضافة مجموعة
+Add people (email or name),إضافة أشخاص (بريد إلكتروني أو اسم)
+Add reaction,إضافة تفاعل
+Add tag…,إضافة وسم...
+Admin,مدير
+Advanced,متقدم
+Advanced layout algorithms,خوارزميات تخطيط متقدمة
+Affected,متأثر
+After,بعد
+After Effects animations,رسوم متحركة After Effects
+Alerts,التنبيهات
+All,الكل
+All Done!,تم الانتهاء!
+All Systems Operational,جميع الأنظمة تعمل
+All done!,تم الانتهاء!
+All types,جميع الأنواع
+Allowed Roles,الأدوار المسموحة
+Amendment,تعديل
+An error occurred in Frappe Visual,An error occurred in Frappe Visual
+Angle,زاوية
+Animation Engine,محرك الرسوم المتحركة
+App Map,خريطة التطبيق
+App Structure,هيكل التطبيق
+App showcase for admins and decision makers,عرض التطبيق للمسؤولين وصانعي القرار
+Application,التطبيق
+Application Structure,هيكل التطبيق
+Apply,تطبيق
+Approval workflow,سير عمل الموافقة
+Approve,موافقة
+Approved,معتمد
+April,أبريل
+Are you sure?,هل أنت متأكد؟
+Arkan Dark,أركان داكن
+Arkan Default,أركان الافتراضي
+Ask anything...,اسأل أي شيء...
+Assignments,التكليفات
+Attach,إرفاق
+Attach file,إرفاق ملف
+Audit Trail,سجل التدقيق
+August,أغسطس
+Auto,تلقائي
+Auto Dark Mode,الوضع الداكن التلقائي
+Auto Dark Mode Detection,الكشف التلقائي للوضع الداكن
+Auto Detection,الكشف التلقائي
+Auto Layout,تخطيط تلقائي
+Auto RTL,RTL التلقائي
+Auto RTL Detection,الكشف التلقائي لـ RTL
+"Auto dark mode, RTL, and 55+ CSS design tokens",وضع داكن تلقائي و RTL وأكثر من 55 رمز تصميم CSS
+Auto-backup data,النسخ الاحتياطي التلقائي
+Auto-refresh every,تحديث تلقائي كل
+Avg Utilization,متوسط الاستخدام
+Back,رجوع
+Back to top,العودة للأعلى
+Background,الخلفية
+Background Jobs,المهام الخلفية
+Background image opacity (0.0 – 1.0),شفافية صورة الخلفية (0.0 – 1.0)
+Backlog,قائمة الانتظار
+Base Size,Base Size
+Base Theme,Base Theme
+Basic,Basic
+Before,قبل
+Best formats,Best formats
+Bilingual Tooltip System,نظام التلميحات ثنائية اللغة
+Bilingual tooltips disabled,تم تعطيل التلميحات ثنائية اللغة
+Bilingual tooltips enabled,تم تفعيل التلميحات ثنائية اللغة
+Bins,Bins
+Bookmark,إشارة مرجعية
+Bookmark removed,Bookmark removed
+Border,Border
+Border Radius,Border Radius
+Brand Colors,Brand Colors
+Breadcrumb,مسار التنقل
+Browse and search 3000+ Tabler icons,تصفح وابحث في أكثر من 3000 أيقونة Tabler
+Built for Arabic and Hebrew from the ground up,مبني للعربية والعبرية من الأساس
+Built on battle-tested libraries,مبني على مكتبات مجربة وموثوقة
+Button has no accessible name,Button has no accessible name
 CEO,الرئيس التنفيذي
-CTO,المدير التقني
 CFO,المدير المالي
 COO,مدير العمليات
-Dev Lead,قائد التطوير
-QA Lead,قائد الجودة
-Accounting,المحاسبة
-Treasury,الخزينة
-HR,الموارد البشرية
-Operations,العمليات
-Setup Wizard,معالج الإعداد
-Complete the following steps to get started,أكمل الخطوات التالية للبدء
-Company Details,بيانات الشركة
-Enter your company information to get started,أدخل معلومات شركتك للبدء
-Company Name,اسم الشركة
-Enter company name,أدخل اسم الشركة
-Industry,القطاع
-Select industry,اختر القطاع
-Technology,التقنية
-Manufacturing,التصنيع
-Retail,التجزئة
-Add Users,إضافة المستخدمين
-Invite team members to your workspace,دعوة أعضاء الفريق إلى مساحة العمل
-Email Address,البريد الإلكتروني
-Role,الدور
-Admin,مدير
-Manager,مسؤول
-User,مستخدم
-Configure your preferences,تكوين تفضيلاتك
-Enable notifications,تفعيل الإشعارات
-Auto-backup data,النسخ الاحتياطي التلقائي
-Enable dark mode,تفعيل الوضع الداكن
-Setup Complete!,اكتمل الإعداد!
-You're all set. Click Finish to start using the system.,أنت جاهز. انقر إنهاء لبدء استخدام النظام.
-Wizard completed successfully!,تم إكمال المعالج بنجاح!
-Project Tasks,مهام المشروع
-Drag and drop to organize tasks,اسحب وأفلت لتنظيم المهام
-Backlog,قائمة الانتظار
-To Do,للتنفيذ
-In Progress,قيد التنفيذ
-Review,المراجعة
-Done,مكتمل
-Research competitors,بحث المنافسين
-Write documentation,كتابة التوثيق
-Design mockups,تصميم النماذج
-API integration,دمج API
-Frontend development,تطوير الواجهة
-Database optimization,تحسين قاعدة البيانات
+CTO,المدير التقني
+Cache cleared,Cache cleared
+Calendar,التقويم
+Cancel,إلغاء
+Cancelled,ملغى
+Cannot delete built-in themes,Cannot delete built-in themes
+Capacity,Capacity
+Caption,Caption
+Capturing...,Capturing...
+Card View,عرض البطاقات
+Cards,بطاقات
+Change Background,Change Background
+Change History,Change History
+Change Layout Algorithm,تغيير خوارزمية التخطيط
+Changed,Changed
+Chart,مخطط
+Chart engine not available,Chart engine not available
+ChartPro not loaded,ChartPro not loaded
+Chat cleared. How can I help you?,Chat cleared. How can I help you?
+Child Table,جدول فرعي
+Circle,دائرة
+Clear,مسح
+Clear All,مسح الكل
+Clear Cache,Clear Cache
+Clear chat,Clear chat
+Clear selection,Clear selection
+Click Send to test,Click Send to test
+Click a node to see details,Click a node to see details
+Click any button above to preview a template,انقر على أي زر أعلاه لمعاينة قالب
+Click to edit,Click to edit
+Clickable element not keyboard accessible,Clickable element not keyboard accessible
+Clipboard copy failed,Clipboard copy failed
+Close,إغلاق
+Close current tab,Close current tab
+Close detail panel,Close detail panel
+Close panel (Esc),Close panel (Esc)
+Close panel / overlay,Close panel / overlay
+Close tab,Close tab
+Closed,مغلق
 Code review,مراجعة الكود
-Project setup,إعداد المشروع
+Collapse,طي
+Collapse All,طي الكل
+Color,لون
+Color System,نظام الألوان
+Column,Column
+Column Mapping,Column Mapping
+Columns,أعمدة
+Command Center,Command Center
+Command Palette,لوحة الأوامر
+Comment,تعليق
+Comments,تعليقات
+Company Details,بيانات الشركة
+Company Name,اسم الشركة
+Company departments and hierarchy,أقسام الشركة والتسلسل الهرمي
+Comparison,Comparison
+Complete,اكتمال
+Complete the following steps to get started,أكمل الخطوات التالية للبدء
+Completed,مكتمل
+Component Not Found,Component Not Found
+Components,المكونات
+Concentric,متحد المركز
+Condition,Condition
+Configuration & Docs,الإعدادات والتوثيق
+Configuration Error,Configuration Error
+Configure your preferences,تكوين تفضيلاتك
+Configure your settings,تكوين إعداداتك
+Connected to,متصل بـ
+Connection Types,أنواع الاتصال
+Connections,الاتصالات
+Context Menu,قائمة السياق
+Context menu,Context menu
+Controller,متحكم
+Copied,Copied
+Copied rich text,Copied rich text
+Copied to clipboard,تم النسخ إلى الحافظة
+Copy,نسخ
+Core Infrastructure,البنية التحتية الأساسية
+Could not list whiteboards,Could not list whiteboards
+Could not load record,Could not load record
+Create,إنشاء
+Create first,إنشاء أول
+Create new document,Create new document
+Created By,أنشأ بواسطة
+Created successfully,تم الإنشاء بنجاح
+Critical,حرج
+Current,Current
+Current value,Current value
+Custom,مخصص
+Customer Relationships,علاقات العملاء
+Customize,Customize
+Cytoscape.js with 8 layout algorithms including ELK.js,Cytoscape.js مع 8 خوارزميات تخطيط بما في ذلك ELK.js
+Dark Mode,الوضع الداكن
+Data Adapter,محول البيانات
+Data Model,Data Model
+Data Preview,Data Preview
+Data Relationships,علاقات البيانات
+Data Story View,Data Story View
+Database optimization,تحسين قاعدة البيانات
+Date,تاريخ
+Day,يوم
+Day of Month,Day of Month
+Day of Week,Day of Week
+Deals,Deals
+December,ديسمبر
+Decorative image should have role=presentation,Decorative image should have role=presentation
+Decrease font size,Decrease font size
+Default,افتراضي
+Default Layout,التخطيط الافتراضي
+Delete,حذف
+Deleted,Deleted
+Delivered,تم التسليم
+Demo data cleared for Frappe Visual,Demo data cleared for Frappe Visual
+Demo data loaded for Frappe Visual,Demo data loaded for Frappe Visual
+Dependency Graph,رسم التبعيات
+Depends On,Depends On
+Depth,العمق
+Description,وصف
+Design mockups,تصميم النماذج
+Detail Panel,Detail Panel
+Dev Lead,قائد التطوير
+Disable Animations,تعطيل الرسوم المتحركة
+Disable Minimap,تعطيل الخريطة المصغرة
+Disabled,معطل
+Discard,Discard
+Dismiss,تجاهل
+Display Options,Display Options
+Display Settings,إعدادات العرض
+Distance,Distance
+Doc Status,Doc Status
+DocType,نوع المستند
+DocType Details,DocType Details
+DocTypes,أنواع المستندات
+Document,Document
+Documentation,التوثيق
+Done,مكتمل
+Down,أسفل
+Download,تنزيل
+Draft,مسودة
+"Drag & drop a file here, or click to browse","Drag & drop a file here, or click to browse"
+Drag and drop to organize tasks,اسحب وأفلت لتنظيم المهام
+Drag fields from the palette or click to add,Drag fields from the palette or click to add
+"Drag fields to Rows, Columns, and Values zones to build the pivot table","Drag fields to Rows, Columns, and Values zones to build the pivot table"
+Drag to reorder,اسحب لإعادة الترتيب
+Drag to resize,Drag to resize
+Drag-and-drop Kanban boards,لوحات كانبان بالسحب والإفلات
+Drag-and-drop cards with WIP limits,بطاقات سحب وإفلات مع حدود العمل الجاري
+Draggable overlay container,حاوية عائمة قابلة للسحب
+"Draggable, resizable overlay containers",حاويات عائمة قابلة للسحب وتغيير الحجم
+Drawing Tools,Drawing Tools
+Drop files here or click to browse,Drop files here or click to browse
+Duplicate,تكرار
+Dynamic Link,رابط ديناميكي
+ELK Layered,ELK طبقي
+ELK Radial,ELK دائري
+ELK Stress,ELK ضغط
+ELK Tree,ELK شجري
+ERD,مخطط علاقات الكيانات
+ERD Explorer,مستكشف علاقات الكيانات
+Earlier,Earlier
+Edges,حواف
+Edit,تعديل
+Edit DocType,Edit DocType
+Edit Layout,Edit Layout
+Email Account,Email Account
+Email Address,البريد الإلكتروني
+Emergency,Emergency
+Empty,فارغ
+Empty heading element,Empty heading element
+Enable Animations,تمكين الرسوم المتحركة
+Enable Minimap,تمكين الخريطة المصغرة
+Enable dark mode,تفعيل الوضع الداكن
+Enable notifications,تفعيل الإشعارات
+Enabled,مفعل
+Energy Points,Energy Points
+Enter URL,Enter URL
+Enter URL:,Enter URL:
+Enter company name,أدخل اسم الشركة
+Enter floor plan image URL (or /api/method/... for uploaded file):,Enter floor plan image URL (or /api/method/... for uploaded file):
+Enter image URL:,Enter image URL:
+Enter label text:,Enter label text:
+Enter text:,Enter text:
+Enter your company information to get started,أدخل معلومات شركتك للبدء
+Enterprise,مؤسسي
+Entity Relationship Diagrams for DocTypes,مخططات علاقات الكيانات لأنواع المستندات
+Entity Relationship Diagrams showing DocType links and child tables,مخططات علاقات الكيانات تعرض روابط أنواع المستندات والجداول الفرعية
+Entity Relationships,Entity Relationships
+Entity relationship diagram for Customer doctype,مخطط علاقات الكيانات لنوع مستند العميل
+Entity relationships,Entity relationships
+Entrance,Entrance
+Error,خطأ
+Error Log,Error Log
+Every,كل
+Every Monday at 9 AM,Every Monday at 9 AM
+Every Sunday at midnight,Every Sunday at midnight
+Every day at 9 AM,Every day at 9 AM
+Every day at midnight,Every day at midnight
+Every hour,كل ساعة
+Every minute,Every minute
+Excel support requires SheetJS library,Excel support requires SheetJS library
+Expand,توسيع
+Expand All,توسيع الكل
+Expired,منتهي
+Explore all the features and capabilities,استكشف جميع الميزات والإمكانيات
+Export,تصدير
+Export CSV,Export CSV
+Export Error,خطأ في التصدير
+Export JSON,Export JSON
+Export PNG,تصدير PNG
+Export SVG,تصدير SVG
+Export as PNG,تصدير كـ PNG
+Export as SVG,تصدير كـ SVG
+Export failed,فشل التصدير
+Exporting,Exporting
+Exporting SVG...,Exporting SVG...
+Failed to load,Failed to load
+Failed to load app info,فشل في تحميل معلومات التطبيق
+Failed to load app map,فشل في تحميل خريطة التطبيق
+Failed to load data,فشل في تحميل البيانات
+Failed to load floor plan image. Check the URL or upload a new image.,Failed to load floor plan image. Check the URL or upload a new image.
+Failed to load links,فشل في تحميل الروابط
+Failed to load reports,فشل في تحميل التقارير
+Failed to load settings,فشل في تحميل الإعدادات
+Failed to move card,فشل نقل البطاقة
+Failed to parse file:,Failed to parse file:
+Feature not available in free tier,الميزة غير متاحة في الطبقة المجانية
+Features,الميزات
+February,فبراير
+Field Name,Field Name
+Fields,الحقول
+Filter DocTypes or Roles...,Filter DocTypes or Roles...
+Find...,Find...
+Finish,إنهاء
+First of month at midnight,First of month at midnight
+Fit,ملاءمة
+Fit Page,Fit Page
+Fit Width,Fit Width
+Fit to Screen,ملاءمة الشاشة
+Fit to View,ملاءمة العرض
+Flags,Flags
+Floating Window,النافذة العائمة
+FloatingWindow component required,FloatingWindow component required
+Floor Plan Image,Floor Plan Image
+Floor plan saved,Floor plan saved
+Follow the steps,Follow the steps
+Font Family,Font Family
+Font Size,حجم الخط
+Font size,Font size
+Font size slider,Font size slider
+Force Directed,قوة موجهة
+"Force-directed, hierarchical, radial, grid, and more",قوة موجهة وتسلسل هرمي ودائري وشبكي والمزيد
+Foreground,Foreground
+Forest Green,Forest Green
+Form Builder,Form Builder
+Form Dashboard,لوحة النموذج
+Form Preview,Form Preview
+Form View,Form View
+Form input missing label,Form input missing label
+Found {0} edges,تم العثور على {0} حافة
+Found {0} nodes,تم العثور على {0} عقدة
+Frappe,Frappe
+Frappe Visual,فراب فيجوال
+Frappe Visual Administrator,مدير Frappe Visual
+Frappe Visual Error,Frappe Visual Error
+Frappe Visual Export,Frappe Visual Export
+Frappe Visual Onboarding,Frappe Visual Onboarding
+Frappe Visual Power User,مستخدم متقدم Frappe Visual
+Frappe Visual Settings,إعدادات Frappe Visual
+Frappe Visual Viewer,عارض Frappe Visual
+Free,مجاني
+Fri,جمعة
+From,من
+From graphs to kanban boards everything you need,من الرسوم البيانية إلى لوحات كانبان كل ما تحتاجه
+From order creation to delivery,من إنشاء الطلب إلى التسليم
+Frontend development,تطوير الواجهة
+Full Form,النموذج الكامل
+Full RTL Support,دعم كامل للغات من اليمين لليسار
+Fullscreen,ملء الشاشة
+GSAP-powered smooth animations everywhere,رسوم متحركة سلسة بتقنية GSAP في كل مكان
+"GSAP-powered stagger, morph, and scroll animations",رسوم متحركة بتقنية GSAP مع تأثيرات التتابع والتحول والتمرير
+Gallery,المعرض
+Gantt Chart,مخطط جانت
+General,عام
+General Settings,الإعدادات العامة
+Generating PDF...,Generating PDF...
+Generating page for,جاري إنشاء صفحة لـ
+Geographic map with clustering and markers,خريطة جغرافية مع تجميع وعلامات
+Geographic map with markers,خريطة جغرافية مع علامات
+Get Started,ابدأ الآن
+Getting Started,البدء
+Global,عام
+Go back,Go back
+Go forward,Go forward
+Go to,Go to
+Grand Total,Grand Total
+Graph Components,مكونات الرسوم البيانية
+Graph Engine,محرك الرسوم البيانية
+Graph generated successfully,تم إنشاء الرسم البياني بنجاح
+Graph rendering & interaction,عرض الرسوم البيانية والتفاعل
+Graph-based Visual UX Framework,إطار عمل UX مرئي قائم على الرسوم البيانية
+Graph-based Visual UX Framework for Frappe applications,إطار عمل UX مرئي قائم على الرسوم البيانية لتطبيقات Frappe
+Grid,شبكة
+Guided walkthroughs & onboarding,جولات إرشادية وتعريفية
+Guided walkthroughs and onboarding slides,جولات إرشادية وشرائح تعريفية
+HR,الموارد البشرية
+Hello! How can I help you today?,Hello! How can I help you today?
+Hidden,مخفي
+Hierarchical,تسلسل هرمي
+Hierarchical structure,Hierarchical structure
+Hierarchical tree visualization,تصور الشجرة الهرمية
+Hierarchical tree with expand/collapse and search,شجرة هرمية مع توسيع/طي وبحث
+Hierarchy,تسلسل هرمي
+High contrast off,High contrast off
+High contrast on,High contrast on
+High volume — consider reviewing filters,High volume — consider reviewing filters
+Home,الرئيسية
+Hour,ساعة
+Icon Explorer,مستكشف الأيقونات
+Icon System,نظام الأيقونات
+Icons,الأيقونات
+Image Source,Image Source
+Image URL,Image URL
+Image gallery with lightbox,معرض صور مع عرض مكبر
+Image gallery with lightbox and zoom,معرض صور مع عرض مكبر وتقريب
+Image missing alt text,Image missing alt text
+Image resolution,Image resolution
+Import,استيراد
+Import Complete,Import Complete
+Import More,Import More
+Importing into,Importing into
+Importing...,Importing...
+In Progress,قيد التنفيذ
+Inactive,غير نشط
+Incoming,وارد
+Increase font size,Increase font size
+Industry,القطاع
+Info,معلومات
 Initial planning,التخطيط الأولي
-Project Timeline,الجدول الزمني للمشروع
-Q2 2026 Development Roadmap,خارطة طريق التطوير للربع الثاني 2026
+Insufficient permissions,Insufficient permissions
+Integration Error,Integration Error
+Integration error with {0}: {1},Integration error with {0}: {1}
+Interactive Application Explorer,مستكشف التطبيقات التفاعلي
+Interactive app/module/DocType graph explorer,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات
+Interactive app/module/DocType graph explorer with multiple layout engines,مستكشف رسوم بيانية تفاعلي للتطبيقات والوحدات وأنواع المستندات مع محركات تخطيط متعددة
+Invalid,غير صالح
+Invalid email address: {0},Invalid email address: {0}
+Invalid phone number: {0},Invalid phone number: {0}
+Invalid theme file,Invalid theme file
+Invite team members to your workspace,دعوة أعضاء الفريق إلى مساحة العمل
+Items,عناصر
+JSON,JSON
+January,يناير
+July,يوليو
+June,يونيو
+KPIs,KPIs
+Kanban,كانبان
+Kanban Board,لوحة كانبان
+Kanban View,عرض كانبان
+Key,مفتاح
+Key Features,الميزات الرئيسية
+Keyboard Shortcuts,Keyboard Shortcuts
+Label,تسمية
+Last 30 Days,Last 30 Days
+Last 7 Days,Last 7 Days
+Last Modified,آخر تعديل
+Last Month,Last Month
+Last checked,Last checked
+Layout,تخطيط
+Layout Error,Layout Error
+Layout Manager,مدير التخطيط
+Layout error{0}: {1},Layout error{0}: {1}
+Legend,وسيلة إيضاح
+Less,Less
+Let's get you started with a quick tour,دعنا نبدأ معك بجولة سريعة
+License,الترخيص
+License Error,License Error
+License Information,معلومات الترخيص
+License Key,مفتاح الترخيص
+License Status,حالة الترخيص
+License validation failed,License validation failed
+"License, display, and theme settings",إعدادات الترخيص والعرض والمظهر
+Light Mode,الوضع الفاتح
+Light Text,Light Text
+Linear,Linear
+Link,رابط
+Link Document,Link Document
+Link copied!,Link copied!
+Link has no accessible text,Link has no accessible text
+Link opens in new tab without warning,Link opens in new tab without warning
+Link sharing,Link sharing
+Link to Document,Link to Document
+Linked Documents,المستندات المرتبطة
+Linked Types,الأنواع المرتبطة
+Links,الروابط
+List,قائمة
+List View,List View
+Listening...,Listening...
+Load,Load
+Load More,تحميل المزيد
+Load Whiteboard,Load Whiteboard
+Load failed,Load failed
+Load from Server,Load from Server
+Load preset…,Load preset…
+Loading application map...,جاري تحميل خريطة التطبيق...
+Loading relationship explorer...,جاري تحميل مستكشف العلاقات...
+Loading...,جاري التحميل...
+Log,سجل
+Loop,Loop
+Main,Main
+Manage Settings,إدارة الإعدادات
+Manager,مسؤول
+Mandatory,Mandatory
+Manufacturing,التصنيع
+Map,الخريطة
+Map Layers,Map Layers
+Map source columns to target fields,Map source columns to target fields
+March,مارس
+Mark all read,Mark all read
+Master,رئيسي
+Material,Material
+Max,Max
+May,مايو
+Media,Media
+Mentions,Mentions
+Min,Min
+Minimap,الخريطة المصغرة
+Minute,دقيقة
+Modified,تم التعديل
+Module,وحدة
+Modules,وحدات
+Modules and components,Modules and components
+Mon,إثنين
+Month,شهر
+Month/week/day event calendar with drag support,تقويم أحداث شهري/أسبوعي/يومي مع دعم السحب
+Month/week/day visual calendar,تقويم مرئي شهري/أسبوعي/يومي
+Monthly Sales,المبيعات الشهرية
+More,المزيد
+More actions,More actions
+Motion off,Motion off
+Motion on,Motion on
+Move Down,Move Down
+Move Up,Move Up
+Mute,Mute
+Muted Text,Muted Text
+My Location,موقعي
+Name,الاسم
+Navigate,Navigate
+Navigate records,Navigate records
+Navigation,Navigation
+Navigation overview for large graphs,نظرة عامة للتنقل في الرسوم البيانية الكبيرة
+New,جديد
+New Invoice,فاتورة جديدة
+New Order,طلب جديد
+New Orders,الطلبات الجديدة
+New Tab,New Tab
+New assignment,New assignment
+Next,التالي
+Next Page,Next Page
+Next record (↓),Next record (↓)
+Next: Preview,Next: Preview
+No,لا
+No DocType specified,No DocType specified
+No Link fields found,No Link fields found
+No SVG element found,No SVG element found
+No active workflow found,No active workflow found
+No activity,No activity
+No activity yet,No activity yet
+No apps found,لم يتم العثور على تطبيقات
+No audit entries found,No audit entries found
+No bins match your filter,No bins match your filter
+No cards,لا توجد بطاقات
+No commands found,No commands found
+No data,No data
+No data available for storytelling,No data available for storytelling
+No data to export,لا توجد بيانات للتصدير
+No endpoints found,No endpoints found
+No events found,لم يتم العثور على أحداث
+No events to display,No events to display
+No fields found. Load a DocType or add fields.,No fields found. Load a DocType or add fields.
+No files in this folder,No files in this folder
+No images found,لم يتم العثور على صور
+No linked documents,لا توجد مستندات مرتبطة
+No matching actions,No matching actions
+No notifications,No notifications
+No numeric columns to chart,No numeric columns to chart
+No recent activity,No recent activity
+No recent records,No recent records
+No records,No records
+No records found,لا توجد سجلات
+No relationships found,لم يتم العثور على علاقات
+No resources defined,No resources defined
+No results,No results
+No results found,No results found
+No saved whiteboards,No saved whiteboards
+No status field found for Kanban view,لم يتم العثور على حقل حالة لعرض كانبان
+No status options defined,لم يتم تحديد خيارات الحالة
+No tasks found,لم يتم العثور على مهام
+No users found,No users found
+No version data,No version data
+No versions to compare. Enable versioning on this DocType to track changes.,No versions to compare. Enable versioning on this DocType to track changes.
+No words to display,No words to display
+No workflow defined,No workflow defined
+No workflow found,No workflow found
+Nodes,عقد
+Not Found,غير موجود
+Not Set,Not Set
+Not shared with anyone,Not shared with anyone
+Notification,إشعار
+Notifications,إشعارات
+November,نوفمبر
+Ocean Breeze,Ocean Breeze
+October,أكتوبر
+Older,Older
+On Hold,في الانتظار
+Onboarding complete!,اكتمل التعريف!
+One line to create an interactive application graph,سطر واحد لإنشاء رسم بياني تفاعلي للتطبيق
+Opacity,الشفافية
+Open,مفتوح
+Open App,Open App
+Open Full Form,Open Full Form
+Open List,فتح القائمة
+Open full form,Open full form
+Open full form (Ctrl+Enter),Open full form (Ctrl+Enter)
+Open full form →,Open full form →
+Open list,Open list
+Open report,Open report
+Operations,العمليات
+Options,خيارات
+Order Processing Workflow,سير عمل معالجة الطلبات
+Order approved by manager,تمت الموافقة من المدير
+Order being prepared,جاري تحضير الطلب
+Order created pending submission,تم إنشاء الطلب في انتظار الإرسال
+Order delivered to customer,تم تسليم الطلب للعميل
+Order dispatched,تم إرسال الطلب
+Order submitted for approval,تم إرسال الطلب للموافقة
+Organization Structure,الهيكل التنظيمي
+Other,أخرى
+Outgoing,صادر
+PDF export requires jsPDF. Downloaded as PNG instead.,PDF export requires jsPDF. Downloaded as PNG instead.
+Page,صفحة
+Page missing lang attribute on <html>,Page missing lang attribute on <html>
+Pagination,Pagination
+Parameters,Parameters
+Pending,معلق
+Pending Invoices,الفواتير المعلقة
+People viewing,People viewing
+Permission Denied,Permission Denied
+Permission Matrix,Permission Matrix
 Phase 1: Planning,المرحلة 1: التخطيط
 Phase 2: Design,المرحلة 2: التصميم
 Phase 3: Development,المرحلة 3: التطوير
 Phase 4: Testing,المرحلة 4: الاختبار
 Phase 5: Launch,المرحلة 5: الإطلاق
-Visual GUI Framework for Frappe,إطار عمل واجهة مستخدم رسومية لـ Frappe
-15 Visual Components,15 مكون مرئي
-From graphs to kanban boards everything you need,من الرسوم البيانية إلى لوحات كانبان كل ما تحتاجه
-3000+ Icons,أكثر من 3000 أيقونة
-Tabler Icons with smart DocType mapping,أيقونات Tabler مع ربط ذكي لأنواع المستندات
-Built for Arabic and Hebrew from the ground up,مبني للعربية والعبرية من الأساس
+Pick from screen,Pick from screen
+Picture-in-Picture,Picture-in-Picture
+Pipeline,Pipeline
+Pivot Table,Pivot Table
+Play,Play
+Playlist,Playlist
+Please select an icon,يرجى اختيار أيقونة
+Powerful engines under the hood,محركات قوية تحت الغطاء
+Premium,احترافي
 Premium Animations,رسوم متحركة احترافية
-GSAP-powered smooth animations everywhere,رسوم متحركة سلسة بتقنية GSAP في كل مكان
-Get Started,ابدأ الآن
-Documentation,التوثيق
-Generating page for,جاري إنشاء صفحة لـ
-Failed to load app info,فشل في تحميل معلومات التطبيق
-Key Features,الميزات الرئيسية
-Application Structure,هيكل التطبيق
-Data Relationships,علاقات البيانات
-User Roles,أدوار المستخدمين
-Ready to get started?,جاهز للبدء؟
-Explore all the features and capabilities,استكشف جميع الميزات والإمكانيات
-Reports Hub,مركز التقارير
-reports available,تقرير متاح
-Search reports...,بحث في التقارير...
-Standard,قياسي
-Welcome to,مرحباً بك في
-Let's get you started with a quick tour,دعنا نبدأ معك بجولة سريعة
-Finish,إنهاء
-Onboarding complete!,اكتمل التعريف!
-Settings saved successfully,تم حفظ الإعدادات بنجاح
-Configure your settings,تكوين إعداداتك
-Failed to load settings,فشل في تحميل الإعدادات
-Failed to load reports,فشل في تحميل التقارير
+Premium Feature,ميزة احترافية
+Premium Visual Effects,تأثيرات مرئية احترافية
+Preparing export...,Preparing export...
+Preset name:,Preset name:
+Press,Press
+Preview,معاينة
+Previous,السابق
+Previous / next record,Previous / next record
+Previous Page,Previous Page
+Previous record (↑),Previous record (↑)
+Price,Price
+Primary,Primary
+Primary Dark,Primary Dark
+Primary Light,Primary Light
+Print,طباعة
+Print Settings,Print Settings
+Process flow visualization,Process flow visualization
+Processing,قيد المعالجة
+Professional animations,رسوم متحركة احترافية
+Project Tasks,مهام المشروع
+Project Timeline,الجدول الزمني للمشروع
+Project setup,إعداد المشروع
+Project timeline,Project timeline
+Project timeline Gantt bars,أشرطة جانت للجدول الزمني للمشروع
+Project timeline with task dependencies,جدول زمني للمشروع مع تبعيات المهام
+Properties,الخصائص
+Q2 2026 Development Roadmap,خارطة طريق التطوير للربع الثاني 2026
+QA Lead,قائد الجودة
 Query Report,تقرير استعلام
-Script Report,تقرير برمجي
-Report Builder,منشئ التقارير
-Other,أخرى
-Search...,بحث...
-records,سجل
-No records found,لم يتم العثور على سجلات
-Create first,إنشاء أول
-Failed to load data,فشل في تحميل البيانات
-Retry,إعادة المحاولة
-Cards,بطاقات
-List,قائمة
-Kanban,كانبان
-Quick entry form,نموذج إدخال سريع
-Full Form,النموذج الكامل
-Created successfully,تم الإنشاء بنجاح
-Saved successfully,تم الحفظ بنجاح
-Linked Documents,المستندات المرتبطة
-No linked documents,لا توجد مستندات مرتبطة
-Failed to load links,فشل في تحميل الروابط
-more,المزيد
-Modified,تم التعديل
-View,عرض
-Edit,تعديل
-Delete,حذف
-Select...,اختر...
-View file,عرض الملف
-Status,الحالة
-Created By,أنشأ بواسطة
-Last Modified,آخر تعديل
-Linked Documents,المستندات المرتبطة
-Connection Types,أنواع الاتصال
-Relationships,العلاقات
-Expand,توسيع
+Queue,طابور
+Quick Actions,Quick Actions
 Quick Navigation,تنقل سريع
-Total documents,إجمالي المستندات
-Table View,عرض الجدول
-Card View,عرض البطاقات
-Kanban View,عرض كانبان
-Timeline View,عرض الخط الزمني
-No records found,لا توجد سجلات
-No status field found for Kanban view,لم يتم العثور على حقل حالة لعرض كانبان
-This DocType needs a Select field with status options,يحتاج هذا النوع إلى حقل اختيار مع خيارات الحالة
-No status options defined,لم يتم تحديد خيارات الحالة
-Empty,فارغ
-Loading relationship explorer...,جاري تحميل مستكشف العلاقات...
-Draft,مسودة
-Submitted,مقدم
-Cancelled,ملغى
-Active,نشط
-Enabled,مفعل
-Approved,معتمد
-Completed,مكتمل
-Open,مفتوح
-Closed,مغلق
+Quick Presets,Quick Presets
+Quick action,Quick action
+Quick entry form,نموذج إدخال سريع
+Quick filter...,Quick filter...
+Radial,Radial
+Radius Large,Radius Large
+Radius Small,Radius Small
+Rate Limit Exceeded,Rate Limit Exceeded
+Rating,Rating
+Reactions,Reactions
+Read Only,Read Only
+Ready to get started?,جاهز للبدء؟
+Real-time business metrics,مقاييس الأعمال في الوقت الفعلي
+Real-time overview,Real-time overview
+Recent,الأخيرة
+Recent Activity,Recent Activity
+Recent Incidents,Recent Incidents
+Recommended Resolution,Recommended Resolution
+Recommended minimum,Recommended minimum
+Record Detail Panel,Record Detail Panel
+Records,السجلات
+Redo,إعادة
+Redo (Alt),Redo (Alt)
+Refresh,تحديث
+Reject,رفض
+Reject All,Reject All
 Rejected,مرفوض
-Disabled,معطل
-Pending,معلق
-On Hold,في الانتظار
-In Progress,قيد التنفيذ
+Relationship Explorer,مستكشف العلاقات
+Relationships,العلاقات
+Reload Page,Reload Page
+Remove,إزالة
+Remove group,Remove group
+Render Error,Render Error
+Render error{0}: {1},Render error{0}: {1}
+Reply...,Reply...
+Report,تقرير
+Report Builder,منشئ التقارير
+Reports,التقارير
+Reports Hub,مركز التقارير
+Research competitors,بحث المنافسين
+Resend Code,Resend Code
+Resend in,Resend in
+Reset,إعادة تعيين
+Reset View,إعادة تعيين العرض
+Reset font size,Reset font size
+Resolve,Resolve
+Response,Response
+Restore,استعادة
+Retail,التجزئة
+Retry,إعادة المحاولة
+Revenue by Region,الإيرادات حسب المنطقة
+Revert,Revert
+Review,المراجعة
+Review & Submit,Review & Submit
+Review Your Information,Review Your Information
+Rich interactive widgets,أدوات تفاعلية غنية
+Right-click actions on graph nodes and edges,إجراءات النقر بزر الماوس الأيمن على عقد وحواف الرسم البياني
+Role,الدور
+Roles,أدوار
+Room,Room
+Route,Route
+Route Planner,Route Planner
+Row,صف
+Rows,صفوف
+SVG missing aria-label or <title>,SVG missing aria-label or <title>
+Sales Dashboard,لوحة المبيعات
+Sat,سبت
+Save,حفظ
+Save Preset,Save Preset
+Save Theme,Save Theme
+Save document,Save document
+Save failed,Save failed
+Save failed ✕,Save failed ✕
+Save failed:,Save failed:
+Save to Server,Save to Server
+Saved,تم الحفظ
+Saved successfully,تم الحفظ بنجاح
+Saved ✓,Saved ✓
+Saving…,Saving…
+Schema Designer,Schema Designer
+Scope,Scope
+Script Report,تقرير برمجي
+"Scroll down to explore each section, or use keyboard arrows to navigate.","Scroll down to explore each section, or use keyboard arrows to navigate."
+Search,بحث
+Search APIs...,Search APIs...
+Search bins...,Search bins...
+Search everywhere…,Search everywhere…
+Search files...,Search files...
+Search icons...,بحث في الأيقونات...
+Search in document...,Search in document...
+Search in workspace,Search in workspace
+Search location...,Search location...
+Search nodes...,بحث في العقد...
+Search notifications…,Search notifications…
+Search or type a command…,Search or type a command…
+Search reports...,بحث في التقارير...
+Search...,بحث...
+Searching…,Searching…
+Search…,Search…
+Secondary,Secondary
+Select,اختيار
+Select All,تحديد الكل
+Select DocType...,Select DocType...
+Select Icon,اختيار أيقونة
+Select a cell,Select a cell
+Select a field to edit,Select a field to edit
+Select a file to preview,Select a file to preview
+Select a node or edge,Select a node or edge
+Select a record to preview,Select a record to preview
+Select an API endpoint from the sidebar,Select an API endpoint from the sidebar
+Select an app,اختر تطبيقاً
+Select an element first,Select an element first
+Select an element to edit its properties,Select an element to edit its properties
+Select date range,Select date range
+Select end date,Select end date
+Select field…,Select field…
+Select industry,اختر القطاع
+Select language,Select language
+Select start date,Select start date
+Select...,اختر...
+Select…,Select…
+Send,إرسال
+Send Request,Send Request
+September,سبتمبر
+Service,Service
+Set,Set
+Set Floor Plan Background,Set Floor Plan Background
+Settings,الإعدادات
+Settings saved successfully,تم حفظ الإعدادات بنجاح
+Setup,إعداد
+Setup Complete!,اكتمل الإعداد!
+Setup Progress,Setup Progress
+Setup Wizard,معالج الإعداد
+Shadow,ظل
+Share,مشاركة
+Share document,Share document
+Shipped,تم الشحن
+Show ERD,Show ERD
+Show Keyboard Shortcuts,Show Keyboard Shortcuts
+Show errors,Show errors
+Shuffle,Shuffle
+Sign here,Sign here
+Single,مفرد
+Singleton,مفرد
+Size,حجم
+Skip,Skip
+Skip to main content,تخطي إلى المحتوى الرئيسي
+"Sorry, something went wrong. Please try again.","Sorry, something went wrong. Please try again."
+Source Column,Source Column
+Spacing & Radius,Spacing & Radius
+Spacing Unit,Spacing Unit
+Speech recognition not supported,Speech recognition not supported
+Speed,Speed
+Split,Split
+Split View — click row to preview without leaving the list,Split View — click row to preview without leaving the list
+Split ✓,Split ✓
+Staff,Staff
+Standard,قياسي
+Star,Star
+Starred,Starred
+Start Import,Start Import
+Start Tutorial,Start Tutorial
+Start building visual experiences,ابدأ ببناء تجارب مرئية
+Start writing...,Start writing...
+Statistics,إحصائيات
+Status,الحالة
+Status Colors,Status Colors
+Step {0} of {1},الخطوة {0} من {1}
+Step-by-step guide,Step-by-step guide
+Sticky note text:,Sticky note text:
+Story,Story
+Storyboard,القصة المصورة
+Storyboard Wizard,معالج القصة المصورة
+Stretch Mode,Stretch Mode
+Stroke Color,Stroke Color
+Stroke Width,Stroke Width
+Submit,إرسال
+Submit document,Submit document
+Submittable,قابل للإرسال
+Submitted,مقدم
+Subtle Background,Subtle Background
+Success,نجاح
+Suggestions,Suggestions
+Summary,ملخص
+Sun,أحد
+Sunset Warm,Sunset Warm
+Supported formats,Supported formats
+Surface Colors,Surface Colors
+Switch tabs,Switch tabs
+System,النظام
+System Settings,System Settings
+Table,جدول
+Table View,عرض الجدول
+Tabler Icons with smart DocType mapping,أيقونات Tabler مع ربط ذكي لأنواع المستندات
+Tailwind,Tailwind
+Target Field,Target Field
+Tasks,مهام
+Technology,التقنية
+Technology Stack,المكدس التقني
+Tests,الاختبارات
+Text,نص
+Theme Builder,Theme Builder
+Theme Error,Theme Error
+Theme Manager,مدير المظهر
+Theme Name,Theme Name
+Theme error{0}: {1},Theme error{0}: {1}
+Thickness,Thickness
+This DocType needs a Select field with status options,يحتاج هذا النوع إلى حقل اختيار مع خيارات الحالة
+This Month,This Month
+This Quarter,This Quarter
+This Week,This Week
+This Year,This Year
+This field is required,This field is required
+This interactive story walks you through the key metrics and data in this workspace.,This interactive story walks you through the key metrics and data in this workspace.
+Thu,خميس
+Thumbnails,Thumbnails
+Time,وقت
+Timeline,الجدول الزمني
+Timeline View,عرض الخط الزمني
+Tip,Tip
+To,إلى
+To Do,للتنفيذ
+Today,اليوم
+Toggle Bilingual Tips,تبديل التلميحات ثنائية اللغة
+Toggle Dark Mode,Toggle Dark Mode
+Toggle Direction,Toggle Direction
+Toggle Full Screen,Toggle Full Screen
+Toggle Grid,Toggle Grid
+Toggle Heatmap,Toggle Heatmap
+Toggle Layout,Toggle Layout
+Toggle Nav Sidebar,Toggle Nav Sidebar
+Toggle Split View,Toggle Split View
+Toggle high contrast,Toggle high contrast
+Toggle navigation,Toggle navigation
+Toggle reduced motion,Toggle reduced motion
+Too many requests. Please try again later.,Too many requests. Please try again later.
+Tool,أداة
+Total,الإجمالي
+Total DocTypes,إجمالي أنواع المستندات
+Total Metrics,Total Metrics
+Total Modules,إجمالي الوحدات
+Total Qty,Total Qty
+Total Revenue,إجمالي الإيرادات
+Total Value,Total Value
+Total documents,إجمالي المستندات
+Transaction,معاملة
+Transition Label,Transition Label
+Treasury,الخزينة
+Tree,شجرة
+Tree View,عرض الشجرة
+Tue,ثلاثاء
+Type,النوع
+Type / for commands...,اكتب / للأوامر...
+Type a command,Type a command
+Type a command or search…,Type a command or search…
+Type a command…,Type a command…
+Type to search across all sources,اكتب للبحث في جميع المصادر
+Typography,الخطوط
+UI Components,مكونات واجهة المستخدم
+URL,رابط
+Undo,تراجع
+Unified,موحّد
+Unknown widget type,نوع أداة غير معروف
+Untitled,بدون عنوان
+Up,أعلى
+Upgrade to Premium for this feature,قم بالترقية للإصدار الاحترافي لهذه الميزة
+Upload,رفع
+Upload Image,رفع صورة
+Use App Map,استخدام خريطة التطبيق
+Use Calendar,استخدام التقويم
+Use Ctrl+F in viewer,استخدم Ctrl+F في العارض
+Use ERD Explorer,استخدام مستكشف العلاقات
+Use Gallery,استخدام المعرض
+Use Gantt Chart,استخدام مخطط جانت
+Use Kanban Board,استخدام لوحة كانبان
+Use Map,استخدام الخريطة
+Use Storyboard,استخدام القصة المصورة
+Use Tree View,استخدام عرض الشجرة
+Use high-resolution blueprint/CAD exports for best results,استخدم صادرات عالية الدقة للحصول على أفضل النتائج
+Use the toolbar above to switch back to the standard view at any time.,استخدم شريط الأدوات أعلاه للعودة إلى العرض القياسي في أي وقت.
+Use ↑↓ to navigate · Esc to close · Ctrl+Enter to open full,استخدم ↑↓ للتنقل · Esc للإغلاق · Ctrl+Enter للفتح الكامل
+User,مستخدم
+User Roles,أدوار المستخدمين
+Valid,صالح
+Validation Error,Validation Error
+Validation failed,Validation failed
+Value,قيمة
+Values,قيم
+Versions,إصدارات
+View,عرض
+View Details,عرض التفاصيل
+View Relationships,عرض العلاقات
+View Reports,عرض التقارير
+View Statistics,عرض الإحصائيات
+View Visual Hub,عرض المركز المرئي
+View file,عرض الملف
+Virtual,افتراضي
+Visual Calendar,التقويم المرئي
+Visual Dashboard,لوحة المعلومات المرئية
+Visual Form Dashboard,لوحة النموذج المرئية
+Visual GUI Framework for Frappe,إطار عمل واجهة مستخدم رسومية لـ Frappe
+Visual Gallery,المعرض المرئي
+Visual Gantt,مخطط جانت المرئي
+Visual Hub,المركز المرئي
+Visual Map,الخريطة المرئية
+Visual Templates Demo,عرض توضيحي للقوالب المرئية
+Visual Tree View,عرض الشجرة المرئي
+Visual component '{0}' not found,Visual component '{0}' not found
+Visual linked-document dashboard,لوحة مستندات مرتبطة مرئية
+Visual linked-document dashboard on forms,لوحة مستندات مرتبطة مرئية على النماذج
+Visual schema explorer,مستكشف المخطط المرئي
+Visualize your data relationships,تصور علاقات بياناتك
+Voice input,إدخال صوتي
+WIP limit reached for {0},تم الوصول لحد العمل الجاري لـ {0}
+Walkthrough,الدليل التعريفي
+Warning,تحذير
+We use cookies to improve your experience.,نستخدم ملفات تعريف الارتباط لتحسين تجربتك.
+Website Settings,إعدادات الموقع
+Wed,أربعاء
+Week,أسبوع
+Week of,أسبوع
+Weekdays at 9 AM,أيام الأسبوع عند 9 صباحاً
+Weighted Value,قيمة مرجّحة
+Welcome to,مرحباً بك في
+What you can do,ما يمكنك فعله
+Whiteboard,السبورة البيضاء
+Whiteboard loaded,تم تحميل السبورة البيضاء
+Whiteboard saved,تم حفظ السبورة البيضاء
+Wizard completed successfully!,تم إكمال المعالج بنجاح!
+Workflow,سير العمل
+Workflow & dependency visualization,تصور سير العمل والتبعيات
+Workflow and dependency chain visualization,تصور سلسلة سير العمل والتبعيات
+Workflow saved,تم حفظ سير العمل
+Workspace,مساحة العمل
+Workspace Navigation,تنقل مساحة العمل
+Workspaces,مساحات العمل
+Write a comment…,اكتب تعليقاً...
+Write documentation,كتابة التوثيق
+Yes,نعم
+Yesterday,أمس
+You are here,أنت هنا
+You do not have permission to {0} {1},You do not have permission to {0} {1}
+You do not have the '{0}' capability. Contact your administrator.,You do not have the '{0}' capability. Contact your administrator.
+You have an unsaved draft.,لديك مسودة غير محفوظة.
+You were mentioned,تم ذكرك
+You're all set. Click Finish to start using the system.,أنت جاهز. انقر إنهاء لبدء استخدام النظام.
+Your information has been submitted successfully.,تم إرسال معلوماتك بنجاح.
+Zone,منطقة
+Zoom In,تكبير
+Zoom Out,تصغير
+active filter(s),مرشح(ات) نشطة
+at,عند
+at minute,عند الدقيقة
+changes,changes
+chars,chars
+close,close
+commented,commented
+completed,completed
+cover = fill (may crop) · contain = fit inside · stretch = distort to fill · original = natural size,cover = fill (may crop) · contain = fit inside · stretch = distort to fill · original = natural size
+d,d
+days,days
+empty,empty
+errors,errors
+every minute,كل دقيقة
+failed,failed
+fields,fields
+h,h
+imported,imported
+in,in
+info,info
+items,items
+just now,just now
+m,m
+mapped fields,mapped fields
+min,min
+modified,modified
+more,المزيد
+navigate,navigate
+of,من
+of every hour,of every hour
+on,on
+on day,on day
+or higher,or higher
+page,page
+permissions granted,permissions granted
+records,سجل
+reports available,تقرير متاح
+resp,resp
+rows,rows
+rows added,rows added
+rows removed,rows removed
+select,select
+selected,selected
+to toggle,to toggle
+to toggle this overlay,to toggle this overlay
+uptime,وقت التشغيل
+versions,إصدارات
+viewing,يشاهد
+vs last period,مقارنة بالفترة السابقة
+warnings,تحذيرات
+words,كلمات
+{0} doctypes,{0} أنواع مستندات
+{0} is not configured properly. Please check Settings.,{0} is not configured properly. Please check Settings.
+{0} is required,{0} is required
+{0} modules,{0} وحدات
+{0} must be a number,{0} must be a number
+{0} must be greater than zero,{0} must be greater than zero
+{0} must be one of: {1},{0} must be one of: {1}
+{0} {1} not found,{0} {1} not found
+— Skip —,— Skip —

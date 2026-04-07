@@ -172,7 +172,7 @@
     width: 18px;
     height: 18px;
     font-size: 18px;
-    margin-right: 10px;
+    margin-inline-end: 10px;
     opacity: 0.75;
     flex-shrink: 0;
     transition: opacity 0.2s, color 0.2s;
@@ -199,7 +199,7 @@
     width: 28px;
     height: 28px;
     font-size: 28px;
-    margin-right: 12px;
+    margin-inline-end: 12px;
 }
 
 /* Workspace shortcut icons */
@@ -210,7 +210,7 @@
     width: 20px;
     height: 20px;
     font-size: 20px;
-    margin-right: 8px;
+    margin-inline-end: 8px;
 }
 
 
@@ -241,7 +241,7 @@
     width: 24px;
     height: 24px;
     font-size: 24px;
-    margin-right: 12px;
+    margin-inline-end: 12px;
     color: var(--primary-color);
     flex-shrink: 0;
 }
@@ -254,7 +254,7 @@
 .fv-dash-link-count {
     font-size: 13px;
     color: var(--text-muted);
-    margin-left: 8px;
+    margin-inline-start: 8px;
 }
 
 /* Dashboard cards with large icons */
@@ -330,7 +330,7 @@
     width: 18px;
     height: 18px;
     font-size: 18px;
-    margin-right: 8px;
+    margin-inline-end: 8px;
     opacity: 0.8;
 }
 
@@ -427,7 +427,7 @@
 .fv-field-with-icon input,
 .fv-field-with-icon select,
 .fv-field-with-icon .form-control {
-    padding-left: 38px !important;
+    padding-inline-start: 38px !important;
 }
 
 /* Field with icon suffix */
@@ -439,8 +439,8 @@
 .fv-field-with-icon-right input,
 .fv-field-with-icon-right select,
 .fv-field-with-icon-right .form-control {
-    padding-left: 12px !important;
-    padding-right: 38px !important;
+    padding-inline-start: 12px !important;
+    padding-inline-end: 38px !important;
 }
 
 /* Clearable field icon */
@@ -468,15 +468,15 @@
 /* Standard button with icon */
 .btn .fv-icon,
 .btn .ti {
-    margin-right: 6px;
+    margin-inline-end: 6px;
     vertical-align: middle;
 }
 
 /* Icon after text */
 .btn .fv-icon-right,
 .btn .ti-right {
-    margin-right: 0;
-    margin-left: 6px;
+    margin-inline-end: 0;
+    margin-inline-start: 6px;
 }
 
 /* Icon-only button */
@@ -677,7 +677,7 @@
 /* Dropdown toggle arrow */
 .dropdown-toggle .fv-icon-chevron,
 .dropdown-toggle .ti-chevron-down {
-    margin-left: 4px;
+    margin-inline-start: 4px;
     transition: transform 0.2s ease;
 }
 
@@ -691,7 +691,7 @@
 .nav-tabs .ti,
 .nav-pills .fv-icon,
 .nav-pills .ti {
-    margin-right: 6px;
+    margin-inline-end: 6px;
 }
 
 /* Accordion toggle icons */
@@ -774,33 +774,33 @@
 
 [dir="rtl"] .btn .fv-icon,
 [dir="rtl"] .btn .ti {
-    margin-right: 0;
-    margin-left: 6px;
+    margin-inline-end: 0;
+    margin-inline-start: 6px;
 }
 
 [dir="rtl"] .btn .fv-icon-right,
 [dir="rtl"] .btn .ti-right {
-    margin-left: 0;
-    margin-right: 6px;
+    margin-inline-start: 0;
+    margin-inline-end: 6px;
 }
 
 [dir="rtl"] .sidebar-menu .fv-icon,
 [dir="rtl"] .sidebar-menu .ti,
 [dir="rtl"] .desk-sidebar .fv-icon,
 [dir="rtl"] .desk-sidebar .ti {
-    margin-right: 0;
-    margin-left: 10px;
+    margin-inline-end: 0;
+    margin-inline-start: 10px;
 }
 
 [dir="rtl"] .fv-dash-link .fv-icon,
 [dir="rtl"] .fv-dash-link .ti {
-    margin-right: 0;
-    margin-left: 12px;
+    margin-inline-end: 0;
+    margin-inline-start: 12px;
 }
 
 [dir="rtl"] .fv-dash-link-count {
-    margin-left: 0;
-    margin-right: 8px;
+    margin-inline-start: 0;
+    margin-inline-end: 8px;
 }
 
 [dir="rtl"] .fv-field-with-icon .fv-field-icon {
@@ -811,8 +811,8 @@
 [dir="rtl"] .fv-field-with-icon input,
 [dir="rtl"] .fv-field-with-icon select,
 [dir="rtl"] .fv-field-with-icon .form-control {
-    padding-left: 12px !important;
-    padding-right: 38px !important;
+    padding-inline-start: 12px !important;
+    padding-inline-end: 38px !important;
 }
 
 [dir="rtl"] .fv-field-with-icon-right .fv-field-icon {
@@ -823,22 +823,22 @@
 [dir="rtl"] .fv-field-with-icon-right input,
 [dir="rtl"] .fv-field-with-icon-right select,
 [dir="rtl"] .fv-field-with-icon-right .form-control {
-    padding-right: 12px !important;
-    padding-left: 38px !important;
+    padding-inline-end: 12px !important;
+    padding-inline-start: 38px !important;
 }
 
 [dir="rtl"] .dropdown-toggle .fv-icon-chevron,
 [dir="rtl"] .dropdown-toggle .ti-chevron-down {
-    margin-left: 0;
-    margin-right: 4px;
+    margin-inline-start: 0;
+    margin-inline-end: 4px;
 }
 
 [dir="rtl"] .nav-tabs .fv-icon,
 [dir="rtl"] .nav-tabs .ti,
 [dir="rtl"] .nav-pills .fv-icon,
 [dir="rtl"] .nav-pills .ti {
-    margin-right: 0;
-    margin-left: 6px;
+    margin-inline-end: 0;
+    margin-inline-start: 6px;
 }
 
 [dir="rtl"] .fv-status-icon {
@@ -847,19 +847,19 @@
 
 [dir="rtl"] .workspace-header .fv-icon,
 [dir="rtl"] .workspace-header .ti {
-    margin-right: 0;
-    margin-left: 12px;
+    margin-inline-end: 0;
+    margin-inline-start: 12px;
 }
 
 [dir="rtl"] .widget-head .fv-icon,
 [dir="rtl"] .widget-head .ti {
-    margin-right: 0;
-    margin-left: 8px;
+    margin-inline-end: 0;
+    margin-inline-start: 8px;
 }
 
 [dir="rtl"] .fv-log-icon {
-    margin-right: 0;
-    margin-left: 10px;
+    margin-inline-end: 0;
+    margin-inline-start: 10px;
 }
 
 [dir="rtl"] .fv-dash-card {

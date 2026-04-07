@@ -1,0 +1,9 @@
+{
+ "name": "data-viz-gallery",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Data Visualization Gallery",
+ "icon": "ti ti-chart-dots-3",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}, {"role": "All"}]
+}

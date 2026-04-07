@@ -1,0 +1,125 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"creation": "2026-04-06 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"title",
+		"dashboard_type",
+		"status",
+		"cb_main",
+		"workspace",
+		"is_public",
+		"refresh_interval",
+		"layout_section",
+		"layout_config",
+		"widgets_section",
+		"widgets"
+	],
+	"fields": [
+		{
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Title",
+			"reqd": 1,
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "dashboard_type",
+			"fieldtype": "Select",
+			"label": "Dashboard Type",
+			"options": "Standard\nScene\nKanban\nAnalytics\nCustom",
+			"default": "Standard",
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nPublished\nArchived",
+			"default": "Draft",
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "cb_main",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "workspace",
+			"fieldtype": "Link",
+			"label": "Workspace",
+			"options": "Workspace"
+		},
+		{
+			"fieldname": "is_public",
+			"fieldtype": "Check",
+			"label": "Is Public",
+			"default": 0
+		},
+		{
+			"fieldname": "refresh_interval",
+			"fieldtype": "Int",
+			"label": "Refresh Interval (seconds)",
+			"default": 30,
+			"description": "Auto-refresh interval for live data. 0 = no auto-refresh."
+		},
+		{
+			"fieldname": "layout_section",
+			"fieldtype": "Section Break",
+			"label": "Layout Configuration"
+		},
+		{
+			"fieldname": "layout_config",
+			"fieldtype": "JSON",
+			"label": "Layout Config",
+			"description": "GridStack / Bento layout positions and sizes"
+		},
+		{
+			"fieldname": "widgets_section",
+			"fieldtype": "Section Break",
+			"label": "Widgets"
+		},
+		{
+			"fieldname": "widgets",
+			"fieldtype": "Table",
+			"label": "Widgets",
+			"options": "FV Dashboard Widget"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-04-06 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "FV Dashboard",
+	"naming_rule": "Random",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"read": 1,
+			"role": "Website Manager",
+			"write": 1
+		}
+	],
+	"search_fields": "title,dashboard_type,workspace",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"title_field": "title",
+	"track_changes": 1
+}

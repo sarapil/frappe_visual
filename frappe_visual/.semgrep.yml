@@ -1,0 +1,132 @@
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# License: GPL-3.0
+# Semgrep rules for frappe_visual — FC Marketplace compliance
+
+rules:
+  # ── Security: No raw SQL without parameterization ──
+  - id: fv-no-raw-sql-fstring
+    patterns:
+      - pattern: frappe.db.sql(f"...")
+    message: >
+      Raw f-string SQL detected. Use parameterized queries:
+      frappe.db.sql("... %(param)s ...", {"param": value})
+    severity: ERROR
+    languages: [python]
+
+  - id: fv-no-raw-sql-format
+    patterns:
+      - pattern: frappe.db.sql("...".format(...))
+    message: >
+      SQL string formatting detected. Use parameterized queries.
+    severity: ERROR
+    languages: [python]
+
+  - id: fv-no-raw-sql-concat
+    patterns:
+      - pattern: frappe.db.sql("..." + ...)
+    message: >
+      SQL string concatenation detected. Use parameterized queries.
+    severity: ERROR
+    languages: [python]
+
+  # ── Security: No eval/exec ──
+  - id: fv-no-eval
+    pattern: eval(...)
+    message: "eval() is forbidden — remote code execution risk."
+    severity: ERROR
+    languages: [python]
+
+  - id: fv-no-exec
+    pattern: exec(...)
+    message: "exec() is forbidden — remote code execution risk."
+    severity: ERROR
+    languages: [python]
+
+  # ── Security: No hardcoded credentials ──
+  - id: fv-no-hardcoded-secrets
+    pattern-regex: '(api_key|password|secret|token)\s*=\s*["\'][a-zA-Z0-9_\-]{8,}["\']'
+    message: "Hardcoded secret detected. Use frappe.conf.get() or environment variables."
+    severity: ERROR
+    languages: [python]
+
+  # ── Frappe v16: No db.commit() inside document events ──
+  - id: fv-no-commit-in-hooks
+    patterns:
+      - pattern: |
+          def $FUNC(self, ...):
+              ...
+              frappe.db.commit()
+              ...
+      - metavariable-regex:
+          metavariable: $FUNC
+          regex: "(validate|before_save|on_update|on_submit|on_cancel|before_insert|after_insert|on_trash|before_rename|after_rename)"
+    message: >
+      frappe.db.commit() inside document event will corrupt transactions.
+      Frappe manages commits automatically.
+    severity: ERROR
+    languages: [python]
+
+  # ── Frappe v16: No override_doctype_class ──
+  - id: fv-no-override-doctype-class
+    pattern: "override_doctype_class = ..."
+    message: >
+      Use extend_doctype_class instead of override_doctype_class.
+      Override replaces the entire class, breaking other apps.
+    severity: ERROR
+    languages: [python]
+
+  # ── Security: Whitelisted APIs must check permissions ──
+  - id: fv-whitelist-needs-permission
+    patterns:
+      - pattern: |
+          @frappe.whitelist()
+          def $FUNC(...):
+              ...
+      - pattern-not: |
+          @frappe.whitelist()
+          def $FUNC(...):
+              ...
+              frappe.has_permission(...)
+              ...
+      - pattern-not: |
+          @frappe.whitelist()
+          def $FUNC(...):
+              ...
+              frappe.only_for(...)
+              ...
+      - pattern-not: |
+          @frappe.whitelist(allow_guest=True)
+          def $FUNC(...):
+              ...
+    message: >
+      Whitelisted API without permission check.
+      Add frappe.has_permission() or frappe.only_for() at the top.
+    severity: WARNING
+    languages: [python]
+
+  # ── Quality: No print() statements ──
+  - id: fv-no-print
+    pattern: print(...)
+    message: "Use frappe.logger() instead of print()."
+    severity: WARNING
+    languages: [python]
+    paths:
+      exclude:
+        - "*/tests/*"
+
+  # ── Frontend: No Font Awesome ──
+  - id: fv-no-font-awesome
+    pattern-regex: 'fa-[a-z]+'
+    message: "Use frappe.visual.icons instead of Font Awesome classes."
+    severity: WARNING
+    languages: [javascript]
+
+  # ── Frontend: No console.log in production ──
+  - id: fv-no-console-log
+    pattern: console.log(...)
+    message: "Remove console.log() or guard with frappe.boot.developer_mode."
+    severity: WARNING
+    languages: [javascript]
+    paths:
+      exclude:
+        - "*/tests/*"

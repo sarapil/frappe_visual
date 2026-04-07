@@ -1,0 +1,105 @@
+{# Frappe Visual — Documentation Overview #}
+{# Website route: /frappe-visual-docs #}
+{% extends "templates/web.html" %}
+
+{% block title %}Frappe Visual — Documentation{% endblock %}
+
+{% block page_content %}
+<div class="fv-docs-page" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+
+  <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 8px;">
+    📚 Frappe Visual Documentation
+  </h1>
+  <p style="color: #6B7280; font-size: 1.1rem; margin-bottom: 40px;">
+    Everything you need to build stunning visual interfaces in Frappe.
+  </p>
+
+  {% set sections = [
+    {
+      "title": "Getting Started",
+      "icon": "🚀",
+      "links": [
+        {"label": "Installation", "desc": "Install Frappe Visual on your bench"},
+        {"label": "Quick Start", "desc": "Your first visual component in 5 minutes"},
+        {"label": "Architecture", "desc": "How the 307+ components are organized"}
+      ]
+    },
+    {
+      "title": "Core Components",
+      "icon": "⚙️",
+      "links": [
+        {"label": "GraphEngine", "desc": "Core graph rendering with Cytoscape.js"},
+        {"label": "LayoutManager", "desc": "9 ELK.js layout algorithms"},
+        {"label": "ThemeManager", "desc": "Dark mode, RTL, CSS variables"}
+      ]
+    },
+    {
+      "title": "Business Views",
+      "icon": "📊",
+      "links": [
+        {"label": "AppMap", "desc": "Interactive app/module/DocType explorer"},
+        {"label": "KanbanBoard", "desc": "Drag-and-drop Kanban columns"},
+        {"label": "VisualCalendar", "desc": "Month/week/day event calendar"},
+        {"label": "VisualGantt", "desc": "Project timeline Gantt chart"},
+        {"label": "SceneEngine", "desc": "Immersive SVG workspace dashboards"}
+      ]
+    },
+    {
+      "title": "Data Visualization",
+      "icon": "📈",
+      "links": [
+        {"label": "Heatmap", "desc": "Color-coded matrix visualization"},
+        {"label": "Funnel", "desc": "Conversion funnel chart"},
+        {"label": "Sankey", "desc": "Flow diagram between categories"},
+        {"label": "Radar", "desc": "Multi-axis comparison chart"}
+      ]
+    },
+    {
+      "title": "API Reference",
+      "icon": "🔧",
+      "links": [
+        {"label": "JavaScript API", "desc": "frappe.visual.* shorthand methods"},
+        {"label": "REST API", "desc": "Server-side endpoints for graphs, charts, icons"},
+        {"label": "CSS Classes", "desc": ".fv-fx-* effect classes reference"}
+      ]
+    },
+    {
+      "title": "Integration Guides",
+      "icon": "🔗",
+      "links": [
+        {"label": "CAPS Integration", "desc": "Capability-based access control"},
+        {"label": "arkan_help Integration", "desc": "Contextual help system"},
+        {"label": "Cross-App Usage", "desc": "Using frappe_visual from any Frappe app"}
+      ]
+    }
+  ] %}
+
+  {% for section in sections %}
+  <div style="margin-bottom: 32px;">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;">
+      {{ section.icon }} {{ section.title }}
+    </h2>
+    <div style="display: grid; gap: 12px;">
+      {% for link in section.links %}
+      <div style="background: white; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <strong style="font-size: 0.95rem;">{{ link.label }}</strong>
+          <p style="color: #6B7280; font-size: 0.85rem; margin: 4px 0 0 0;">{{ link.desc }}</p>
+        </div>
+        <span style="color: #6366F1; font-size: 1.2rem;">→</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <div style="text-align: center; padding: 32px; margin-top: 40px; background: #F9FAFB; border-radius: 12px;">
+    <p style="color: #6B7280;">
+      Full API documentation is also available inside the app via the
+      <strong>Visual Hub</strong> page.
+    </p>
+    <a href="/desk/frappe-visual" class="btn btn-primary">Open Visual Hub →</a>
+  </div>
+
+</div>
+{% endblock %}

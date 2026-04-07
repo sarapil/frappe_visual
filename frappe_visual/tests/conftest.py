@@ -38,7 +38,7 @@ def as_guest():
 
 @pytest.fixture
 def test_user():
-    """Create and return a temporary test user."""
+    """Create and return a temporary test user with proper roles."""
     user_email = "test_frappe_visual@example.com"
     if not frappe.db.exists("User", user_email):
         user = frappe.get_doc({
@@ -48,13 +48,23 @@ def test_user():
             "last_name": "Frappe Visual",
             "enabled": 1,
             "user_type": "System User",
+            "roles": [
+                {"role": "System Manager"},
+                {"role": "All"},
+            ],
         })
         user.insert(ignore_permissions=True)
-        frappe.db.commit()
+    else:
+        # Ensure roles are up-to-date
+        user = frappe.get_doc("User", user_email)
+        existing_roles = {r.role for r in user.roles}
+        for role_name in ("System Manager", "All"):
+            if role_name not in existing_roles:
+                user.append("roles", {"role": role_name})
+        user.save(ignore_permissions=True)
 
     frappe.set_user(user_email)
     yield user_email
     frappe.set_user("Administrator")
     if frappe.db.exists("User", user_email):
         frappe.delete_doc("User", user_email, force=True)
-        frappe.db.commit()

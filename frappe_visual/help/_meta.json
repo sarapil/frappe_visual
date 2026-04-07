@@ -2,7 +2,7 @@
   "app": "frappe_visual",
   "name": "Frappe Visual",
   "icon": "chart-dots",
-  "color": "#9B59B6",
+  "color": "#6366F1",
   "languages": [
     "en",
     "ar"

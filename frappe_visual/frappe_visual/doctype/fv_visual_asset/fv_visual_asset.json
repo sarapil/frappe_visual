@@ -1,0 +1,138 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"creation": "2026-04-06 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"title",
+		"asset_type",
+		"status",
+		"cb_main",
+		"reference_doctype",
+		"reference_name",
+		"is_public",
+		"data_section",
+		"asset_data",
+		"metadata_section",
+		"tags",
+		"cb_meta",
+		"description"
+	],
+	"fields": [
+		{
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Title",
+			"reqd": 1,
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "asset_type",
+			"fieldtype": "Select",
+			"label": "Asset Type",
+			"options": "Story\nWhiteboard\nDashboard\nTheme\nFloorPlan\nWorkflow\nScene\nReport",
+			"reqd": 1,
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nPublished\nArchived",
+			"default": "Draft",
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "cb_main",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "reference_doctype",
+			"fieldtype": "Link",
+			"label": "Reference DocType",
+			"options": "DocType"
+		},
+		{
+			"fieldname": "reference_name",
+			"fieldtype": "Dynamic Link",
+			"label": "Reference Name",
+			"options": "reference_doctype"
+		},
+		{
+			"fieldname": "is_public",
+			"fieldtype": "Check",
+			"label": "Is Public",
+			"default": 0,
+			"description": "If checked, all users with FV_view_visual_hub capability can view this asset"
+		},
+		{
+			"fieldname": "data_section",
+			"fieldtype": "Section Break",
+			"label": "Asset Data"
+		},
+		{
+			"fieldname": "asset_data",
+			"fieldtype": "JSON",
+			"label": "Asset Data",
+			"description": "JSON configuration data for this visual asset"
+		},
+		{
+			"fieldname": "metadata_section",
+			"fieldtype": "Section Break",
+			"label": "Metadata"
+		},
+		{
+			"fieldname": "tags",
+			"fieldtype": "Data",
+			"label": "Tags",
+			"description": "Comma-separated tags for categorization"
+		},
+		{
+			"fieldname": "cb_meta",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-04-06 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "FV Visual Asset",
+	"naming_rule": "Random",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 0,
+			"read": 1,
+			"role": "Website Manager",
+			"write": 1
+		}
+	],
+	"search_fields": "title,asset_type,status",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"title_field": "title",
+	"track_changes": 1
+}

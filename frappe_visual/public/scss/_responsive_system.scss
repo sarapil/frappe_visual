@@ -1,0 +1,436 @@
+/**
+ * Frappe Visual — Responsive Design System SCSS
+ * ================================================
+ * Breakpoint mixins, container query utilities,
+ * responsive component variants, and mobile-first utilities.
+ */
+
+// ── Breakpoint Map ────────────────────────────────────────────
+$fv-breakpoints: (
+	xs:  0,
+	sm:  480px,
+	md:  768px,
+	lg:  1024px,
+	xl:  1280px,
+	xxl: 1536px,
+);
+
+// ── Breakpoint Mixins ─────────────────────────────────────────
+
+/// Media query for minimum width (mobile-first)
+/// @param {string} $bp - breakpoint name (xs, sm, md, lg, xl, xxl)
+@mixin fv-bp-up($bp) {
+	$value: map-get($fv-breakpoints, $bp);
+	@if $value == 0 {
+		@content;
+	} @else {
+		@media (min-width: $value) { @content; }
+	}
+}
+
+/// Media query for maximum width
+@mixin fv-bp-down($bp) {
+	$value: map-get($fv-breakpoints, $bp);
+	@media (max-width: ($value - 1px)) { @content; }
+}
+
+/// Media query for exact range between two breakpoints
+@mixin fv-bp-between($lower, $upper) {
+	$min: map-get($fv-breakpoints, $lower);
+	$max: map-get($fv-breakpoints, $upper) - 1px;
+	@media (min-width: $min) and (max-width: $max) { @content; }
+}
+
+/// Media query for a single breakpoint only
+@mixin fv-bp-only($bp) {
+	$keys: map-keys($fv-breakpoints);
+	$idx: index($keys, $bp);
+	$min: map-get($fv-breakpoints, $bp);
+	@if $idx < length($keys) {
+		$next: nth($keys, $idx + 1);
+		$max: map-get($fv-breakpoints, $next) - 1px;
+		@media (min-width: $min) and (max-width: $max) { @content; }
+	} @else {
+		@media (min-width: $min) { @content; }
+	}
+}
+
+// ── Semantic Aliases ──────────────────────────────────────────
+
+@mixin fv-mobile { @include fv-bp-down(md) { @content; } }
+@mixin fv-tablet { @include fv-bp-between(md, lg) { @content; } }
+@mixin fv-desktop { @include fv-bp-up(lg) { @content; } }
+@mixin fv-touch { @include fv-bp-down(lg) { @content; } }
+@mixin fv-widescreen { @include fv-bp-up(xxl) { @content; } }
+
+// ── Container Query Classes ───────────────────────────────────
+// These use data attributes set by the JS ResizeObserver polyfill
+
+[data-fv-container="compact"] {
+	--fv-container-cols: 1;
+	--fv-container-gap: 8px;
+	--fv-container-font-scale: 0.875;
+}
+
+[data-fv-container="normal"] {
+	--fv-container-cols: 2;
+	--fv-container-gap: 12px;
+	--fv-container-font-scale: 1;
+}
+
+[data-fv-container="wide"] {
+	--fv-container-cols: 3;
+	--fv-container-gap: 16px;
+	--fv-container-font-scale: 1;
+}
+
+[data-fv-container="full"] {
+	--fv-container-cols: 4;
+	--fv-container-gap: 20px;
+	--fv-container-font-scale: 1;
+}
+
+// ── Responsive Visibility Utilities ───────────────────────────
+
+// Hide on specific breakpoints
+@each $bp, $value in $fv-breakpoints {
+	.fv-hide-#{$bp} {
+		@include fv-bp-only($bp) { display: none !important; }
+	}
+	.fv-show-#{$bp} {
+		display: none !important;
+		@include fv-bp-only($bp) { display: block !important; }
+	}
+	.fv-show-#{$bp}-flex {
+		display: none !important;
+		@include fv-bp-only($bp) { display: flex !important; }
+	}
+}
+
+// Progressive visibility
+.fv-mobile-only { @include fv-desktop { display: none !important; } }
+.fv-tablet-up { @include fv-mobile { display: none !important; } }
+.fv-desktop-only { @include fv-touch { display: none !important; } }
+
+// ── Touch Target Sizing ───────────────────────────────────────
+// WCAG 2.5.8: Touch targets must be at least 44×44 CSS pixels on mobile
+
+.fv-touch-target {
+	min-block-size: 36px;
+	min-inline-size: 36px;
+
+	@include fv-touch {
+		min-block-size: 44px;
+		min-inline-size: 44px;
+		padding: 8px;
+	}
+}
+
+// ── Responsive Typography ─────────────────────────────────────
+
+:root {
+	--fv-text-xs: clamp(0.625rem, 0.5rem + 0.25vw, 0.75rem);
+	--fv-text-sm: clamp(0.75rem, 0.625rem + 0.3vw, 0.875rem);
+	--fv-text-base: clamp(0.875rem, 0.75rem + 0.35vw, 1rem);
+	--fv-text-lg: clamp(1rem, 0.875rem + 0.4vw, 1.25rem);
+	--fv-text-xl: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+	--fv-text-2xl: clamp(1.25rem, 1rem + 0.75vw, 2rem);
+	--fv-text-3xl: clamp(1.5rem, 1.125rem + 1vw, 2.5rem);
+
+	// Responsive spacing
+	--fv-space-xs: clamp(4px, 0.25rem + 0.15vw, 6px);
+	--fv-space-sm: clamp(6px, 0.375rem + 0.25vw, 10px);
+	--fv-space-md: clamp(10px, 0.625rem + 0.5vw, 16px);
+	--fv-space-lg: clamp(16px, 1rem + 0.75vw, 24px);
+	--fv-space-xl: clamp(24px, 1.5rem + 1vw, 40px);
+}
+
+// ── Responsive Component Variants ─────────────────────────────
+
+// Compact mode (applied via body[data-fv-compact="1"])
+body[data-fv-compact="1"] {
+	// Reduce spacing
+	.frappe-control {
+		margin-block-end: var(--fv-space-xs);
+	}
+
+	.form-section,
+	.section-body {
+		padding: var(--fv-space-sm);
+	}
+
+	// Stack form columns on mobile
+	.form-column {
+		flex: 0 0 100% !important;
+		max-inline-size: 100% !important;
+	}
+
+	// Full-width buttons
+	.btn-group,
+	.btn-group-sm {
+		flex-direction: column;
+		inline-size: 100%;
+
+		> .btn {
+			inline-size: 100%;
+			border-radius: var(--border-radius) !important;
+			margin-block-end: var(--fv-space-xs);
+		}
+	}
+
+	// Compact page header
+	.page-head {
+		.page-title {
+			font-size: var(--fv-text-lg);
+		}
+		.page-actions {
+			flex-wrap: wrap;
+			gap: var(--fv-space-xs);
+		}
+	}
+}
+
+// ── Responsive Card Grid ──────────────────────────────────────
+
+.fv-responsive-grid {
+	display: grid;
+	gap: var(--fv-space-md);
+	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+
+	@include fv-mobile {
+		grid-template-columns: 1fr;
+		gap: var(--fv-space-sm);
+	}
+
+	@include fv-widescreen {
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
+}
+
+// ── Responsive Stack ──────────────────────────────────────────
+
+.fv-stack {
+	display: flex;
+	gap: var(--fv-space-md);
+
+	&--horizontal {
+		flex-direction: row;
+		align-items: center;
+
+		@include fv-mobile {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+
+	&--reverse-mobile {
+		@include fv-mobile {
+			flex-direction: column-reverse;
+		}
+	}
+}
+
+// ── Responsive Sidebar Layout ─────────────────────────────────
+
+.fv-sidebar-layout {
+	display: grid;
+	gap: var(--fv-space-lg);
+	grid-template-columns: 280px 1fr;
+
+	@include fv-touch {
+		grid-template-columns: 1fr;
+
+		> .fv-sidebar {
+			display: none;
+		}
+
+		&.fv-sidebar-open > .fv-sidebar {
+			display: block;
+			position: fixed;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			z-index: var(--fv-z-floating, 100);
+			block-size: 100dvh;
+			inline-size: min(320px, 85vw);
+			background: var(--fg-color, #fff);
+			box-shadow: 4px 0 16px rgba(0, 0, 0, 0.15);
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	@include fv-widescreen {
+		grid-template-columns: 320px 1fr;
+	}
+}
+
+// Backdrop for mobile sidebar
+.fv-sidebar-backdrop {
+	display: none;
+
+	.fv-sidebar-layout.fv-sidebar-open & {
+		@include fv-touch {
+			display: block;
+			position: fixed;
+			inset: 0;
+			z-index: calc(var(--fv-z-floating, 100) - 1);
+			background: rgba(0, 0, 0, 0.4);
+			backdrop-filter: blur(2px);
+		}
+	}
+}
+
+// ── Responsive Modal/Dialog ───────────────────────────────────
+
+.fv-responsive-dialog {
+	@include fv-mobile {
+		// Bottom sheet on mobile
+		position: fixed !important;
+		inset-block-end: 0 !important;
+		inset-inline-start: 0 !important;
+		inset-inline-end: 0 !important;
+		inset-block-start: auto !important;
+		max-block-size: 90dvh;
+		inline-size: 100% !important;
+		border-radius: 16px 16px 0 0 !important;
+		transform: none !important;
+
+		// Drag handle
+		&::before {
+			content: "";
+			display: block;
+			inline-size: 40px;
+			block-size: 4px;
+			border-radius: 2px;
+			background: var(--gray-400, #aaa);
+			margin: 12px auto 8px;
+		}
+	}
+}
+
+// ── Responsive Table ──────────────────────────────────────────
+
+.fv-responsive-table {
+	@include fv-mobile {
+		// Card layout on mobile
+		thead { display: none; }
+
+		tbody tr {
+			display: block;
+			margin-block-end: var(--fv-space-md);
+			padding: var(--fv-space-md);
+			border: 1px solid var(--border-color, #e5e5e5);
+			border-radius: var(--border-radius, 8px);
+			background: var(--fg-color, #fff);
+		}
+
+		td {
+			display: flex;
+			justify-content: space-between;
+			padding: var(--fv-space-xs) 0;
+			border: none;
+
+			&::before {
+				content: attr(data-label);
+				font-weight: 600;
+				color: var(--text-muted);
+				flex-shrink: 0;
+				margin-inline-end: var(--fv-space-sm);
+			}
+		}
+	}
+}
+
+// ── Orientation-Specific ──────────────────────────────────────
+
+body[data-fv-orientation="portrait"] {
+	@include fv-touch {
+		.fv-landscape-content {
+			display: none;
+		}
+	}
+}
+
+body[data-fv-orientation="landscape"] {
+	@include fv-touch {
+		.fv-portrait-content {
+			display: none;
+		}
+	}
+}
+
+// ── Safe Area Padding (Notch / Dynamic Island) ────────────────
+
+.fv-safe-area {
+	padding-block-start: env(safe-area-inset-top, 0);
+	padding-inline-end: env(safe-area-inset-right, 0);
+	padding-block-end: env(safe-area-inset-bottom, 0);
+	padding-inline-start: env(safe-area-inset-left, 0);
+}
+
+.fv-safe-bottom {
+	padding-block-end: calc(var(--fv-space-md) + env(safe-area-inset-bottom, 0));
+}
+
+// ── Dark Mode Responsive Overrides ────────────────────────────
+
+[data-theme="dark"] {
+	.fv-sidebar-layout.fv-sidebar-open > .fv-sidebar {
+		@include fv-touch {
+			background: var(--fg-color, #1a1a2e);
+			box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+		}
+	}
+
+	.fv-sidebar-backdrop {
+		.fv-sidebar-layout.fv-sidebar-open & {
+			@include fv-touch {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+}
+
+// ── RTL Responsive Adjustments ────────────────────────────────
+
+[dir="rtl"] {
+	.fv-sidebar-layout.fv-sidebar-open > .fv-sidebar {
+		@include fv-touch {
+			box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+		}
+	}
+}
+
+// ── Print ─────────────────────────────────────────────────────
+
+@media print {
+	.fv-mobile-only,
+	.fv-touch-target,
+	.fv-sidebar-backdrop,
+	.fv-safe-area,
+	[data-fv-compact] .btn-group {
+		all: revert;
+	}
+
+	.fv-responsive-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+
+	.fv-responsive-table {
+		thead { display: table-header-group !important; }
+		tbody tr { display: table-row !important; }
+		td {
+			display: table-cell !important;
+			&::before { display: none; }
+		}
+	}
+}
+
+// ── Reduced Motion ────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+	.fv-sidebar-layout > .fv-sidebar,
+	.fv-responsive-dialog {
+		transition: none !important;
+	}
+}

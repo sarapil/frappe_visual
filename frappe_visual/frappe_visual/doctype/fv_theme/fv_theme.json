@@ -1,0 +1,117 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"creation": "2026-04-06 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"title",
+		"base_theme",
+		"is_default",
+		"cb_main",
+		"app",
+		"status",
+		"variables_section",
+		"css_variables",
+		"preview_section",
+		"preview_image",
+		"description"
+	],
+	"fields": [
+		{
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Title",
+			"reqd": 1,
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "base_theme",
+			"fieldtype": "Select",
+			"label": "Base Theme",
+			"options": "Light\nDark\nAuto",
+			"default": "Light",
+			"in_list_view": 1,
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "is_default",
+			"fieldtype": "Check",
+			"label": "Is Default",
+			"default": 0
+		},
+		{
+			"fieldname": "cb_main",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "app",
+			"fieldtype": "Data",
+			"label": "App",
+			"description": "Optional: restrict this theme to a specific app"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Active\nInactive",
+			"default": "Active",
+			"in_standard_filter": 1
+		},
+		{
+			"fieldname": "variables_section",
+			"fieldtype": "Section Break",
+			"label": "CSS Variables"
+		},
+		{
+			"fieldname": "css_variables",
+			"fieldtype": "JSON",
+			"label": "CSS Variables",
+			"description": "JSON object of CSS custom property overrides"
+		},
+		{
+			"fieldname": "preview_section",
+			"fieldtype": "Section Break",
+			"label": "Preview"
+		},
+		{
+			"fieldname": "preview_image",
+			"fieldtype": "Attach Image",
+			"label": "Preview Image"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-04-06 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "FV Theme",
+	"naming_rule": "Random",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"read": 1,
+			"role": "All"
+		}
+	],
+	"search_fields": "title,base_theme,app",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"title_field": "title",
+	"track_changes": 1
+}

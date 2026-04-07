@@ -1,10 +1,18 @@
 [
   {
     "role": "System Manager",
-    "capabilities": [
-      "FV_view_maps",
-      "FV_manage_settings",
-      "FV_use_components"
-    ]
+    "capabilities": ["FV_view_visual_hub","FV_use_app_map","FV_use_erd","FV_use_storyboard","FV_use_kanban","FV_use_calendar","FV_use_gantt","FV_use_map","FV_use_gallery","FV_use_tree","FV_export_svg","FV_export_png","FV_change_layout","FV_manage_settings","FV_view_statistics"]
+  },
+  {
+    "role": "FV Admin",
+    "capabilities": ["FV_view_visual_hub","FV_use_app_map","FV_use_erd","FV_use_storyboard","FV_use_kanban","FV_use_calendar","FV_use_gantt","FV_use_map","FV_use_gallery","FV_use_tree","FV_export_svg","FV_export_png","FV_change_layout","FV_manage_settings","FV_view_statistics"]
+  },
+  {
+    "role": "FV Manager",
+    "capabilities": ["FV_view_visual_hub","FV_use_app_map","FV_use_erd","FV_use_storyboard","FV_use_kanban","FV_use_calendar","FV_use_gantt","FV_use_map","FV_use_gallery","FV_use_tree","FV_export_svg","FV_export_png","FV_change_layout","FV_view_statistics"]
+  },
+  {
+    "role": "FV User",
+    "capabilities": ["FV_view_visual_hub","FV_use_app_map","FV_use_erd","FV_use_storyboard","FV_use_kanban","FV_use_calendar","FV_use_gantt","FV_use_map","FV_use_gallery","FV_use_tree","FV_view_statistics"]
   }
 ]

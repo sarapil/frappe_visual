@@ -333,48 +333,35 @@ import { CursorShare } from "./components/cursor_share";
 import { LiveComments } from "./components/live_comments";
 import { Reactions } from "./components/reactions";
 import { MentionPopup } from "./components/mention_popup";
-import { ActivityFeed } from "./components/activity_feed";
 import { ChangeTracker } from "./components/change_tracker";
 import { ApprovalFlow } from "./components/approval_flow";
 import { ShareDialog } from "./components/share_dialog";
 
 // ── Wave 25 — Form Enhancement & Smart Input Suite ───────────────
-import { TagInput } from "./components/tag_input";
-import { ColorPicker } from "./components/color_picker";
-import { DateRangePicker } from "./components/date_range_picker";
-import { SignaturePad } from "./components/signature_pad";
 import { RatingStars } from "./components/rating_stars";
 import { FileDropZone } from "./components/file_drop_zone";
 import { InlineEditor } from "./components/inline_editor";
 import { AutoSave } from "./components/auto_save";
-import { FormWizard } from "./components/form_wizard";
 
 // ── Wave 26 — Notification & Alert Suite ─────────────────────────
 import { ToastStack } from "./components/toast_stack";
 import { SnackBar } from "./components/snack_bar";
 import { BannerAlert } from "./components/banner_alert";
-import { ConfirmDialog } from "./components/confirm_dialog";
 import { ProgressModal } from "./components/progress_modal";
 import { CountdownTimer } from "./components/countdown_timer";
 import { StatusPulse } from "./components/status_pulse";
-import { NotificationCenter } from "./components/notification_center";
 import { BadgeCounter } from "./components/badge_counter";
 
 // ── Wave 27 — Media & Content Suite ─────────────────────────────
 import { ImageCropper } from "./components/image_cropper";
 import { VideoPlayer } from "./components/video_player";
 import { AudioWaveform } from "./components/audio_waveform";
-import { PDFViewer } from "./components/pdf_viewer";
-import { CodeEditor } from "./components/code_editor";
 import { MarkdownRenderer } from "./components/markdown_renderer";
 import { EmojiPicker } from "./components/emoji_picker";
 import { AvatarGroup } from "./components/avatar_group";
-import { Lightbox } from "./components/lightbox";
 
 // ── Wave 28 — Table & Data Grid Suite ────────────────────────────
-import { DataTable } from "./components/data_table";
 import { VirtualScroll } from "./components/virtual_scroll";
-import { PivotTable } from "./components/pivot_table";
 import { SpreadsheetGrid } from "./components/spreadsheet_grid";
 import { ColumnResizer } from "./components/column_resizer";
 import { RowExpander } from "./components/row_expander";
@@ -383,12 +370,9 @@ import { SortableHeaders } from "./components/sortable_headers";
 import { FilterBar } from "./components/filter_bar";
 
 // ── Wave 29 — Navigation & Layout Suite ──────────────────────────
-import { CommandPalette } from "./components/command_palette";
 import { BreadcrumbTrail } from "./components/breadcrumb_trail";
-import { StepIndicator } from "./components/step_indicator";
 import { TabStrip } from "./components/tab_strip";
 import { AccordionGroup } from "./components/accordion_group";
-import { SplitPane } from "./components/split_pane";
 import { ResizablePanel } from "./components/resizable_panel";
 import { DockLayout } from "./components/dock_layout";
 import { FloatingToolbar } from "./components/floating_toolbar";
@@ -405,24 +389,40 @@ import { DebugOverlay } from "./components/debug_overlay";
 import { PerformanceMonitor } from "./components/performance_monitor";
 
 // ── Wave 31: Loading & Skeleton Suite ─────────────────────────────
-import { Skeleton } from "./components/skeleton";
 import { Shimmer } from "./components/shimmer";
 import { LoadingDots } from "./components/loading_dots";
-import { ProgressRing } from "./components/progress_ring";
-import { InfiniteScroll } from "./components/infinite_scroll";
 import { LazyImage } from "./components/lazy_image";
 import { Placeholder } from "./components/placeholder";
 import { ContentLoader } from "./components/content_loader";
-import { PageTransition } from "./components/page_transition";
 
 // ── Utility Modules (auto-init) ──────────────────────────────────
 import "./utils/bilingual_tooltip";
+import "./utils/event_bus";
 import "./utils/visual_page_templates";
+import "./utils/desk_workspace";
+import "./utils/shortcut_cheatsheet";
 import "./utils/app_page_generator";
 import "./utils/doctype_visualizer";
 import "./utils/form_enhancer";
 import "./utils/list_enhancer";
 import "./utils/workspace_enhancer";
+import "./utils/workspace_storytelling";
+import "./utils/whiteboard_doclink";
+import "./utils/dock_coordinator";
+import "./utils/notification_realtime";
+import "./utils/user_preferences_sync";
+import "./utils/responsive_system";
+import "./utils/plugin_system";
+import "./utils/drag_manager";
+import "./utils/component_playground";
+import "./utils/animation_timeline";
+import "./utils/pdf_export";
+import "./utils/theme_builder";
+import "./utils/faceted_search";
+import "./utils/perf_monitor";
+import "./utils/deep_state";
+import "./utils/keyboard_shortcuts";
+import "./utils/undo_manager";
 
 // ── Register on frappe.visual namespace ──────────────────────────
 frappe.provide("frappe.visual");

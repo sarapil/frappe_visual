@@ -1,0 +1,10 @@
+{
+  "name": "animation-demo",
+  "doctype": "Page",
+  "module": "Frappe Visual",
+  "title": "Micro-Animation Demo",
+  "icon": "sparkles",
+  "standard": "Yes",
+  "roles": [{"role": "System Manager"}, {"role": "All"}],
+  "system_page": 0
+}

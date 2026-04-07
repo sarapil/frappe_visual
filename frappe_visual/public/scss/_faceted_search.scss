@@ -1,0 +1,357 @@
+/*
+ * Frappe Visual — Faceted Search Styles
+ * =======================================
+ * Multi-facet filter panel, chips, counters, saved views.
+ */
+
+/* ── Container ──────────────────────────────── */
+.fv-faceted-search {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	font-family: var(--font-stack, -apple-system, BlinkMacSystemFont, "Inter", sans-serif);
+	font-size: 13px;
+	color: var(--text-color, #1f2937);
+}
+
+/* ── Search Bar ─────────────────────────────── */
+.fv-faceted-search__search {
+	padding: 8px 0;
+
+	input {
+		width: 100%;
+		padding: 8px 12px;
+		border: 1px solid var(--border-color, #e5e7eb);
+		border-radius: 8px;
+		background: var(--control-bg, #fff);
+		font-size: 13px;
+		outline: none;
+		transition: border-color 0.2s, box-shadow 0.2s;
+
+		&:focus {
+			border-color: var(--primary, #6366f1);
+			box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		&::placeholder {
+			color: var(--text-light, #94a3b8);
+		}
+	}
+}
+
+/* ── Active Filter Summary ──────────────────── */
+.fv-faceted-search__summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px 10px;
+	margin-bottom: 4px;
+	background: rgba(99, 102, 241, 0.06);
+	border-radius: 6px;
+	font-size: 12px;
+	color: var(--primary, #6366f1);
+}
+
+.fv-faceted-search__clear-all {
+	background: none;
+	border: none;
+	color: var(--primary, #6366f1);
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: underline;
+	padding: 0;
+
+	&:hover {
+		color: var(--primary-dark, #4f46e5);
+	}
+}
+
+/* ── Facet Panel ────────────────────────────── */
+.fv-faceted-search__facet {
+	border: 1px solid var(--border-color, #e5e7eb);
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 6px;
+	background: var(--fg-color, #fff);
+}
+
+.fv-faceted-search__facet-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 12px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--text-muted, #6b7280);
+	user-select: none;
+	transition: background 0.12s;
+
+	&:hover {
+		background: var(--subtle-fg, #f9fafb);
+	}
+}
+
+.fv-faceted-search__toggle {
+	font-size: 10px;
+	color: var(--text-light, #94a3b8);
+	transition: transform 0.2s;
+}
+
+.fv-faceted-search__facet-body {
+	padding: 4px 8px 8px;
+	border-block-start: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* ── Checkbox Option ────────────────────────── */
+.fv-faceted-search__option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 5px 6px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.1s;
+
+	&:hover {
+		background: var(--subtle-fg, #f9fafb);
+	}
+
+	&.active {
+		background: rgba(99, 102, 241, 0.06);
+	}
+
+	input[type="checkbox"] {
+		width: 15px;
+		height: 15px;
+		accent-color: var(--primary, #6366f1);
+		flex-shrink: 0;
+		margin: 0;
+		cursor: pointer;
+	}
+}
+
+.fv-faceted-search__option-label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 13px;
+}
+
+.fv-faceted-search__count {
+	font-size: 11px;
+	color: var(--text-light, #94a3b8);
+	background: var(--subtle-fg, #f1f5f9);
+	padding: 1px 7px;
+	border-radius: 10px;
+	min-width: 22px;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+/* ── Toggle Control ─────────────────────────── */
+.fv-faceted-search__toggle-control {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 6px 4px;
+	cursor: pointer;
+
+	input[type="checkbox"] {
+		width: 16px;
+		height: 16px;
+		accent-color: var(--primary, #6366f1);
+	}
+}
+
+/* ── Date Range ─────────────────────────────── */
+.fv-faceted-search__daterange {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 0;
+
+	input[type="date"] {
+		flex: 1;
+		padding: 6px 8px;
+		border: 1px solid var(--border-color, #e5e7eb);
+		border-radius: 6px;
+		font-size: 12px;
+		background: var(--control-bg, #fff);
+		color: var(--text-color, #1f2937);
+
+		&:focus {
+			border-color: var(--primary, #6366f1);
+			outline: none;
+		}
+	}
+
+	span {
+		color: var(--text-light, #94a3b8);
+		font-size: 12px;
+	}
+}
+
+/* ── Numeric Range ──────────────────────────── */
+.fv-faceted-search__range {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 0;
+
+	input[type="number"] {
+		flex: 1;
+		padding: 6px 8px;
+		border: 1px solid var(--border-color, #e5e7eb);
+		border-radius: 6px;
+		font-size: 12px;
+		background: var(--control-bg, #fff);
+		color: var(--text-color, #1f2937);
+		-moz-appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+
+		&:focus {
+			border-color: var(--primary, #6366f1);
+			outline: none;
+		}
+	}
+
+	span {
+		color: var(--text-light, #94a3b8);
+		font-size: 12px;
+	}
+}
+
+/* ── Saved Views Dropdown ───────────────────── */
+.fv-faceted-search__saved-views {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 0 10px;
+	border-block-end: 1px solid var(--border-color, #e5e7eb);
+	margin-bottom: 4px;
+
+	select {
+		flex: 1;
+		padding: 6px 10px;
+		border: 1px solid var(--border-color, #e5e7eb);
+		border-radius: 6px;
+		font-size: 12px;
+		background: var(--control-bg, #fff);
+		color: var(--text-color, #1f2937);
+	}
+
+	button {
+		padding: 5px 12px;
+		border: 1px solid var(--border-color, #e5e7eb);
+		border-radius: 6px;
+		background: transparent;
+		cursor: pointer;
+		font-size: 12px;
+		white-space: nowrap;
+		transition: all 0.15s;
+
+		&:hover {
+			background: var(--subtle-fg, #f9fafb);
+		}
+	}
+}
+
+/* ── Filter Chips (inline compact mode) ─────── */
+.fv-faceted-search__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding: 6px 0;
+}
+
+.fv-faceted-search__chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 3px 10px;
+	background: rgba(99, 102, 241, 0.08);
+	border: 1px solid rgba(99, 102, 241, 0.2);
+	border-radius: 16px;
+	font-size: 12px;
+	color: var(--primary, #6366f1);
+	white-space: nowrap;
+
+	.chip-remove {
+		cursor: pointer;
+		font-size: 14px;
+		line-height: 1;
+		opacity: 0.6;
+		transition: opacity 0.1s;
+
+		&:hover { opacity: 1; }
+	}
+}
+
+/* ── Dark Mode ──────────────────────────────── */
+html[data-theme="dark"] .fv-faceted-search,
+body.dark .fv-faceted-search {
+	.fv-faceted-search__search input {
+		background: #1a1a2e;
+		border-color: #2d2d44;
+		color: #e2e8f0;
+	}
+
+	.fv-faceted-search__facet {
+		border-color: #2d2d44;
+		background: #1a1a2e;
+	}
+
+	.fv-faceted-search__facet-header:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.fv-faceted-search__option:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.fv-faceted-search__count {
+		background: rgba(255, 255, 255, 0.06);
+		color: #94a3b8;
+	}
+
+	.fv-faceted-search__daterange input,
+	.fv-faceted-search__range input {
+		background: #0f0f23;
+		border-color: #2d2d44;
+		color: #e2e8f0;
+	}
+}
+
+/* ── RTL ────────────────────────────────────── */
+[dir="rtl"] .fv-faceted-search {
+	text-align: right;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 480px) {
+	.fv-faceted-search__daterange,
+	.fv-faceted-search__range {
+		flex-wrap: wrap;
+
+		input { min-width: 0; }
+		span { display: none; }
+	}
+}
+
+/* ── Reduced Motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+	.fv-faceted-search__search input,
+	.fv-faceted-search__option,
+	.fv-faceted-search__facet-header {
+		transition: none !important;
+	}
+}

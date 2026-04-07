@@ -1,0 +1,10 @@
+{
+  "name": "navigation-demo",
+  "doctype": "Page",
+  "module": "Frappe Visual",
+  "title": "Navigation Demo",
+  "icon": "compass",
+  "standard": "Yes",
+  "roles": [{"role": "System Manager"}, {"role": "All"}],
+  "system_page": 0
+}

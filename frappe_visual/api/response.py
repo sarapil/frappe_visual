@@ -13,13 +13,12 @@ from frappe import _
 import math
 
 
-def success(data=None, message=None, status_code=200):
+def success(data=None, message=None):
     """Return a standardized success response.
 
     Args:
         data: Response payload (dict, list, or scalar).
         message: Optional human-readable message.
-        status_code: HTTP status code (default 200).
 
     Returns:
         dict: {"status": "success", "data": ..., "message": ...}
@@ -29,31 +28,29 @@ def success(data=None, message=None, status_code=200):
         response["data"] = data
     if message:
         response["message"] = _(message)
-    frappe.response["http_status_code"] = status_code
     return response
 
 
-def error(message, error_code=None, details=None, status_code=400):
+def error(message, error_code="UNKNOWN_ERROR", details=None, http_status=400):
     """Return a standardized error response.
 
     Args:
         message: Human-readable error description.
         error_code: Machine-readable error code (e.g. "VALIDATION_ERROR").
         details: Additional context (dict).
-        status_code: HTTP status code (default 400).
+        http_status: HTTP status code (default 400).
 
     Returns:
         dict: {"status": "error", "error_code": ..., "message": ..., "details": ...}
     """
     response = {
         "status": "error",
+        "error_code": error_code,
         "message": _(message),
     }
-    if error_code:
-        response["error_code"] = error_code
     if details:
         response["details"] = details
-    frappe.response["http_status_code"] = status_code
+    frappe.local.response.http_status_code = http_status
     return response
 
 

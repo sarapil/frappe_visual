@@ -41,6 +41,14 @@
 	};
 
 	/**
+	 * Alias for engine() — ensures the bundle is loaded before use.
+	 * Used by Wave 9+ component shorthands.
+	 */
+	frappe.visual._load = async function () {
+		return frappe.visual.engine();
+	};
+
+	/**
 	 * Shorthand: create a graph immediately.
 	 * @param {Object} opts - { container, nodes, edges, layout, theme, ... }
 	 */
@@ -697,11 +705,6 @@
 		return frappe.visual.Badge.create(opts);
 	};
 
-	frappe.visual.timeline = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.Timeline.create(opts);
-	};
-
 	frappe.visual.statCard = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.StatCard.create(opts);
@@ -950,14 +953,6 @@
 	};
 
 	// Wave 16 — Data Visualization & Chart Enhancement
-	frappe.visual.heatmap = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.Heatmap.create(opts);
-	};
-	frappe.visual.sparkline = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.Sparkline.create(opts);
-	};
 	frappe.visual.radarChart = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.RadarChart.create(opts);
@@ -1274,10 +1269,6 @@
 		await frappe.visual._load();
 		return frappe.visual.MentionPopup.create(opts);
 	};
-	frappe.visual.activityFeed = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.ActivityFeed.create(opts);
-	};
 	frappe.visual.changeTracker = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.ChangeTracker.create(opts);
@@ -1292,22 +1283,6 @@
 	};
 
 	// ── Wave 25 — Form Enhancement & Smart Input Suite ───────────────
-	frappe.visual.tagInput = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.TagInput.create(opts);
-	};
-	frappe.visual.colorPicker = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.ColorPicker.create(opts);
-	};
-	frappe.visual.dateRangePicker = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.DateRangePicker.create(opts);
-	};
-	frappe.visual.signaturePad = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.SignaturePad.create(opts);
-	};
 	frappe.visual.ratingStars = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.RatingStars.create(opts);
@@ -1324,11 +1299,6 @@
 		await frappe.visual._load();
 		return frappe.visual.AutoSave.create(opts);
 	};
-	frappe.visual.formWizard = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.FormWizard.create(opts);
-	};
-
 	// ── Wave 26 — Notification & Alert Suite ─────────────────────────
 	frappe.visual.toastStack = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1341,10 +1311,6 @@
 	frappe.visual.bannerAlert = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.BannerAlert.create(opts);
-	};
-	frappe.visual.confirmDialog = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.ConfirmDialog.create(opts);
 	};
 	frappe.visual.progressModal = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1380,14 +1346,6 @@
 		await frappe.visual._load();
 		return frappe.visual.AudioWaveform.create(opts);
 	};
-	frappe.visual.pdfViewer = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.PDFViewer.create(opts);
-	};
-	frappe.visual.codeEditor = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.CodeEditor.create(opts);
-	};
 	frappe.visual.markdownRenderer = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.MarkdownRenderer.create(opts);
@@ -1400,23 +1358,10 @@
 		await frappe.visual._load();
 		return frappe.visual.AvatarGroup.create(opts);
 	};
-	frappe.visual.lightbox = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.Lightbox.create(opts);
-	};
-
 	// ── Wave 28 — Table & Data Grid Suite ───────────────────────────
-	frappe.visual.dataTable = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.DataTable.create(opts);
-	};
 	frappe.visual.virtualScroll = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.VirtualScroll.create(opts);
-	};
-	frappe.visual.pivotTable = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.PivotTable.create(opts);
 	};
 	frappe.visual.spreadsheetGrid = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1444,17 +1389,9 @@
 	};
 
 	// ── Wave 29 — Navigation & Layout Suite ──────────────────────────
-	frappe.visual.commandPalette = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.CommandPalette.create(opts);
-	};
 	frappe.visual.breadcrumbTrail = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.BreadcrumbTrail.create(opts);
-	};
-	frappe.visual.stepIndicator = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.StepIndicator.create(opts);
 	};
 	frappe.visual.tabStrip = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1463,10 +1400,6 @@
 	frappe.visual.accordionGroup = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.AccordionGroup.create(opts);
-	};
-	frappe.visual.splitPane = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.SplitPane.create(opts);
 	};
 	frappe.visual.resizablePanel = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1486,7 +1419,7 @@
 		await frappe.visual._load();
 		return frappe.visual.StateMachine.create(opts);
 	};
-	frappe.visual.eventBus = async function (opts = {}) {
+	frappe.visual.createEventBus = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.EventBus.create(opts);
 	};
@@ -1520,10 +1453,6 @@
 	};
 
 	// ── Wave 31: Loading & Skeleton Suite ─────────────────────────
-	frappe.visual.skeleton = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.Skeleton.create(opts);
-	};
 	frappe.visual.shimmer = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.Shimmer.create(opts);
@@ -1531,14 +1460,6 @@
 	frappe.visual.loadingDots = async function (opts = {}) {
 		await frappe.visual._load();
 		return frappe.visual.LoadingDots.create(opts);
-	};
-	frappe.visual.progressRing = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.ProgressRing.create(opts);
-	};
-	frappe.visual.infiniteScroll = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.InfiniteScroll.create(opts);
 	};
 	frappe.visual.lazyImage = async function (opts = {}) {
 		await frappe.visual._load();
@@ -1552,11 +1473,6 @@
 		await frappe.visual._load();
 		return frappe.visual.ContentLoader.create(opts);
 	};
-	frappe.visual.pageTransition = async function (opts = {}) {
-		await frappe.visual._load();
-		return frappe.visual.PageTransition.create(opts);
-	};
-
 	/**
 	 * Quick-detect the current theme mode.
 	 */
@@ -1578,9 +1494,562 @@
 		);
 	};
 
-	console.log(
-		"%c⬡ Frappe Visual%c v0.1.0 loaded",
-		"color:#6366f1;font-weight:bold",
-		"color:#94a3b8"
-	);
+	// ── Desk Workspace — VS Code-style split view + CMD+K ─────────
+
+	/**
+	 * Open the Detail Panel for a specific record.
+	 * @param {string} doctype
+	 * @param {string} docname
+	 */
+	frappe.visual.openDetail = async function (doctype, docname) {
+		await frappe.visual._load();
+		return frappe.visual.deskWorkspace?.openDetail(doctype, docname);
+	};
+
+	/**
+	 * Close the detail panel.
+	 */
+	frappe.visual.closeDetail = function () {
+		frappe.visual.deskWorkspace?.closeDetail();
+	};
+
+	/**
+	 * Toggle the persistent navigation sidebar.
+	 * The nav sidebar stays visible while navigating between pages.
+	 */
+	frappe.visual.toggleNavSidebar = function () {
+		frappe.visual.deskWorkspace?.toggleNavSidebar();
+	};
+
+	/**
+	 * Rebuild the Bento grid on the current workspace.
+	 * Useful after workspace content changes.
+	 */
+	frappe.visual.rebuildBento = function () {
+		frappe.visual.workspaceEnhancer?.rebuildBento?.();
+	};
+
+	// ── Workspace Storytelling ─────────────────────────────────────
+
+	/** Toggle data storytelling view on the current workspace. */
+	frappe.visual.toggleStory = function () {
+		frappe.visual.workspaceStorytelling?.toggle();
+	};
+
+	// ── Dock Coordinator ──────────────────────────────────────────
+
+	/**
+	 * Find a safe position for a floating window that avoids dock panels.
+	 * @param {number} width
+	 * @param {number} height
+	 * @returns {{ x: number, y: number }}
+	 */
+	frappe.visual.findSafePosition = function (width, height) {
+		return frappe.visual.dockCoordinator?.findSafePosition(width, height) || { x: 100, y: 100 };
+	};
+
+	// ── Notification Realtime ─────────────────────────────────────
+
+	/** Mark a notification as read (syncs to server). */
+	frappe.visual.markNotificationRead = async function (id) {
+		await frappe.visual._load();
+		return frappe.visual.notificationRealtime?.markRead(id);
+	};
+
+	/** Mark all notifications as read. */
+	frappe.visual.markAllNotificationsRead = async function () {
+		await frappe.visual._load();
+		return frappe.visual.notificationRealtime?.markAllRead();
+	};
+
+	// ── Preferences Sync ─────────────────────────────────────────
+
+	/** Force sync all UI preferences with server. */
+	frappe.visual.syncPreferences = async function () {
+		await frappe.visual._load();
+		return frappe.visual.preferencesSync?.forceSync();
+	};
+
+	/** Reset all Frappe Visual preferences to defaults. */
+	frappe.visual.resetPreferences = async function () {
+		await frappe.visual._load();
+		return frappe.visual.preferencesSync?.resetAll();
+	};
+
+	// ── Whiteboard DocType Linking ───────────────────────────────────
+
+	/**
+	 * Link a Frappe document to a whiteboard element.
+	 * @param {string} elementId — The whiteboard element ID
+	 * @param {string} doctype
+	 * @param {string} docname
+	 */
+	frappe.visual.linkDocToWhiteboard = function (elementId, doctype, docname) {
+		frappe.visual.whiteboardDocLink?.linkDocument?.(elementId, doctype, docname);
+	};
+
+	// ── Event Bus Shortcuts ──────────────────────────────────────────
+
+	/** Emit an event on the global EventBus. Shorthand for frappe.visual.eventBus.emit() */
+	frappe.visual.emit = function (event, data) {
+		frappe.visual.eventBus?.emit?.(event, data);
+	};
+
+	/** Subscribe to a global EventBus event. Returns unsubscribe fn. */
+	frappe.visual.on = function (event, handler) {
+		return frappe.visual.eventBus?.on?.(event, handler);
+	};
+
+	// ── Responsive System ───────────────────────────────────────────
+
+	/** Check if current viewport is mobile. */
+	frappe.visual.isMobile = function () {
+		return frappe.visual.responsive?.isMobile ?? window.innerWidth < 768;
+	};
+
+	/** Get current breakpoint name (xs/sm/md/lg/xl/xxl). */
+	frappe.visual.breakpoint = function () {
+		return frappe.visual.responsive?.current?.name ?? "md";
+	};
+
+	// ── Plugin System ───────────────────────────────────────────────
+
+	/** Register a plugin manifest. */
+	frappe.visual.registerPlugin = function (manifest) {
+		return frappe.visual.plugins?.registerPlugin?.(manifest);
+	};
+
+	/** Create a registered component by name. */
+	frappe.visual.createComponent = async function (name, container, config) {
+		await frappe.visual._load();
+		return frappe.visual.plugins?.create?.(name, container, config);
+	};
+
+	// ── Drag & Drop ─────────────────────────────────────────────────
+
+	/** Make an element draggable. Returns cleanup fn. */
+	frappe.visual.makeDraggable = function (el, opts) {
+		return frappe.visual.drag?.makeDraggable?.(el, opts);
+	};
+
+	/** Make an element a drop zone. Returns cleanup fn. */
+	frappe.visual.makeDropZone = function (el, opts) {
+		return frappe.visual.drag?.makeDropZone?.(el, opts);
+	};
+
+	/** Make children of a container sortable. Returns cleanup fn. */
+	frappe.visual.makeSortable = function (container, opts) {
+		return frappe.visual.drag?.makeSortable?.(container, opts);
+	};
+
+	// ── Animation Timeline ─────────────────────────────────────────
+
+	/** Create a named animation timeline. */
+	/** Quick preset animation (fadeUp, scaleUp, spring, etc). */
+	frappe.visual.animatePreset = function (target, preset, opts) {
+		return frappe.visual.animate?.preset?.(target, preset, opts);
+	};
+
+	/** Animate elements on scroll into view. */
+	frappe.visual.onScroll = function (target, fromVars, opts) {
+		return frappe.visual.animate?.onScroll?.(target, fromVars, opts);
+	};
+
+	// ── Component Playground ────────────────────────────────────────
+
+	/** Open the component playground explorer. */
+	frappe.visual.openPlayground = function () {
+		frappe.set_route("visual-playground");
+	};
+
+	// ── Export Engine ────────────────────────────────────────────────────
+
+	/** Export element to PDF. */
+	frappe.visual.exportPDF = async function (element, opts) {
+		await frappe.visual._load();
+		return frappe.visual.exporter?.pdf?.(element, opts);
+	};
+
+	/** Export element to PNG. */
+	frappe.visual.exportPNG = async function (element, opts) {
+		await frappe.visual._load();
+		return frappe.visual.exporter?.png?.(element, opts);
+	};
+
+	/** Export element to SVG. */
+	frappe.visual.exportSVG = async function (element, opts) {
+		await frappe.visual._load();
+		return frappe.visual.exporter?.svg?.(element, opts);
+	};
+
+	// ── Theme Builder ──────────────────────────────────────────────────
+
+	/** Open the visual theme builder. */
+	frappe.visual.openThemeBuilder = function () {
+		frappe.visual.themeBuilder?.open?.();
+	};
+
+	/** Apply a named theme. */
+	frappe.visual.applyTheme = function (name) {
+		frappe.visual.themeBuilder?.apply?.(name);
+	};
+
+	// ── Faceted Search ─────────────────────────────────────────────────
+
+	/** Create a faceted search panel for a doctype. */
+	frappe.visual.createSearch = function (container, opts) {
+		return frappe.visual.search?.create?.(container, opts);
+	};
+
+	// ── Performance Monitor ────────────────────────────────────────────
+
+	/** Toggle performance HUD overlay. */
+	frappe.visual.togglePerfHUD = function () {
+		frappe.visual.perf?.toggleHUD?.();
+	};
+
+	// ── Reactive State ────────────────────────────────────────────────
+
+	/** Create a reactive state store. */
+	frappe.visual.createStore = function (initial, opts) {
+		return frappe.visual.state?.create?.(initial, opts);
+	};
+
+	// ── Keyboard Shortcuts ────────────────────────────────────────────
+
+	/** Register a keyboard shortcut. */
+	frappe.visual.registerKey = function (combo, fn, opts) {
+		return frappe.visual.keys?.register?.(combo, fn, opts);
+	};
+
+	/** Show keyboard shortcuts cheat sheet. */
+	frappe.visual.showKeys = function () {
+		frappe.visual.keys?.showCheatSheet?.();
+	};
+
+	// ── Undo / Redo ───────────────────────────────────────────────────
+
+	/** Execute an undoable command. */
+	frappe.visual.exec = function (cmd) {
+		return frappe.visual.undo?.execute?.(cmd);
+	};
+
+	/** Undo last action. */
+	frappe.visual.undoAction = function () {
+		return frappe.visual.undo?.undo?.();
+	};
+
+	/** Redo last undone action. */
+	frappe.visual.redoAction = function () {
+		return frappe.visual.undo?.redo?.();
+	};
+
+	// ═══════════════════════════════════════════════════════════════════════
+	// SKELETON LOADER UTILITY
+	// Provides consistent loading states across all visual pages/components.
+	// ═══════════════════════════════════════════════════════════════════════
+
+	frappe.visual.skeleton = {
+		/**
+		 * Inject skeleton placeholders into a container.
+		 * @param {HTMLElement|string} container - DOM element or selector
+		 * @param {object} opts - { rows: 3, type: 'card'|'table'|'chart'|'list'|'text', cols: 3 }
+		 */
+		show(container, opts = {}) {
+			const el = typeof container === "string" ? document.querySelector(container) : container;
+			if (!el) return;
+			const rows = opts.rows || 3;
+			const cols = opts.cols || 3;
+			const type = opts.type || "card";
+			let html = '<div class="fv-skeleton-wrapper" role="status" aria-label="Loading...">';
+
+			if (type === "card") {
+				html += '<div class="fv-skeleton-grid" style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:1rem;">';
+				for (let i = 0; i < rows * cols; i++) {
+					html += `<div class="fv-skeleton-card" style="background:var(--fg-color,#f8f9fa);border-radius:var(--border-radius-lg,12px);padding:1.5rem;min-height:120px;">
+						<div class="fv-skeleton-line" style="width:60%;height:14px;background:var(--gray-200,#e5e7eb);border-radius:4px;margin-bottom:12px;animation:fv-skeleton-pulse 1.5s ease-in-out infinite;"></div>
+						<div class="fv-skeleton-line" style="width:80%;height:10px;background:var(--gray-200,#e5e7eb);border-radius:4px;margin-bottom:8px;animation:fv-skeleton-pulse 1.5s ease-in-out 0.2s infinite;"></div>
+						<div class="fv-skeleton-line" style="width:40%;height:10px;background:var(--gray-200,#e5e7eb);border-radius:4px;animation:fv-skeleton-pulse 1.5s ease-in-out 0.4s infinite;"></div>
+					</div>`;
+				}
+				html += "</div>";
+			} else if (type === "table") {
+				html += '<div style="display:flex;flex-direction:column;gap:8px;">';
+				for (let i = 0; i < rows; i++) {
+					html += `<div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-100,#f3f4f6);">
+						<div class="fv-skeleton-line" style="width:20%;height:12px;background:var(--gray-200,#e5e7eb);border-radius:4px;animation:fv-skeleton-pulse 1.5s ease-in-out ${i * 0.1}s infinite;"></div>
+						<div class="fv-skeleton-line" style="width:35%;height:12px;background:var(--gray-200,#e5e7eb);border-radius:4px;animation:fv-skeleton-pulse 1.5s ease-in-out ${i * 0.1 + 0.1}s infinite;"></div>
+						<div class="fv-skeleton-line" style="width:25%;height:12px;background:var(--gray-200,#e5e7eb);border-radius:4px;animation:fv-skeleton-pulse 1.5s ease-in-out ${i * 0.1 + 0.2}s infinite;"></div>
+					</div>`;
+				}
+				html += "</div>";
+			} else if (type === "chart") {
+				html += `<div style="background:var(--fg-color,#f8f9fa);border-radius:var(--border-radius-lg,12px);padding:1.5rem;min-height:250px;display:flex;align-items:flex-end;gap:8px;">`;
+				for (let i = 0; i < 8; i++) {
+					const h = 30 + Math.random() * 60;
+					html += `<div style="flex:1;height:${h}%;background:var(--gray-200,#e5e7eb);border-radius:4px 4px 0 0;animation:fv-skeleton-pulse 1.5s ease-in-out ${i * 0.15}s infinite;"></div>`;
+				}
+				html += "</div>";
+			} else {
+				for (let i = 0; i < rows; i++) {
+					const w = 50 + Math.random() * 40;
+					html += `<div class="fv-skeleton-line" style="width:${w}%;height:12px;background:var(--gray-200,#e5e7eb);border-radius:4px;margin-bottom:10px;animation:fv-skeleton-pulse 1.5s ease-in-out ${i * 0.15}s infinite;"></div>`;
+				}
+			}
+
+			html += '<span class="sr-only">' + __("Loading...") + "</span></div>";
+			el.innerHTML = html;
+
+			// Inject keyframes if not already present
+			if (!document.getElementById("fv-skeleton-style")) {
+				const style = document.createElement("style");
+				style.id = "fv-skeleton-style";
+				style.textContent = `@keyframes fv-skeleton-pulse{0%,100%{opacity:1}50%{opacity:.4}}`;
+				document.head.appendChild(style);
+			}
+		},
+
+		/** Remove skeleton placeholders from a container. */
+		hide(container) {
+			const el = typeof container === "string" ? document.querySelector(container) : container;
+			if (!el) return;
+			const wrapper = el.querySelector(".fv-skeleton-wrapper");
+			if (wrapper) wrapper.remove();
+		},
+	};
+
+	// ═══════════════════════════════════════════════════════════════════════
+	// ACCESSIBILITY (a11y) HELPERS
+	// ARIA attributes, focus management, screen reader announcements.
+	// ═══════════════════════════════════════════════════════════════════════
+
+	frappe.visual.a11y = {
+		/**
+		 * Announce a message to screen readers via a live region.
+		 * @param {string} message - Text to announce
+		 * @param {string} priority - 'polite' or 'assertive'
+		 */
+		announce(message, priority = "polite") {
+			let region = document.getElementById("fv-a11y-live");
+			if (!region) {
+				region = document.createElement("div");
+				region.id = "fv-a11y-live";
+				region.setAttribute("aria-live", priority);
+				region.setAttribute("aria-atomic", "true");
+				region.className = "sr-only";
+				region.style.cssText = "position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);";
+				document.body.appendChild(region);
+			}
+			region.setAttribute("aria-live", priority);
+			region.textContent = "";
+			requestAnimationFrame(() => { region.textContent = message; });
+		},
+
+		/**
+		 * Make a container a labeled ARIA region.
+		 * @param {HTMLElement} el - Element to label
+		 * @param {string} role - ARIA role (e.g. 'region', 'tabpanel', 'dialog')
+		 * @param {string} label - Accessible label text
+		 */
+		label(el, role, label) {
+			if (!el) return;
+			if (role) el.setAttribute("role", role);
+			if (label) el.setAttribute("aria-label", label);
+		},
+
+		/**
+		 * Trap focus inside a container (for modals/dialogs).
+		 * Returns a cleanup function to release the trap.
+		 * @param {HTMLElement} container
+		 * @returns {Function} release — call to remove the focus trap
+		 */
+		trapFocus(container) {
+			const focusable = container.querySelectorAll(
+				'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'
+			);
+			if (!focusable.length) return () => {};
+			const first = focusable[0];
+			const last = focusable[focusable.length - 1];
+			function handler(e) {
+				if (e.key !== "Tab") return;
+				if (e.shiftKey) {
+					if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+				} else {
+					if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+				}
+			}
+			container.addEventListener("keydown", handler);
+			first.focus();
+			return () => container.removeEventListener("keydown", handler);
+		},
+
+		/**
+		 * Set up skip-link navigation for a page.
+		 * @param {string} mainContentId - ID of the main content area
+		 */
+		skipLink(mainContentId) {
+			if (document.getElementById("fv-skip-link")) return;
+			const link = document.createElement("a");
+			link.id = "fv-skip-link";
+			link.href = "#" + mainContentId;
+			link.className = "sr-only";
+			link.textContent = __("Skip to main content");
+			link.style.cssText = "position:absolute;top:-100px;left:0;z-index:10000;padding:8px 16px;background:var(--primary);color:#fff;";
+			link.addEventListener("focus", () => { link.style.top = "0"; });
+			link.addEventListener("blur", () => { link.style.top = "-100px"; });
+			document.body.prepend(link);
+		},
+	};
+
+	// ═══════════════════════════════════════════════════════════════════════
+	// CSV / DATA EXPORT CLIENT HELPER
+	// Client-side CSV generation + server-side export via ExportService.
+	// ═══════════════════════════════════════════════════════════════════════
+
+	frappe.visual.exportData = {
+		/**
+		 * Export data as a CSV file download (client-side).
+		 * @param {Array<Array>} rows - 2D array (first row = headers)
+		 * @param {string} filename - File name without extension
+		 */
+		toCSV(rows, filename = "export") {
+			if (!rows || !rows.length) {
+				frappe.show_alert({ message: __("No data to export"), indicator: "orange" });
+				return;
+			}
+			const csv = rows.map(row =>
+				row.map(cell => {
+					const s = String(cell ?? "");
+					return s.includes(",") || s.includes('"') || s.includes("\n")
+						? '"' + s.replace(/"/g, '""') + '"' : s;
+				}).join(",")
+			).join("\n");
+
+			const BOM = "\uFEFF"; // UTF-8 BOM for Excel Arabic support
+			const blob = new Blob([BOM + csv], { type: "text/csv;charset=utf-8;" });
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement("a");
+			a.href = url;
+			a.download = filename + ".csv";
+			a.click();
+			URL.revokeObjectURL(url);
+			frappe.show_alert({ message: __("Exported {0} rows", [rows.length - 1]), indicator: "green" });
+		},
+
+		/**
+		 * Export chart/dashboard data via server-side ExportService.
+		 * @param {object} opts - { doctype, fields, filters, format:'csv'|'xlsx' }
+		 */
+		async fromServer(opts = {}) {
+			const { doctype, fields, filters, format = "csv" } = opts;
+			if (!doctype) return;
+			try {
+				const result = await frappe.xcall(
+					"frappe_visual.api.v1.export.export_data",
+					{ doctype, fields: JSON.stringify(fields || []),
+					  filters: JSON.stringify(filters || {}), format }
+				);
+				if (result?.file_url) {
+					window.open(result.file_url);
+				}
+			} catch (e) {
+				frappe.msgprint({ title: __("Export Error"), message: e.message || __("Export failed"), indicator: "red" });
+			}
+		},
+	};
+
+	// ═══════════════════════════════════════════════════════════════════════
+	// REALTIME COLLABORATION UTILITY
+	// Wrapper around frappe.realtime for visual component live updates.
+	// ═══════════════════════════════════════════════════════════════════════
+
+	frappe.visual.realtime = {
+		_handlers: {},
+
+		/**
+		 * Subscribe to a Frappe Visual realtime event.
+		 * @param {string} event - Event name (will be prefixed with "fv_")
+		 * @param {Function} callback
+		 */
+		on(event, callback) {
+			const key = "fv_" + event;
+			if (!frappe.visual.realtime._handlers[key]) {
+				frappe.visual.realtime._handlers[key] = [];
+			}
+			frappe.visual.realtime._handlers[key].push(callback);
+			frappe.realtime.on(key, callback);
+		},
+
+		/**
+		 * Unsubscribe from a Frappe Visual realtime event.
+		 * @param {string} event
+		 * @param {Function} callback
+		 */
+		off(event, callback) {
+			const key = "fv_" + event;
+			frappe.realtime.off(key, callback);
+			const handlers = frappe.visual.realtime._handlers[key];
+			if (handlers) {
+				const idx = handlers.indexOf(callback);
+				if (idx > -1) handlers.splice(idx, 1);
+			}
+		},
+
+		/**
+		 * Emit a realtime event to other users viewing the same resource.
+		 * @param {string} event - Event name
+		 * @param {object} data - Payload
+		 * @param {string} room - Room name (defaults to current page)
+		 */
+		emit(event, data = {}, room = null) {
+			frappe.xcall("frappe_visual.api.v1.realtime.broadcast", {
+				event: "fv_" + event,
+				data: JSON.stringify(data),
+				room: room || frappe.get_route_str(),
+			}).catch(() => {});
+		},
+
+		/**
+		 * Show presence indicators (who else is viewing this page).
+		 * @param {HTMLElement} container - Where to show avatar chips
+		 * @param {string} room - Room name
+		 */
+		showPresence(container, room) {
+			const el = typeof container === "string" ? document.querySelector(container) : container;
+			if (!el) return;
+
+			frappe.visual.realtime.on("presence_update", (data) => {
+				if (data.room !== (room || frappe.get_route_str())) return;
+				const users = data.users || [];
+				el.innerHTML = users.map(u =>
+					`<span class="fv-presence-chip" title="${frappe.utils.escape_html(u.full_name)}" style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:var(--gray-100);font-size:var(--text-xs);margin-inline-end:4px;">
+						<span class="avatar avatar-xs"><img src="${u.user_image || '/assets/frappe/images/default-avatar.png'}" alt="${frappe.utils.escape_html(u.full_name)}"></span>
+						${frappe.utils.escape_html(u.full_name.split(" ")[0])}
+					</span>`
+				).join("");
+			});
+
+			// Announce presence
+			frappe.visual.realtime.emit("join", {
+				user: frappe.session.user,
+				room: room || frappe.get_route_str(),
+			});
+		},
+
+		/** Clean up all subscriptions. */
+		destroy() {
+			for (const [key, handlers] of Object.entries(frappe.visual.realtime._handlers)) {
+				for (const h of handlers) frappe.realtime.off(key, h);
+			}
+			frappe.visual.realtime._handlers = {};
+		},
+	};
+
+	if (frappe.boot?.developer_mode) {
+		console.log(
+			"%c⬡ Frappe Visual%c loaded",
+			"color:#6366f1;font-weight:bold",
+			"color:#94a3b8"
+		);
+	}
 })();

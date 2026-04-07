@@ -1,0 +1,59 @@
+{# Frappe Visual — Public Gallery Page #}
+{# Website route: /frappe-visual-gallery #}
+{% extends "templates/web.html" %}
+
+{% block title %}Frappe Visual — Component Gallery{% endblock %}
+
+{% block page_content %}
+<div class="fv-gallery-page" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+
+  <div style="text-align: center; margin-bottom: 60px;">
+    <h1 style="font-size: 2.5rem; font-weight: 800;">
+      <span style="background: linear-gradient(135deg, #6366F1, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Frappe Visual
+      </span>
+    </h1>
+    <p style="font-size: 1.25rem; color: #6B7280; max-width: 600px; margin: 0 auto;">
+      307+ Interactive UI Components for Frappe — Graph Engine, Scene Engine, Data Viz, Layouts, Navigation & more.
+    </p>
+  </div>
+
+  <!-- Tier Overview -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px;">
+    {% set tiers = [
+      {"name": "Core Engine", "count": 6, "icon": "⚙️", "desc": "Graph & Layout Engine with 9 ELK.js algorithms"},
+      {"name": "Business Views", "count": 11, "icon": "📊", "desc": "AppMap, ERD, Storyboard, Kanban, Calendar, Gantt"},
+      {"name": "Data Viz", "count": 9, "icon": "📈", "desc": "ECharts Suite — Heatmap, Radar, Funnel, Sankey"},
+      {"name": "Layout", "count": 9, "icon": "🏗️", "desc": "Masonry, Dock, GridStack, Bento, VirtualList"},
+      {"name": "Navigation", "count": 9, "icon": "🧭", "desc": "CommandBar, FloatingNav, SpeedDial, TabBar"},
+      {"name": "Feedback", "count": 9, "icon": "💬", "desc": "BottomSheet, Lightbox, OnboardingTour, NotificationStack"},
+      {"name": "Productivity", "count": 9, "icon": "⚡", "desc": "ShortcutManager, UndoRedo, BulkActions, GlobalSearch"},
+      {"name": "Scene Engine", "count": 18, "icon": "🎭", "desc": "Immersive SVG rooms — Office, Library, Clinic, Workshop, Café"},
+      {"name": "Micro-Animation", "count": 9, "icon": "✨", "desc": "GSAP — Typewriter, Confetti, Parallax, GlowCard"},
+      {"name": "Form Enhancement", "count": 60, "icon": "📝", "desc": "Waves 23-31 — Advanced controls, data tables, workflows"}
+    ] %}
+    {% for tier in tiers %}
+    <div style="background: white; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #E5E7EB;">
+      <div style="font-size: 2rem; margin-bottom: 8px;">{{ tier.icon }}</div>
+      <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">{{ tier.name }}</h3>
+      <div style="color: #6366F1; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px;">{{ tier.count }} components</div>
+      <p style="color: #6B7280; font-size: 0.85rem; margin: 0;">{{ tier.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align: center; padding: 40px; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); border-radius: 16px; color: white;">
+    <h2 style="color: white; margin-bottom: 16px;">Ready to build beautiful Frappe apps?</h2>
+    <p style="opacity: 0.9; max-width: 500px; margin: 0 auto 24px;">
+      Install Frappe Visual from the Frappe Cloud Marketplace and start using 307+ components today.
+    </p>
+    <a href="https://frappecloud.com/marketplace/apps/frappe_visual"
+       class="btn btn-light btn-lg"
+       style="font-weight: 600;">
+      Get Frappe Visual →
+    </a>
+  </div>
+
+</div>
+{% endblock %}

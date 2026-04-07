@@ -58,7 +58,6 @@ def inject_app_desktop_icon(
                 "standard": 1,
                 "hidden": 0,
             }).insert(ignore_permissions=True)
-            frappe.db.commit()
     except Exception:
         frappe.log_error(title=f"inject_app_desktop_icon({app}): create icon failed")
 
@@ -114,7 +113,6 @@ def inject_app_desktop_icon(
                 "Desktop Layout", layout.name, "layout", json.dumps(data)
             )
 
-        frappe.db.commit()
         frappe.cache.delete_key("desktop_icons")
         frappe.cache.delete_key("bootinfo")
     except Exception:

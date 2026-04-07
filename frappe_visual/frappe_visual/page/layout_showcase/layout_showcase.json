@@ -1,0 +1,10 @@
+{
+  "name": "layout-showcase",
+  "doctype": "Page",
+  "module": "Frappe Visual",
+  "title": "Layout Showcase",
+  "icon": "layout-grid",
+  "standard": "Yes",
+  "roles": [{"role": "System Manager"}, {"role": "All"}],
+  "system_page": 0
+}

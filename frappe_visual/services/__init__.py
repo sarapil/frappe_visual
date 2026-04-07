@@ -7,3 +7,12 @@
 Frappe Visual — Service Layer
 Business-logic abstraction between API endpoints and DocType access.
 """
+
+__all__ = [
+	"GraphService",
+	"IconService",
+	"LayoutService",
+	"KanbanService",
+	"TranslationService",
+	"ExportService",
+]

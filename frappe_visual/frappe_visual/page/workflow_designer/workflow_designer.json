@@ -1,0 +1,9 @@
+{
+ "name": "workflow-designer",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Workflow Designer",
+ "icon": "ti ti-git-branch",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}]
+}

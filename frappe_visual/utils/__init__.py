@@ -3,4 +3,13 @@
 # License: GPL-3.0
 # For license information, please see license.txt
 
-# Frappe Visual Utils
+"""Frappe Visual — Utilities Package."""
+
+__all__ = [
+	"constants",
+	"formatters",
+	"validators",
+	"icons",
+	"license",
+	"feature_flags",
+]

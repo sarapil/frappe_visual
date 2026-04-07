@@ -47,3 +47,55 @@ def format_file_size(size_bytes: int) -> str:
             return f"{size_bytes:.1f} {unit}"
         size_bytes /= 1024
     return f"{size_bytes:.1f} TB"
+
+
+# --- Arabic / Bilingual Formatters ---
+
+ARABIC_DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
+WESTERN_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
+
+ARABIC_MONTHS = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر",
+]
+
+
+def to_arabic_digits(text: str) -> str:
+    """Convert Western digits to Arabic-Indic digits (٠١٢٣٤٥٦٧٨٩)."""
+    return str(text).translate(ARABIC_DIGITS) if text else ""
+
+
+def to_western_digits(text: str) -> str:
+    """Convert Arabic-Indic digits back to Western digits."""
+    return str(text).translate(WESTERN_DIGITS) if text else ""
+
+
+def format_date_ar(date_value) -> str:
+    """Format date in Arabic: ١٥ يناير ٢٠٢٥."""
+    if not date_value:
+        return ""
+    from frappe.utils import getdate
+    d = getdate(date_value)
+    day = to_arabic_digits(str(d.day))
+    month = ARABIC_MONTHS[d.month - 1]
+    year = to_arabic_digits(str(d.year))
+    return f"{day} {month} {year}"
+
+
+def format_currency_ar(amount, currency=None) -> str:
+    """Format currency with Arabic digits: ١٢٣٬٤٥٦٫٧٨ ر.س."""
+    currency = currency or frappe.defaults.get_global_default("currency") or "SAR"
+    formatted = fmt_money(flt(amount), currency=currency)
+    return to_arabic_digits(formatted)
+
+
+def format_number_ar(value, precision: int = 2) -> str:
+    """Format a number with Arabic-Indic digits."""
+    return to_arabic_digits(f"{flt(value):.{precision}f}")
+
+
+def format_bilingual(en_text: str, ar_text: str, separator: str = " | ") -> str:
+    """Combine English and Arabic text with a separator for bilingual display."""
+    if ar_text and en_text:
+        return f"{en_text}{separator}{ar_text}"
+    return ar_text or en_text or ""

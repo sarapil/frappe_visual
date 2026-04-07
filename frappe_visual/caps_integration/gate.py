@@ -55,3 +55,22 @@ def require_capability(capability_code: str):
             return fn(*args, **kwargs)
         return wrapper
     return decorator
+
+
+def on_before_save(doc, method=None):
+    """
+    doc_events hook for FV DocTypes.
+    Ensures the user has the FV_manage_settings capability to modify
+    public/shared Visual Assets, Dashboards, or Themes.
+    """
+    # Skip for Administrator
+    if frappe.session.user == "Administrator":
+        return
+
+    # Only gate public/shared items — personal items are always allowed
+    is_shared = getattr(doc, "is_public", 0) or getattr(doc, "is_default", 0)
+    if not is_shared:
+        return
+
+    if not check_capability("FV_manage_settings"):
+        raise CapabilityDenied("FV_manage_settings")

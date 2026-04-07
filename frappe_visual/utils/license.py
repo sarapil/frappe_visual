@@ -132,7 +132,9 @@ class LicenseValidator:
 @frappe.whitelist()
 def get_license_status() -> dict:
 	"""API: Get current license status."""
-	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+	from frappe_visual.caps_integration.gate import check_capability
+	if not check_capability("FV_view_visual_hub"):
+		frappe.throw(frappe._("Insufficient permissions"), frappe.PermissionError)
 
 	return LicenseValidator.get_license_info()
 
@@ -140,7 +142,9 @@ def get_license_status() -> dict:
 @frappe.whitelist()
 def validate_license_key(key: str) -> dict:
 	"""API: Validate a license key without saving."""
-	frappe.only_for(["Frappe Visual User", "System Manager", "System Manager"])
+	from frappe_visual.caps_integration.gate import check_capability
+	if not check_capability("FV_manage_settings"):
+		frappe.throw(frappe._("Insufficient permissions"), frappe.PermissionError)
 
 	is_valid = LicenseValidator._validate_key(key)
 	return {

@@ -1,0 +1,113 @@
+/* Frappe Visual — Print Stylesheet
+ * Optimizes visual dashboards and pages for printing.
+ * Strips animations, backdrop filters, and ensures contrast. */
+
+@media print {
+  /* ─── Hide non-printable elements ─── */
+  .page-head,
+  .layout-side-section,
+  .navbar,
+  .fv-hub-skeleton,
+  .btn,
+  button,
+  .fv-tier-toggle,
+  .frappe-control[data-fieldtype="Select"],
+  [data-page-container] > .page-head,
+  .page-breadcrumbs,
+  .comment-box,
+  .like-action,
+  .form-footer,
+  .form-sidebar,
+  .form-timeline {
+    display: none !important;
+  }
+
+  /* ─── Strip glassmorphism and animations ─── */
+  .fv-fx-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .fv-fx-hover-lift,
+  .fv-fx-hover-shine,
+  .fv-fx-mouse-glow,
+  .fv-fx-gradient-animated,
+  .fv-fx-morph-blob,
+  .fv-fx-page-enter {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .fv-fx-gradient-text {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+  }
+
+  /* ─── Ensure readable contrast ─── */
+  body,
+  .page-container,
+  .fv-hub-wrapper {
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .text-muted {
+    color: #555 !important;
+  }
+
+  /* ─── Layout adjustments ─── */
+  .layout-main-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .row {
+    page-break-inside: avoid;
+  }
+
+  /* ─── Charts: ensure SVG prints ─── */
+  svg {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  canvas {
+    max-width: 100% !important;
+  }
+
+  /* ─── Data tables ─── */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #ccc !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* ─── Scene engine: flatten ─── */
+  .fv-scene-container {
+    filter: none !important;
+    transform: none !important;
+  }
+
+  /* ─── Page breaks ─── */
+  section {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}

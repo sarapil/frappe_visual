@@ -1,0 +1,9 @@
+{
+ "name": "visual-whiteboard",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Whiteboard",
+ "icon": "ti ti-writing",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}, {"role": "All"}]
+}

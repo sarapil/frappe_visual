@@ -1,0 +1,907 @@
+/* ─── Frappe Visual: Split Workspace & Desk Layout ────────────────
+ * Complete CSS for:
+ *   1. Z-index 5-level Elevation Architecture (2.5D UI)
+ *   2. Detail Panel (sliding, glass morphism, resizable)
+ *   3. Persistent Navigation Sidebar
+ *   4. Bento Grid Micro-Dashboards
+ *   5. Workspace Enhancer layout overrides
+ *   6. Dark mode, RTL, print, reduced-motion
+ *
+ * Class prefix: .fv-dw-*  (desk workspace)
+ * CSS vars:     --fv-z-*  (elevation)  --fv-panel-*  (detail panel)
+ */
+
+// ── Spatial Z-Index Custom Properties ────────────────────────────
+// Exposed at :root so ANY stylesheet or inline style can reference them.
+// The 5-layer 2.5D architecture:
+//   Layer 0 — Background   : graph canvases, scene backgrounds
+//   Layer 1 — Cards        : content cards, widgets, tiles
+//   Layer 2 — Dropdowns    : popovers, tooltips, floating menus
+//   Layer 3 — Modals       : dialogs, drawers, full overlays
+//   Layer 4 — Orbiters     : notifications, command palette, toasts
+
+:root {
+	// Elevation Layers
+	--fv-z-bg:          1;
+	--fv-z-cards:       10;
+	--fv-z-dropdowns:   100;
+	--fv-z-modals:      1000;
+	--fv-z-orbiters:    10000;
+
+	// Detail Panel
+	--fv-panel-width:      42vw;
+	--fv-panel-min-width:  240px;
+	--fv-panel-header-h:   44px;
+	--fv-panel-z:          var(--fv-z-modals);
+
+	// Nav Sidebar
+	--fv-nav-w:            54px;
+	--fv-nav-w-expanded:   200px;
+	--fv-nav-z:            var(--fv-z-dropdowns);
+
+	// Glass variables (overridden by ThemeManager per theme)
+	--fv-glass-blur:       16px;
+	--fv-glass-bg:         rgba(255, 255, 255, 0.72);
+	--fv-glass-border:     rgba(255, 255, 255, 0.35);
+	--fv-glass-shadow:     0 8px 40px rgba(0, 0, 0, 0.10);
+
+	// Transitions
+	--fv-spring:           cubic-bezier(0.34, 1.56, 0.64, 1);
+	--fv-ease-in:          cubic-bezier(0.4, 0, 1, 1);
+	--fv-ease-out:         cubic-bezier(0, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+	--fv-glass-bg:         rgba(15, 15, 28, 0.80);
+	--fv-glass-border:     rgba(255, 255, 255, 0.09);
+	--fv-glass-shadow:     0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+// ── Utility Elevation Classes ─────────────────────────────────────
+// Use these instead of raw z-index values throughout the app.
+
+.fv-elevation-bg        { z-index: var(--fv-z-bg); }
+.fv-elevation-cards     { z-index: var(--fv-z-cards); }
+.fv-elevation-dropdowns { z-index: var(--fv-z-dropdowns); }
+.fv-elevation-modals    { z-index: var(--fv-z-modals); }
+.fv-elevation-orbiters  { z-index: var(--fv-z-orbiters); }
+
+// ── Body layout when detail panel or nav is open ──────────────────
+body.fv-dw-panel-open {
+	// Push list view left to make room for detail panel (optional).
+	// Commented: the panel overlays instead, matching VS Code "Peek" behavior.
+	// .page-container { padding-inline-end: var(--fv-panel-width) !important; }
+}
+
+body.fv-dw-nav-open {
+	// Add left margin when persistent nav sidebar is open
+	.page-container,
+	.container,
+	.layout-side-section + .layout-main-section {
+		margin-inline-start: var(--fv-nav-w) !important;
+		transition: margin 0.35s var(--fv-ease-out);
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 1 — DETAIL PANEL
+// Sliding glass panel that appears from the right on row click.
+// Inspired by VS Code "Peek Definition" (Ctrl+Shift+F10).
+// ─────────────────────────────────────────────────────────────────
+
+.fv-dw-panel {
+	position: fixed;
+	inset-block: 0;
+	inset-inline-end: 0;
+	width: var(--fv-panel-width);
+	min-width: var(--fv-panel-min-width);
+	max-width: 75vw;
+	z-index: var(--fv-panel-z);
+	display: flex;
+	flex-direction: column;
+
+	// Glass morphism — Frosted glass effect
+	background: var(--fv-glass-bg);
+	backdrop-filter: blur(var(--fv-glass-blur)) saturate(1.4);
+	-webkit-backdrop-filter: blur(var(--fv-glass-blur)) saturate(1.4);
+	border-inline-start: 1px solid var(--fv-glass-border);
+	box-shadow: var(--fv-glass-shadow), -4px 0 24px rgba(0, 0, 0, 0.06);
+	border-radius: 0; // Full-height panel
+
+	// Hidden by default
+	transform: translateX(100%);
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: none; // GSAP handles all transitions
+
+	&--visible {
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	// ── Resize Handle ───────────────────────────────────────────
+	&-resize-handle {
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: -4px;
+		width: 8px;
+		cursor: col-resize;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover .fv-dw-resize-grip span,
+		&:active .fv-dw-resize-grip span {
+			background: var(--fv-accent, #6366f1);
+			opacity: 1;
+		}
+	}
+
+	.fv-dw-resize-grip {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 4px 2px;
+
+		span {
+			display: block;
+			width: 3px;
+			height: 12px;
+			background: var(--border-color, #e2e8f0);
+			border-radius: 2px;
+			opacity: 0.6;
+			transition: all 0.2s;
+		}
+	}
+
+	// ── Panel Header ────────────────────────────────────────────
+	&-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: var(--fv-panel-header-h);
+		padding-inline: 14px 10px;
+		border-block-end: 1px solid var(--fv-glass-border);
+		flex-shrink: 0;
+		gap: 8px;
+	}
+
+	&-breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		font-size: 12px;
+		color: var(--text-muted, #6b7280);
+		min-width: 0;
+		overflow: hidden;
+	}
+
+	&-doctype-label {
+		font-weight: 600;
+		color: var(--text-color, #1a1a2e);
+		white-space: nowrap;
+	}
+
+	&-sep {
+		opacity: 0.4;
+		font-size: 14px;
+		line-height: 1;
+	}
+
+	&-docname-label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 160px;
+		color: var(--fv-accent, #6366f1);
+		font-weight: 500;
+	}
+
+	// ── Control Buttons ─────────────────────────────────────────
+	&-controls {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		flex-shrink: 0;
+	}
+
+	&-body {
+		flex: 1;
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+
+		// Custom scrollbar
+		&::-webkit-scrollbar { width: 4px; }
+		&::-webkit-scrollbar-track { background: transparent; }
+		&::-webkit-scrollbar-thumb {
+			background: var(--border-color, #e2e8f0);
+			border-radius: 4px;
+		}
+	}
+
+	// ── Placeholder ─────────────────────────────────────────────
+	&-placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		min-height: 260px;
+		padding: 32px;
+		text-align: center;
+		gap: 12px;
+	}
+
+	.fv-dw-placeholder-text {
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--text-muted, #9ca3af);
+		margin: 0;
+	}
+
+	.fv-dw-placeholder-hint {
+		font-size: 11px;
+		color: var(--text-muted, #9ca3af);
+		opacity: 0.6;
+		margin: 0;
+		line-height: 1.6;
+	}
+}
+
+// ── Panel Control Buttons ─────────────────────────────────────────
+.fv-dw-ctrl-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border: none;
+	background: transparent;
+	border-radius: 6px;
+	color: var(--text-muted, #6b7280);
+	cursor: pointer;
+	transition: all 0.15s;
+	padding: 0;
+
+	&:hover {
+		background: color-mix(in srgb, var(--fv-accent, #6366f1) 10%, transparent);
+		color: var(--fv-accent, #6366f1);
+	}
+
+	&:active {
+		transform: scale(0.92);
+	}
+}
+
+.fv-dw-ctrl-sep {
+	width: 1px;
+	height: 16px;
+	background: var(--border-color, #e2e8f0);
+	margin-inline: 4px;
+}
+
+.fv-dw-btn-close:hover {
+	background: color-mix(in srgb, #ef4444 10%, transparent) !important;
+	color: #ef4444 !important;
+}
+
+// ── Form Container Inside Panel ───────────────────────────────────
+.fv-dw-form-container {
+	padding: 16px;
+	min-height: 100%;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 2 — PERSISTENT NAVIGATION SIDEBAR
+// Compact icon sidebar that stays across all desk navigation.
+// Inspired by VS Code Activity Bar.
+// ─────────────────────────────────────────────────────────────────
+
+.fv-dw-nav-sidebar {
+	position: fixed;
+	inset-block: 0;
+	inset-inline-start: 0;
+	width: var(--fv-nav-w);
+	z-index: var(--fv-nav-z);
+	display: flex;
+	flex-direction: column;
+
+	background: var(--fv-glass-bg);
+	backdrop-filter: blur(20px) saturate(1.3);
+	-webkit-backdrop-filter: blur(20px) saturate(1.3);
+	border-inline-end: 1px solid var(--fv-glass-border);
+	box-shadow: 2px 0 16px rgba(0, 0, 0, 0.06);
+	transition: width 0.3s var(--fv-ease-out);
+
+	// Expanded state (hover or toggle)
+	&:hover,
+	&.fv-dw-nav-expanded {
+		width: var(--fv-nav-w-expanded);
+
+		.fv-dw-nav-label {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&.fv-dw-nav-collapsed {
+		width: 0 !important;
+		overflow: hidden;
+	}
+
+	// ── Header ──────────────────────────────────────────────────
+	.fv-dw-nav-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+		border-block-end: 1px solid var(--fv-glass-border);
+		height: 52px;
+		flex-shrink: 0;
+	}
+
+	.fv-dw-nav-logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 8px;
+		background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+		flex-shrink: 0;
+		cursor: pointer;
+	}
+
+	.fv-dw-nav-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border: none;
+		background: transparent;
+		border-radius: 4px;
+		color: var(--text-muted, #6b7280);
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.2s;
+		padding: 0;
+
+		&:hover {
+			background: color-mix(in srgb, var(--fv-accent, #6366f1) 10%, transparent);
+			color: var(--fv-accent, #6366f1);
+		}
+	}
+
+	&:hover .fv-dw-nav-toggle {
+		opacity: 1;
+	}
+
+	// ── Nav Items ────────────────────────────────────────────────
+	.fv-dw-nav-items {
+		flex: 1;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding: 6px 0;
+
+		&::-webkit-scrollbar { width: 3px; }
+		&::-webkit-scrollbar-thumb { background: transparent; }
+		&:hover::-webkit-scrollbar-thumb {
+			background: var(--border-color, #e2e8f0);
+		}
+	}
+
+	// ── Nav Footer ──────────────────────────────────────────────
+	.fv-dw-nav-footer {
+		padding: 6px 0;
+		border-block-start: 1px solid var(--fv-glass-border);
+	}
+}
+
+// ── Nav Item ──────────────────────────────────────────────────────
+.fv-dw-nav-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	padding: 8px 12px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	text-align: start;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: background 0.15s;
+
+	&:hover {
+		background: color-mix(in srgb, var(--fv-accent, #6366f1) 8%, transparent);
+	}
+
+	&.active {
+		background: color-mix(in srgb, var(--fv-accent, #6366f1) 12%, transparent);
+
+		.fv-dw-nav-label {
+			color: var(--fv-accent, #6366f1);
+			font-weight: 600;
+		}
+	}
+}
+
+.fv-dw-nav-icon {
+	width: 30px;
+	min-width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	background: color-mix(in srgb, currentColor 10%, transparent);
+	flex-shrink: 0;
+}
+
+.fv-dw-nav-label {
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--text-color, #374151);
+	opacity: 0;
+	transform: translateX(-6px);
+	transition: opacity 0.2s, transform 0.2s;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 3 — BENTO GRID MICRO-DASHBOARDS
+// Workspace shortcuts reorganized as a dynamic Bento grid layout.
+// Inspired by Japanese "bento box" modular compartment design.
+// ─────────────────────────────────────────────────────────────────
+
+.fv-ws-bento-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	grid-auto-rows: 80px;
+	gap: 12px;
+	padding: 4px;
+	margin-block: 16px;
+
+	// Large featured tiles
+	.fv-ws-bento-tile--wide {
+		grid-column: span 2;
+	}
+
+	.fv-ws-bento-tile--tall {
+		grid-row: span 2;
+	}
+
+	.fv-ws-bento-tile--hero {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+}
+
+.fv-ws-bento-tile {
+	position: relative;
+	border-radius: 14px;
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 14px;
+	transition: transform 0.25s var(--fv-spring), box-shadow 0.25s;
+
+	// Glass morphism by default
+	background: var(--fv-glass-bg);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--fv-glass-border);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background: linear-gradient(
+			135deg,
+			color-mix(in srgb, var(--fv-tile-color, #6366f1) 8%, transparent),
+			transparent 60%
+		);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	&:hover {
+		transform: translateY(-3px) scale(1.01);
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12),
+			0 0 0 1px color-mix(in srgb, var(--fv-tile-color, #6366f1) 20%, transparent);
+
+		&::before { opacity: 1; }
+	}
+
+	&:active {
+		transform: translateY(-1px) scale(0.99);
+	}
+
+	// ── Tile content ────────────────────────────────────────────
+	&-icon {
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--fv-tile-color, #6366f1) 12%, transparent);
+		color: var(--fv-tile-color, #6366f1);
+		font-size: 16px;
+		flex-shrink: 0;
+	}
+
+	&-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		min-width: 0;
+	}
+
+	&-title {
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--text-color, #1a1a2e);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&-count {
+		font-size: 22px;
+		font-weight: 700;
+		color: var(--fv-tile-color, #6366f1);
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+	}
+
+	&-trend {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		font-size: 10px;
+		color: var(--text-muted, #6b7280);
+	}
+
+	&-sparkline {
+		position: absolute;
+		bottom: 0;
+		inset-inline: 0;
+		height: 32px;
+		opacity: 0.3;
+	}
+
+	// ── Accent bar (bottom) ──────────────────────────────────────
+	&-accent {
+		position: absolute;
+		bottom: 0;
+		inset-inline-start: 0;
+		height: 3px;
+		width: 40%;
+		background: linear-gradient(
+			90deg,
+			var(--fv-tile-color, #6366f1),
+			color-mix(in srgb, var(--fv-tile-color, #6366f1) 0%, transparent)
+		);
+		border-radius: 0 2px 2px 0;
+		transition: width 0.4s var(--fv-ease-out);
+	}
+
+	&:hover .fv-ws-bento-tile-accent { width: 75%; }
+}
+
+// ── Hero Tile ─────────────────────────────────────────────────────
+.fv-ws-bento-tile--hero {
+	background: linear-gradient(
+		135deg,
+		color-mix(in srgb, var(--fv-tile-color, #6366f1) 15%, var(--fv-glass-bg)),
+		var(--fv-glass-bg)
+	);
+	justify-content: center;
+	gap: 12px;
+
+	.fv-ws-bento-tile-count {
+		font-size: 40px;
+	}
+
+	.fv-ws-bento-tile-title {
+		font-size: 14px;
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 4 — PARALLAX CONTAINER
+// CSS Parallax depth layers for workspace backgrounds.
+// Apply .fv-fx-parallax-container to workspace page shells.
+// ─────────────────────────────────────────────────────────────────
+
+.fv-fx-parallax-container {
+	position: relative;
+	overflow: hidden;
+	transform-style: preserve-3d;
+
+	.fv-parallax-layer-bg {
+		transform: translateZ(-2px) scale(1.8);
+		z-index: var(--fv-z-bg);
+	}
+
+	.fv-parallax-layer-mid {
+		transform: translateZ(-1px) scale(1.4);
+		z-index: var(--fv-z-cards);
+	}
+
+	.fv-parallax-layer-fg {
+		transform: translateZ(0);
+		z-index: var(--fv-z-dropdowns);
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 5 — WORKSPACE ENHANCER OVERRIDES
+// CSS grid enhancements for the workspace cards container.
+// ─────────────────────────────────────────────────────────────────
+
+// When bento mode is active, override workspace widget grids
+.fv-ws-bento-mode {
+	.shortcut-widget-box {
+		display: grid !important;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+		grid-auto-rows: 90px !important;
+		gap: 12px !important;
+		padding: 8px 0 !important;
+
+		// First 2 shortcuts get wide tiles
+		.widget:nth-child(1),
+		.widget:nth-child(2) {
+			grid-column: span 2;
+		}
+	}
+
+	.number-widget-box {
+		display: grid !important;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+		gap: 12px !important;
+	}
+}
+
+// ── Workspace Enhanced Shortcut Cards ────────────────────────────
+.fv-ws-shortcut-card {
+	position: relative;
+	border-radius: 12px !important;
+	overflow: hidden;
+	transition:
+		transform 0.25s var(--fv-spring),
+		box-shadow 0.25s ease !important;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		border: 1px solid transparent;
+		background:
+			linear-gradient(white, white) padding-box,
+			linear-gradient(
+				135deg,
+				color-mix(in srgb, var(--fv-ws-accent, #6366f1) 30%, transparent),
+				transparent
+			) border-box;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+
+	&:hover {
+		transform: translateY(-3px) !important;
+		box-shadow: 0 8px 24px color-mix(in srgb, var(--fv-ws-accent, #6366f1) 18%, rgba(0,0,0,0.08)) !important;
+	}
+}
+
+// ── Workspace Number Cards ────────────────────────────────────────
+.fv-ws-number-card {
+	position: relative;
+	border-radius: 12px !important;
+	overflow: hidden;
+	transition: all 0.25s var(--fv-spring) !important;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline: 0;
+		height: 3px;
+		background: linear-gradient(
+			90deg,
+			var(--fv-ws-accent, #6366f1),
+			color-mix(in srgb, var(--fv-ws-accent, #6366f1) 0%, transparent)
+		);
+		border-radius: 0 0 12px 12px;
+	}
+
+	&:hover {
+		transform: translateY(-2px) !important;
+		box-shadow: 0 6px 20px color-mix(in srgb, var(--fv-ws-accent, #6366f1) 14%, rgba(0,0,0,0.06)) !important;
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 6 — SPLIT VIEW OVERLAY (used by SplitPane in list pages)
+// ─────────────────────────────────────────────────────────────────
+
+.fv-sp-glass {
+	// Override SplitPane gutter to glass style
+	.fv-sp-gutter {
+		background: var(--fv-glass-border);
+		transition: background 0.2s;
+
+		&:hover {
+			background: var(--fv-accent, #6366f1);
+		}
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 7 — RESPONSIVE
+// ─────────────────────────────────────────────────────────────────
+
+@media (max-width: 900px) {
+	.fv-dw-panel {
+		--fv-panel-width: 100vw;
+		border-radius: 0;
+		inset-block-start: auto;
+		height: 85vh;
+		inset-block-end: 0;
+		inset-inline-start: 0;
+		border-radius: 16px 16px 0 0;
+		border-inline-start: none;
+		border-block-start: 1px solid var(--fv-glass-border);
+
+		&-resize-handle {
+			display: none;
+		}
+	}
+
+	body.fv-dw-nav-open {
+		.page-container { margin-inline-start: 0 !important; }
+	}
+
+	.fv-dw-nav-sidebar {
+		inset-block-start: auto;
+		inset-block-end: 0;
+		inset-inline: 0;
+		width: 100% !important;
+		height: var(--fv-nav-w);
+		flex-direction: row;
+		border-inline-end: none;
+		border-block-start: 1px solid var(--fv-glass-border);
+
+		.fv-dw-nav-items {
+			display: flex;
+			flex-direction: row;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 0;
+		}
+
+		.fv-dw-nav-label { display: none; }
+		.fv-dw-nav-header, .fv-dw-nav-footer { display: none; }
+		.fv-dw-nav-item { flex-direction: column; min-width: 60px; padding: 6px; }
+	}
+
+	.fv-ws-bento-grid {
+		grid-template-columns: repeat(2, 1fr);
+
+		.fv-ws-bento-tile--wide,
+		.fv-ws-bento-tile--hero { grid-column: span 1; }
+
+		.fv-ws-bento-tile--tall,
+		.fv-ws-bento-tile--hero { grid-row: span 1; }
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 8 — RTL (Right-to-Left) Support
+// All logical properties already handle RTL via inset-inline-*.
+// Only directional animations need explicit RTL overrides.
+// ─────────────────────────────────────────────────────────────────
+
+[dir="rtl"] {
+	// Mirror panel entrance direction
+	.fv-dw-panel {
+		--fv-panel-enter-x: -100%;
+	}
+
+	// Mirror bento tile accent gradient
+	.fv-ws-bento-tile-accent {
+		background: linear-gradient(
+			270deg,
+			var(--fv-tile-color, #6366f1),
+			color-mix(in srgb, var(--fv-tile-color, #6366f1) 0%, transparent)
+		);
+		border-radius: 2px 0 0 2px;
+	}
+
+	// Nav icon pulse direction
+	@keyframes fv-icon-pulse-rtl {
+		0%, 100% { transform: scaleX(-1) scale(1); }
+		50%       { transform: scaleX(-1) scale(1.08); }
+	}
+	.fv-ws-icon-pulse { animation-name: fv-icon-pulse-rtl; }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 9 — DARK MODE
+// ─────────────────────────────────────────────────────────────────
+
+[data-theme="dark"] {
+	.fv-ws-bento-tile {
+		border-color: rgba(255, 255, 255, 0.07);
+	}
+
+	.fv-dw-panel-breadcrumb .fv-dw-panel-doctype-label {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.fv-dw-nav-label {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.fv-ws-bento-tile-title {
+		color: rgba(255, 255, 255, 0.85);
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 10 — REDUCED MOTION
+// Respect user's system preference (prefers-reduced-motion).
+// ─────────────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+	.fv-dw-panel,
+	.fv-dw-nav-sidebar,
+	.fv-ws-bento-tile,
+	.fv-ws-shortcut-card,
+	.fv-ws-number-card {
+		transition: none !important;
+		animation: none !important;
+	}
+
+	// Still show panels when visible — just no animation
+	.fv-dw-panel--visible {
+		transform: translateX(0) !important;
+		opacity: 1 !important;
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION 11 — PRINT STYLES
+// ─────────────────────────────────────────────────────────────────
+
+@media print {
+	.fv-dw-panel,
+	.fv-dw-nav-sidebar,
+	.fv-dw-split-btn,
+	.fv-ws-bento-tile-accent,
+	.fv-ws-bento-tile-sparkline,
+	.fv-ws-count-badge { display: none !important; }
+
+	body.fv-dw-nav-open .page-container {
+		margin-inline-start: 0 !important;
+	}
+}

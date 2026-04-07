@@ -1,0 +1,9 @@
+{
+ "name": "icon-explorer",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Icon Explorer",
+ "icon": "ti ti-icons",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}, {"role": "All"}]
+}

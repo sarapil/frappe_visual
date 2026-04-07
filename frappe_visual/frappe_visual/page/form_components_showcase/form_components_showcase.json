@@ -1,0 +1,9 @@
+{
+ "name": "form-components-showcase",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Form Components Showcase",
+ "icon": "ti ti-forms",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}, {"role": "All"}]
+}

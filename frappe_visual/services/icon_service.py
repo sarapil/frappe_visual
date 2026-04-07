@@ -5,41 +5,48 @@
 
 """
 Frappe Visual — IconService
-Business logic for icon service operations.
+Business logic for icon management, sprite operations, and DocType icon mapping.
 """
 
 import frappe
 from frappe import _
+import re
+from pathlib import Path
 
 
 class IconService:
-    """Service class for icon service business logic.
-
-    Separates business rules from API endpoint handling and direct
-    DocType manipulation. API endpoints should delegate to this class.
-    """
+    """Service class for icon business logic."""
 
     @staticmethod
-    def get_list(filters=None, page=1, page_size=20):
-        """Get paginated list of records."""
-        raise NotImplementedError("Implement in subclass or override")
+    def list_installed_icons() -> list[str]:
+        """List all icon IDs from Frappe's SVG sprite."""
+        from frappe_visual.setup.icons import get_frappe_icons_path
+        icons_file = get_frappe_icons_path()
+        if not icons_file.exists():
+            return []
+        content = icons_file.read_text(encoding="utf-8")
+        return sorted(set(re.findall(r'id="icon-([^"]+)"', content)))
 
     @staticmethod
-    def get_detail(name):
-        """Get single record details."""
-        raise NotImplementedError("Implement in subclass or override")
+    def icon_exists(icon_name: str) -> bool:
+        """Check if a specific icon exists in the sprite."""
+        return icon_name in IconService.list_installed_icons()
 
     @staticmethod
-    def create(data):
-        """Create a new record with validation."""
-        raise NotImplementedError("Implement in subclass or override")
+    def get_doctype_icon(doctype: str) -> str:
+        """Get the mapped icon for a DocType, with sensible fallback."""
+        from frappe_visual.setup.icons import DOCTYPE_ICONS
+        return DOCTYPE_ICONS.get(doctype, "file-text")
 
     @staticmethod
-    def update(name, data):
-        """Update an existing record."""
-        raise NotImplementedError("Implement in subclass or override")
+    def get_all_doctype_icons() -> dict[str, str]:
+        """Return the full DocType → icon mapping."""
+        from frappe_visual.setup.icons import DOCTYPE_ICONS
+        return dict(DOCTYPE_ICONS)
 
     @staticmethod
-    def validate(data):
-        """Validate data before create/update."""
-        raise NotImplementedError("Implement in subclass or override")
+    def search_icons(query: str, limit: int = 50) -> list[str]:
+        """Search installed icons by partial name match."""
+        all_icons = IconService.list_installed_icons()
+        q = query.lower()
+        return [i for i in all_icons if q in i.lower()][:limit]

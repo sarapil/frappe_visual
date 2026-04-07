@@ -5,7 +5,7 @@
   "label": "Frappe Visual",
   "title": "Frappe Visual",
   "app": "frappe_visual",
-  "icon": "eye",
+  "icon": "ti ti-eye",
   "public": 1,
   "type": "Workspace",
   "idx": 0,
@@ -15,13 +15,25 @@
   "sequence_id": 20,
   "owner": "Administrator",
   "modified_by": "Administrator",
-  "content": "[{\"id\":\"fv_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header'><h3><span class='ti ti-eye'></span> Frappe Visual</h3><p class='text-muted'>Graph-based Visual UX Framework — 15 interactive components for Frappe apps</p></div>\",\"col\":12}},{\"id\":\"fv_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visual Hub\",\"col\":4}},{\"id\":\"fv_shortcuts_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Settings\",\"col\":4}},{\"id\":\"fv_shortcuts_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"About\",\"col\":4}},{\"id\":\"fv_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fv_card_graph\",\"type\":\"card\",\"data\":{\"card_name\":\"Graph Components\",\"col\":4}},{\"id\":\"fv_card_ui\",\"type\":\"card\",\"data\":{\"card_name\":\"UI Components\",\"col\":4}},{\"id\":\"fv_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration & Docs\",\"col\":4}}]",
+  "content": "[{\"id\":\"fv_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header'><h3><span class='ti ti-eye'></span> Frappe Visual</h3><p class='text-muted'>307+ Interactive Components — Graph Engine, Scene Engine, Data Viz, Layout, Navigation, Productivity & more</p></div>\",\"col\":12}},{\"id\":\"fv_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visual Hub\",\"col\":3}},{\"id\":\"fv_shortcuts_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Icon Explorer\",\"col\":3}},{\"id\":\"fv_shortcuts_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Viz Gallery\",\"col\":3}},{\"id\":\"fv_shortcuts_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Settings\",\"col\":3}},{\"id\":\"fv_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fv_card_graph\",\"type\":\"card\",\"data\":{\"card_name\":\"Graph & Scene Components\",\"col\":4}},{\"id\":\"fv_card_ui\",\"type\":\"card\",\"data\":{\"card_name\":\"UI Components & Showcases\",\"col\":4}},{\"id\":\"fv_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration & Data\",\"col\":4}}]",
   "shortcuts": [
     {
       "label": "Visual Hub",
       "link_to": "visual-hub",
       "type": "Page",
       "icon": "eye"
+    },
+    {
+      "label": "Icon Explorer",
+      "link_to": "icon-explorer",
+      "type": "Page",
+      "icon": "icons"
+    },
+    {
+      "label": "Data Viz Gallery",
+      "link_to": "data-viz-gallery",
+      "type": "Page",
+      "icon": "chart-dots-3"
     },
     {
       "label": "Settings",
@@ -39,7 +51,7 @@
   "links": [
     {
       "type": "Card Break",
-      "label": "Graph Components",
+      "label": "Graph & Scene Components",
       "icon": "chart-dots-3",
       "hidden": 0,
       "is_query_report": 0,
@@ -72,14 +84,38 @@
     },
     {
       "type": "Link",
-      "label": "Dependency Graph",
-      "link_to": "visual-hub",
+      "label": "Scene Engine Showcase",
+      "link_to": "scene-engine-showcase",
+      "link_type": "Page",
+      "icon": "photo-filled",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "5 Scene presets, 18 components — immersive SVG rooms",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Workflow Designer",
+      "link_to": "workflow-designer",
       "link_type": "Page",
       "icon": "git-branch",
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0,
-      "description": "Workflow & dependency visualization",
+      "description": "Visual drag-and-drop workflow state builder",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Visual Whiteboard",
+      "link_to": "visual-whiteboard",
+      "link_type": "Page",
+      "icon": "pencil",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "SVG whiteboard — draw, annotate, collaborate",
       "link_count": 0
     },
     {
@@ -96,7 +132,7 @@
     },
     {
       "type": "Card Break",
-      "label": "UI Components",
+      "label": "UI Components & Showcases",
       "icon": "layout-dashboard",
       "hidden": 0,
       "is_query_report": 0,
@@ -105,14 +141,38 @@
     },
     {
       "type": "Link",
-      "label": "Calendar",
-      "link_to": "visual-hub",
+      "label": "Data Viz Gallery",
+      "link_to": "data-viz-gallery",
       "link_type": "Page",
-      "icon": "calendar-event",
+      "icon": "chart-pie",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "15+ chart types — Heatmap, Radar, Funnel, Sankey & more",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Icon Explorer",
+      "link_to": "icon-explorer",
+      "link_type": "Page",
+      "icon": "icons",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Browse, search, and copy 5000+ Tabler icons",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Form Components Showcase",
+      "link_to": "form-components-showcase",
+      "link_type": "Page",
+      "icon": "forms",
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0,
-      "description": "Month/week/day visual calendar",
+      "description": "60+ advanced form input controls sandbox",
       "link_count": 0
     },
     {
@@ -125,6 +185,18 @@
       "is_query_report": 0,
       "onboard": 0,
       "description": "Drag-and-drop Kanban boards",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Calendar",
+      "link_to": "visual-hub",
+      "link_type": "Page",
+      "icon": "calendar-event",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Month/week/day visual calendar",
       "link_count": 0
     },
     {
@@ -165,18 +237,6 @@
     },
     {
       "type": "Link",
-      "label": "Form Dashboard",
-      "link_to": "visual-hub",
-      "link_type": "Page",
-      "icon": "layout-list",
-      "hidden": 0,
-      "is_query_report": 0,
-      "onboard": 0,
-      "description": "Visual linked-document dashboard",
-      "link_count": 0
-    },
-    {
-      "type": "Link",
       "label": "Storyboard",
       "link_to": "visual-hub",
       "link_type": "Page",
@@ -189,19 +249,55 @@
     },
     {
       "type": "Link",
-      "label": "Floating Window",
-      "link_to": "visual-hub",
+      "label": "Templates Demo",
+      "link_to": "visual-templates-demo",
       "link_type": "Page",
-      "icon": "app-window",
+      "icon": "layout-grid",
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0,
-      "description": "Draggable overlay container",
+      "description": "Interactive demo of all 8 page templates",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Layout Showcase",
+      "link_to": "layout-showcase",
+      "link_type": "Page",
+      "icon": "layout-grid",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "9 layout containers — Masonry, Dock, GridStack, Bento & more",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Animation Demo",
+      "link_to": "animation-demo",
+      "link_type": "Page",
+      "icon": "sparkles",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "9 GSAP micro-animations — Typewriter, Confetti, Parallax",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Navigation Demo",
+      "link_to": "navigation-demo",
+      "link_type": "Page",
+      "icon": "compass",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "9 wayfinding components — CommandBar, SpeedDial, TabBar",
       "link_count": 0
     },
     {
       "type": "Card Break",
-      "label": "Configuration & Docs",
+      "label": "Configuration & Data",
       "icon": "settings",
       "hidden": 0,
       "is_query_report": 0,
@@ -222,14 +318,38 @@
     },
     {
       "type": "Link",
-      "label": "Icon Explorer",
-      "link_to": "visual-hub",
-      "link_type": "Page",
-      "icon": "icons",
+      "label": "Visual Assets",
+      "link_to": "FV Visual Asset",
+      "link_type": "DocType",
+      "icon": "database",
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0,
-      "description": "Browse and search 3000+ Tabler icons",
+      "description": "Stories, whiteboards, scenes, dashboards & more",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Dashboards",
+      "link_to": "FV Dashboard",
+      "link_type": "DocType",
+      "icon": "layout-dashboard",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Saved dashboard configurations with widgets",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Themes",
+      "link_to": "FV Theme",
+      "link_type": "DocType",
+      "icon": "palette",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Custom theme CSS variable overrides",
       "link_count": 0
     },
     {
@@ -242,18 +362,6 @@
       "is_query_report": 0,
       "onboard": 0,
       "description": "App showcase for admins and decision makers",
-      "link_count": 0
-    },
-    {
-      "type": "Link",
-      "label": "Templates Demo",
-      "link_to": "visual-templates-demo",
-      "link_type": "Page",
-      "icon": "layout-grid",
-      "hidden": 0,
-      "is_query_report": 0,
-      "onboard": 1,
-      "description": "Interactive demo of all 8 page templates",
       "link_count": 0
     }
   ],

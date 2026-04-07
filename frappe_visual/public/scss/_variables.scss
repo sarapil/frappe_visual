@@ -44,7 +44,7 @@ $fv-shadow-md:    0 4px 6px -1px rgba(0,0,0,0.1);
 $fv-shadow-lg:    0 10px 15px -3px rgba(0,0,0,0.1);
 $fv-shadow-glow:  0 0 20px rgba(99,102,241,0.15);
 
-// ── Z-indices ────────────────────────────────────────────────────
+// ── Z-indices (SCSS build-time vars) ─────────────────────────────
 $fv-z-graph:      1;
 $fv-z-minimap:    100;
 $fv-z-toolbar:    200;
@@ -56,3 +56,60 @@ $fv-transition-fast:  0.15s ease;
 $fv-transition-base:  0.25s ease;
 $fv-transition-slow:  0.4s ease;
 $fv-transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// ── CSS Custom Properties (runtime) ──────────────────────────────
+// The 5-layer 2.5D Spatial Elevation Architecture:
+//   Layer 0 (bg)       : graph canvases, background elements
+//   Layer 1 (cards)    : floating tiles, widgets, stat cards
+//   Layer 2 (dropdowns): popovers, tooltips, mini-menus
+//   Layer 3 (modals)   : dialogs, drawers, full-screen overlays
+//   Layer 4 (orbiters) : notifications, command palette, toasts
+:root {
+    // ── Elevation Layers ─────────────────────────────────────────
+    --fv-z-bg:          1;
+    --fv-z-cards:       10;
+    --fv-z-dropdowns:   100;
+    --fv-z-modals:      1000;
+    --fv-z-orbiters:    10000;
+
+    // ── Design Tokens ────────────────────────────────────────────
+    --fv-accent:        #{$fv-accent};
+    --fv-accent-light:  #{$fv-accent-light};
+    --fv-success:       #{$fv-success};
+    --fv-warning:       #{$fv-warning};
+    --fv-danger:        #{$fv-danger};
+    --fv-info:          #{$fv-info};
+
+    // ── Glass Morphism Defaults ───────────────────────────────────
+    --fv-glass-blur:    16px;
+    --fv-glass-bg:      rgba(255, 255, 255, 0.72);
+    --fv-glass-border:  rgba(255, 255, 255, 0.35);
+    --fv-glass-shadow:  0 8px 40px rgba(0, 0, 0, 0.10);
+
+    // ── Spring Physics Easing ─────────────────────────────────────
+    // Use with GSAP: ease: "elastic.out(1, 0.7)" for spring feel
+    --fv-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);
+    --fv-ease-in:       cubic-bezier(0.4, 0, 1, 1);
+    --fv-ease-out:      cubic-bezier(0, 0, 0.2, 1);
+
+    // ── Spacing ───────────────────────────────────────────────────
+    --fv-space-1: #{$fv-space-1};
+    --fv-space-2: #{$fv-space-2};
+    --fv-space-3: #{$fv-space-3};
+    --fv-space-4: #{$fv-space-4};
+    --fv-space-6: #{$fv-space-6};
+    --fv-space-8: #{$fv-space-8};
+
+    // ── Radius ────────────────────────────────────────────────────
+    --fv-radius-sm:   #{$fv-radius-sm};
+    --fv-radius-md:   #{$fv-radius-md};
+    --fv-radius-lg:   #{$fv-radius-lg};
+    --fv-radius-full: #{$fv-radius-full};
+}
+
+// ── Dark mode overrides ───────────────────────────────────────────
+[data-theme="dark"] {
+    --fv-glass-bg:      rgba(15, 15, 28, 0.82);
+    --fv-glass-border:  rgba(255, 255, 255, 0.09);
+    --fv-glass-shadow:  0 8px 40px rgba(0, 0, 0, 0.50);
+}

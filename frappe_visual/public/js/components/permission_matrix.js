@@ -165,7 +165,7 @@ export class PermissionMatrix {
 					const checked = perm[col.key] ? "checked" : "";
 					td.innerHTML = this.opts.editable
 						? `<input type="checkbox" class="fv-pm-check" data-key="${key}" data-perm="${col.key}" ${checked}>`
-						: `<span class="fv-pm-indicator" style="color:${perm[col.key] ? col.color : "#d1d5db'}">${perm[col.key] ? "●" : "○"}</span>`;
+						: `<span class="fv-pm-indicator" style="color:${perm[col.key] ? col.color : "#d1d5db"}">${perm[col.key] ? "●" : "○"}</span>`;
 					tr.appendChild(td);
 				}
 			}

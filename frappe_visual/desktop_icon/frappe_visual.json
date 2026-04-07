@@ -3,9 +3,10 @@
   "doctype": "Desktop Icon",
   "icon_type": "App",
   "label": "Frappe Visual",
-  "link": "/app/frappe-visual",
+  "link": "/desk/frappe-visual",
   "link_type": "External",
-  "logo_url": "/assets/frappe_visual/images/logo.svg",
+  "logo_url": "/assets/frappe_visual/images/frappe_visual-logo.svg",
   "standard": 1,
-  "hidden": 0
+  "hidden": 0,
+  "name": "Frappe Visual"
 }

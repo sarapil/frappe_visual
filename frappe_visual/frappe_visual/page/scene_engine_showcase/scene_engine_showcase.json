@@ -1,0 +1,9 @@
+{
+ "name": "scene-engine-showcase",
+ "doctype": "Page",
+ "module": "Frappe Visual",
+ "title": "Scene Engine Showcase",
+ "icon": "ti ti-3d-cube-sphere",
+ "standard": "Yes",
+ "roles": [{"role": "System Manager"}, {"role": "All"}]
+}

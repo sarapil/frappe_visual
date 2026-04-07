@@ -13,42 +13,87 @@ frappe.pages["frappe-visual-onboarding"].on_page_load = function(wrapper) {
 
     const steps = [
         {
-                "title": "Welcome to Frappe Visual",
-                "description": "220+ visual components for building premium Frappe applications.",
-                "icon": "sparkles"
+            title: __("Welcome to Frappe Visual"),
+            description: __("307+ premium visual components across 31 waves and 10 tiers. Transform every Frappe page into an immersive, data-rich experience with zero boilerplate."),
+            icon: "sparkles",
         },
         {
-                "title": "Component Library",
-                "description": "Explore all available components.",
-                "icon": "sitemap",
-                "component": "app-map"
+            title: __("Architecture Overview"),
+            description: __("Two usage methods: async shorthands (frappe.visual.kanban(), frappe.visual.heatmap()) available from ANY app, or direct class instantiation inside bundles. Lazy-loaded on first call for zero startup cost."),
+            icon: "topology-star-3",
         },
         {
-                "title": "Auto-Enhancers",
-                "description": "Form stats, list toggles, and workspace cards activate automatically.",
-                "icon": "wand"
+            title: __("Component Library — 10 Tiers"),
+            description: __("Tier 1: Core Engine (GraphEngine, LayoutManager). Tier 2: Business Views (AppMap, Kanban, Calendar). Tier 3: Data Viz (ECharts). Tier 4: Layouts. Tier 5: Navigation. Tier 6: Feedback. Tier 7: Productivity. Tier 8: Scene Engine. Tier 9: Animations. Tier 10: Form Enhancement."),
+            icon: "sitemap",
+            component: "app-map",
         },
         {
-                "title": "Graph Engine",
-                "description": "Create interactive node-edge graphs with Cytoscape.js and ELK.js layouts.",
-                "icon": "chart-dots-3"
+            title: __("Auto-Enhancers — Zero Config"),
+            description: __("formEnhancer: stats ribbon + relationship graph on every form. listEnhancer: Table/Cards/Kanban/Timeline toggle on every list. workspaceEnhancer: live counts + sparklines + glassmorphism. bilingualTooltip: Arabic↔English hover on every element."),
+            icon: "wand",
         },
         {
-                "title": "Page Templates",
-                "description": "Use built-in templates for dashboards, ERDs, workflows, and more.",
-                "icon": "template"
+            title: __("Graph Engine — Cytoscape.js + ELK.js"),
+            description: __("Create interactive node-edge graphs with 9 ELK.js layout algorithms. Supports AppMap, RelationshipExplorer, ERD templates, custom nodes, edge bundling, minimap, and context menus."),
+            icon: "chart-dots-3",
         },
         {
-                "title": "Generators",
-                "description": "Auto-generate about pages, settings pages, reports hubs, and onboarding wizards.",
-                "icon": "robot"
+            title: __("Scene Engine — Immersive SVG Dashboards"),
+            description: __("Replace flat workspaces with animated SVG rooms. 5 presets: Office, Library, Clinic, Workshop, Café. 18 components: SceneRoom, SceneFrame, SceneDesk, SceneShelf, SceneBoard, plus SceneDataBinder for live Frappe data."),
+            icon: "building",
         },
         {
-                "title": "Start Building",
-                "description": "Check the Visual Hub for demos and API documentation.",
-                "icon": "rocket"
-        }
-];
+            title: __("Data Visualization — ECharts Suite"),
+            description: __("9 chart types: Heatmap, Sparkline, Radar, Funnel, Treemap, Donut, DataCard, Area, Sankey. All support dark mode, RTL, responsive sizing, and live data refresh."),
+            icon: "chart-bar",
+        },
+        {
+            title: __("Layout Containers"),
+            description: __("9 powerful layout systems: Masonry, Dock, GridStack, Bento, InfiniteScroll, Sortable, VirtualList, StackedLayout, Resizable. Build complex responsive layouts without CSS headaches."),
+            icon: "layout-grid",
+        },
+        {
+            title: __("Navigation & Productivity"),
+            description: __("CommandBar (⌘K global search), FloatingNav, NavRail, SpeedDial, TabBar, BottomNav. Plus productivity tools: ShortcutManager, ClipboardManager, UndoRedo (⌘Z), BulkActions, MultiSelectBar."),
+            icon: "compass",
+        },
+        {
+            title: __("Micro-Animations — GSAP Effects"),
+            description: __("9 animation components: Typewriter, Parallax, Confetti, Ripple, TextLoop, NumberTicker, GlowCard, MorphingText, DotPattern. Plus 10 CSS effect classes: .fv-fx-glass, .fv-fx-hover-lift, .fv-fx-mouse-glow, and more."),
+            icon: "sparkles",
+        },
+        {
+            title: __("Page Templates"),
+            description: __("8 ready-made templates: dashboard (KPI + charts), erd (Entity Relationships), workflow, tree, wizard, kanbanWorkspace, timeline, appOverview. Each accepts a simple config object."),
+            icon: "template",
+        },
+        {
+            title: __("Generators — Auto-Create Pages"),
+            description: __("4 generators: aboutPage (full app showcase, 14+ slides), settingsPage (visual settings), reportsHub (unified report access), onboardingWizard (first-time experience). One line of code for an entire page."),
+            icon: "robot",
+        },
+        {
+            title: __("Icon System — 5000+ Tabler Icons"),
+            description: __("frappe.visual.icons.render(), .forDocType(), .statusBadge(), .pick() (interactive picker), .dashCard(). All icons auto-swap in RTL. Never use Font Awesome — always use frappe.visual.icons."),
+            icon: "icons",
+        },
+        {
+            title: __("Internationalization & RTL"),
+            description: __("Full Arabic support. CSS Logical Properties (margin-inline-start, not margin-left). dir='auto' for user content. bilingualTooltip on every element. All strings wrapped in __() for i18n."),
+            icon: "language",
+        },
+        {
+            title: __("CAPS & Permissions"),
+            description: __("15 fine-grained capabilities across Module, Action, and Report categories. 3 role bundles: Viewer (11 caps), Power User (14), Admin (15). Gate pattern checks permissions before any sensitive operation."),
+            icon: "shield-lock",
+        },
+        {
+            title: __("Start Building — Your Next Steps"),
+            description: __("1) Visit the Visual Hub for live demos. 2) Try the Playground for hands-on testing. 3) Read the docs at frappe_visual/docs/. 4) Use frappe.visual.engine() to start adding components to your app."),
+            icon: "rocket",
+        },
+    ];
 
     // Use frappe.visual.generator for premium wizard rendering
     const renderWithGenerator = () => {

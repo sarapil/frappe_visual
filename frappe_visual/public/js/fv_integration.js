@@ -35,26 +35,26 @@
     $(document).on("page-change", function() {
         if (!frappe.visual || !frappe.visual.generator) return;
 
-    // Visual Settings Page
-    if (frappe.get_route_str() === 'frappe-visual-settings') {
-        const page = frappe.container.page;
-        if (page && page.main && frappe.visual.generator) {
-            frappe.visual.generator.settingsPage(
-                page.main[0] || page.main,
-                "Frappe Visual Settings"
-            );
+        // Visual Settings Page
+        if (frappe.get_route_str() === 'frappe-visual-settings') {
+            const page = frappe.container.page;
+            if (page && page.main) {
+                frappe.visual.generator.settingsPage(
+                    page.main[0] || page.main,
+                    "Frappe Visual Settings"
+                );
+            }
         }
-    }
 
-    // Visual Reports Hub
-    if (frappe.get_route_str() === 'frappe-visual-reports') {
-        const page = frappe.container.page;
-        if (page && page.main && frappe.visual.generator) {
-            frappe.visual.generator.reportsHub(
-                page.main[0] || page.main,
-                "Frappe Visual"
-            );
+        // Visual Reports Hub
+        if (frappe.get_route_str() === 'frappe-visual-reports') {
+            const page = frappe.container.page;
+            if (page && page.main) {
+                frappe.visual.generator.reportsHub(
+                    page.main[0] || page.main,
+                    "Frappe Visual"
+                );
+            }
         }
-    }
     });
 })();
