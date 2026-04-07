@@ -1,0 +1,36 @@
+# CODEOWNERS — مالكو الكود
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# These owners will be automatically requested for review when a PR
+# modifies files matching the patterns.
+# سيتم طلب مراجعة هؤلاء المالكين تلقائياً عند تعديل ملفات مطابقة.
+
+# ─── Default Owner — المالك الافتراضي ─────────────────────────────────────────
+*                           @sarapil/frappe_visual-maintainers
+
+# ─── Core Configuration — الإعدادات الأساسية ──────────────────────────────────
+frappe_visual/hooks.py       @sarapil/frappe_visual-maintainers
+frappe_visual/install.py     @sarapil/frappe_visual-maintainers
+frappe_visual/seed.py        @sarapil/frappe_visual-maintainers
+pyproject.toml              @sarapil/frappe_visual-maintainers
+setup.cfg                   @sarapil/frappe_visual-maintainers
+
+# ─── API Layer — طبقة الواجهة البرمجية ────────────────────────────────────────
+frappe_visual/api/           @sarapil/frappe_visual-maintainers
+
+# ─── Security & Permissions — الأمان والصلاحيات ───────────────────────────────
+frappe_visual/caps/          @sarapil/frappe_visual-maintainers
+SECURITY.md                 @sarapil/frappe_visual-maintainers
+
+# ─── CI/CD — خط الأنابيب ─────────────────────────────────────────────────────
+.github/workflows/          @sarapil/frappe_visual-maintainers
+
+# ─── Frontend — الواجهة الأمامية ──────────────────────────────────────────────
+frappe_visual/public/        @sarapil/frappe_visual-maintainers
+
+# ─── Translations — الترجمات ──────────────────────────────────────────────────
+frappe_visual/translations/  @sarapil/frappe_visual-maintainers
+
+# ─── Documentation — التوثيق ──────────────────────────────────────────────────
+frappe_visual/help/          @sarapil/frappe_visual-maintainers
+*.md                        @sarapil/frappe_visual-maintainers

@@ -1,102 +1,120 @@
-# Contributing to Frappe Visual
+# Contributing to Frappe Visual — المساهمة في Frappe Visual
 
-Thank you for your interest in contributing to Frappe Visual! 🎉
+شكراً لاهتمامك بالمساهمة! — Thank you for your interest in contributing!
 
-## Getting Started
+## 📋 Code of Conduct — قواعد السلوك
 
-### Prerequisites
-- Frappe v16+ development environment
-- Python 3.11+
-- Node.js 18+
+This project follows the [Arkan Lab Code of Conduct](https://github.com/sarapil/frappe_docker/blob/main/CODE_OF_CONDUCT.md).
 
-### Setup
+## 🚀 Getting Started — البدء
+
+### 1. Fork & Clone — التفريع والنسخ
 
 ```bash
-# Clone and install
-bench get-app --branch develop https://github.com/ArkanLab/frappe_visual.git
+git clone https://github.com/YOUR_USERNAME/frappe_visual.git
+cd frappe_visual
+```
+
+### 2. Setup Development Environment — إعداد بيئة التطوير
+
+```bash
+bench get-app frappe_visual /path/to/your/fork
 bench --site dev.localhost install-app frappe_visual
-
-# Install JS dependencies
-cd apps/frappe_visual && npm install
-
-# Build for development
-bench build --app frappe_visual
-
-# Watch mode
-bench watch --apps frappe_visual
+bench --site dev.localhost migrate
 ```
 
-## Development Workflow
+### 3. Create a Branch — إنشاء فرع
 
-### 1. Create a Branch
 ```bash
-git checkout -b feature/my-feature
-# or
-git checkout -b fix/my-bugfix
+# For features — للميزات
+git checkout -b feat/my-feature
+
+# For bug fixes — لإصلاح الأخطاء
+git checkout -b fix/bug-description
+
+# For documentation — للتوثيق
+git checkout -b docs/topic
 ```
 
-### 2. Make Changes
-- Python code: `frappe_visual/`
-- JavaScript core: `frappe_visual/public/js/frappe_visual/core/`
-- Components: `frappe_visual/public/js/frappe_visual/components/`
-- Styles: `frappe_visual/public/scss/`
-
-### 3. Test Your Changes
-```bash
-# Python tests
-bench --site dev.localhost run-tests --app frappe_visual
-
-# Build and check for errors
-bench build --app frappe_visual
-```
-
-### 4. Submit a Pull Request
-- Fill out the PR template
-- Reference any related issues
-- Add screenshots for UI changes
-
-## Code Standards
+## 📐 Development Standards — معايير التطوير
 
 ### Python
-- Use `frappe.qb` (QueryBuilder) — no raw SQL
-- Add docstrings to all public functions
-- Use type hints
-- All API endpoints need `@frappe.whitelist()`
+- **Style:** Ruff linter + formatter
+- **Type hints:** Required on all functions
+- **Pattern:** Thin Controller — logic in `services/`
+- **SQL:** Parameterized only — NEVER f-strings
+- **Tests:** Required for new features
 
 ### JavaScript
-- Use `const`/`let` — no `var`
-- Wrap user-facing strings in `__()`
-- Add JSDoc comments
-- Implement `destroy()` on classes
+- **Style:** ESLint
+- **Components:** Use `frappe.visual` components
+- **Icons:** `frappe.visual.icons` — NEVER Font Awesome
+- **RTL:** CSS Logical Properties
 
-### CSS/SCSS
-- Use CSS custom properties for colors
-- Use logical properties for RTL support
-- No `!important` unless absolutely necessary
+### Translations
+- **Arabic is mandatory** for all user-facing strings
+- Wrap strings in `__()` (Python and JS)
 
-## Commit Messages
+## 🔒 Security Rules — قواعد الأمان
 
-Follow conventional commits:
+- ❌ No `eval()`/`exec()`
+- ❌ No `override_doctype_class`
+- ❌ No `frappe.db.commit()` in document events
+- ❌ No hardcoded credentials
+- ✅ Permission checks on all `@frappe.whitelist()` APIs
+- ✅ Parameterized SQL only
+
+## 🧪 Testing — الاختبارات
+
+```bash
+# Run all tests — تشغيل كل الاختبارات
+bench --site dev.localhost run-tests --app frappe_visual
+
+# Run specific test — تشغيل اختبار محدد
+bench --site dev.localhost run-tests --app frappe_visual --module frappe_visual.tests.unit.test_my_service
 ```
-feat: add new layout algorithm
-fix: correct RTL minimap position
-docs: update API documentation
-refactor: simplify DataAdapter
-test: add license validation tests
+
+## 📝 Commit Convention — اتفاقية الالتزامات
+
+Use [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+feat: add new reservation type
+fix: correct date validation
+docs: update API reference
+perf: optimize query performance
+security: fix SQL injection in API
+refactor: extract service layer
+test: add unit tests for booking
+i18n: add Arabic translations
 ```
 
-## Reporting Bugs
+## 🔄 Pull Request Process — عملية طلب الدمج
 
-Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.md).
+1. **Update your branch** with latest `main`
+2. **Run tests** locally
+3. **Run linters:** `ruff check . && ruff format --check .`
+4. **Create PR** using the [PR template](/.github/PULL_REQUEST_TEMPLATE.md)
+5. **Wait for CI** — all checks must pass
+6. **Request review** from code owners
+7. **Address feedback** promptly
 
-## Requesting Features
+## 🏷️ Issue Labels — تصنيفات المشكلات
 
-Use the [feature request template](.github/ISSUE_TEMPLATE/feature_request.md).
+When creating issues, use the templates provided. Labels are auto-assigned based on content.
 
-## Code of Conduct
+Key labels:
+- `good first issue` — مناسب للمبتدئين
+- `help wanted` — يحتاج مساعدة
+- `priority: critical` — أولوية حرجة
 
-Be respectful, inclusive, and constructive. We follow the [Contributor Covenant](https://www.contributor-covenant.org/).
+## 📖 Documentation — التوثيق
 
-## License
+- Update help files in `frappe_visual/help/` for DocType changes
+- Both English and Arabic versions required
+- Update wiki pages for architectural changes
 
-By contributing, you agree that your contributions will be licensed under GPL-3.0.
+## 💬 Questions? — أسئلة؟
+
+- [GitHub Discussions](https://github.com/orgs/sarapil/discussions)
+- [Wiki](../../wiki)
