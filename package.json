@@ -1,9 +1,10 @@
 {
   "name": "frappe-visual",
   "version": "0.1.0",
-  "description": "Visual UX Framework for Frappe — Cytoscape.js + ELK.js + GSAP powered interactive diagrams",
+  "description": "Visual UX Framework for Frappe — Cytoscape.js + ELK.js + GSAP + Three.js powered interactive diagrams & 3D visualization",
   "private": true,
   "dependencies": {
+    "three": "^0.170.0",
     "cytoscape": "^3.30.4",
     "cytoscape-fcose": "^2.2.0",
     "cytoscape-elk": "^2.2.0",

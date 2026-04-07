@@ -2045,9 +2045,98 @@
 		},
 	};
 
+	// ══════════════════════════════════════════════════════════════
+	// 3D / CAD / XR — Lazy-loaded sub-bundles (Tiers 11-15)
+	// ══════════════════════════════════════════════════════════════
+
+	const THREE_D_BUNDLE = "fv_3d.bundle.js";
+	const CAD_BUNDLE = "fv_cad.bundle.js";
+	const XR_BUNDLE = "fv_xr.bundle.js";
+
+	frappe.provide("frappe.visual.three");
+	frappe.provide("frappe.visual.cad");
+	frappe.provide("frappe.visual.xr");
+
+	frappe.visual.three._loaded = false;
+	frappe.visual.cad._loaded = false;
+	frappe.visual.xr._loaded = false;
+
+	/**
+	 * Load the 3D engine bundle (Three.js + model viewer + render pipeline).
+	 *   const three = await frappe.visual.load3D();
+	 *   const viewer = three.viewer("#container", { src: "model.glb" });
+	 */
+	frappe.visual.load3D = async function () {
+		if (!frappe.visual.three._loaded) {
+			await frappe.require(THREE_D_BUNDLE);
+			frappe.visual.three._loaded = true;
+		}
+		return frappe.visual.three;
+	};
+
+	/**
+	 * Load the 2D CAD bundle (floor plan editor, drawing tools).
+	 *   const cad = await frappe.visual.loadCAD();
+	 *   const editor = cad.editor("#container", { catalog: [...] });
+	 */
+	frappe.visual.loadCAD = async function () {
+		if (!frappe.visual.cad._loaded) {
+			await frappe.require(CAD_BUNDLE);
+			frappe.visual.cad._loaded = true;
+		}
+		return frappe.visual.cad;
+	};
+
+	/**
+	 * Load the WebXR bundle (VR viewer, AR overlay, hand tracking).
+	 * Also loads the 3D bundle as a dependency.
+	 *   const xr = await frappe.visual.loadXR();
+	 *   await xr.startVR(threeEngine);
+	 */
+	frappe.visual.loadXR = async function () {
+		if (!frappe.visual.xr._loaded) {
+			// XR depends on 3D engine
+			await frappe.visual.load3D();
+			await frappe.require(XR_BUNDLE);
+			frappe.visual.xr._loaded = true;
+		}
+		return frappe.visual.xr;
+	};
+
+	// Quick shorthands that auto-load the right bundle
+	frappe.visual.modelViewer = async function (container, opts = {}) {
+		const three = await frappe.visual.load3D();
+		return three.viewer(container, opts);
+	};
+
+	frappe.visual.sceneBuilder = async function (container, opts = {}) {
+		const three = await frappe.visual.load3D();
+		return three.builder(container, opts);
+	};
+
+	frappe.visual.floorPlan3D = async function (container, opts = {}) {
+		const three = await frappe.visual.load3D();
+		return three.floorPlan3D(container, opts);
+	};
+
+	frappe.visual.floorPlanEditor = async function (container, opts = {}) {
+		const cad = await frappe.visual.loadCAD();
+		return cad.editor(container, opts);
+	};
+
+	frappe.visual.startVR = async function (engine, opts = {}) {
+		const xr = await frappe.visual.loadXR();
+		return xr.startVR(engine, opts);
+	};
+
+	frappe.visual.startAR = async function (engine, opts = {}) {
+		const xr = await frappe.visual.loadXR();
+		return xr.startAR(engine, opts);
+	};
+
 	if (frappe.boot?.developer_mode) {
 		console.log(
-			"%c⬡ Frappe Visual%c loaded",
+			"%c⬡ Frappe Visual%c loaded — 3D/CAD/XR bundles available via load3D() / loadCAD() / loadXR()",
 			"color:#6366f1;font-weight:bold",
 			"color:#94a3b8"
 		);
