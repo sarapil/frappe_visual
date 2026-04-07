@@ -1,0 +1,14 @@
+{
+	"content": null,
+	"doctype": "Page",
+	"icon": "ti ti-book-2",
+	"module": "Frappe Visual",
+	"name": "component-browser",
+	"page_name": "component-browser",
+	"roles": [
+		{ "role": "System Manager" },
+		{ "role": "All" }
+	],
+	"standard": "Yes",
+	"title": "Component Browser"
+}
