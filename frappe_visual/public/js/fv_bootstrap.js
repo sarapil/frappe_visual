@@ -1941,13 +1941,13 @@
 		 * @param {object} opts - { doctype, fields, filters, format:'csv'|'xlsx' }
 		 */
 		async fromServer(opts = {}) {
-			const { doctype, fields, filters, format = "csv" } = opts;
+			const { doctype, fields, filters } = opts;
 			if (!doctype) return;
 			try {
 				const result = await frappe.xcall(
-					"frappe_visual.api.v1.export.export_data",
+					"frappe_visual.api.v1.export.export_doctype_csv",
 					{ doctype, fields: JSON.stringify(fields || []),
-					  filters: JSON.stringify(filters || {}), format }
+					  filters: JSON.stringify(filters || {}) }
 				);
 				if (result?.file_url) {
 					window.open(result.file_url);

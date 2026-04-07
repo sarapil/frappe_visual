@@ -25,7 +25,6 @@ def get_batch_counts(doctypes: str) -> dict:
     Args:
         doctypes: JSON array of DocType names, or comma-separated string.
     """
-    frappe.rate_limiter.rate_limit(limit=30, seconds=60)
     frappe.has_permission("DocType", "read", throw=True)
 
     if isinstance(doctypes, str):

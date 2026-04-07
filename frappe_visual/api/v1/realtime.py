@@ -16,6 +16,9 @@ import json
 @frappe.whitelist()
 def broadcast(event: str, data: str = "{}", room: str | None = None):
     """Broadcast a realtime event to users in a room."""
+    from frappe_visual.caps_integration.gate import check_capability
+    check_capability("FV_use_collaboration")
+
     if not event or not isinstance(event, str):
         frappe.throw(_("Invalid event name"))
 
@@ -29,16 +32,23 @@ def broadcast(event: str, data: str = "{}", room: str | None = None):
 
     target_room = room or frappe.form_dict.get("room", "")
 
-    frappe.publish_realtime(
-        event=event,
-        message=payload,
-        after_commit=True,
-    )
+    publish_kwargs = {
+        "event": event,
+        "message": payload,
+        "after_commit": True,
+    }
+    if target_room:
+        publish_kwargs["room"] = target_room
+
+    frappe.publish_realtime(**publish_kwargs)
 
 
 @frappe.whitelist()
 def join_room(room: str):
     """Announce user presence in a room."""
+    from frappe_visual.caps_integration.gate import check_capability
+    check_capability("FV_use_collaboration")
+
     if not room:
         return
 
@@ -63,6 +73,9 @@ def join_room(room: str):
 @frappe.whitelist()
 def leave_room(room: str):
     """Announce user departure from a room."""
+    from frappe_visual.caps_integration.gate import check_capability
+    check_capability("FV_use_collaboration")
+
     if not room:
         return
 

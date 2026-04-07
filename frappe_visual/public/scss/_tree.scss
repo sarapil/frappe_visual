@@ -85,16 +85,16 @@
 
 	// Indentation based on depth
 	.fv-tree-list {
-		margin-left: $fv-space-6;
-		padding-left: $fv-space-3;
-		border-left: 2px solid var(--fv-border-primary, #e2e8f0);
+		margin-inline-start: $fv-space-6;
+		padding-inline-start: $fv-space-3;
+		border-inline-start: 2px solid var(--fv-border-primary, #e2e8f0);
 		position: relative;
 
 		// Animated connecting line
 		&::before {
 			content: '';
 			position: absolute;
-			left: -2px;
+			inset-inline-start: -2px;
 			top: 0;
 			bottom: 0;
 			width: 2px;
@@ -205,7 +205,7 @@
 }
 
 .fv-tree-node-badge {
-	margin-left: auto;
+	margin-inline-start: auto;
 	background: var(--fv-bg-tertiary, #f1f5f9);
 	color: var(--fv-text-tertiary, #94a3b8);
 	font-size: $fv-font-size-xs;
@@ -227,9 +227,9 @@
 	}
 
 	.fv-tree-list .fv-tree-list {
-		margin-left: 0;
-		padding-left: 0;
-		border-left: none;
+		margin-inline-start: 0;
+		padding-inline-start: 0;
+		border-inline-start: none;
 		margin-top: $fv-space-2;
 		padding-top: $fv-space-2;
 		border-top: 2px solid var(--fv-border-primary, #e2e8f0);
@@ -247,5 +247,5 @@
 // ── Responsive ───────────────────────────────────────────────────
 @media (max-width: 768px) {
 	.fv-tree-toolbar { flex-direction: column; align-items: flex-start; }
-	.fv-tree-list .fv-tree-list { margin-left: $fv-space-4; }
+	.fv-tree-list .fv-tree-list { margin-inline-start: $fv-space-4; }
 }

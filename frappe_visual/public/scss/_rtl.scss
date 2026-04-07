@@ -24,11 +24,6 @@
 		flex-direction: row;
 	}
 
-	.fv-avatar {
-		margin-right: 0;
-		margin-left: -6px;
-	}
-
 	// Detail panel border
 	.fv-detail-header {
 		border-left: none;
@@ -56,22 +51,10 @@
 	.fv-cal-event { border-left: none; border-right: 3px solid var(--fv-ev-color, #6366f1); }
 	.fv-cal-week-event { border-left: none; border-right: 3px solid var(--fv-ev-color, #6366f1); }
 	.fv-cal-day-event { border-left: none; border-right: 4px solid var(--fv-ev-color, #6366f1); }
-	.fv-cal-time-slot { text-align: left; }
 
 	// Gantt
 	.fv-gantt-label-col { border-right: none; border-left: 1px solid var(--fv-border-primary, #e2e8f0); }
 	.fv-gantt-bar { transform-origin: right center; }
-
-	// Tree
-	.fv-tree-list .fv-tree-list {
-		margin-left: 0;
-		margin-right: 24px;
-		padding-left: 0;
-		padding-right: 12px;
-		border-left: none;
-		border-right: 2px solid var(--fv-border-primary, #e2e8f0);
-	}
-	.fv-tree-node-badge { margin-left: 0; margin-right: auto; }
 
 	// Form Dashboard links
 	.fv-fdash-link-item {

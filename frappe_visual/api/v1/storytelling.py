@@ -113,8 +113,6 @@ def get_chart_data(doctype: str, measure_field: str,
         period: daily, weekly, monthly, yearly.
         filters: JSON filters dict.
     """
-    # ── Rate limiting: heavy SQL aggregation ──
-    frappe.rate_limiter.rate_limit(**_HEAVY_RATE_LIMIT)
     # ── Security: Validate DocType exists (prevents table injection) ──
     if not frappe.db.exists("DocType", doctype):
         return error(f"DocType '{doctype}' does not exist", "INVALID_DOCTYPE")

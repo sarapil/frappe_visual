@@ -18,7 +18,6 @@ from frappe_visual.api.response import success, error
 @frappe.whitelist()
 def rebuild_icon_sprite():
     """Force rebuild of the icon sprite (admin only)."""
-    frappe.rate_limiter.rate_limit(limit=5, seconds=300)
     from frappe_visual.caps_integration.gate import check_capability
     if not check_capability("FV_manage_settings"):
         frappe.throw(_("Insufficient permissions"), frappe.PermissionError)
@@ -61,7 +60,7 @@ def get_system_health():
         "icons_installed": len(list_installed_icons()),
         "caps_available": frappe.db.exists("DocType", "CAPS Capability") is not None,
         "settings_doctype": None,
-        "cache_status": "ok" if frappe.cache.get_value("fv_health_check") is not None or True else "unknown",
+        "cache_status": "ok" if frappe.cache.get_value("fv_health_check") else "unknown",
     }
 
     for dt_name in ["FV Settings", "Frappe Visual Settings", "FV Setting"]:

@@ -191,7 +191,7 @@
 	font-weight: 700;
 	color: var(--text-color, #1e293b);
 	min-width: 60px;
-	text-align: right;
+	text-align: end;
 }
 
 .fv-sc-metric-visual {
@@ -268,7 +268,7 @@
 	font-size: 0.82rem;
 	font-weight: 500;
 	color: var(--text-color, #1e293b);
-	text-align: right;
+	text-align: end;
 }
 
 .fv-bc-bullet--vertical .fv-bc-label {
@@ -785,14 +785,6 @@
 }
 
 /* ─── RTL ────────────────────────────────────────────────────── */
-[dir="rtl"] .fv-bc-label {
-	text-align: left;
-}
-
-[dir="rtl"] .fv-sc-metric-value {
-	text-align: left;
-}
-
 [dir="rtl"] .fv-pt--horizontal .fv-pt-connector {
 	left: auto;
 	right: 50%;

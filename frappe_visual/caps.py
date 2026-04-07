@@ -120,8 +120,13 @@ FV_CAPABILITIES = [
         "label": "Manage Settings",
         "label_ar": "إدارة الإعدادات",
         "description": "Configure Frappe Visual Settings (license, theme, defaults)",
+    },    {
+        "name": "FV_use_collaboration",
+        "category": "Action",
+        "label": "Use Realtime Collaboration",
+        "label_ar": "استخدام التعاون المباشر",
+        "description": "Broadcast events and see other users' presence in visual workspaces",
     },
-
     # ── Report Capabilities ────────────────────────────────────────
     {
         "name": "FV_view_statistics",
@@ -151,6 +156,7 @@ FV_ROLE_BUNDLES = {
             "FV_use_map",
             "FV_use_gallery",
             "FV_use_tree",
+            "FV_use_collaboration",
             "FV_view_statistics",
         ],
     },
@@ -172,6 +178,7 @@ FV_ROLE_BUNDLES = {
             "FV_export_svg",
             "FV_export_png",
             "FV_change_layout",
+            "FV_use_collaboration",
             "FV_view_statistics",
         ],
     },
@@ -194,6 +201,7 @@ FV_ROLE_BUNDLES = {
             "FV_export_png",
             "FV_change_layout",
             "FV_manage_settings",
+            "FV_use_collaboration",
             "FV_view_statistics",
         ],
     },

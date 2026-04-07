@@ -18,6 +18,9 @@ def export_doctype_csv(doctype, fields=None, filters=None, order_by="creation de
     """Export DocType records as CSV."""
     frappe.has_permission(doctype, "read", throw=True)
 
+    # Cap limit to prevent memory exhaustion
+    limit = min(int(limit), 10000)
+
     if isinstance(fields, str):
         fields = json.loads(fields)
     if isinstance(filters, str):

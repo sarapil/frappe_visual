@@ -15,10 +15,13 @@
             "role": "System Manager"
         },
         {
-            "role": "Frappe Visual Administrator"
+            "role": "FV Admin"
         },
         {
-            "role": "Frappe Visual Power User"
+            "role": "FV Manager"
+        },
+        {
+            "role": "FV User"
         }
     ],
     "script": null,

@@ -31,7 +31,6 @@ def universal_search(query: str, categories: str | None = None,
         page: Page number (1-based).
         page_size: Results per page (max 50).
     """
-    frappe.rate_limiter.rate_limit(limit=30, seconds=60)
     frappe.has_permission("DocType", "read", throw=True)
 
     query = (query or "").strip()
