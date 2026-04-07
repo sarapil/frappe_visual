@@ -15,15 +15,15 @@ roles: [FV Admin, FV Manager]
 
 The visualization type for this widget. Supported types:
 
-| Type          | Description                                |
-| ------------- | ------------------------------------------ |
-| `number_card` | Single KPI value with trend indicator      |
-| `bar`         | Vertical or horizontal bar chart           |
-| `line`        | Line/area chart with time series           |
-| `donut`       | Donut/pie chart for proportions            |
-| `heatmap`     | Color-coded matrix for density data        |
-| `sparkline`   | Compact inline trend chart                 |
-| `kanban`      | Kanban board view                          |
+| Type          | Description                           |
+| ------------- | ------------------------------------- |
+| `number_card` | Single KPI value with trend indicator |
+| `bar`         | Vertical or horizontal bar chart      |
+| `line`        | Line/area chart with time series      |
+| `donut`       | Donut/pie chart for proportions       |
+| `heatmap`     | Color-coded matrix for density data   |
+| `sparkline`   | Compact inline trend chart            |
+| `kanban`      | Kanban board view                     |
 
 ## # widget_config
 

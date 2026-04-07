@@ -119,6 +119,7 @@ async function buildHub(page) {
 
 	// ═══ Section 2: Quick Links Grid ═══
 	const pages = [
+		{ route: "component-browser",             icon: "ti ti-book-2",             label: __("Component Browser"), desc: __("Full API & demo reference") },
 		{ route: "visual-playground",            icon: "ti ti-code",               label: __("Playground"),        desc: __("Test any component live") },
 		{ route: "visual-templates-demo",        icon: "ti ti-template",           label: __("Templates"),         desc: __("8 page templates") },
 		{ route: "data-viz-gallery",             icon: "ti ti-chart-dots-3",       label: __("Data Viz"),          desc: __("15 chart types") },
@@ -275,6 +276,7 @@ async function buildHub(page) {
 		<div class="text-center text-muted py-4" style="font-size:12px">
 			<span class="ti ti-info-circle" aria-hidden="true"></span>
 			${__("Frappe Visual")} v0.1.0 — 307+ ${__("components")} · 31 ${__("waves")} · 10 ${__("tiers")}
+			· <a href="/app/component-browser">${__("Component Browser")}</a>
 			· <a href="/app/frappe-visual-onboarding">${__("Onboarding")}</a>
 			· <a href="/frappe-visual-about">${__("About")}</a>
 		</div>

@@ -15,7 +15,7 @@
   "sequence_id": 20,
   "owner": "Administrator",
   "modified_by": "Administrator",
-  "content": "[{\"id\":\"fv_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header'><h3><span class='ti ti-eye'></span> Frappe Visual</h3><p class='text-muted'>307+ Interactive Components — Graph Engine, Scene Engine, Data Viz, Layout, Navigation, Productivity & more</p></div>\",\"col\":12}},{\"id\":\"fv_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visual Hub\",\"col\":3}},{\"id\":\"fv_shortcuts_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Icon Explorer\",\"col\":3}},{\"id\":\"fv_shortcuts_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Viz Gallery\",\"col\":3}},{\"id\":\"fv_shortcuts_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Settings\",\"col\":3}},{\"id\":\"fv_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fv_card_graph\",\"type\":\"card\",\"data\":{\"card_name\":\"Graph & Scene Components\",\"col\":4}},{\"id\":\"fv_card_ui\",\"type\":\"card\",\"data\":{\"card_name\":\"UI Components & Showcases\",\"col\":4}},{\"id\":\"fv_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration & Data\",\"col\":4}}]",
+  "content": "[{\"id\":\"fv_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header'><h3><span class='ti ti-eye'></span> Frappe Visual</h3><p class='text-muted'>307+ Interactive Components — Graph Engine, Scene Engine, Data Viz, Layout, Navigation, Productivity & more</p></div>\",\"col\":12}},{\"id\":\"fv_shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visual Hub\",\"col\":3}},{\"id\":\"fv_shortcuts_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Icon Explorer\",\"col\":3}},{\"id\":\"fv_shortcuts_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Viz Gallery\",\"col\":3}},{\"id\":\"fv_shortcuts_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Settings\",\"col\":3}},{\"id\":\"fv_shortcuts_5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Component Browser\",\"col\":3}},{\"id\":\"fv_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fv_card_graph\",\"type\":\"card\",\"data\":{\"card_name\":\"Graph & Scene Components\",\"col\":4}},{\"id\":\"fv_card_ui\",\"type\":\"card\",\"data\":{\"card_name\":\"UI Components & Showcases\",\"col\":4}},{\"id\":\"fv_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration & Data\",\"col\":4}}]",
   "shortcuts": [
     {
       "label": "Visual Hub",
@@ -46,6 +46,12 @@
       "link_to": "/frappe-visual-about",
       "type": "URL",
       "icon": "info-circle"
+    },
+    {
+      "label": "Component Browser",
+      "link_to": "component-browser",
+      "type": "Page",
+      "icon": "book-2"
     }
   ],
   "links": [
@@ -137,6 +143,18 @@
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Component Browser",
+      "link_to": "component-browser",
+      "link_type": "Page",
+      "icon": "book-2",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Browse all 287+ components with live demos, code examples & API reference",
       "link_count": 0
     },
     {
