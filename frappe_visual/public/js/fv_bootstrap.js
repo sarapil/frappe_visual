@@ -1531,6 +1531,73 @@ frappe.provide("frappe.visual");
 		frappe.visual.workspaceEnhancer?.rebuildBento?.();
 	};
 
+	// ── Tab Management ────────────────────────────────────────────
+
+	/**
+	 * Get all open tabs in the detail panel.
+	 * @returns {Array} Tab objects with { id, doctype, docname }
+	 */
+	frappe.visual.getTabs = function () {
+		return frappe.visual.deskWorkspace?.tabs || [];
+	};
+
+	/**
+	 * Get the currently active tab ID.
+	 * @returns {string|null}
+	 */
+	frappe.visual.getActiveTabId = function () {
+		return frappe.visual.deskWorkspace?.activeTabId || null;
+	};
+
+	/**
+	 * Switch to a specific tab by ID.
+	 * @param {string} tabId
+	 */
+	frappe.visual.switchTab = function (tabId) {
+		frappe.visual.deskWorkspace?.switchTab(tabId);
+	};
+
+	/**
+	 * Close a specific tab by ID.
+	 * @param {string} tabId
+	 */
+	frappe.visual.closeTab = function (tabId) {
+		frappe.visual.deskWorkspace?.closeTab(tabId);
+	};
+
+	/**
+	 * Check whether the detail panel is currently visible.
+	 * @returns {boolean}
+	 */
+	frappe.visual.isDetailVisible = function () {
+		return frappe.visual.deskWorkspace?.isDetailVisible || false;
+	};
+
+	/**
+	 * Get the doctype/docname for the currently shown record.
+	 * @returns {{ doctype: string, docname: string }|null}
+	 */
+	frappe.visual.getCurrentRecord = function () {
+		return frappe.visual.deskWorkspace?.currentRecord || null;
+	};
+
+	// ── Recent Records ────────────────────────────────────────────
+
+	/**
+	 * Get the recent records list from the detail panel.
+	 * @returns {Array}
+	 */
+	frappe.visual.getRecentRecords = function () {
+		return frappe.visual.deskWorkspace?.recentRecords || [];
+	};
+
+	/**
+	 * Clear all recent records.
+	 */
+	frappe.visual.clearRecentRecords = function () {
+		frappe.visual.deskWorkspace?.clearRecent();
+	};
+
 	// ── Workspace Storytelling ─────────────────────────────────────
 
 	/** Toggle data storytelling view on the current workspace. */

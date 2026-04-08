@@ -12,12 +12,12 @@
  *   await editor.init();
  */
 
-import { Canvas2DEngine } from "../core/canvas_2d_engine.js";
-import { DrawingTools } from "../tools/drawing_tools.js";
-import { SnapEngine } from "../tools/snap_engine.js";
-import { CatalogPanel } from "../panels/catalog_panel.js";
-import { PropertiesPanel } from "../panels/properties_panel.js";
-import { ToolbarPanel } from "../panels/toolbar_panel.js";
+import { Canvas2DEngine } from "./core/canvas_2d_engine.js";
+import { DrawingTools } from "./tools/drawing_tools.js";
+import { SnapEngine } from "./tools/snap_engine.js";
+import { CatalogPanel } from "./panels/catalog_panel.js";
+import { PropertiesPanel } from "./panels/properties_panel.js";
+import { ToolbarPanel } from "./panels/toolbar_panel.js";
 
 export class FloorPlanEditor {
 	constructor(container, opts = {}) {
