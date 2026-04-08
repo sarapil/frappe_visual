@@ -8,7 +8,7 @@
     // App branding registration
     const APP_CONFIG = {
         name: "frappe_visual",
-        title: __("Frappe Visual"),
+        title: "Frappe Visual",
         color: "#6366F1",
         module: "Frappe Visual",
     };

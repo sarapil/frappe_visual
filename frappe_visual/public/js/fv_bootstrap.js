@@ -19,7 +19,9 @@
 	"use strict";
 
 	// ── Namespace ────────────────────────────────────────────────
-	frappe.provide("frappe.visual");
+	// Guard: skip if frappe core not loaded (transient HTTP/2 proxy failures)
+if (typeof frappe === "undefined" || typeof frappe.provide !== "function") { return; }
+frappe.provide("frappe.visual");
 	frappe.provide("frappe.visual._cache");
 
 	const BUNDLE = "frappe_visual.bundle.js";
