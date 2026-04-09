@@ -1,0 +1,115 @@
+/*
+ * FV ERP Pages — Launchpad & Page Wrapper Styles
+ * Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+ * License: GPL-3.0
+ */
+
+/* ── Launchpad Grid ───────────────────────────────── */
+.fv-launchpad-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: 1rem;
+	padding: 0.5rem 0;
+}
+
+.fv-launchpad-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	padding: 1.5rem 1rem;
+	border-radius: 12px;
+	background: var(--card-bg);
+	border: 1px solid var(--border-color);
+	text-decoration: none !important;
+	color: var(--text-color) !important;
+	transition: all 0.2s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.fv-launchpad-card::before {
+	content: "";
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inset-inline-end: 0;
+	height: 3px;
+	background: var(--card-accent, var(--primary));
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.fv-launchpad-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	border-color: var(--card-accent, var(--primary));
+}
+
+.fv-launchpad-card:hover::before {
+	opacity: 1;
+}
+
+.fv-launchpad-icon {
+	font-size: 2rem;
+	line-height: 1;
+}
+
+.fv-launchpad-title {
+	font-size: var(--text-sm);
+	font-weight: 500;
+	text-align: center;
+}
+
+/* ── Hub Link ─────────────────────────────────────── */
+.fv-launchpad-hub-link {
+	text-align: center;
+}
+
+.fv-launchpad-hub-link .btn {
+	font-weight: 500;
+}
+
+/* ── Page Container Shared ────────────────────────── */
+#fv-erp-page-root {
+	min-height: 400px;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+	.fv-launchpad-grid {
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+		gap: 0.75rem;
+	}
+
+	.fv-launchpad-card {
+		padding: 1rem 0.75rem;
+	}
+
+	.fv-launchpad-icon {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.fv-launchpad-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ── Dark Mode ────────────────────────────────────── */
+[data-theme="dark"] .fv-launchpad-card {
+	background: var(--control-bg);
+	border-color: var(--dark-border-color);
+}
+
+[data-theme="dark"] .fv-launchpad-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Print ────────────────────────────────────────── */
+@media print {
+	.fv-launchpad-hub-link { display: none; }
+	.fv-launchpad-card { break-inside: avoid; }
+}

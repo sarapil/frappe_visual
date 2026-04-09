@@ -20,13 +20,22 @@ import { FVERPBuying }        from "./fv_erp_buying";
 import { FVERPManufacturing } from "./fv_erp_manufacturing";
 import { FVERPProjects }      from "./fv_erp_projects";
 import { FVERPCRM }           from "./fv_erp_crm";
+import { FVERPAssets }        from "./fv_erp_assets";
+import { FVERPQuality }       from "./fv_erp_quality";
+import { FVERPSupport }       from "./fv_erp_support";
+import { FVERPPayroll }       from "./fv_erp_payroll";
+import { FVERPEducation }     from "./fv_erp_education";
+import { FVERPPOS }           from "./fv_erp_pos";
+import { FVERPLoans }         from "./fv_erp_loans";
+import { FVERPWebsite }       from "./fv_erp_website";
+import { FVRoleHub }          from "./fv_role_hub";
 
 /* ── Register on frappe.visual.erp namespace ─────────────── */
 
 if (!frappe.visual) frappe.visual = {};
 if (!frappe.visual.erp) frappe.visual.erp = {};
 
-// Class references
+// Class references — Core 8
 frappe.visual.erp.Finance       = FVERPFinance;
 frappe.visual.erp.Stock         = FVERPStock;
 frappe.visual.erp.HR            = FVERPHR;
@@ -36,7 +45,20 @@ frappe.visual.erp.Manufacturing = FVERPManufacturing;
 frappe.visual.erp.Projects      = FVERPProjects;
 frappe.visual.erp.CRM           = FVERPCRM;
 
-// Factory shortcuts — each returns a Promise
+// Class references — Extended 8
+frappe.visual.erp.Assets        = FVERPAssets;
+frappe.visual.erp.Quality       = FVERPQuality;
+frappe.visual.erp.Support       = FVERPSupport;
+frappe.visual.erp.Payroll       = FVERPPayroll;
+frappe.visual.erp.Education     = FVERPEducation;
+frappe.visual.erp.POS           = FVERPPOS;
+frappe.visual.erp.Loans         = FVERPLoans;
+frappe.visual.erp.Website       = FVERPWebsite;
+
+// Role-based workspace distribution
+frappe.visual.erp.RoleHub       = FVRoleHub;
+
+// Factory shortcuts — Core 8
 frappe.visual.erp.finance = (container, opts) => FVERPFinance.create(container, opts);
 frappe.visual.erp.stock   = (container, opts) => FVERPStock.create(container, opts);
 frappe.visual.erp.hr      = (container, opts) => FVERPHR.create(container, opts);
@@ -45,6 +67,19 @@ frappe.visual.erp.buying  = (container, opts) => FVERPBuying.create(container, o
 frappe.visual.erp.manufacturing = (container, opts) => FVERPManufacturing.create(container, opts);
 frappe.visual.erp.projects = (container, opts) => FVERPProjects.create(container, opts);
 frappe.visual.erp.crm      = (container, opts) => FVERPCRM.create(container, opts);
+
+// Factory shortcuts — Extended 8
+frappe.visual.erp.assets     = (container, opts) => FVERPAssets.create(container, opts);
+frappe.visual.erp.quality    = (container, opts) => FVERPQuality.create(container, opts);
+frappe.visual.erp.support    = (container, opts) => FVERPSupport.create(container, opts);
+frappe.visual.erp.payroll    = (container, opts) => FVERPPayroll.create(container, opts);
+frappe.visual.erp.education  = (container, opts) => FVERPEducation.create(container, opts);
+frappe.visual.erp.pos        = (container, opts) => FVERPPOS.create(container, opts);
+frappe.visual.erp.loans      = (container, opts) => FVERPLoans.create(container, opts);
+frappe.visual.erp.website    = (container, opts) => FVERPWebsite.create(container, opts);
+
+// Role Hub — dynamic role-based workspace
+frappe.visual.erp.roleHub   = (container, opts) => FVRoleHub.create(container, opts);
 
 // All-in-one dashboard creator
 frappe.visual.erp.dashboard = async (container, module, opts) => {
@@ -57,6 +92,14 @@ frappe.visual.erp.dashboard = async (container, module, opts) => {
 		manufacturing: FVERPManufacturing,
 		projects: FVERPProjects,
 		crm: FVERPCRM,
+		assets: FVERPAssets,
+		quality: FVERPQuality,
+		support: FVERPSupport,
+		payroll: FVERPPayroll,
+		education: FVERPEducation,
+		pos: FVERPPOS,
+		loans: FVERPLoans,
+		website: FVERPWebsite,
 	};
 	const Module = modules[module];
 	if (!Module) {
@@ -67,13 +110,15 @@ frappe.visual.erp.dashboard = async (container, module, opts) => {
 
 // Mark as loaded
 frappe.visual.erp._loaded = true;
-frappe.visual.erp._version = "1.0.0";
+frappe.visual.erp._version = "2.0.0";
 frappe.visual.erp._modules = [
 	"finance", "stock", "hr", "selling", "buying",
 	"manufacturing", "projects", "crm",
+	"assets", "quality", "support", "payroll",
+	"education", "pos", "loans", "website",
 ];
 
 console.log(
-	"%c🏢 frappe.visual.erp loaded — 8 modules",
+	"%c🏢 frappe.visual.erp loaded — 16 modules",
 	"color:#6366f1;font-weight:bold"
 );

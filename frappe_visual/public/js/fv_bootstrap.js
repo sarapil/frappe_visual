@@ -2325,6 +2325,42 @@ frappe.provide("frappe.visual");
 		await frappe.visual.loadERP();
 		return frappe.visual.erp.crm(container, opts);
 	};
+	frappe.visual.assetsDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.assets(container, opts);
+	};
+	frappe.visual.qualityDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.quality(container, opts);
+	};
+	frappe.visual.supportDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.support(container, opts);
+	};
+	frappe.visual.payrollDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.payroll(container, opts);
+	};
+	frappe.visual.educationDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.education(container, opts);
+	};
+	frappe.visual.posDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.pos(container, opts);
+	};
+	frappe.visual.loansDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.loans(container, opts);
+	};
+	frappe.visual.websiteDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.website(container, opts);
+	};
+	frappe.visual.roleHub = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.roleHub(container, opts);
+	};
 
 	if (frappe.boot?.developer_mode) {
 		console.log(

@@ -349,3 +349,240 @@
 		border: 1px solid #e2e8f0;
 	}
 }
+
+/* ═════════════════════════════════════════════════════
+ *  Extended ERP Modules (Assets, Quality, Support,
+ *  Payroll, Education, POS, Loans, Website)
+ * ═════════════════════════════════════════════════════ */
+.fv-erp-assets,
+.fv-erp-quality,
+.fv-erp-support,
+.fv-erp-payroll,
+.fv-erp-education,
+.fv-erp-pos,
+.fv-erp-loans,
+.fv-erp-website {
+	max-inline-size: 1400px;
+	margin-inline: auto;
+	padding: 0.5rem;
+}
+
+.fv-erp-assets__inner,
+.fv-erp-quality__inner,
+.fv-erp-support__inner,
+.fv-erp-payroll__inner,
+.fv-erp-education__inner,
+.fv-erp-pos__inner,
+.fv-erp-loans__inner,
+.fv-erp-website__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.fv-erp-assets__header,
+.fv-erp-quality__header,
+.fv-erp-support__header,
+.fv-erp-payroll__header,
+.fv-erp-education__header,
+.fv-erp-pos__header,
+.fv-erp-loans__header,
+.fv-erp-website__header {
+	padding: 1rem 1.25rem;
+	border-radius: var(--fv-desk-radius, 12px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.fv-erp-assets__grid,
+.fv-erp-quality__grid,
+.fv-erp-support__grid,
+.fv-erp-payroll__grid,
+.fv-erp-education__grid,
+.fv-erp-pos__grid,
+.fv-erp-loans__grid,
+.fv-erp-website__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+	gap: 1rem;
+}
+
+/* ── Progress Stack Bar ───────────────────────────── */
+.fv-erp-progress-stack {
+	display: flex;
+	height: 1.25rem;
+	border-radius: 6px;
+	overflow: hidden;
+	margin-block: 0.5rem;
+}
+
+.fv-erp-progress-segment {
+	transition: width 0.4s ease;
+}
+
+/* ── Legend ────────────────────────────────────────── */
+.fv-erp-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-block-start: 0.5rem;
+}
+
+.fv-erp-legend__item {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.8rem;
+}
+
+/* ── Quick Links Grid ─────────────────────────────── */
+.fv-erp-quick-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-block-start: 0.5rem;
+}
+
+/* ── Status Dot Utility ───────────────────────────── */
+.fv-status-dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-inline-end: 4px;
+}
+
+/* ── Mini Card List ───────────────────────────────── */
+.fv-erp-card-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.fv-erp-mini-card {
+	padding: 0.5rem 0.75rem;
+	border-radius: 8px;
+	border: 1px solid var(--border-color, #e2e8f0);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.fv-erp-mini-card a {
+	font-weight: 500;
+	color: var(--text-color, #1a202c);
+	text-decoration: none;
+}
+
+.fv-erp-mini-card a:hover {
+	color: var(--primary, #6366f1);
+}
+
+/* ── Spinner ──────────────────────────────────────── */
+.fv-erp-spinner {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 3px solid rgba(99, 102, 241, 0.2);
+	border-top-color: #6366f1;
+	border-radius: 50%;
+	animation: fv-spin 0.6s linear infinite;
+}
+
+@keyframes fv-spin {
+	to { transform: rotate(360deg); }
+}
+
+/* ═════════════════════════════════════════════════════
+ *  Role Hub — Role-Based Workspace Distribution
+ * ═════════════════════════════════════════════════════ */
+.fv-role-hub {
+	max-inline-size: 1400px;
+	margin-inline: auto;
+	padding: 0.5rem;
+}
+
+.fv-role-hub__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.fv-role-hub__header {
+	padding: 1.25rem 1.5rem;
+	border-radius: var(--fv-desk-radius, 12px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.fv-role-hub__date {
+	font-size: 0.85rem;
+	color: var(--fv-text-muted, #94a3b8);
+}
+
+.fv-role-hub__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+	gap: 0.75rem;
+}
+
+.fv-role-hub__card {
+	padding: 1rem;
+	border-radius: var(--fv-desk-radius, 12px);
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.2s ease;
+	border: 2px solid transparent;
+}
+
+.fv-role-hub__card:hover {
+	border-color: var(--card-accent, #6366f1);
+}
+
+.fv-role-hub__card--active {
+	border-color: var(--card-accent, #6366f1);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--card-accent, #6366f1) 20%, transparent);
+}
+
+.fv-role-hub__card-icon {
+	font-size: 2rem;
+	margin-block-end: 0.5rem;
+}
+
+.fv-role-hub__card-title {
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var(--text-color, #1a202c);
+}
+
+.fv-role-hub__card-desc {
+	font-size: 0.75rem;
+	color: var(--fv-text-muted, #94a3b8);
+	margin-block-start: 0.25rem;
+}
+
+.fv-role-hub__active-dashboard {
+	min-height: 300px;
+}
+
+/* ── Print hide for all ERP modules ───────────────── */
+@media print {
+	.fv-erp-assets__actions,
+	.fv-erp-quality__actions,
+	.fv-erp-support__actions,
+	.fv-erp-payroll__actions,
+	.fv-erp-education__actions,
+	.fv-erp-pos__actions,
+	.fv-erp-loans__actions,
+	.fv-erp-website__actions,
+	.fv-role-hub__card {
+		display: none;
+	}
+}
