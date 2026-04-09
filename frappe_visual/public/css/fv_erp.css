@@ -1,0 +1,351 @@
+/* ═════════════════════════════════════════════════════
+ *  FV ERP Dashboard Styles
+ *  Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+ *  License: GPL-3.0
+ *
+ *  Styles for all 8 ERP visual dashboard modules.
+ *  Uses CSS Logical Properties for RTL support.
+ * ═════════════════════════════════════════════════════ */
+
+/* ── Shared Layout ──────────────────────────────────── */
+.fv-erp-finance,
+.fv-erp-stock,
+.fv-erp-hr,
+.fv-erp-selling,
+.fv-erp-buying,
+.fv-erp-mfg,
+.fv-erp-projects,
+.fv-erp-crm {
+	max-inline-size: 1400px;
+	margin-inline: auto;
+	padding: 0.5rem;
+}
+
+.fv-erp-finance__inner,
+.fv-erp-stock__inner,
+.fv-erp-hr__inner,
+.fv-erp-selling__inner,
+.fv-erp-buying__inner,
+.fv-erp-mfg__inner,
+.fv-erp-projects__inner,
+.fv-erp-crm__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.fv-erp-finance__header,
+.fv-erp-stock__header,
+.fv-erp-hr__header,
+.fv-erp-selling__header,
+.fv-erp-buying__header,
+.fv-erp-mfg__header,
+.fv-erp-projects__header,
+.fv-erp-crm__header {
+	padding: 1rem 1.25rem;
+	border-radius: var(--fv-desk-radius, 12px);
+}
+
+.fv-erp-finance__header h2,
+.fv-erp-stock__header h2,
+.fv-erp-hr__header h2,
+.fv-erp-selling__header h2,
+.fv-erp-buying__header h2,
+.fv-erp-mfg__header h2,
+.fv-erp-projects__header h2,
+.fv-erp-crm__header h2 {
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+/* ── KPI Grid ───────────────────────────────────────── */
+.fv-erp-finance__kpis,
+.fv-erp-stock__kpis,
+.fv-erp-hr__kpis,
+.fv-erp-selling__kpis,
+.fv-erp-buying__kpis,
+.fv-erp-mfg__kpis,
+.fv-erp-projects__kpis,
+.fv-erp-crm__kpis {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 0.75rem;
+}
+
+/* ── Two-Column Grid ────────────────────────────────── */
+.fv-erp-finance__grid,
+.fv-erp-stock__grid,
+.fv-erp-hr__grid,
+.fv-erp-selling__grid,
+.fv-erp-buying__grid,
+.fv-erp-mfg__grid,
+.fv-erp-projects__grid,
+.fv-erp-crm__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+@media (max-width: 768px) {
+	.fv-erp-finance__grid,
+	.fv-erp-stock__grid,
+	.fv-erp-hr__grid,
+	.fv-erp-selling__grid,
+	.fv-erp-buying__grid,
+	.fv-erp-mfg__grid,
+	.fv-erp-projects__grid,
+	.fv-erp-crm__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ── Glass Sections Inside Grid ─────────────────────── */
+.fv-erp-finance__grid > div,
+.fv-erp-stock__grid > div,
+.fv-erp-hr__grid > div,
+.fv-erp-selling__grid > div,
+.fv-erp-buying__grid > div,
+.fv-erp-mfg__grid > div,
+.fv-erp-projects__grid > div,
+.fv-erp-crm__grid > div {
+	padding: 1rem 1.25rem;
+	border-radius: var(--fv-desk-radius, 12px);
+}
+
+/* ── Quick Actions Grid ──────────────────────────────── */
+.fv-erp-finance__actions,
+.fv-erp-stock__actions,
+.fv-erp-hr__actions,
+.fv-erp-selling__actions,
+.fv-erp-buying__actions,
+.fv-erp-mfg__actions,
+.fv-erp-projects__actions,
+.fv-erp-crm__actions {
+	padding: 1rem 1.25rem;
+	border-radius: var(--fv-desk-radius, 12px);
+}
+
+.fv-erp-finance__actions-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+	gap: 0.5rem;
+}
+
+/* ── Period Selector ─────────────────────────────────── */
+.fv-erp-period-selector {
+	display: inline-flex;
+	gap: 0.25rem;
+	padding: 2px;
+	background: var(--fv-desk-bg-secondary, rgba(0, 0, 0, 0.06));
+	border-radius: var(--fv-desk-radius-sm, 8px);
+}
+
+.fv-erp-period-btn {
+	padding: 0.35rem 0.75rem;
+	border: none;
+	border-radius: var(--fv-desk-radius-sm, 8px);
+	background: transparent;
+	font-size: 0.8rem;
+	cursor: pointer;
+	transition: all 0.2s;
+	color: var(--fv-text-color, #334155);
+}
+
+.fv-erp-period-btn:hover {
+	background: var(--fv-desk-bg-primary, rgba(255, 255, 255, 0.7));
+}
+
+.fv-erp-period-btn.active {
+	background: var(--fv-desk-bg-primary, #fff);
+	font-weight: 600;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Project Cards ───────────────────────────────────── */
+.fv-erp-projects__cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 0.75rem;
+}
+
+.fv-erp-project-card {
+	padding: 1rem;
+	border-radius: var(--fv-desk-radius-sm, 8px);
+	background: var(--fv-desk-bg-secondary, rgba(0, 0, 0, 0.03));
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.fv-erp-project-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fv-erp-project-card__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-block-end: 0.5rem;
+}
+
+.fv-erp-project-card__title {
+	font-weight: 600;
+	font-size: 0.9rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.fv-erp-project-card__status {
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 2px 8px;
+	border-radius: 999px;
+}
+
+/* ── Progress Bar ────────────────────────────────────── */
+.fv-erp-progress {
+	height: 6px;
+	background: var(--fv-desk-bg-secondary, rgba(0, 0, 0, 0.08));
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.fv-erp-progress__bar {
+	height: 100%;
+	border-radius: 3px;
+	transition: width 0.6s ease;
+}
+
+/* ── Work Order Row ──────────────────────────────────── */
+.fv-erp-wo-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.5rem 0;
+	border-block-end: 1px solid var(--fv-desk-border, rgba(0, 0, 0, 0.06));
+}
+
+.fv-erp-wo-row:last-child {
+	border-block-end: none;
+}
+
+.fv-erp-wo-row__info {
+	flex: 1;
+	min-inline-size: 0;
+}
+
+.fv-erp-wo-row__name {
+	font-weight: 600;
+	font-size: 0.85rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+	color: var(--fv-text-color);
+}
+
+.fv-erp-wo-row__name:hover {
+	color: var(--fv-link-color, #6366f1);
+}
+
+.fv-erp-wo-row__meta {
+	font-size: 0.75rem;
+	color: var(--fv-text-muted, #94a3b8);
+}
+
+.fv-erp-wo-row__progress {
+	inline-size: 120px;
+}
+
+/* ── Pipeline Funnel (Selling/CRM) ───────────────────── */
+.fv-erp-pipeline {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.fv-erp-pipeline__stage {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.fv-erp-pipeline__bar {
+	height: 28px;
+	border-radius: var(--fv-desk-radius-sm, 8px);
+	min-inline-size: 24px;
+	transition: width 0.5s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+.fv-erp-pipeline__label {
+	font-size: 0.8rem;
+	color: var(--fv-text-muted, #94a3b8);
+	min-inline-size: 80px;
+}
+
+/* ── Dark Mode ───────────────────────────────────────── */
+[data-theme="dark"] .fv-erp-project-card {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .fv-erp-progress {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .fv-erp-period-selector {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .fv-erp-period-btn.active {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .fv-erp-wo-row {
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes fv-erp-count-up {
+	from { opacity: 0; transform: translateY(8px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+.fv-erp-finance__kpis .fv-workspace-kpi,
+.fv-erp-stock__kpis .fv-workspace-kpi,
+.fv-erp-hr__kpis .fv-workspace-kpi,
+.fv-erp-selling__kpis .fv-workspace-kpi,
+.fv-erp-buying__kpis .fv-workspace-kpi,
+.fv-erp-mfg__kpis .fv-workspace-kpi,
+.fv-erp-projects__kpis .fv-workspace-kpi,
+.fv-erp-crm__kpis .fv-workspace-kpi {
+	animation: fv-erp-count-up 0.4s ease both;
+}
+
+/* ── Print Styles ────────────────────────────────────── */
+@media print {
+	.fv-erp-finance__actions,
+	.fv-erp-stock__actions,
+	.fv-erp-hr__actions,
+	.fv-erp-selling__actions,
+	.fv-erp-buying__actions,
+	.fv-erp-mfg__actions,
+	.fv-erp-projects__actions,
+	.fv-erp-crm__actions {
+		display: none;
+	}
+
+	.fv-fx-glass {
+		background: #fff !important;
+		backdrop-filter: none !important;
+		box-shadow: none !important;
+		border: 1px solid #e2e8f0;
+	}
+}

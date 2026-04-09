@@ -2203,9 +2203,132 @@ frappe.provide("frappe.visual");
 		return xr.startAR(engine, opts);
 	};
 
+	// ─── Desk Override Layer ──────────────────────────────────────────
+	const DESK_BUNDLE = "fv_desk.bundle.js";
+
+	frappe.visual.desk = { _loaded: false };
+
+	/**
+	 * Load the Desk override bundle (Page, FormView, ListView, Dialog, etc.).
+	 *   const desk = await frappe.visual.loadDesk();
+	 *   desk.ListView.create(container, opts);
+	 */
+	frappe.visual.loadDesk = async function () {
+		if (!frappe.visual.desk._loaded) {
+			await frappe.require(DESK_BUNDLE);
+			frappe.visual.desk._loaded = true;
+		}
+		return frappe.visual.desk;
+	};
+
+	// Convenience shorthands — auto-load desk bundle on first call
+	frappe.visual.dialog = async function (opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Dialog.show(opts);
+	};
+	frappe.visual.confirm = async function (message, onYes, onNo) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Dialog.confirm({ message, onYes, onNo });
+	};
+	frappe.visual.alert = async function (message, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Dialog.alert({ message, ...opts });
+	};
+	frappe.visual.prompt = async function (label, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Dialog.prompt({ label, ...opts });
+	};
+	frappe.visual.listView = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.ListView.create(container, opts);
+	};
+	frappe.visual.formView = async function (frm, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.FormView.enhance(frm, opts);
+	};
+	frappe.visual.workspaceView = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.WorkspaceView.create(container, opts);
+	};
+	frappe.visual.reportView = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.ReportView.create(container, opts);
+	};
+	frappe.visual.renderField = async function (container, fieldDef, value) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.FieldRenderer.render(container, fieldDef, value);
+	};
+	frappe.visual.renderForm = async function (container, doctype, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.FieldRenderer.renderForm(container, doctype, opts);
+	};
+	frappe.visual.page = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Page.create(container, opts);
+	};
+	frappe.visual.navbar = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Navbar.create(container, opts);
+	};
+	frappe.visual.sidebar = async function (container, opts = {}) {
+		await frappe.visual.loadDesk();
+		return frappe.visual.desk.Sidebar.create(container, opts);
+	};
+
+	// ─── ERP Dashboard Layer ─────────────────────────────────────────
+	const ERP_BUNDLE = "fv_erp.bundle.js";
+
+	frappe.visual.erp = { _loaded: false };
+
+	/**
+	 * Load the ERP visual dashboard bundle (Finance, Stock, HR, etc.).
+	 *   const erp = await frappe.visual.loadERP();
+	 *   erp.finance("#container", { company: "My Co" });
+	 */
+	frappe.visual.loadERP = async function () {
+		if (!frappe.visual.erp._loaded) {
+			await frappe.require(ERP_BUNDLE);
+		}
+		return frappe.visual.erp;
+	};
+
+	// ERP convenience shorthands (auto-load bundle)
+	frappe.visual.financeDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.finance(container, opts);
+	};
+	frappe.visual.stockDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.stock(container, opts);
+	};
+	frappe.visual.hrDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.hr(container, opts);
+	};
+	frappe.visual.sellingDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.selling(container, opts);
+	};
+	frappe.visual.buyingDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.buying(container, opts);
+	};
+	frappe.visual.manufacturingDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.manufacturing(container, opts);
+	};
+	frappe.visual.projectsDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.projects(container, opts);
+	};
+	frappe.visual.crmDashboard = async function (container, opts) {
+		await frappe.visual.loadERP();
+		return frappe.visual.erp.crm(container, opts);
+	};
+
 	if (frappe.boot?.developer_mode) {
 		console.log(
-			"%c⬡ Frappe Visual%c loaded — 3D/CAD/XR bundles available via load3D() / loadCAD() / loadXR()",
+			"%c⬡ Frappe Visual%c loaded — desk/erp/3D/CAD/XR bundles available",
 			"color:#6366f1;font-weight:bold",
 			"color:#94a3b8"
 		);

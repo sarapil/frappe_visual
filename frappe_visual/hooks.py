@@ -49,6 +49,10 @@ app_include_css = [
     "/assets/frappe_visual/css/templates.css",
     # Print stylesheet for dashboards
     "/assets/frappe_visual/css/print.css",
+    # Desk override layer
+    "/assets/frappe_visual/css/fv_desk.css",
+    # ERP visual dashboards
+    "/assets/frappe_visual/css/fv_erp.css",
 ]
 
 # ─── Website Includes ─────────────────────────────────────────────
