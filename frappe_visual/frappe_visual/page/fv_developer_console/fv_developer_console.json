@@ -1,0 +1,18 @@
+{
+	"creation": "2026-04-11 00:00:00.000000",
+	"doctype": "Page",
+	"icon": "ti ti-terminal",
+	"modified": "2026-04-11 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "fv-developer-console",
+	"owner": "Administrator",
+	"page_name": "fv-developer-console",
+	"roles": [
+		{"role": "System Manager"},
+		{"role": "Administrator"}
+	],
+	"standard": "Yes",
+	"system_page": 0,
+	"title": "Developer Console"
+}
