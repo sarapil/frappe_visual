@@ -29,32 +29,13 @@ add_to_apps_screen = [
 # ─── Desk Includes ────────────────────────────────────────────────
 # The main bundle is lazy-loaded on demand via frappe.require().
 # Only the lightweight bootstrap loader is included globally.
-app_include_js = [
-    "/assets/frappe_visual/js/fv_bootstrap.js",
-    "/assets/frappe_visual/js/icon_helper.js",
-    "/assets/frappe_visual/js/fv_integration.js",
-]
+app_include_js = ["/assets/frappe_visual/js/frappe_visual_combined.js"]
 # NOTE: Arkan Help JS is loaded by arkan_help's own hooks.py when installed.
 # Do NOT include /assets/arkan_help/ files here — arkan_help is not in required_apps.
 app_include_css = [
-    "/assets/frappe_visual/css/frappe_visual-theme.css",
     "frappe_visual.bundle.css",
-    # Tabler Icons Webfont (6,000+ icons)
     "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css",
-    # App icon utilities
-    "/assets/frappe_visual/css/icons.css",
-    # Brand CSS variables
-    "/assets/frappe_visual/css/brand.css",
-    # Visual page templates
-    "/assets/frappe_visual/css/templates.css",
-    # Print stylesheet for dashboards
-    "/assets/frappe_visual/css/print.css",
-    # Desk override layer
-    "/assets/frappe_visual/css/fv_desk.css",
-    # ERP visual dashboards
-    "/assets/frappe_visual/css/fv_erp.css",
-    # ERP pages (launchpad, module pages)
-    "/assets/frappe_visual/css/fv_erp_pages.css",
+    "/assets/frappe_visual/css/frappe_visual_combined.css",
 ]
 
 # ─── Website Includes ─────────────────────────────────────────────
