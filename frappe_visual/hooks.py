@@ -29,14 +29,14 @@ add_to_apps_screen = [
 # ─── Desk Includes ────────────────────────────────────────────────
 # The main bundle is lazy-loaded on demand via frappe.require().
 # Only the lightweight bootstrap loader is included globally.
-app_include_js = ["/assets/frappe_visual/js/frappe_visual_combined.js"]
+# MEGA: app_include_js = ["/assets/frappe_visual/js/frappe_visual_combined.js"]
 # NOTE: Arkan Help JS is loaded by arkan_help's own hooks.py when installed.
 # Do NOT include /assets/arkan_help/ files here — arkan_help is not in required_apps.
-app_include_css = [
-    "frappe_visual.bundle.css",
-    "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css",
-    "/assets/frappe_visual/css/frappe_visual_combined.css",
-]
+# MEGA: app_include_css = [
+# MEGA:     "frappe_visual.bundle.css",
+# MEGA:     "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css",
+# MEGA:     "/assets/frappe_visual/css/frappe_visual_combined.css",
+# MEGA: ]
 
 # ─── Website Includes ─────────────────────────────────────────────
 # web_include_js = []
