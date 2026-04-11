@@ -53,6 +53,8 @@ app_include_css = [
     "/assets/frappe_visual/css/fv_desk.css",
     # ERP visual dashboards
     "/assets/frappe_visual/css/fv_erp.css",
+    # ERP pages (launchpad, module pages)
+    "/assets/frappe_visual/css/fv_erp_pages.css",
 ]
 
 # ─── Website Includes ─────────────────────────────────────────────

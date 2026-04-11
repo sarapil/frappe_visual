@@ -29,6 +29,11 @@ import { FVERPPOS }           from "./fv_erp_pos";
 import { FVERPLoans }         from "./fv_erp_loans";
 import { FVERPWebsite }       from "./fv_erp_website";
 import { FVRoleHub }          from "./fv_role_hub";
+import "./fv_erp_desk_integration";
+
+/* ── API endpoint namespace ──────────────────────────────── */
+
+const ERP_API_BASE = "frappe_visual.api.erp_dashboard";
 
 /* ── Register on frappe.visual.erp namespace ─────────────── */
 
@@ -80,6 +85,52 @@ frappe.visual.erp.website    = (container, opts) => FVERPWebsite.create(containe
 
 // Role Hub — dynamic role-based workspace
 frappe.visual.erp.roleHub   = (container, opts) => FVRoleHub.create(container, opts);
+
+// Server-side API helpers (use aggregated endpoints)
+frappe.visual.erp.api = {
+	base: ERP_API_BASE,
+	getFinance:       (opts) => frappe.xcall(`${ERP_API_BASE}.get_finance_data`, opts || {}),
+	getStock:         (opts) => frappe.xcall(`${ERP_API_BASE}.get_stock_data`, opts || {}),
+	getHR:            (opts) => frappe.xcall(`${ERP_API_BASE}.get_hr_data`, opts || {}),
+	getSelling:       (opts) => frappe.xcall(`${ERP_API_BASE}.get_selling_data`, opts || {}),
+	getBuying:        (opts) => frappe.xcall(`${ERP_API_BASE}.get_buying_data`, opts || {}),
+	getManufacturing: (opts) => frappe.xcall(`${ERP_API_BASE}.get_manufacturing_data`, opts || {}),
+	getProjects:      (opts) => frappe.xcall(`${ERP_API_BASE}.get_projects_data`, opts || {}),
+	getCRM:           (opts) => frappe.xcall(`${ERP_API_BASE}.get_crm_data`, opts || {}),
+	getAssets:        (opts) => frappe.xcall(`${ERP_API_BASE}.get_assets_data`, opts || {}),
+	getQuality:       (opts) => frappe.xcall(`${ERP_API_BASE}.get_quality_data`, opts || {}),
+	getSupport:       (opts) => frappe.xcall(`${ERP_API_BASE}.get_support_data`, opts || {}),
+	getPayroll:       (opts) => frappe.xcall(`${ERP_API_BASE}.get_payroll_data`, opts || {}),
+	getPOS:           (opts) => frappe.xcall(`${ERP_API_BASE}.get_pos_data`, opts || {}),
+	getLoans:         (opts) => frappe.xcall(`${ERP_API_BASE}.get_loan_data`, opts || {}),
+	getWebsite:       ()     => frappe.xcall(`${ERP_API_BASE}.get_website_data`),
+	getRoleHub:       ()     => frappe.xcall(`${ERP_API_BASE}.get_role_hub_data`),
+};
+
+// Launchpad renderer
+frappe.visual.erp.launchpad = async (container, opts = {}) => {
+	const el = typeof container === "string" ? document.querySelector(container) : container;
+	if (!el) return;
+	try {
+		const data = await frappe.visual.erp.api.getRoleHub();
+		el.innerHTML = "";
+		const grid = document.createElement("div");
+		grid.className = "fv-launchpad-grid fv-fx-page-enter";
+		(data.modules || []).forEach((m, i) => {
+			const card = document.createElement("a");
+			card.href = m.route;
+			card.className = "fv-launchpad-card fv-fx-hover-lift";
+			card.style.cssText = `--card-accent:${m.color};animation-delay:${i * 40}ms`;
+			card.innerHTML = `
+				<i class="${m.icon}" style="font-size:2rem;color:${m.color}"></i>
+				<span class="fv-launchpad-title">${m.title}</span>`;
+			grid.appendChild(card);
+		});
+		el.appendChild(grid);
+	} catch {
+		el.innerHTML = `<p class="text-muted text-center" style="padding:2rem">${__("Could not load modules")}</p>`;
+	}
+};
 
 // All-in-one dashboard creator
 frappe.visual.erp.dashboard = async (container, module, opts) => {
