@@ -15,7 +15,7 @@
   "sequence_id": 21,
   "owner": "Administrator",
   "modified_by": "Administrator",
-  "content": "[{\"id\":\"erp_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header fv-fx-page-enter'><h3><span class='ti ti-cube-3d-sphere'></span> Visual ERP</h3><p class='text-muted'>16 ERP Module Dashboards — Role-Based Hub — Visual Finance, HR, Stock, Sales & more</p></div>\",\"col\":12}},{\"id\":\"erp_sc_1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ERP Launchpad\",\"col\":3}},{\"id\":\"erp_sc_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Workspace\",\"col\":3}},{\"id\":\"erp_sc_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Finance\",\"col\":3}},{\"id\":\"erp_sc_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":3}},{\"id\":\"erp_sc_5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory\",\"col\":3}},{\"id\":\"erp_sc_6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR\",\"col\":3}},{\"id\":\"erp_spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"erp_card_core\",\"type\":\"card\",\"data\":{\"card_name\":\"Core ERP Modules\",\"col\":4}},{\"id\":\"erp_card_ops\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations & Projects\",\"col\":4}},{\"id\":\"erp_card_extra\",\"type\":\"card\",\"data\":{\"card_name\":\"Specialized Modules\",\"col\":4}}]",
+  "content": "[{\"id\":\"erp_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header fv-fx-page-enter'><h3><span class='ti ti-cube-3d-sphere'></span> Visual ERP</h3><p class='text-muted'>16 ERP Module Dashboards — Role-Based Hub — Visual Finance, HR, Stock, Sales & more</p></div>\",\"col\":12}},{\"id\":\"erp_sc_1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ERP Launchpad\",\"col\":3}},{\"id\":\"erp_sc_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Workspace\",\"col\":3}},{\"id\":\"erp_sc_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Finance\",\"col\":3}},{\"id\":\"erp_sc_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":3}},{\"id\":\"erp_sc_5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory\",\"col\":3}},{\"id\":\"erp_sc_6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR\",\"col\":3}},{\"id\":\"erp_spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"erp_card_core\",\"type\":\"card\",\"data\":{\"card_name\":\"Core ERP Modules\",\"col\":4}},{\"id\":\"erp_card_ops\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations & Projects\",\"col\":4}},{\"id\":\"erp_card_extra\",\"type\":\"card\",\"data\":{\"card_name\":\"Specialized Modules\",\"col\":4}},{\"id\":\"erp_spacer_2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"erp_card_devtools\",\"type\":\"card\",\"data\":{\"card_name\":\"Developer Tools\",\"col\":4}}]",
   "shortcuts": [
     {
       "label": "ERP Launchpad",
@@ -272,6 +272,38 @@
       "is_query_report": 0,
       "onboard": 0,
       "description": "Web Pages, Blog, Forms, Traffic analytics",
+      "link_count": 0
+    },
+    {
+      "type": "Card Break",
+      "label": "Developer Tools",
+      "icon": "terminal-2",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "API Tester",
+      "link_to": "/app/fv-erp-api-tester",
+      "link_type": "URL",
+      "icon": "api",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Test all 16 ERP dashboard API endpoints interactively",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Developer Console",
+      "link_to": "/app/fv-developer-console",
+      "link_type": "URL",
+      "icon": "terminal-2",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Interactive component playground with live preview",
       "link_count": 0
     }
   ]
