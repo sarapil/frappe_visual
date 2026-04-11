@@ -1,0 +1,278 @@
+{
+  "name": "Visual ERP",
+  "doctype": "Workspace",
+  "module": "Frappe Visual",
+  "label": "Visual ERP",
+  "title": "Visual ERP",
+  "app": "frappe_visual",
+  "icon": "ti ti-cube-3d-sphere",
+  "public": 1,
+  "type": "Workspace",
+  "idx": 0,
+  "docstatus": 0,
+  "is_hidden": 0,
+  "hide_custom": 0,
+  "sequence_id": 21,
+  "owner": "Administrator",
+  "modified_by": "Administrator",
+  "content": "[{\"id\":\"erp_hero\",\"type\":\"header\",\"data\":{\"text\":\"<div class='workspace-header fv-fx-page-enter'><h3><span class='ti ti-cube-3d-sphere'></span> Visual ERP</h3><p class='text-muted'>16 ERP Module Dashboards — Role-Based Hub — Visual Finance, HR, Stock, Sales & more</p></div>\",\"col\":12}},{\"id\":\"erp_sc_1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ERP Launchpad\",\"col\":3}},{\"id\":\"erp_sc_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Workspace\",\"col\":3}},{\"id\":\"erp_sc_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Finance\",\"col\":3}},{\"id\":\"erp_sc_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":3}},{\"id\":\"erp_sc_5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Inventory\",\"col\":3}},{\"id\":\"erp_sc_6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR\",\"col\":3}},{\"id\":\"erp_spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"erp_card_core\",\"type\":\"card\",\"data\":{\"card_name\":\"Core ERP Modules\",\"col\":4}},{\"id\":\"erp_card_ops\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations & Projects\",\"col\":4}},{\"id\":\"erp_card_extra\",\"type\":\"card\",\"data\":{\"card_name\":\"Specialized Modules\",\"col\":4}}]",
+  "shortcuts": [
+    {
+      "label": "ERP Launchpad",
+      "link_to": "fv-erp",
+      "type": "Page",
+      "icon": "layout-dashboard"
+    },
+    {
+      "label": "My Workspace",
+      "link_to": "fv-role-hub",
+      "type": "Page",
+      "icon": "home"
+    },
+    {
+      "label": "Finance",
+      "link_to": "fv-finance",
+      "type": "Page",
+      "icon": "coin"
+    },
+    {
+      "label": "Sales",
+      "link_to": "fv-selling",
+      "type": "Page",
+      "icon": "chart-line"
+    },
+    {
+      "label": "Inventory",
+      "link_to": "fv-stock",
+      "type": "Page",
+      "icon": "package"
+    },
+    {
+      "label": "HR",
+      "link_to": "fv-hr",
+      "type": "Page",
+      "icon": "users"
+    }
+  ],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Core ERP Modules",
+      "icon": "building",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Finance Dashboard",
+      "link_to": "fv-finance",
+      "link_type": "Page",
+      "icon": "coin",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "GL Entries, Invoices, Payments, P&L, Balance Sheet",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Sales Dashboard",
+      "link_to": "fv-selling",
+      "link_type": "Page",
+      "icon": "chart-line",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Quotations, Sales Orders, Revenue pipeline",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Purchasing Dashboard",
+      "link_to": "fv-buying",
+      "link_type": "Page",
+      "icon": "shopping-cart",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Purchase Orders, Supplier analytics, RFQs",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Inventory Dashboard",
+      "link_to": "fv-stock",
+      "link_type": "Page",
+      "icon": "package",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Warehouses, Stock Levels, Material Requests",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "HR Dashboard",
+      "link_to": "fv-hr",
+      "link_type": "Page",
+      "icon": "users",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 1,
+      "description": "Employees, Attendance, Leave, Recruitment",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "CRM Dashboard",
+      "link_to": "fv-crm",
+      "link_type": "Page",
+      "icon": "address-book",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Leads, Opportunities, Pipeline analytics",
+      "link_count": 0
+    },
+    {
+      "type": "Card Break",
+      "label": "Operations & Projects",
+      "icon": "building-factory",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Manufacturing Dashboard",
+      "link_to": "fv-manufacturing",
+      "link_type": "Page",
+      "icon": "building-factory",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Work Orders, BOM, Production planning",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Projects Dashboard",
+      "link_to": "fv-projects",
+      "link_type": "Page",
+      "icon": "folders",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Projects, Tasks, Timesheets, Gantt charts",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Asset Management",
+      "link_to": "fv-assets",
+      "link_type": "Page",
+      "icon": "building-warehouse",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Assets, Depreciation, Maintenance schedules",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Quality Management",
+      "link_to": "fv-quality",
+      "link_type": "Page",
+      "icon": "microscope",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Quality Inspections, Goals, Feedback",
+      "link_count": 0
+    },
+    {
+      "type": "Card Break",
+      "label": "Specialized Modules",
+      "icon": "components",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Payroll Dashboard",
+      "link_to": "fv-payroll",
+      "link_type": "Page",
+      "icon": "cash",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Salary Slips, Payroll Entries, Deductions",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Support Desk",
+      "link_to": "fv-support",
+      "link_type": "Page",
+      "icon": "ticket",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Issues, SLAs, Knowledge Base, Response times",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Education Dashboard",
+      "link_to": "fv-education",
+      "link_type": "Page",
+      "icon": "school",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Students, Courses, Assessments, Schedules",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "POS Dashboard",
+      "link_to": "fv-pos",
+      "link_type": "Page",
+      "icon": "shopping-bag",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Point of Sale sessions, Daily summaries",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Loan Management",
+      "link_to": "fv-loans",
+      "link_type": "Page",
+      "icon": "building-bank",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Loans, Repayments, Interest calculations",
+      "link_count": 0
+    },
+    {
+      "type": "Link",
+      "label": "Website Dashboard",
+      "link_to": "fv-website",
+      "link_type": "Page",
+      "icon": "world",
+      "hidden": 0,
+      "is_query_report": 0,
+      "onboard": 0,
+      "description": "Web Pages, Blog, Forms, Traffic analytics",
+      "link_count": 0
+    }
+  ]
+}

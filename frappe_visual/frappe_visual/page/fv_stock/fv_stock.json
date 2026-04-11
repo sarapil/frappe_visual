@@ -1,0 +1,25 @@
+{
+	"creation": "2026-04-11 00:00:00.000000",
+	"doctype": "Page",
+	"icon": "ti ti-package",
+	"modified": "2026-04-11 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "fv-stock",
+	"owner": "Administrator",
+	"page_name": "fv-stock",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Stock Manager"
+		},
+		{
+			"role": "Stock User"
+		}
+	],
+	"standard": "Yes",
+	"system_page": 0,
+	"title": "Inventory Dashboard"
+}

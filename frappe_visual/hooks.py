@@ -60,7 +60,28 @@ app_include_css = [
 # web_include_css = []
 
 # ─── Page JS ──────────────────────────────────────────────────────
-# page_js = {"visual-hub": "public/js/pages/visual_hub.js"}
+# ERP module pages auto-load JS from their page directories.
+# Additional JS can be injected per-page:
+page_js = {
+    "fv-erp": "public/js/erp/pages/fv_erp_launchpad.js",
+    "fv-role-hub": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-finance": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-stock": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-hr": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-selling": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-buying": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-manufacturing": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-projects": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-crm": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-assets": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-quality": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-support": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-payroll": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-education": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-pos": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-loans": "public/js/erp/pages/fv_erp_pages.js",
+    "fv-website": "public/js/erp/pages/fv_erp_pages.js",
+}
 
 # ═══════════════════════════════════════════════════════════════════
 # ICON SYSTEM - Install / Migrate / Uninstall Hooks
@@ -85,6 +106,10 @@ jinja = {
 fixtures = [
     {
         "doctype": "Workspace",
+        "filters": [["module", "=", "Frappe Visual"]],
+    },
+    {
+        "doctype": "Page",
         "filters": [["module", "=", "Frappe Visual"]],
     },
     {"doctype": "Desktop Icon", "filters": [["app", "=", "frappe_visual"]]},

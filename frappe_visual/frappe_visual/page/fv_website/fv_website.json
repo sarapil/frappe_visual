@@ -1,0 +1,22 @@
+{
+	"creation": "2026-04-11 00:00:00.000000",
+	"doctype": "Page",
+	"icon": "ti ti-world",
+	"modified": "2026-04-11 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Frappe Visual",
+	"name": "fv-website",
+	"owner": "Administrator",
+	"page_name": "fv-website",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Website Manager"
+		}
+	],
+	"standard": "Yes",
+	"system_page": 0,
+	"title": "Website Dashboard"
+}
