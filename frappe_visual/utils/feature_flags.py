@@ -64,6 +64,7 @@ def require_premium(feature_key: str):
 		@frappe.whitelist()
 		@require_premium("animation_engine")
 		def create_animation(data):
+		    frappe.only_for(["System Manager", "Website Manager"])
 			# Premium-only code
 			pass
 	"""

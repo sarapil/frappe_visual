@@ -101,6 +101,7 @@ def list_themes(app: str | None = None, status: str = "Active") -> dict:
 
 @frappe.whitelist()
 def get_active_theme() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Get the currently active (default) theme."""
     theme = frappe.get_all(
         "FV Theme",

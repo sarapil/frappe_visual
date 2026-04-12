@@ -103,6 +103,7 @@ def get_workspace_stories(workspace: str) -> dict:
 def get_chart_data(doctype: str, measure_field: str,
                    group_by: str = "creation", period: str = "monthly",
                    filters: str | None = None) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Fetch aggregated chart data for a story chapter.
 

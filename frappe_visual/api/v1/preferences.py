@@ -30,6 +30,7 @@ ALLOWED_KEYS = {
 
 @frappe.whitelist()
 def get_preferences() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Get all Frappe Visual preferences for the current user.
     Merges server-stored values with defaults.
@@ -41,6 +42,7 @@ def get_preferences() -> dict:
 
 @frappe.whitelist()
 def set_preference(key: str, value: str) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Set a single preference key.
 
@@ -65,6 +67,7 @@ def set_preference(key: str, value: str) -> dict:
 
 @frappe.whitelist()
 def set_preferences_bulk(preferences: str) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Set multiple preferences at once.
 
@@ -91,6 +94,7 @@ def set_preferences_bulk(preferences: str) -> dict:
 
 @frappe.whitelist()
 def add_recent_record(doctype: str, docname: str, label: str | None = None) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Add a document to the user's recent records list.
     Maintains a FIFO queue of MAX_RECENT items.
@@ -123,6 +127,7 @@ def add_recent_record(doctype: str, docname: str, label: str | None = None) -> d
 
 @frappe.whitelist()
 def get_recent_records(limit: int = 20) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Get the user's recent records list."""
     user = frappe.session.user
     prefs = _load_prefs(user)
@@ -133,6 +138,7 @@ def get_recent_records(limit: int = 20) -> dict:
 
 @frappe.whitelist()
 def clear_recent_records() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Clear all recent records for the current user."""
     user = frappe.session.user
     prefs = _load_prefs(user)
@@ -143,6 +149,7 @@ def clear_recent_records() -> dict:
 
 @frappe.whitelist()
 def get_all_preferences() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Get all FV preferences for the current user with sync timestamp.
     Used by user_preferences_sync.js for cross-device sync.
@@ -181,6 +188,7 @@ def get_all_preferences() -> dict:
 
 @frappe.whitelist()
 def save_preferences(preferences: str | dict) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Save a batch of flat fv_* key-value preferences.
     Used by user_preferences_sync.js for cross-device sync.
@@ -236,6 +244,7 @@ def save_preferences(preferences: str | dict) -> dict:
 
 @frappe.whitelist()
 def clear_all_preferences() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Clear all FV preferences for the current user."""
     user = frappe.session.user
 

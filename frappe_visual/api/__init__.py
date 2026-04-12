@@ -97,6 +97,7 @@ def get_kanban_data(doctype, fieldname, fields=None, filters=None,
 
 @frappe.whitelist()
 def get_reverse_translation(arabic_text):
+	frappe.only_for(["System Manager", "Website Manager"])
 	"""Find the English source string for a given Arabic translation."""
 	from frappe_visual.services.translation_service import TranslationService
 	return TranslationService.reverse_lookup(arabic_text)

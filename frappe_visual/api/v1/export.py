@@ -42,6 +42,7 @@ def export_doctype_csv(doctype, fields=None, filters=None, order_by="creation de
 
 @frappe.whitelist()
 def export_chart_csv(chart_data):
+    frappe.only_for(["System Manager", "Website Manager"])
     """Export chart data as CSV."""
     if isinstance(chart_data, str):
         chart_data = json.loads(chart_data)

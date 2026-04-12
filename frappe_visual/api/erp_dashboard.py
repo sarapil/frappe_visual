@@ -559,6 +559,7 @@ def get_website_data():
 
 @frappe.whitelist()
 def get_role_hub_data():
+    frappe.only_for(["System Manager", "Website Manager"])
     """Get available ERP modules based on current user's roles."""
     user_roles = frappe.get_roles(frappe.session.user)
 

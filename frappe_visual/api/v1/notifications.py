@@ -19,6 +19,7 @@ import json
 @frappe.whitelist()
 def get_notifications(category: str = "all", page: int = 1,
                       page_size: int = 30, unread_only: bool = False) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """
     Fetch grouped notifications for the current user.
     Returns notifications with time-group labels (today/yesterday/week/older).
@@ -74,6 +75,7 @@ def get_notifications(category: str = "all", page: int = 1,
 @frappe.whitelist()
 def mark_read(notification_names: str | list | None = None,
              notification_id: str | None = None) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Mark one or more notifications as read."""
     user = frappe.session.user
 
@@ -116,6 +118,7 @@ def mark_read(notification_names: str | list | None = None,
 
 @frappe.whitelist()
 def mark_all_read() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Mark all notifications as read for current user."""
     user = frappe.session.user
     frappe.db.sql("""
@@ -133,6 +136,7 @@ def mark_all_read() -> dict:
 
 @frappe.whitelist()
 def snooze_notification(notification_name: str, snooze_until: str) -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Snooze a notification until a specific datetime."""
     user = frappe.session.user
 
@@ -148,6 +152,7 @@ def snooze_notification(notification_name: str, snooze_until: str) -> dict:
 
 @frappe.whitelist()
 def get_unread_count() -> dict:
+    frappe.only_for(["System Manager", "Website Manager"])
     """Get unread notification count for navbar badge."""
     user = frappe.session.user
     count = frappe.db.count(
