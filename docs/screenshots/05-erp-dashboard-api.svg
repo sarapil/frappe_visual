@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#0F172A"/>
+  <rect x="0" y="0" width="1280" height="48" fill="#1E1E2E"/>
+  <text x="24" y="32" font-family="system-ui" font-size="16" fill="#E2E8F0" font-weight="600">Frappe Visual — ERP Dashboard API</text>
+  <!-- Left: API sidebar -->
+  <rect x="0" y="48" width="280" height="752" fill="#1E1E2E" opacity="0.7"/>
+  <text x="16" y="80" font-family="system-ui" font-size="12" fill="#6366F1" font-weight="600">API ENDPOINTS</text>
+  <rect x="8" y="92" width="264" height="28" rx="4" fill="#6366F1" opacity="0.2"/>
+  <text x="16" y="111" font-family="system-ui" font-size="12" fill="#818CF8">● finance_overview</text>
+  <text x="16" y="139" font-family="system-ui" font-size="12" fill="#94A3B8">○ receivables_summary</text>
+  <text x="16" y="163" font-family="system-ui" font-size="12" fill="#94A3B8">○ payables_summary</text>
+  <text x="16" y="187" font-family="system-ui" font-size="12" fill="#94A3B8">○ stock_overview</text>
+  <text x="16" y="211" font-family="system-ui" font-size="12" fill="#94A3B8">○ hr_overview</text>
+  <text x="16" y="235" font-family="system-ui" font-size="12" fill="#94A3B8">○ sales_pipeline</text>
+  <text x="16" y="259" font-family="system-ui" font-size="12" fill="#94A3B8">○ project_overview</text>
+  <text x="16" y="283" font-family="system-ui" font-size="12" fill="#94A3B8">○ manufacturing_overview</text>
+  <text x="16" y="307" font-family="system-ui" font-size="12" fill="#94A3B8">○ support_overview</text>
+  <text x="16" y="331" font-family="system-ui" font-size="12" fill="#94A3B8">○ buying_overview</text>
+  <text x="16" y="355" font-family="system-ui" font-size="12" fill="#94A3B8">○ quality_overview</text>
+  <text x="16" y="379" font-family="system-ui" font-size="12" fill="#94A3B8">○ asset_overview</text>
+  <!-- Right: Response preview -->
+  <rect x="296" y="64" width="968" height="48" rx="8" fill="#1E1E2E" opacity="0.5"/>
+  <rect x="304" y="72" width="56" height="32" rx="4" fill="#10B981"/>
+  <text x="314" y="93" font-family="system-ui" font-size="12" fill="#FFFFFF" font-weight="600">GET</text>
+  <text x="372" y="93" font-family="monospace" font-size="12" fill="#E2E8F0">/api/method/frappe_visual.api.v1.erp_dashboard.finance_overview</text>
+  <!-- KPI Cards -->
+  <rect x="296" y="128" width="230" height="100" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <text x="316" y="160" font-family="system-ui" font-size="24" fill="#10B981" font-weight="700">$2.4M</text>
+  <text x="316" y="184" font-family="system-ui" font-size="12" fill="#94A3B8">Total Revenue</text>
+  <text x="316" y="212" font-family="system-ui" font-size="11" fill="#10B981">↑ 12.5% vs last month</text>
+  <rect x="542" y="128" width="230" height="100" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <text x="562" y="160" font-family="system-ui" font-size="24" fill="#F59E0B" font-weight="700">$380K</text>
+  <text x="562" y="184" font-family="system-ui" font-size="12" fill="#94A3B8">Outstanding Receivables</text>
+  <text x="562" y="212" font-family="system-ui" font-size="11" fill="#EF4444">↓ 3.2% overdue</text>
+  <rect x="788" y="128" width="230" height="100" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <text x="808" y="160" font-family="system-ui" font-size="24" fill="#6366F1" font-weight="700">847</text>
+  <text x="808" y="184" font-family="system-ui" font-size="12" fill="#94A3B8">Invoices This Quarter</text>
+  <text x="808" y="212" font-family="system-ui" font-size="11" fill="#10B981">↑ 8% vs Q3</text>
+  <rect x="1034" y="128" width="230" height="100" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <text x="1054" y="160" font-family="system-ui" font-size="24" fill="#EF4444" font-weight="700">23</text>
+  <text x="1054" y="184" font-family="system-ui" font-size="12" fill="#94A3B8">Overdue Invoices</text>
+  <text x="1054" y="212" font-family="system-ui" font-size="11" fill="#EF4444">Needs attention</text>
+  <!-- JSON response -->
+  <rect x="296" y="244" width="968" height="520" rx="12" fill="#1E1E2E" opacity="0.8"/>
+  <text x="316" y="276" font-family="system-ui" font-size="12" fill="#6366F1" font-weight="600">RESPONSE — 200 OK (42ms)</text>
+  <text x="316" y="308" font-family="monospace" font-size="12" fill="#E2E8F0">{</text>
+  <text x="316" y="332" font-family="monospace" font-size="12" fill="#818CF8">  "status": "success",</text>
+  <text x="316" y="356" font-family="monospace" font-size="12" fill="#818CF8">  "data": {</text>
+  <text x="316" y="380" font-family="monospace" font-size="12" fill="#10B981">    "total_revenue": 2400000,</text>
+  <text x="316" y="404" font-family="monospace" font-size="12" fill="#10B981">    "outstanding_receivables": 380000,</text>
+  <text x="316" y="428" font-family="monospace" font-size="12" fill="#10B981">    "total_invoices": 847,</text>
+  <text x="316" y="452" font-family="monospace" font-size="12" fill="#F59E0B">    "overdue_invoices": 23,</text>
+  <text x="316" y="476" font-family="monospace" font-size="12" fill="#E2E8F0">    "monthly_trend": [</text>
+  <text x="316" y="500" font-family="monospace" font-size="12" fill="#94A3B8">      {"month": "Jan", "revenue": 180000},</text>
+  <text x="316" y="524" font-family="monospace" font-size="12" fill="#94A3B8">      {"month": "Feb", "revenue": 210000},</text>
+  <text x="316" y="548" font-family="monospace" font-size="12" fill="#94A3B8">      ...</text>
+  <text x="640" y="780" font-family="system-ui" font-size="11" fill="#64748B" text-anchor="middle">ERP Dashboard API • 16 Endpoints • Real-time Business Intelligence</text>
+</svg>

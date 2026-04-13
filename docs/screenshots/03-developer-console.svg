@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#0F172A"/>
+  <rect x="0" y="0" width="1280" height="48" fill="#1E1E2E"/>
+  <text x="24" y="32" font-family="system-ui" font-size="16" fill="#E2E8F0" font-weight="600">Frappe Visual — Developer Console</text>
+  <!-- Code panel left -->
+  <rect x="0" y="48" width="640" height="752" fill="#1E1E2E" opacity="0.8"/>
+  <text x="16" y="80" font-family="system-ui" font-size="12" fill="#6366F1" font-weight="600">CODE EDITOR</text>
+  <text x="16" y="116" font-family="monospace" font-size="13" fill="#C4B5FD">// Initialize Graph Engine</text>
+  <text x="16" y="140" font-family="monospace" font-size="13" fill="#E2E8F0">const engine = await frappe.visual.engine();</text>
+  <text x="16" y="172" font-family="monospace" font-size="13" fill="#C4B5FD">// Add nodes</text>
+  <text x="16" y="196" font-family="monospace" font-size="13" fill="#E2E8F0">engine.addNode({</text>
+  <text x="16" y="220" font-family="monospace" font-size="13" fill="#10B981">  id: 'sales-order',</text>
+  <text x="16" y="244" font-family="monospace" font-size="13" fill="#10B981">  label: 'Sales Order',</text>
+  <text x="16" y="268" font-family="monospace" font-size="13" fill="#10B981">  type: 'doctype'</text>
+  <text x="16" y="292" font-family="monospace" font-size="13" fill="#E2E8F0">});</text>
+  <text x="16" y="324" font-family="monospace" font-size="13" fill="#C4B5FD">// Render with hierarchical layout</text>
+  <text x="16" y="348" font-family="monospace" font-size="13" fill="#E2E8F0">engine.render('#preview', {</text>
+  <text x="16" y="372" font-family="monospace" font-size="13" fill="#F59E0B">  layout: 'hierarchical'</text>
+  <text x="16" y="396" font-family="monospace" font-size="13" fill="#E2E8F0">});</text>
+  <!-- Run button -->
+  <rect x="520" y="420" width="100" height="32" rx="6" fill="#6366F1"/>
+  <text x="546" y="441" font-family="system-ui" font-size="13" fill="#FFFFFF" font-weight="600">▶ Run</text>
+  <!-- Preview panel right -->
+  <rect x="640" y="48" width="640" height="752" fill="#0F172A"/>
+  <text x="656" y="80" font-family="system-ui" font-size="12" fill="#10B981" font-weight="600">LIVE PREVIEW</text>
+  <!-- Graph preview nodes -->
+  <rect x="840" y="160" width="140" height="50" rx="8" fill="#6366F1" opacity="0.3"/>
+  <text x="870" y="190" font-family="system-ui" font-size="13" fill="#E2E8F0">Sales Order</text>
+  <line x1="910" y1="210" x2="810" y2="300" stroke="#818CF8" stroke-width="2"/>
+  <line x1="910" y1="210" x2="1010" y2="300" stroke="#818CF8" stroke-width="2"/>
+  <rect x="740" y="300" width="140" height="50" rx="8" fill="#10B981" opacity="0.3"/>
+  <text x="760" y="330" font-family="system-ui" font-size="13" fill="#E2E8F0">Sales Invoice</text>
+  <rect x="940" y="300" width="140" height="50" rx="8" fill="#F59E0B" opacity="0.3"/>
+  <text x="960" y="330" font-family="system-ui" font-size="13" fill="#E2E8F0">Delivery Note</text>
+  <!-- Output section -->
+  <rect x="656" y="500" width="608" height="280" rx="8" fill="#1E1E2E" opacity="0.5"/>
+  <text x="672" y="530" font-family="system-ui" font-size="12" fill="#94A3B8">OUTPUT</text>
+  <text x="672" y="560" font-family="monospace" font-size="12" fill="#10B981">✓ Engine initialized</text>
+  <text x="672" y="584" font-family="monospace" font-size="12" fill="#10B981">✓ 3 nodes, 2 edges rendered</text>
+  <text x="672" y="608" font-family="monospace" font-size="12" fill="#10B981">✓ Layout: hierarchical (ELK.js)</text>
+  <text x="640" y="780" font-family="system-ui" font-size="11" fill="#64748B" text-anchor="middle">Developer Console • frappe_visual v0.1.0</text>
+</svg>

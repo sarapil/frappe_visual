@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg2)"/>
+  <rect x="0" y="0" width="1280" height="48" fill="#1E1E2E" opacity="0.9"/>
+  <text x="24" y="32" font-family="system-ui" font-size="16" fill="#E2E8F0" font-weight="600">Frappe Visual — Component Gallery</text>
+  <!-- Filter bar -->
+  <rect x="24" y="68" width="1232" height="48" rx="8" fill="#1E1E2E" opacity="0.5"/>
+  <text x="48" y="98" font-family="system-ui" font-size="14" fill="#94A3B8">Search components… (⌘K)</text>
+  <rect x="1080" y="78" width="80" height="28" rx="6" fill="#6366F1" opacity="0.3"/>
+  <text x="1096" y="98" font-family="system-ui" font-size="12" fill="#818CF8">All Tiers</text>
+  <!-- Component cards grid -->
+  <rect x="24" y="136" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="40" y="152" width="40" height="40" rx="8" fill="#6366F1" opacity="0.3"/>
+  <text x="92" y="176" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">GraphEngine</text>
+  <text x="92" y="196" font-family="system-ui" font-size="11" fill="#818CF8">Tier 1 • Core</text>
+  <text x="40" y="240" font-family="system-ui" font-size="12" fill="#94A3B8">Cytoscape.js-powered graph</text>
+  <text x="40" y="258" font-family="system-ui" font-size="12" fill="#94A3B8">with 9 ELK.js layout algorithms</text>
+  <rect x="330" y="136" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="346" y="152" width="40" height="40" rx="8" fill="#10B981" opacity="0.3"/>
+  <text x="398" y="176" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">KanbanBoard</text>
+  <text x="398" y="196" font-family="system-ui" font-size="11" fill="#10B981">Tier 2 • Business</text>
+  <text x="346" y="240" font-family="system-ui" font-size="12" fill="#94A3B8">Drag-and-drop Kanban with</text>
+  <text x="346" y="258" font-family="system-ui" font-size="12" fill="#94A3B8">real-time status sync</text>
+  <rect x="636" y="136" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="652" y="152" width="40" height="40" rx="8" fill="#F59E0B" opacity="0.3"/>
+  <text x="704" y="176" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">Heatmap</text>
+  <text x="704" y="196" font-family="system-ui" font-size="11" fill="#F59E0B">Tier 3 • Data Viz</text>
+  <text x="652" y="240" font-family="system-ui" font-size="12" fill="#94A3B8">ECharts-powered calendar</text>
+  <text x="652" y="258" font-family="system-ui" font-size="12" fill="#94A3B8">heatmap visualization</text>
+  <rect x="942" y="136" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="958" y="152" width="40" height="40" rx="8" fill="#EF4444" opacity="0.3"/>
+  <text x="1010" y="176" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">SceneEngine</text>
+  <text x="1010" y="196" font-family="system-ui" font-size="11" fill="#EF4444">Tier 8 • Scene</text>
+  <text x="958" y="240" font-family="system-ui" font-size="12" fill="#94A3B8">Immersive SVG room with</text>
+  <text x="958" y="258" font-family="system-ui" font-size="12" fill="#94A3B8">animated KPI picture frames</text>
+  <!-- Row 2 -->
+  <rect x="24" y="336" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="40" y="352" width="40" height="40" rx="8" fill="#8B5CF6" opacity="0.3"/>
+  <text x="92" y="376" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">CommandBar</text>
+  <text x="92" y="396" font-family="system-ui" font-size="11" fill="#8B5CF6">Tier 5 • Navigation</text>
+  <rect x="330" y="336" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="346" y="352" width="40" height="40" rx="8" fill="#06B6D4" opacity="0.3"/>
+  <text x="398" y="376" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">Masonry</text>
+  <text x="398" y="396" font-family="system-ui" font-size="11" fill="#06B6D4">Tier 4 • Layout</text>
+  <rect x="636" y="336" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="652" y="352" width="40" height="40" rx="8" fill="#EC4899" opacity="0.3"/>
+  <text x="704" y="376" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">Typewriter</text>
+  <text x="704" y="396" font-family="system-ui" font-size="11" fill="#EC4899">Tier 9 • Animation</text>
+  <rect x="942" y="336" width="290" height="180" rx="12" fill="#1E1E2E" opacity="0.7"/>
+  <rect x="958" y="352" width="40" height="40" rx="8" fill="#14B8A6" opacity="0.3"/>
+  <text x="1010" y="376" font-family="system-ui" font-size="15" fill="#E2E8F0" font-weight="600">BottomSheet</text>
+  <text x="1010" y="396" font-family="system-ui" font-size="11" fill="#14B8A6">Tier 6 • Feedback</text>
+  <text x="640" y="760" font-family="system-ui" font-size="11" fill="#64748B" text-anchor="middle">frappe_visual v0.1.0 • 307+ Components across 10 Tiers</text>
+</svg>

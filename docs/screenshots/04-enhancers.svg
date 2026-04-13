@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#0F172A"/>
+  <rect x="0" y="0" width="1280" height="48" fill="#1E1E2E"/>
+  <text x="24" y="32" font-family="system-ui" font-size="16" fill="#E2E8F0" font-weight="600">Frappe Visual — Form Enhancer + List Enhancer</text>
+  <!-- Form enhancer left half -->
+  <rect x="16" y="64" width="620" height="720" rx="12" fill="#1E1E2E" opacity="0.6"/>
+  <text x="32" y="96" font-family="system-ui" font-size="14" fill="#6366F1" font-weight="600">formEnhancer — Sales Order SO-0001</text>
+  <!-- Stats ribbon -->
+  <rect x="32" y="112" width="140" height="60" rx="8" fill="#6366F1" opacity="0.15"/>
+  <text x="48" y="138" font-family="system-ui" font-size="18" fill="#6366F1" font-weight="700">$12,500</text>
+  <text x="48" y="158" font-family="system-ui" font-size="11" fill="#94A3B8">Grand Total</text>
+  <rect x="184" y="112" width="140" height="60" rx="8" fill="#10B981" opacity="0.15"/>
+  <text x="200" y="138" font-family="system-ui" font-size="18" fill="#10B981" font-weight="700">5</text>
+  <text x="200" y="158" font-family="system-ui" font-size="11" fill="#94A3B8">Items</text>
+  <rect x="336" y="112" width="140" height="60" rx="8" fill="#F59E0B" opacity="0.15"/>
+  <text x="352" y="138" font-family="system-ui" font-size="18" fill="#F59E0B" font-weight="700">Submitted</text>
+  <text x="352" y="158" font-family="system-ui" font-size="11" fill="#94A3B8">Status</text>
+  <rect x="488" y="112" width="140" height="60" rx="8" fill="#EF4444" opacity="0.15"/>
+  <text x="504" y="138" font-family="system-ui" font-size="18" fill="#EF4444" font-weight="700">3</text>
+  <text x="504" y="158" font-family="system-ui" font-size="11" fill="#94A3B8">Linked Docs</text>
+  <!-- Relationship Graph mini -->
+  <rect x="32" y="188" width="590" height="180" rx="8" fill="#0F172A" opacity="0.5"/>
+  <text x="48" y="216" font-family="system-ui" font-size="12" fill="#818CF8">Relationship Graph</text>
+  <circle cx="310" cy="280" r="30" fill="#6366F1" opacity="0.3"/>
+  <text x="290" y="284" font-family="system-ui" font-size="10" fill="#E2E8F0">SO-0001</text>
+  <circle cx="160" cy="320" r="22" fill="#10B981" opacity="0.3"/>
+  <text x="137" y="324" font-family="system-ui" font-size="9" fill="#E2E8F0">SI-0012</text>
+  <circle cx="460" cy="320" r="22" fill="#F59E0B" opacity="0.3"/>
+  <text x="437" y="324" font-family="system-ui" font-size="9" fill="#E2E8F0">DN-0008</text>
+  <circle cx="310" cy="340" r="22" fill="#EF4444" opacity="0.3"/>
+  <text x="287" y="344" font-family="system-ui" font-size="9" fill="#E2E8F0">PE-0003</text>
+  <line x1="285" y1="300" x2="175" y2="305" stroke="#818CF8" stroke-width="1.5"/>
+  <line x1="335" y1="300" x2="445" y2="305" stroke="#818CF8" stroke-width="1.5"/>
+  <line x1="310" y1="310" x2="310" y2="320" stroke="#818CF8" stroke-width="1.5"/>
+  <!-- List enhancer right half -->
+  <rect x="652" y="64" width="612" height="720" rx="12" fill="#1E1E2E" opacity="0.6"/>
+  <text x="668" y="96" font-family="system-ui" font-size="14" fill="#10B981" font-weight="600">listEnhancer — Sales Order List</text>
+  <!-- View toggle -->
+  <rect x="668" y="112" width="60" height="28" rx="6" fill="#6366F1"/>
+  <text x="680" y="131" font-family="system-ui" font-size="11" fill="#FFFFFF">Table</text>
+  <rect x="732" y="112" width="60" height="28" rx="6" fill="#1E1E2E" opacity="0.5"/>
+  <text x="744" y="131" font-family="system-ui" font-size="11" fill="#94A3B8">Cards</text>
+  <rect x="796" y="112" width="68" height="28" rx="6" fill="#1E1E2E" opacity="0.5"/>
+  <text x="806" y="131" font-family="system-ui" font-size="11" fill="#94A3B8">Kanban</text>
+  <rect x="868" y="112" width="76" height="28" rx="6" fill="#1E1E2E" opacity="0.5"/>
+  <text x="878" y="131" font-family="system-ui" font-size="11" fill="#94A3B8">Timeline</text>
+  <!-- Table rows -->
+  <rect x="668" y="156" width="580" height="32" fill="#6366F1" opacity="0.1"/>
+  <text x="684" y="177" font-family="system-ui" font-size="12" fill="#94A3B8" font-weight="600">Name</text>
+  <text x="860" y="177" font-family="system-ui" font-size="12" fill="#94A3B8" font-weight="600">Customer</text>
+  <text x="1060" y="177" font-family="system-ui" font-size="12" fill="#94A3B8" font-weight="600">Total</text>
+  <text x="1180" y="177" font-family="system-ui" font-size="12" fill="#94A3B8" font-weight="600">Status</text>
+  <text x="684" y="212" font-family="system-ui" font-size="12" fill="#818CF8">SO-0001</text>
+  <text x="860" y="212" font-family="system-ui" font-size="12" fill="#E2E8F0">Acme Corp</text>
+  <text x="1060" y="212" font-family="system-ui" font-size="12" fill="#E2E8F0">$12,500</text>
+  <rect x="1172" y="198" width="68" height="22" rx="4" fill="#10B981" opacity="0.2"/>
+  <text x="1184" y="214" font-family="system-ui" font-size="11" fill="#10B981">Submitted</text>
+  <text x="684" y="244" font-family="system-ui" font-size="12" fill="#818CF8">SO-0002</text>
+  <text x="860" y="244" font-family="system-ui" font-size="12" fill="#E2E8F0">Globex Inc</text>
+  <text x="1060" y="244" font-family="system-ui" font-size="12" fill="#E2E8F0">$8,750</text>
+  <rect x="1172" y="230" width="48" height="22" rx="4" fill="#F59E0B" opacity="0.2"/>
+  <text x="1184" y="246" font-family="system-ui" font-size="11" fill="#F59E0B">Draft</text>
+  <text x="640" y="780" font-family="system-ui" font-size="11" fill="#64748B" text-anchor="middle">Auto-Enhancers • Active on every form + list • Zero configuration</text>
+</svg>
