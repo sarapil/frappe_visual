@@ -115,3 +115,10 @@ GPL-3.0 — See [LICENSE](LICENSE) for details.
 **Arkan Lab** — [arkan.it.com](https://arkan.it.com)
 
 📧 moatazsarapil@gmail.com
+
+## Contact
+
+For support and inquiries:
+- Phone: +201508268982
+- WhatsApp: https://wa.me/201508268982
+
