@@ -1,4 +1,5 @@
 # About Page — Screen Specification
+
 # مواصفات شاشة صفحة عن التطبيق
 
 ## Overview
@@ -49,12 +50,12 @@ CR-003 (Cross-Role), WS-001 (Manager)
 
 ## Layout
 
-| Breakpoint | Behavior |
-|-----------|----------|
-| Mobile | Full width slides, bottom nav |
-| Tablet | Centered slides, side nav dots |
-| Desktop | Wide slides with fixed nav |
-| Large | Max-width 1200px centered |
+| Breakpoint | Behavior                       |
+| ---------- | ------------------------------ |
+| Mobile     | Full width slides, bottom nav  |
+| Tablet     | Centered slides, side nav dots |
+| Desktop    | Wide slides with fixed nav     |
+| Large      | Max-width 1200px centered      |
 
 ## Navigation
 

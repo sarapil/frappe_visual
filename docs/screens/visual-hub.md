@@ -1,4 +1,5 @@
 # Visual Hub — Screen Specification
+
 # مواصفات شاشة المركز المرئي
 
 ## Overview
@@ -29,12 +30,12 @@ DS-002 (Developer), WS-001 (Manager)
 
 ## Layout
 
-| Breakpoint | Behavior |
-|-----------|----------|
-| Mobile (320-767px) | Single column, stacked cards |
-| Tablet (768-1023px) | Two-column grid |
-| Desktop (1024-1439px) | Three-column grid with sidebar |
-| Large (1440px+) | Four-column grid with expanded sidebar |
+| Breakpoint            | Behavior                               |
+| --------------------- | -------------------------------------- |
+| Mobile (320-767px)    | Single column, stacked cards           |
+| Tablet (768-1023px)   | Two-column grid                        |
+| Desktop (1024-1439px) | Three-column grid with sidebar         |
+| Large (1440px+)       | Four-column grid with expanded sidebar |
 
 ## Dark Mode
 

@@ -1,4 +1,5 @@
 # Developer Console — Screen Specification
+
 # مواصفات شاشة وحدة التطوير
 
 ## Overview
@@ -29,12 +30,12 @@ DS-001 (Developer), DS-003 (Developer), WS-002 (Developer)
 
 ## Layout
 
-| Breakpoint | Behavior |
-|-----------|----------|
-| Mobile | Not supported (requires keyboard input) |
-| Tablet | Single column, tabs for code/output |
-| Desktop | Split pane: code left, preview right |
-| Large | Split pane with wider preview area |
+| Breakpoint | Behavior                                |
+| ---------- | --------------------------------------- |
+| Mobile     | Not supported (requires keyboard input) |
+| Tablet     | Single column, tabs for code/output     |
+| Desktop    | Split pane: code left, preview right    |
+| Large      | Split pane with wider preview area      |
 
 ## Dark Mode
 

@@ -1,4 +1,5 @@
 # Gallery — Screen Specification
+
 # مواصفات شاشة معرض المكونات
 
 ## Overview
@@ -29,12 +30,12 @@ WS-001 (Developer)
 
 ## Layout
 
-| Breakpoint | Behavior |
-|-----------|----------|
-| Mobile | Single column, collapsed previews |
-| Tablet | Two-column masonry |
-| Desktop | Three-column masonry with sidebar filter |
-| Large | Four-column masonry |
+| Breakpoint | Behavior                                 |
+| ---------- | ---------------------------------------- |
+| Mobile     | Single column, collapsed previews        |
+| Tablet     | Two-column masonry                       |
+| Desktop    | Three-column masonry with sidebar filter |
+| Large      | Four-column masonry                      |
 
 ## Dark Mode
 

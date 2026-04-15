@@ -1,4 +1,5 @@
 # Workspace Dashboard — Screen Specification
+
 # مواصفات شاشة لوحة تحكم مساحة العمل
 
 ## Overview
@@ -31,12 +32,12 @@ DS-001 (Manager), DS-003 (End User), CR-002 (Cross-Role)
 
 ## Layout
 
-| Breakpoint | Behavior |
-|-----------|----------|
-| Mobile | Scene hidden, cards stacked |
-| Tablet | Scene compressed, 2-col cards |
-| Desktop | Full scene header + 3-col cards |
-| Large | Extended scene + 4-col cards |
+| Breakpoint | Behavior                        |
+| ---------- | ------------------------------- |
+| Mobile     | Scene hidden, cards stacked     |
+| Tablet     | Scene compressed, 2-col cards   |
+| Desktop    | Full scene header + 3-col cards |
+| Large      | Extended scene + 4-col cards    |
 
 ## Dark Mode
 
