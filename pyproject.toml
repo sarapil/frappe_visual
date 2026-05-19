@@ -1,5 +1,5 @@
 [project]
-name = "frappe-visual"
+name = "frappe_visual"
 version = "0.1.0"
 description = "Graph-based Visual UX Framework for Frappe v16 — Interactive visualizations, app maps, relationship explorers, animated diagrams"
 authors = [{name = "Arkan Lab", email = "dev@arkan.tech"}]
